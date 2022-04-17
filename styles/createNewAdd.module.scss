@@ -1,0 +1,178 @@
+.container {
+  @apply mx-auto pt-8;
+  margin-top: 50px;
+  max-width: 700px;
+  padding-bottom: 80px;
+
+  h1 {
+    @apply font-semibold my-8 mb-2;
+    font-size: 40px;
+  }
+
+  .note {
+    @apply mb-16;
+    font-size: 14px;
+
+    a {
+      color: rgba(0, 118, 255, 1);
+    }
+  }
+
+  .btnsContainer {
+    @apply flex items-center justify-between flex-wrap;
+
+    .submitPreviewBtns {
+      @apply flex flex-wrap gap-4 items-center;
+    }
+
+    button {
+      @apply mx-0;
+      height: 52px;
+      width: 150px;
+    }
+
+    .discardBtn button {
+      @apply text-black font-medium;
+      background-color: #edf6f2;
+      border: none;
+
+      &:hover {
+        background-color: #d8f1e7;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    h1 {
+      @apply text-center mt-4;
+    }
+
+    .note {
+      @apply mb-16 text-center;
+    }
+
+    .btnsContainer {
+      @apply flex-col-reverse;
+      button {
+        @apply w-full my-2;
+      }
+
+      .discardBtn,
+      .submitPreviewBtns {
+        @apply w-full gap-0 flex-col-reverse;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    @apply pt-0;
+    h1 {
+      @apply mt-0 mb-8;
+      font-size: 45px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    h1 {
+      @apply mb-0;
+      font-size: 35px;
+    }
+
+    .note {
+      @apply mb-6;
+      font-size: 12px;
+    }
+    .btnsContainer {
+      button {
+        height: 48px !important;
+        font-size: 16px;
+        border-radius: 18px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    h1 {
+      font-size: 26px;
+    }
+    .note {
+      font-size: 8px;
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    h1 {
+      font-size: 24px;
+    }
+    .btnsContainer {
+      button {
+        height: 50px !important;
+      }
+    }
+  }
+}
+
+.overlay {
+  @apply fixed top-0 z-10 cursor-pointer;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  .closeBtn {
+    @apply absolute flex items-center cursor-pointer justify-center;
+    top: 0;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+
+    svg {
+      height: 20px;
+      width: auto;
+    }
+  }
+}
+
+.errorMessage {
+  @apply text-base text-center;
+  color: #c40707;
+}
+
+.postPreviewContainer {
+  @apply pt-20 z-20 overflow-scroll;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0px -4px 22px 0px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  height: 90vh;
+  width: 100vw;
+  animation: postPreviewAnimation 0.2s ease forwards;
+
+  .topContainer {
+    @apply flex gap-12 justify-between mt-10 items-start;
+
+    @media only screen and (max-width: 1200px) {
+      @apply flex-col gap-6;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      @apply mt-4;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    @apply pt-4;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+}
+
+@keyframes postPreviewAnimation {
+  0% {
+    top: 100vh;
+  }
+
+  100% {
+    top: 5vh;
+  }
+}

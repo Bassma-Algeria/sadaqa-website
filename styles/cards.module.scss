@@ -1,0 +1,489 @@
+.adCard {
+  @apply flex my-10 bg-white w-full relative;
+  transition: all 0.4s ease;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+
+  .imageContainer {
+    @apply cursor-pointer;
+    width: 25%;
+    height: 100%;
+
+    img {
+      @apply w-full h-full overflow-hidden;
+      object-fit: cover;
+    }
+  }
+
+  .details {
+    @apply relative h-full font-medium;
+    color: #2d2d2d;
+
+    .time {
+      @apply absolute;
+      color: #c8c8c8;
+    }
+
+    .tag {
+      color: #c8c8c8;
+      text-transform: capitalize;
+    }
+
+    h1 {
+      @apply cursor-pointer capitalize text-black font-semibold;
+    }
+
+    .desc {
+      @apply mt-4;
+    }
+  }
+
+  &.inline {
+    @apply my-5;
+    height: 280px;
+
+    .imageContainer {
+      width: 25%;
+      height: 100%;
+
+      img {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-top-right-radius: 0px;
+      }
+    }
+
+    .details {
+      @apply h-full;
+      width: 75%;
+      padding: 30px;
+      padding-top: 20px;
+      font-size: 16px;
+
+      .time {
+        top: 20px;
+        right: 30px;
+      }
+
+      .tag {
+        margin-bottom: 10px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .buttonsContainer {
+        bottom: 30px;
+        left: 30px;
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      .imageContainer {
+        width: 30%;
+      }
+
+      .details {
+        width: 70%;
+
+        .time {
+          right: 20px;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 700px) {
+      @apply flex-col my-8 mb-4;
+      width: 245px;
+      height: 390px;
+
+      .imageContainer {
+        height: 70%;
+        width: 100%;
+
+        img {
+          border-top-right-radius: 10px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 0px;
+        }
+      }
+
+      .details {
+        height: 30%;
+        width: 100%;
+        padding: 14px;
+        font-size: 12px;
+
+        .tag {
+          @apply m-0;
+        }
+
+        .time {
+          top: 14px;
+          right: 14px;
+        }
+
+        h1 {
+          font-size: 20px;
+        }
+
+        .adress {
+          margin-top: -7px;
+          font-weight: 500;
+          font-size: 16px;
+        }
+
+        .desc {
+          opacity: 0;
+          z-index: -1;
+        }
+
+        .buttonsContainer {
+          @apply gap-2;
+          bottom: 14px;
+          left: 14px;
+
+          .Button {
+            font-size: 14px;
+
+            svg {
+              width: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &.grid {
+    @apply flex-col my-8 mb-4;
+    width: 245px;
+    height: 390px;
+
+    .imageContainer {
+      height: 70%;
+      width: 100%;
+
+      img {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+      }
+    }
+
+    .details {
+      height: 30%;
+      width: 100%;
+      padding: 14px;
+      font-size: 12px;
+
+      .time {
+        top: 14px;
+        right: 14px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .adress {
+        margin-top: -7px;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .desc {
+        opacity: 0;
+        z-index: -1;
+      }
+
+      .buttonsContainer {
+        @apply gap-2;
+
+        .Button {
+          font-size: 14px;
+
+          svg {
+            width: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    &.inline,
+    &.grid {
+      width: 49%;
+      height: 320px;
+      margin-top: 1rem;
+
+      &.dashboardCard {
+        .details {
+          .buttonsContainer {
+            @apply hidden;
+          }
+        }
+      }
+
+      .details {
+        position: static;
+
+        .time {
+          @apply hidden;
+        }
+
+        .buttonsContainer {
+          @apply flex-col gap-1;
+          top: 10px;
+          right: 10px;
+          bottom: unset;
+          left: unset;
+
+          .Button {
+            @apply bg-white flex items-center justify-center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
+            p {
+              @apply hidden;
+            }
+
+            svg {
+              width: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    &.inline,
+    &.grid {
+      height: 280px;
+      border-radius: 5px;
+
+      .imageContainer {
+        height: 75%;
+
+        img {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+      }
+
+      .details {
+        font-size: 10px;
+        padding: 8px 10px;
+        height: 25%;
+
+        h1 {
+          font-size: 16px;
+        }
+
+        .adress {
+          font-size: 12px;
+          margin-top: -6px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    &.inline,
+    &.grid {
+      height: 240px;
+
+      .imageContainer {
+        height: 82%;
+      }
+
+      .details {
+        height: 18%;
+
+        .adress,
+        .tag {
+          @apply hidden;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    &.inline,
+    &.grid {
+      height: 200px;
+
+      .details {
+        h1 {
+          font-size: 12px;
+        }
+
+        .buttonsContainer {
+          @apply flex-col gap-1;
+          top: 8px;
+          right: 8px;
+
+          .Button {
+            width: 25px;
+            height: 25px;
+
+            svg {
+              width: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.buttonsContainer {
+  @apply gap-4 absolute flex items-center;
+  bottom: 14px;
+  left: 14px;
+
+  svg {
+    height: 20px !important;
+  }
+
+  .Button {
+    @apply flex items-center gap-2 cursor-pointer;
+    font-size: 16px;
+    color: black;
+
+    svg {
+      height: 20px;
+      width: auto;
+      fill: black;
+    }
+  }
+}
+
+.dashboardButtons {
+  @apply absolute flex gap-4 items-center;
+  bottom: 20px;
+  right: 20px;
+
+  button {
+    @apply m-0 font-medium;
+    border-color: #edf6f2;
+    color: black;
+    background-color: transparent;
+
+    &:hover {
+      color: black;
+      border-color: #d8f1e7;
+    }
+  }
+
+  .statusBtn {
+    background-color: #edf6f2;
+    color: black !important;
+    opacity: 1 !important;
+
+    &:hover,
+    &.btnActive {
+      background-color: #d8f1e7;
+    }
+
+    svg {
+      fill: black;
+    }
+  }
+}
+
+.dashboardMenu {
+  @apply absolute top-4 left-4 bg-white flex items-center justify-center cursor-pointer;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+  z-index: 9;
+
+  .menuDots {
+    @apply flex items-center gap-1;
+
+    .dot {
+      @apply bg-black;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+  }
+
+  .menuList {
+    @apply absolute bg-white p-1;
+    top: 100%;
+    left: 50%;
+    width: max-content;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.1);
+    animation: open_animation 0.3s ease;
+
+    & > div {
+      @apply font-semibold flex items-center gap-2 px-2 py-1 cursor-pointer;
+      transition: 0.2s ease;
+      border-radius: 5px;
+
+      &.disabled {
+        @apply cursor-default;
+        opacity: 0.2;
+      }
+
+      &:hover {
+        background-color: #edf6f2;
+      }
+
+      svg {
+        height: 20px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    @apply top-2 left-2;
+    height: 30px;
+    width: 30px;
+    gap: 2px;
+
+    .menuDots {
+      .dot {
+        width: 3px;
+        height: 3px;
+      }
+    }
+
+    .menuList {
+      border-radius: 5px;
+      animation: open_animation 0.3s ease;
+
+      & > div {
+        @apply font-medium p-1;
+        border-radius: 2px;
+        font-size: 12px;
+
+        svg {
+          height: 15px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes open_animation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

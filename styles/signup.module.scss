@@ -1,0 +1,269 @@
+.signup {
+  @apply flex w-full;
+  min-height: 100vh;
+
+  .imgContainer {
+    @apply flex items-center px-10 bg-secondary;
+    width: 45%;
+
+    img {
+      @apply h-auto mb-20 fixed;
+      top: 50%;
+      left: 22.5%;
+      transform: translate(-50%, -50%);
+      width: 44vw;
+    }
+  }
+
+  .signupInputsSection {
+    @apply m-0 flex flex-col justify-start;
+    width: 55%;
+    padding: 5%;
+    padding-top: 100px;
+
+    .typeCard {
+      @apply flex bg-white border border-black p-4 px-0 pl-6 font-medium mb-6 items-center cursor-pointer;
+      border-radius: 20px;
+      font-size: 20px;
+      width: 100%;
+      min-width: 470px;
+      max-width: 470px;
+
+      &.selected {
+        border-color: #c94ac6;
+        background-color: #fff5ff;
+
+        .circleInside {
+          @apply absolute rounded-full;
+
+          background-color: #c94ac6;
+          top: 50%;
+          right: 50%;
+          transform: translate(44%, -43%);
+          height: 8px;
+          width: 8px;
+        }
+      }
+
+      &:hover {
+        border-color: #c94ac6;
+        background-color: #fff5ff;
+      }
+
+      .radioButton {
+        @apply relative rounded-full border border-black mr-3;
+        height: 15px;
+        width: 15px;
+      }
+    }
+
+    h1 {
+      @apply font-semibold mb-5;
+      font-size: 50px;
+
+      &.chooseType {
+        font-size: 40px;
+        max-width: 600px;
+        margin-bottom: 40px;
+      }
+    }
+
+    .submitBtnContainer {
+      @apply flex w-full gap-2 justify-end;
+
+      .backArrow {
+        @apply flex items-center justify-end absolute p-2 hidden bg-white cursor-pointer;
+        width: 70px;
+        height: 50px;
+        border-radius: 25px;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        top: 80px;
+        left: -30px;
+
+        svg {
+          width: 25px;
+          height: auto;
+        }
+      }
+
+      button {
+        @apply mt-4 mx-0;
+        border-radius: 20px;
+      }
+    }
+
+    .errorMessage {
+      @apply text-base text-center;
+      color: #c40707;
+    }
+
+    p {
+      @apply text-left;
+      font-size: 18px;
+
+      a {
+        color: #cb7feb;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .imgContainer {
+      @apply hidden;
+    }
+
+    .signupInputsSection {
+      @apply w-full;
+
+      .typeCard {
+        max-width: unset;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .signupInputsSection {
+      .submitBtnContainer {
+        button {
+          width: 100% !important;
+        }
+
+        & button:nth-child(2) {
+          @apply hidden;
+        }
+
+        .backArrow {
+          @apply flex;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .signupInputsSection {
+      h1,
+      h1.chooseType {
+        @apply mb-8 text-center;
+        font-size: 45px;
+      }
+
+      p {
+        @apply text-center;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .signupInputsSection {
+      h1 {
+        font-size: 35px;
+
+        &.chooseType {
+          font-size: 40px;
+        }
+      }
+
+      button {
+        height: 48px !important;
+        font-size: 16px;
+        border-radius: 18px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .errorMessage {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .signupInputsSection {
+      @apply justify-start;
+      padding-top: 20%;
+
+      .typeCard {
+        @apply pl-3;
+        min-width: unset;
+        font-size: 18px;
+
+        .radioButton {
+          @apply mr-2;
+          height: 12px;
+          width: 12px;
+        }
+      }
+
+      h1,
+      h1.chooseType {
+        font-size: 35px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .signupInputsSection {
+      h1 {
+        font-size: 26px;
+
+        &.chooseType {
+          font-size: 26px;
+        }
+      }
+
+      p {
+        font-size: 14px;
+      }
+
+      .typeCard {
+        @apply py-3;
+        border-radius: 15px;
+        font-size: 14px;
+      }
+
+      button {
+        height: 50px !important;
+      }
+
+      .errorMessage {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 300px) {
+    .signupInputsSection {
+      h1 {
+        font-size: 24px;
+
+        &.chooseType {
+          font-size: 22px;
+        }
+      }
+
+      p {
+        font-size: 12px;
+      }
+
+      .typeCard {
+        @apply py-3;
+        border-radius: 13px;
+        font-size: 12px;
+      }
+
+      button {
+        height: 50px !important;
+      }
+
+      .errorMessage {
+        font-size: 12px;
+      }
+    }
+  }
+}

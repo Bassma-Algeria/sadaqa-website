@@ -1,0 +1,332 @@
+.container {
+  @apply flex gap-12 items-start justify-center;
+
+  @media only screen and (max-width: 1200px) {
+    @apply flex-col gap-4;
+  }
+}
+
+.profileCardContainer {
+  @apply relative;
+  border-radius: 14px;
+  width: 30%;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.03);
+  height: 460px;
+  background-color: white;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 80px;
+
+  .menuDots {
+    @apply absolute top-6 right-6;
+
+    p {
+      @apply font-medium;
+      color: black;
+    }
+  }
+
+  .cardHeader {
+    @apply flex flex-col items-center justify-center;
+    height: 50%;
+
+    .imgContainer {
+      @apply relative;
+      border: 1px solid #707070;
+      border-radius: 50%;
+      height: 100px;
+      width: 100px;
+      margin-bottom: 20px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .onlineStatus {
+        @apply absolute right-0 bottom-0;
+      }
+    }
+
+    h1 {
+      @apply font-semibold capitalize;
+      font-size: 24px;
+    }
+
+    p {
+      @apply font-medium;
+      font-size: 16px;
+      color: #c8c8c8;
+    }
+  }
+
+  .divider {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 100%;
+    height: 1px;
+  }
+
+  .cardBottom {
+    @apply flex flex-col justify-center pt-4;
+    height: 50%;
+
+    svg {
+      fill: black;
+      height: 15px;
+      width: auto;
+    }
+
+    .contactInfo {
+      @apply flex items-center justify-center gap-3;
+      margin-bottom: 10px;
+      p {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+
+    .socialIcons {
+      @apply flex items-center justify-center gap-3;
+      margin: 10px 0;
+
+      svg {
+        height: 20px;
+        fill: #c8c8c8;
+      }
+    }
+
+    button {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @media only screen and (max-width: 1300px) {
+    .cardBottom {
+      .contactInfo {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    @apply w-full flex relative top-0;
+    height: 250px;
+
+    .cardHeader {
+      @apply h-full py-4;
+      width: 40%;
+    }
+
+    .divider {
+      width: 1px;
+      height: 100%;
+    }
+
+    .cardBottom {
+      @apply h-full items-start;
+      width: 60%;
+
+      .contactInfo {
+        @apply pl-10;
+        p {
+          font-size: 18px;
+        }
+      }
+
+      .socialIcons {
+        @apply pl-10;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .cardHeader {
+      h1 {
+        font-size: 22px;
+      }
+    }
+
+    .cardBottom {
+      .contactInfo {
+        p {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 550px) {
+    .cardHeader {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    @apply flex-col;
+    height: 350px;
+
+    .cardHeader {
+      @apply w-full;
+      height: 50%;
+
+      .imgContainer {
+        margin-bottom: 10px;
+        height: 80px;
+        width: 80px;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+    }
+
+    .cardBottom {
+      @apply w-full;
+      align-items: unset;
+      height: 50%;
+
+      .contactInfo {
+        @apply pl-0;
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .socialIcons {
+        @apply pl-0 m-0;
+      }
+
+      button {
+        @apply py-1;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.postsContainer {
+  @apply bg-white;
+  width: 65%;
+  border-radius: 12px;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.03);
+  min-height: 60vh;
+
+  & > h1 {
+    @apply py-8 pb-4 px-10 capitalize;
+    color: black;
+    font-size: 28px;
+    font-weight: 600;
+  }
+
+  .navLinks {
+    @apply flex items-center w-full px-4 pt-2 bg-white;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 70px;
+    z-index: 2;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      height: 0px;
+    }
+
+    .link {
+      @apply py-4 cursor-pointer capitalize mx-4 relative;
+      color: #c8c8c8;
+      font-size: 16px;
+      white-space: nowrap;
+      z-index: 1;
+
+      &.active {
+        @apply text-primary font-medium;
+
+        &::after {
+          @apply absolute w-full bottom-0;
+
+          content: "";
+          height: 2px;
+          z-index: 2;
+          background-color: #ff7937;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .postsBody {
+    @apply flex justify-between flex-wrap p-10;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    @apply w-full;
+  }
+
+  @media only screen and (max-width: 900px) {
+    .navLinks {
+      top: 50px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    & > h1 {
+      @apply px-4 pb-1 py-4;
+      font-size: 24px;
+    }
+    .navLinks {
+      @apply px-2;
+    }
+    .postsBody {
+      @apply p-6;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    & > h1 {
+      font-size: 20px;
+    }
+    .navLinks {
+      @apply px-2;
+
+      .link {
+        @apply mx-2;
+        font-size: 12px;
+      }
+    }
+    .postsBody {
+      @apply p-2;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    & > h1 {
+      font-size: 18px;
+    }
+    .navLinks {
+      @apply px-2;
+    }
+    .postsBody {
+      @apply p-1 py-2;
+    }
+  }
+}

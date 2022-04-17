@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16.682" height="28.953" viewBox="0 0 16.682 28.953">
+  <g id="mobile-phone" transform="translate(0 0)">
+    <path id="Path_520" data-name="Path 520" d="M339.393,39.2V58.819L336,60.515V37.5Z" transform="translate(-323.135 -35.38)" fill="#06f5dd"/>
+    <path id="Path_521" data-name="Path 521" d="M130.137,37.5V60.515L116,58.819V39.2Z" transform="translate(-115.576 -35.38)" fill="#8cfff3"/>
+    <g id="Group_202" data-name="Group 202" transform="translate(12.865 0.424)">
+      <path id="Path_522" data-name="Path 522" d="M337.7,414.5l-1.7,5.089h1.7a1.7,1.7,0,0,0,1.7-1.7V414.5Z" transform="translate(-336 -391.485)" fill="#bfbfbf"/>
+      <path id="Path_523" data-name="Path 523" d="M337.7,7.5H336l1.7,3.393h1.7V9.2A1.7,1.7,0,0,0,337.7,7.5Z" transform="translate(-336 -7.5)" fill="#bfbfbf"/>
+    </g>
+    <g id="Group_203" data-name="Group 203" transform="translate(0.424 0.424)">
+      <path id="Path_524" data-name="Path 524" d="M130.137,414.5v3.393a1.7,1.7,0,0,1-1.7,1.7H117.7a1.7,1.7,0,0,1-1.7-1.7V414.5Z" transform="translate(-116 -391.485)" fill="#dbdbdb"/>
+      <path id="Path_525" data-name="Path 525" d="M130.137,9.2v1.7H116V9.2a1.7,1.7,0,0,1,1.7-1.7h10.744A1.7,1.7,0,0,1,130.137,9.2Z" transform="translate(-116 -7.5)" fill="#dbdbdb"/>
+    </g>
+    <circle id="Ellipse_239" data-name="Ellipse 239" cx="0.848" cy="0.848" r="0.848" transform="translate(7.493 25.135)" fill="#fff"/>
+    <path id="Path_526" data-name="Path 526" d="M123.061,0H110.621A2.123,2.123,0,0,0,108.5,2.121V26.832a2.123,2.123,0,0,0,2.121,2.121h12.441a2.123,2.123,0,0,0,2.121-2.121V2.121A2.123,2.123,0,0,0,123.061,0ZM110.621.848h12.441a1.274,1.274,0,0,1,1.272,1.272V3.393H109.348V2.121A1.274,1.274,0,0,1,110.621.848ZM123.061,28.1H110.621a1.274,1.274,0,0,1-1.272-1.272V23.863h1.272a.424.424,0,0,0,0-.848h-1.272V4.241h14.985V23.015H112.317a.424.424,0,0,0,0,.848h12.016v2.969A1.274,1.274,0,0,1,123.061,28.1Z" transform="translate(-108.5 0)"/>
+    <path id="Path_527" data-name="Path 527" d="M248.924,30.848h1.7a.424.424,0,0,0,0-.848h-1.7a.424.424,0,1,0,0,.848Z" transform="translate(-240.583 -28.304)"/>
+    <path id="Path_528" data-name="Path 528" d="M234.772,437a1.272,1.272,0,1,0,1.272,1.272A1.274,1.274,0,0,0,234.772,437Zm0,1.7a.424.424,0,1,1,.424-.424A.425.425,0,0,1,234.772,438.7Z" transform="translate(-226.432 -412.289)"/>
+    <circle id="Ellipse_240" data-name="Ellipse 240" cx="0.436" cy="0.436" r="0.436" transform="translate(6.208 1.606)"/>
+  </g>
+</svg>

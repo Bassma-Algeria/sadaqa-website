@@ -1,0 +1,293 @@
+.container {
+  @apply flex gap-12 justify-between mt-10 items-start;
+
+  @media only screen and (max-width: 1200px) {
+    @apply flex-col gap-6;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    @apply mt-4;
+  }
+}
+
+.postDetailsContainer {
+  @apply relative;
+  width: 70%;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.03);
+
+  .ribbon {
+    width: 220px;
+    height: 220px;
+
+    p {
+      top: 76px;
+      right: -55px;
+      font-size: 18px;
+      padding: 8px 30px;
+      width: 300px;
+    }
+  }
+
+  .postHeader {
+    @apply flex justify-between items-center;
+    padding: 20px 40px;
+
+    h1 {
+      @apply font-semibold capitalize;
+      font-size: 32px;
+    }
+
+    .availablityAndDate {
+      @apply flex gap-2 font-medium items-center;
+      color: #c8c8c8;
+      font-size: 15px;
+
+      .pointSeperator {
+        @apply relative;
+        bottom: 6px;
+        font-size: 24px;
+      }
+    }
+  }
+
+  .postPics {
+    width: 100%;
+
+    .imgContainer {
+      @apply relative flex justify-center items-center w-full;
+      height: fit-content;
+      background-position: center center;
+      background-size: cover;
+      height: 400px;
+      z-index: 1;
+
+      &::before {
+        @apply w-full h-full;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 2;
+        @supports (backdrop-filter: blur(10px) brightness(0.8)) {
+          backdrop-filter: blur(10px) brightness(0.8);
+        }
+        @supports not (backdrop-filter: blur(10px) brightness(0.8)) {
+          background-color: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      img {
+        @apply relative;
+        z-index: 3;
+        max-height: 100%;
+        width: auto !important;
+      }
+    }
+  }
+
+  .postInfo {
+    padding: 30px 40px;
+
+    h1 {
+      @apply font-semibold mb-4;
+      font-size: 30px;
+    }
+
+    .desc {
+      @apply mb-10;
+
+      p {
+        font-size: 18px;
+        color: #2d2d2d;
+        font-weight: 500;
+      }
+    }
+
+    .addInfo {
+      .postSingleInfo {
+        @apply flex items-center w-full py-3 font-medium;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        font-size: 18px;
+        color: #2d2d2d;
+
+        .header {
+          width: 300px;
+        }
+
+        .content {
+          color: #c8c8c8;
+          text-transform: capitalize;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .postDetailsContainer {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .postDetailsContainer {
+    .postHeader {
+      padding: 20px;
+
+      h1 {
+        font-size: 26px;
+      }
+
+      .availablityAndDate {
+        @apply hidden;
+      }
+    }
+
+    .postInfo {
+      padding: 20px;
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .desc {
+        @apply mb-8;
+
+        p {
+          font-size: 16px;
+        }
+      }
+
+      .addInfo {
+        .postSingleInfo {
+          @apply py-2;
+          font-size: 16px;
+
+          .header {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .postDetailsContainer {
+    .postHeader {
+      h1 {
+        font-size: 24px;
+      }
+    }
+
+    .postInfo {
+      padding: 20px;
+
+      h1 {
+        @apply mb-0;
+        font-size: 20px;
+      }
+
+      .desc {
+        @apply mb-6;
+      }
+
+      .addInfo {
+        .postSingleInfo {
+          @apply flex-wrap;
+          .header {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .postDetailsContainer {
+    .postHeader {
+      h1 {
+        font-size: 20px;
+      }
+    }
+
+    .postInfo {
+      padding: 20px;
+
+      h1 {
+        @apply mb-0;
+        font-size: 18px;
+      }
+
+      .desc {
+        @apply mb-6;
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .addInfo {
+        h1 {
+          @apply hidden;
+        }
+
+        .postSingleInfo {
+          @apply flex-col items-start;
+          font-size: 14px;
+
+          .header {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .postDetailsContainer {
+    .postHeader {
+      padding: 15px;
+    }
+
+    .imgContainer {
+      height: 300px;
+    }
+
+    .postInfo {
+      padding: 20px 15px;
+
+      h1 {
+        @apply mb-0;
+        font-size: 18px;
+      }
+
+      .desc {
+        @apply mb-6;
+
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .addInfo {
+        h1 {
+          @apply hidden;
+        }
+
+        .postSingleInfo {
+          @apply flex-col items-start;
+          font-size: 14px;
+
+          .header {
+            width: 200px;
+          }
+        }
+      }
+    }
+  }
+}
