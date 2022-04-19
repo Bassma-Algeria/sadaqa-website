@@ -1,18 +1,18 @@
-const { i18n } = require("./next-i18next.config");
+const { i18n } = require('./next-i18next.config');
 
 module.exports = {
   i18n,
-  webpack(config, options) {
+  webpack(config) {
     config.module.rules.push({
       test: /\.(ogg|mp3|wav|mpe?g)$/i,
-      use: {
-        loader: "url-loader",
-      },
+      use: { loader: 'url-loader' },
     });
+
     return config;
   },
   reactStrictMode: true,
+  swcMinify: true,
   images: {
-    domains: ["drive.google.com"],
+    domains: ['drive.google.com', 'localhost'],
   },
 };
