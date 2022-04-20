@@ -51,7 +51,7 @@ const Contact = ({
       onClick={() => router.push(`?chatParticipantId=${contactId}`)}
     >
       <div className={styles.profilePicContainer}>
-        <Image src={getProfilePic(contactProfilePic?.link, gender)} alt="" />
+        <img src={getProfilePic(contactProfilePic?.link, gender)} alt="profile pic" />
         <OnlineStatus className={styles.onlineStatus} userId={contactId} />
       </div>
 

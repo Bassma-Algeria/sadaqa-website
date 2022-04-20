@@ -54,7 +54,7 @@ const Message = ({ sender_id, receiver_id, message_position, content, created_at
       ) && (
         <div className={styles.profilePic}>
           <Link href={`/users/${chatParticipantId}`}>
-            <Image alt="profile Pic" src={getProfilePic(chatParticipantProfilePic.link, gender)} />
+            <img alt="profile Pic" src={getProfilePic(chatParticipantProfilePic.link, gender)} />
           </Link>
         </div>
       )}

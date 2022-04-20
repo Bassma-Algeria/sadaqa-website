@@ -25,7 +25,7 @@ const AdCard = props => {
     >
       <Link href={`/posts/${props.post_id}`}>
         <div className={styles.imageContainer}>
-          <Image src={getPostThumbnail(props.thumbnail_link, props.type)} alt="need help pic" />
+          <img src={getPostThumbnail(props.thumbnail_link, props.type)} alt="post pic" />
         </div>
       </Link>
 

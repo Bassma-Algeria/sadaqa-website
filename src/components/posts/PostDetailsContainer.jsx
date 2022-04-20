@@ -15,7 +15,6 @@ import { ActionMenuDots } from '../common/others/ActionsMenu';
 import { getAvailabiltyText, getDefaultPostThumbnail } from '../../utils/postsHelpers';
 import { postPageSliderSetting } from '../../utils/slidersSettings';
 import { getPostInformationData } from '../../data/postsData';
-import Image from 'next/image';
 
 const PostDetailsContainer = ({ postInfo, postPhotos, publisher: { userInfo } }) => {
   const status = getAvailabiltyText(postInfo.type, postInfo.active);
@@ -65,10 +64,8 @@ const PostPics = ({ postPhotos, postType }) => {
   const paggingFunction = i => {
     return (
       <a>
-        <Image
-          height={80}
-          width={150}
-          objectFit="cover"
+        <img
+          style={{ height: '100%', objectFit: 'cover' }}
           src={postPhotos.length !== 0 && postPhotos[i].link}
           alt="post pic"
         />
@@ -91,10 +88,8 @@ const PostPics = ({ postPhotos, postType }) => {
 
 const PostPic = ({ link }) => {
   return (
-    <div>
-      <div className={styles.imgContainer} style={{ backgroundImage: `url(${link})` }}>
-        <Image layout="fill" src={link} alt="post pic" />
-      </div>
+    <div className={styles.imgContainer} style={{ backgroundImage: `url(${link})` }}>
+      <img src={link} alt="post pic" />
     </div>
   );
 };

@@ -21,7 +21,7 @@ const ProfileImageInput = ({ inputValues, setInputValues }) => {
 
   const fileInput = useRef(null);
 
-  const [picToShow, setPicToShow] = useState(getProfilePic(profilePic, gender));
+  const [picToShow, setPicToShow] = useState(getProfilePic(profilePic, gender).src);
   const [isFileChoosenIsImage, setIsFileChoosenIsImage] = useState(true);
 
   const handleFileInputChange = e => {
@@ -37,7 +37,7 @@ const ProfileImageInput = ({ inputValues, setInputValues }) => {
 
   const handleDeleteBtnClick = () => {
     setInputValues({ ...inputValues, profilePic: null });
-    setPicToShow(getDefaultProfilePic(gender));
+    setPicToShow(getDefaultProfilePic(gender).src);
   };
 
   return (
@@ -46,7 +46,7 @@ const ProfileImageInput = ({ inputValues, setInputValues }) => {
 
       <div className={styles.changeProfilePicContainer}>
         <div className={styles.imgContainer}>
-          <Image src={picToShow} alt="profilePic" onLoad={e => URL.revokeObjectURL(e.target.src)} />
+          <img src={picToShow} alt="profilePic" onLoad={e => URL.revokeObjectURL(e.target.src)} />
         </div>
 
         <Button type="button" onClick={() => fileInput.current.click()} primary size="sm">

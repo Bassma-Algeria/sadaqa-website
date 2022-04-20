@@ -26,13 +26,13 @@ const getAvailabiltyText = (postType, isActive) => {
 
 const getDefaultPostThumbnail = postType => {
   if (postType === 'call_for_help') {
-    return callForHelpDefault;
+    return callForHelpDefault.src;
   } else if (postType === 'family_in_need') {
-    return familyInNeedDefault;
+    return familyInNeedDefault.src;
   } else if (postType === 'donation_request') {
-    return donationRequestDefault;
+    return donationRequestDefault.src;
   } else {
-    return donationDefault;
+    return donationDefault.src;
   }
 };
 

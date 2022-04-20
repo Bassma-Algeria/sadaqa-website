@@ -20,7 +20,7 @@ const getDefaultProfilePic = gender => {
 };
 
 const getProfilePic = (profilePic, gender) => {
-  return profilePic || getDefaultProfilePic(gender);
+  return profilePic || getDefaultProfilePic(gender).src;
 };
 
 const getNameToShow = (associationName, firstName, lastName) => {

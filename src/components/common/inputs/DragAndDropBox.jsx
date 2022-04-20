@@ -224,10 +224,8 @@ const DragAndDropBox = ({
           return (
             <div className="imgContainer" key={index}>
               <div className="overlay"></div>
-              <Image
+              <img
                 src={tempUrl}
-                width={150}
-                height={80}
                 objectFit={'cover'}
                 alt="uploaded image"
                 id="uploadedImage"

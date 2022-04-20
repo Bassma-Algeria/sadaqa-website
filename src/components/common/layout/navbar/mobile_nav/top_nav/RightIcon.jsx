@@ -39,7 +39,7 @@ const RightIcon = ({ openSearchBar }) => {
           </Link>
           <Link href="/dashboard/profile">
             <div className={styles.profilePic}>
-              <Image src={getProfilePic(profilePicLink, gender)} alt="profile pic" />
+              <img src={getProfilePic(profilePicLink, gender)} alt="profile pic" />
             </div>
           </Link>
         </>

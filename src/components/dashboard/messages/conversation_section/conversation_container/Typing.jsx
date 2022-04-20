@@ -24,7 +24,7 @@ const Typing = () => {
   return (
     <div className={`${styles.messageContainer} ${styles.otherUserMessage}`}>
       <div className={styles.profilePic}>
-        <Image alt="profile Pic" src={getProfilePic(link, gender)} />
+        <img alt="profile Pic" src={getProfilePic(link, gender)} />
       </div>
 
       <div className={`${styles.messageContent} ${styles.typing} ${styles.firstAndLast}`}>

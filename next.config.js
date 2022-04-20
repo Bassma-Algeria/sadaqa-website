@@ -13,6 +13,6 @@ module.exports = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['drive.google.com', 'localhost'],
+    domains: ['drive.google.com'],
   },
 };

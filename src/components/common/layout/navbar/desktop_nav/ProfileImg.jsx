@@ -148,7 +148,7 @@ const ProfileImageContainer = ({ withoutNumOfMessages, isOpen, setIsOpen }) => {
 
   return (
     <div className={styles.profileImg} onClick={() => setIsOpen(!isOpen)}>
-      <Image src={getProfilePic(profilePicLink, gender)} alt="profile image" />
+      <img src={getProfilePic(profilePicLink, gender)} alt="profile image" />
 
       {!withoutNumOfMessages && numOfUnreadMessages > 0 && (
         <div className={styles.numOfMessages}>

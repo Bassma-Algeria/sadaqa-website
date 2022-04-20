@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,7 +15,7 @@
 
 html,
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 input::placeholder {
@@ -92,11 +92,11 @@ textarea::placeholder {
 }
 
 .slick-prev::before {
-  content: url("../public/svg/home_left_arrow.svg") !important;
+  content: url('../public/svg/home_left_arrow.svg') !important;
 }
 
 .slick-next::before {
-  content: url("../public/svg/home_right_arrow.svg") !important;
+  content: url('../public/svg/home_right_arrow.svg') !important;
 }
 
 .slick-dots li button:before {
@@ -109,17 +109,17 @@ textarea::placeholder {
   transform: unset !important;
 }
 
-.postPage_postPics__1ezG7 .slick-dots li {
+.postPage_postPics__jJc7X .slick-dots li {
   opacity: 0.3 !important;
-  width: 100px !important;
+  width: auto !important;
   height: 60px !important;
 }
 
-.postPage_postPics__1ezG7 .slick-dots {
+.postPage_postPics__jJc7X .slick-dots {
   bottom: -67px !important;
 }
 
-.postPage_postPics__1ezG7 .slick-dots li.slick-active {
+.postPage_postPics__jJc7X .slick-dots li.slick-active {
   opacity: 1 !important;
 }
 

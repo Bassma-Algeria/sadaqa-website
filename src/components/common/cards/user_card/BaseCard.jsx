@@ -40,8 +40,10 @@ const BaseUserCard = ({ userInfo, userProfilePic, userSocialLinks, style, childr
 
 const ProfilePic = ({ profilePic, gender, user_id }) => {
   return (
-    <div className={styles.imgContainer}>
-      <Image src={getProfilePic(profilePic, gender)} alt="profile pic" />
+    <div className={styles.profilePic}>
+      <div className={styles.imgContainer}>
+        <img src={getProfilePic(profilePic, gender)} alt="profile pic" />
+      </div>
       <OnlineStatus className={styles.onlineStatus} userId={user_id} size="lg" />
     </div>
   );

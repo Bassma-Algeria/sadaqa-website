@@ -39,7 +39,7 @@ const Profile = ({ closeMenu }) => {
       <LanguagesContainer />
 
       <div className={styles.profilePicContainer}>
-        <Image src={getProfilePic(profilePicLink, gender)} alt="" />
+        <img src={getProfilePic(profilePicLink, gender)} alt="" />
       </div>
 
       <Link href="/dashboard/profile">
