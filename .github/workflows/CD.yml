@@ -31,7 +31,7 @@ jobs:
           password: ${{ secrets.ACR_PASSWORD }}
       -
         name: Delete Pre Release Image
-        run: az acr repository delete --name sadaqa --image sadaqa-website:pre-${{ steps.package-version.outputs.current-version }}
+        run: az acr repository delete --name sadaqa --image sadaqa-website:pre-${{ steps.package-version.outputs.current-version }} --yes
       - 
         name: Delete The Pre Release Running Container
         run: az container delete --name sadaqa-pre-website --resource-group sadaqa --yes
