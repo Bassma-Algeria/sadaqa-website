@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import styles from '../../../../../styles/navbar.module.scss';
 
 // images and icons
-import logo from '../../../../../public/images/sadaqa-logo.png';
+import logo from '../../../../../../public/images/sadaqa-logo.png';
 
 // components
 import { NavLinks } from './NavLinks';

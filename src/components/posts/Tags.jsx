@@ -1,11 +1,11 @@
-import React from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import tw from "twin.macro";
-import { ReactSVG } from "react-svg";
+import React from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+import { ReactSVG } from 'react-svg';
 
 // icons and images
-import rightArrowIcon from "../../public/svg/right_arrow_nav_links.svg";
+import rightArrowIcon from '../../../public/svg/right_arrow_nav_links.svg';
 
 const StyledTag = styled.div`
   ${tw`flex items-center gap-2 capitalize font-medium mt-2`}
@@ -31,18 +31,12 @@ const Tags = ({ type, subType, postId, title }) => {
   return (
     <div className="flex items-center gap-2">
       <StyledTag>
-        <Link href={`/${type}`}>
-          {type.replace(/___/g, " / ").replace(/_/g, " ")}
-        </Link>
+        <Link href={`/${type}`}>{type.replace(/___/g, ' / ').replace(/_/g, ' ')}</Link>
         <ReactSVG src={rightArrowIcon.src} />
       </StyledTag>
       <StyledTag>
-        <Link
-          href={`/${type}/${subType
-            .replace(/ \/ /g, "___")
-            .replace(/ /g, "_")}`}
-        >
-          {subType.replace(/___/g, " / ").replace(/_/g, " ")}
+        <Link href={`/${type}/${subType.replace(/ \/ /g, '___').replace(/ /g, '_')}`}>
+          {subType.replace(/___/g, ' / ').replace(/_/g, ' ')}
         </Link>
         <ReactSVG src={rightArrowIcon.src} />
       </StyledTag>

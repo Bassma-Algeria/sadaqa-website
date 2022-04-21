@@ -1,16 +1,16 @@
-import React from "react";
-import { ReactSVG } from "react-svg";
-import Link from "next/link";
+import React from 'react';
+import { ReactSVG } from 'react-svg';
+import Link from 'next/link';
 
 // styles
-import styles from "../../../styles/pop-ups.module.scss";
+import styles from '../../../styles/pop-ups.module.scss';
 
 // images and icons
-import closeIcon from "../../../public/svg/close_icon.svg";
-import errorIcon from "../../../public/svg/error_icon.svg";
+import closeIcon from '../../../../public/svg/close_icon.svg';
+import errorIcon from '../../../../public/svg/error_icon.svg';
 
 // components
-import Button from "../buttons/Button";
+import Button from '../buttons/Button';
 
 const UnauthorizePopup = ({ action, setIsPopupOpen }) => {
   const closePopup = () => setIsPopupOpen(false);
@@ -48,18 +48,18 @@ const UnauthorizePopup = ({ action, setIsPopupOpen }) => {
   );
 };
 
-const getActionText = (action) => {
+const getActionText = action => {
   switch (action) {
-    case "like":
-      return "like this ad";
+    case 'like':
+      return 'like this ad';
       break;
 
-    case "sendMessage":
-      return "be able to send messages";
+    case 'sendMessage':
+      return 'be able to send messages';
       break;
 
-    case "createNewAd":
-      return "be able to publish new ads";
+    case 'createNewAd':
+      return 'be able to publish new ads';
       break;
 
     default:

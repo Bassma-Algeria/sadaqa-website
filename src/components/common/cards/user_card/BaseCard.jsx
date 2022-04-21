@@ -7,8 +7,8 @@ import { ReactSVG } from 'react-svg';
 import styles from '../../../../styles/profile.module.scss';
 
 // images and icons
-import phoneIcon from '../../../../public/svg/phone_icon.svg';
-import locationIcon from '../../../../public/svg/location_icon.svg';
+import phoneIcon from '../../../../../public/svg/phone_icon.svg';
+import locationIcon from '../../../../../public/svg/location_icon.svg';
 
 // helpers
 import {

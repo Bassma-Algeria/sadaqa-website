@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { ReactSVG } from "react-svg";
-import { isMobile } from "react-device-detect";
+import React, { useState } from 'react';
+import { ReactSVG } from 'react-svg';
+import { isMobile } from 'react-device-detect';
 
 // styles
-import styles from "../../../styles/cards.module.scss";
+import styles from '../../../styles/cards.module.scss';
 
 // icons
-import shareIcon from "../../../public/svg/share_icon.svg";
+import shareIcon from '../../../../public/svg/share_icon.svg';
 
 // components
-import SharePopup from "../pop-ups/SharePopup";
+import SharePopup from '../pop-ups/SharePopup';
 
 const ShareButton = ({ isDashboardPage, sharesCount, postLink }) => {
   const [isSharePopupOpen, setIsSharePopupOpen] = useState(false);
@@ -17,8 +17,8 @@ const ShareButton = ({ isDashboardPage, sharesCount, postLink }) => {
   const handleClick = () => {
     if (isMobile && navigator.share) {
       navigator.share({
-        title: "Check this ad",
-        text: "Check this",
+        title: 'Check this ad',
+        text: 'Check this',
         url: postLink,
       });
     } else {
@@ -29,10 +29,7 @@ const ShareButton = ({ isDashboardPage, sharesCount, postLink }) => {
   return (
     <>
       {isSharePopupOpen && (
-        <SharePopup
-          postLink={postLink}
-          setIsSharePopupOpen={setIsSharePopupOpen}
-        />
+        <SharePopup postLink={postLink} setIsSharePopupOpen={setIsSharePopupOpen} />
       )}
       <div className={styles.Button} onClick={handleClick}>
         <ReactSVG src={shareIcon.src} />

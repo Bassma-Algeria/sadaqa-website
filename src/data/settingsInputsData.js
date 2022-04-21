@@ -1,13 +1,13 @@
 import { wilayas } from './wilayas';
 
 // images and icons
-import hidePasswordIcon from '../public/svg/see_password_icon.svg';
-import seePasswordIcon from '../public/svg/hide_password_icon.svg';
-import facebookIcon from '../public/svg/facebook_input.svg';
-import instagramIcon from '../public/svg/instagram_input_icon.svg';
-import linkedinIcon from '../public/svg/linkedin_input_icon.svg';
-import whatsappIcon from '../public/svg/whatsapp_input_icon.svg';
-import viberIcon from '../public/svg/viber_input_icon.svg';
+import hidePasswordIcon from '../../public/svg/see_password_icon.svg';
+import seePasswordIcon from '../../public/svg/hide_password_icon.svg';
+import facebookIcon from '../../public/svg/facebook_input.svg';
+import instagramIcon from '../../public/svg/instagram_input_icon.svg';
+import linkedinIcon from '../../public/svg/linkedin_input_icon.svg';
+import whatsappIcon from '../../public/svg/whatsapp_input_icon.svg';
+import viberIcon from '../../public/svg/viber_input_icon.svg';
 
 export const getEditPersonalInformationInputData = (errors, choosenWilayaId) => [
   {

@@ -1,23 +1,20 @@
-import Link from "next/link";
-import React from "react";
-import { ReactSVG } from "react-svg";
-import styled from "styled-components";
-import tw from "twin.macro";
+import Link from 'next/link';
+import React from 'react';
+import { ReactSVG } from 'react-svg';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 
 // helpers
-import {
-  donationsCategories,
-  peopleNeedHelpCategories,
-} from "../../../data/navbarData";
+import { donationsCategories, peopleNeedHelpCategories } from '../../../data/navbarData';
 
 // images and icons
-import facebookIcon from "../../../public/svg/facebook_footer_icon.svg";
-import instagramIcon from "../../../public/svg/instagram_footer_icon.svg";
-import twitterIcon from "../../../public/svg/twitter_footer_icon.svg";
-import emailIcon from "../../../public/svg/dashboard_chat_icon_empty.svg";
+import facebookIcon from '../../../../public/svg/facebook_footer_icon.svg';
+import instagramIcon from '../../../../public/svg/instagram_footer_icon.svg';
+import twitterIcon from '../../../../public/svg/twitter_footer_icon.svg';
+import emailIcon from '../../../../public/svg/dashboard_chat_icon_empty.svg';
 
 // components
-import { Container } from "../containers/Container";
+import { Container } from '../containers/Container';
 
 const StyledFooter = styled.div`
   ${tw`bg-primary text-white pt-10`}
@@ -135,30 +132,15 @@ const Footer = () => {
                 <ReactSVG src={emailIcon.src} />
                 <p>sadaqa.contact@gmail.com</p>
               </div>
-              <a
-                href="facebook.com"
-                target="_blank"
-                className="socialLink"
-                rel="noreferrer"
-              >
+              <a href="facebook.com" target="_blank" className="socialLink" rel="noreferrer">
                 <ReactSVG src={facebookIcon.src} />
                 <p>/sadaqa-dz</p>
               </a>
-              <a
-                href="instagram.com"
-                target="_blank"
-                className="socialLink"
-                rel="noreferrer"
-              >
+              <a href="instagram.com" target="_blank" className="socialLink" rel="noreferrer">
                 <ReactSVG src={instagramIcon.src} />
                 <p>/sadaqa-dz</p>
               </a>
-              <a
-                href="twitter.com"
-                target="_blank"
-                className="socialLink"
-                rel="noreferrer"
-              >
+              <a href="twitter.com" target="_blank" className="socialLink" rel="noreferrer">
                 <ReactSVG src={twitterIcon.src} />
                 <p>/sadaqa-dz</p>
               </a>
@@ -166,7 +148,7 @@ const Footer = () => {
           </div>
         </div>
         <p>
-          Copyright Sadaqa ©2021 All rights reserved | made with ♥ by{" "}
+          Copyright Sadaqa ©2021 All rights reserved | made with ♥ by{' '}
           <a
             href="https://www.linkedin.com/in/yasser-belatreche-6b450620a/"
             target="_blank"

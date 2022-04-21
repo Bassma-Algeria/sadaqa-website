@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
-import { detect } from "detect-browser";
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+import { detect } from 'detect-browser';
 
 // components
-import { BaseInput } from "./Input";
+import { BaseInput } from './Input';
 
 // images and icons
-import dropdown from "../../../public/svg/dropdown_icon.svg";
+import dropdown from '../../../../public/svg/dropdown_icon.svg';
 
 const StyledDropdown = styled.div`
   ${tw`relative`}
@@ -17,7 +17,7 @@ const StyledDropdown = styled.div`
     ${tw`w-full bg-white flex items-center mb-8 mt-2 px-5 py-3.5 cursor-pointer capitalize`}
     border: 1px solid rgba(0,0,0, 0.15);
     border-radius: 16px;
-    border-color: ${(props) => props.errorMessage && "#c407077d"};
+    border-color: ${props => props.errorMessage && '#c407077d'};
     font-size: 16px !important;
 
     &:hover {
@@ -93,33 +93,23 @@ const StyledDropdown = styled.div`
   }
 `;
 
-const Dropdown = (props) => {
-  const [valueSelected, setValueSelected] = useState(
-    props.inputValues[props.name]
-  );
+const Dropdown = props => {
+  const [valueSelected, setValueSelected] = useState(props.inputValues[props.name]);
 
   return /safari|ios/.test(detect().name) ? (
-    <DefaultDropdown
-      {...props}
-      valueSelected={valueSelected}
-      setValueSelected={setValueSelected}
-    />
+    <DefaultDropdown {...props} valueSelected={valueSelected} setValueSelected={setValueSelected} />
   ) : (
-    <CustomDropdown
-      {...props}
-      valueSelected={valueSelected}
-      setValueSelected={setValueSelected}
-    />
+    <CustomDropdown {...props} valueSelected={valueSelected} setValueSelected={setValueSelected} />
   );
 };
 
-const DefaultDropdown = (props) => {
+const DefaultDropdown = props => {
   return (
     <StyledDropdown errorMessage={props.errorMessage?.[props.name]}>
       <BaseInput {...props}>
         <select
           value={props.valueSelected}
-          onChange={(e) => e.preventDefault()}
+          onChange={e => e.preventDefault()}
           className="inputContainer"
         >
           <option value="" disabled selected hidden>
@@ -132,7 +122,7 @@ const DefaultDropdown = (props) => {
   );
 };
 
-const CustomDropdown = (props) => {
+const CustomDropdown = props => {
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
 
   return (
@@ -142,8 +132,8 @@ const CustomDropdown = (props) => {
     >
       <BaseInput {...props} iconUrl={dropdown.src}>
         <div className="inputContainer">
-          <p className={`value ${props.valueSelected ? "active" : ""}`}>
-            {props.valueSelected || "Tap To Choose :"}
+          <p className={`value ${props.valueSelected ? 'active' : ''}`}>
+            {props.valueSelected || 'Tap To Choose :'}
           </p>
         </div>
       </BaseInput>
@@ -159,12 +149,12 @@ const CustomDropdown = (props) => {
   );
 };
 
-const Options = (props) => {
+const Options = props => {
   useEffect(() => {
     const handleClick = () => props.closeOptions();
-    window.addEventListener("click", handleClick);
+    window.addEventListener('click', handleClick);
 
-    return () => window.removeEventListener("click", handleClick);
+    return () => window.removeEventListener('click', handleClick);
   }, []);
 
   return (
@@ -174,8 +164,8 @@ const Options = (props) => {
   );
 };
 
-const OptionsList = (props) => {
-  const handleOptionClick = (e) => {
+const OptionsList = props => {
+  const handleOptionClick = e => {
     if (e.target.attributes.disabled) return;
 
     let name = e.target.attributes.name.value;
@@ -183,7 +173,7 @@ const OptionsList = (props) => {
 
     props.setValueSelected(value);
 
-    if (name === "typeId") value = Number(value.split(" -")[0].trim());
+    if (name === 'typeId') value = Number(value.split(' -')[0].trim());
 
     props.setInputValues({
       ...props.inputValues,

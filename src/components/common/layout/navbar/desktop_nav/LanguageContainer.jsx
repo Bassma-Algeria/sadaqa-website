@@ -1,28 +1,26 @@
-import React, { useEffect, useState } from "react";
-import { ReactSVG } from "react-svg";
-import { useCookies } from "react-cookie";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { ReactSVG } from 'react-svg';
+import { useCookies } from 'react-cookie';
+import { useDispatch } from 'react-redux';
 
 // style
-import styles from "../../../../../styles/navbar.module.scss";
+import styles from '../../../../../styles/navbar.module.scss';
 
 // redux
-import { setPreferences } from "../../../../../redux/actions/userActions";
+import { setPreferences } from '../../../../../redux/actions/userActions';
 
 // helpers
-import { LANGUAGES } from "../../../../../utils/constants";
+import { LANGUAGES } from '../../../../../utils/constants';
 
 // images and icons
-import languageIcon from "../../../../../public/svg/language_icon.svg";
+import languageIcon from '../../../../../../public/svg/language_icon.svg';
 
 const LanguageContainer = () => {
-  const [cookies] = useCookies(["i18next"]);
+  const [cookies] = useCookies(['i18next']);
   const dispatch = useDispatch();
 
   const [isOptionsOpen, setIsOptionsOpen] = useState(false);
-  const [languageSelected, setLanguageSelected] = useState(
-    cookies.i18next || "ع"
-  );
+  const [languageSelected, setLanguageSelected] = useState(cookies.i18next || 'ع');
 
   useEffect(() => {
     if (cookies.i18next) {
@@ -32,20 +30,13 @@ const LanguageContainer = () => {
   }, [cookies.i18next]);
 
   return (
-    <div
-      className={styles.languageContainer}
-      onClick={() => setIsOptionsOpen(true)}
-    >
+    <div className={styles.languageContainer} onClick={() => setIsOptionsOpen(true)}>
       <div className={styles.iconContainer}>
         <ReactSVG className={styles.languageIcon} src={languageIcon.src} />
       </div>
-      <p className={languageSelected === "ع" ? styles.ar : ""}>
-        {languageSelected}
-      </p>
+      <p className={languageSelected === 'ع' ? styles.ar : ''}>{languageSelected}</p>
 
-      {isOptionsOpen && (
-        <OptionsContainer closeOptions={() => setIsOptionsOpen(false)} />
-      )}
+      {isOptionsOpen && <OptionsContainer closeOptions={() => setIsOptionsOpen(false)} />}
     </div>
   );
 };
@@ -53,9 +44,9 @@ const LanguageContainer = () => {
 const OptionsContainer = ({ closeOptions }) => {
   useEffect(() => {
     const handleClick = () => closeOptions();
-    window.addEventListener("click", handleClick);
+    window.addEventListener('click', handleClick);
 
-    return () => window.removeEventListener("click", handleClick);
+    return () => window.removeEventListener('click', handleClick);
   }, []);
 
   return (
@@ -68,15 +59,15 @@ const OptionsContainer = ({ closeOptions }) => {
 };
 
 const Option = ({ lang }) => {
-  const [_, setCookies] = useCookies(["i18next"]);
+  const [_, setCookies] = useCookies(['i18next']);
 
   const handleClick = () => {
-    setCookies("i18next", lang.shortcut, { path: "/" });
+    setCookies('i18next', lang.shortcut, { path: '/' });
   };
 
   return (
     <p
-      className={`${styles.option} ${lang.shortcut === "ع" ? styles.ar : ""}`}
+      className={`${styles.option} ${lang.shortcut === 'ع' ? styles.ar : ''}`}
       onClick={handleClick}
     >
       {lang.value}

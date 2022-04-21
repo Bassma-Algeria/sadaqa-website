@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import styles from '../styles/signup.module.scss';
 
 // images and icons
-import signupImg from '../public/images/signup.png';
+import signupImg from '../../public/images/signup.png';
 
 // redux
 import { clearErrors } from '../redux/reducers/UISlice';

@@ -1,19 +1,19 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { ReactSVG } from "react-svg";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { ReactSVG } from 'react-svg';
 
 // style
-import styles from "../../styles/signup.module.scss";
+import styles from '../../styles/signup.module.scss';
 
 // icons and images
-import backArrow from "../../public/svg/back_arrow.svg";
+import backArrow from '../../../public/svg/back_arrow.svg';
 
 // components
-import Button from "../common/buttons/Button";
-import Spinner from "../common/loaders/Spinner";
+import Button from '../common/buttons/Button';
+import Spinner from '../common/loaders/Spinner';
 
 const Buttons = ({ initializeState, roleId, handleSubmit }) => {
-  const { loading } = useSelector((state) => state.UI);
+  const { loading } = useSelector(state => state.UI);
 
   return (
     <div className={styles.submitBtnContainer}>
@@ -38,7 +38,7 @@ const Buttons = ({ initializeState, roleId, handleSubmit }) => {
             onClick={handleSubmit}
             style={{ height: 52, width: 150, marginBottom: 80 }}
           >
-            {loading ? <Spinner /> : "Submit"}
+            {loading ? <Spinner /> : 'Submit'}
           </Button>
         </>
       )}
