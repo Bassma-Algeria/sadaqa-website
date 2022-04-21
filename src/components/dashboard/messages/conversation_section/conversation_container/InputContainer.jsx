@@ -1,24 +1,24 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { ReactSVG } from "react-svg";
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ReactSVG } from 'react-svg';
 
 // styles
-import styles from "../../../../../styles/dashboard.module.scss";
+import styles from '../../../../../styles/dashboard.module.scss';
 
 // images and icons
-import sendMessageIcon from "../../../../../public/svg/send_message_icon_filed.svg";
+import sendMessageIcon from '../../../../../../public/svg/send_message_icon_filed.svg';
 
 // socket
 import {
   userIsTypingSocketEmitter,
   userStopTypingSocketEmitter,
-} from "../../../../../socket/eventsEmitters/messagesEmitters";
+} from '../../../../../socket/eventsEmitters/messagesEmitters';
 
 // redux
-import { sendMessage } from "../../../../../redux/actions/messagesActions";
+import { sendMessage } from '../../../../../redux/actions/messagesActions';
 
 // components
-import Button from "../../../../common/buttons/Button";
+import Button from '../../../../common/buttons/Button';
 
 const InputContainer = ({ conversationSectionFooter }) => {
   const {
@@ -32,10 +32,10 @@ const InputContainer = ({ conversationSectionFooter }) => {
         generalInfo: { user_id: currentUserId },
       },
     },
-  } = useSelector((state) => state);
+  } = useSelector(state => state);
   const dispatch = useDispatch();
 
-  const [messageToSend, setMessageToSend] = useState("");
+  const [messageToSend, setMessageToSend] = useState('');
 
   const handleSendButtonClick = () => {
     if (messageToSend) {
@@ -44,7 +44,7 @@ const InputContainer = ({ conversationSectionFooter }) => {
         senderId: currentUserId,
         receiverId: user_id,
       });
-      setMessageToSend("");
+      setMessageToSend('');
     }
   };
 
@@ -75,16 +75,16 @@ const Input = ({ inputValue, setInputValue, handleSend }) => {
         generalInfo: { user_id: currentUserId },
       },
     },
-  } = useSelector((state) => state);
+  } = useSelector(state => state);
 
-  const handleMessageInputChange = (e) => {
+  const handleMessageInputChange = e => {
     setInputValue(e.target.value);
     userIsTypingSocketEmitter({
       senderId: currentUserId,
       receiverId: user_id,
     });
 
-    if (e.target.value === "") {
+    if (e.target.value === '') {
       userStopTypingSocketEmitter({
         senderId: currentUserId,
         receiverId: user_id,
@@ -92,8 +92,8 @@ const Input = ({ inputValue, setInputValue, handleSend }) => {
     }
   };
 
-  const handleInputKeyPress = (e) => {
-    if (inputValue && e.key === "Enter") handleSend();
+  const handleInputKeyPress = e => {
+    if (inputValue && e.key === 'Enter') handleSend();
   };
 
   return (

@@ -1,4 +1,4 @@
-name: Pre Release
+name: Azure Pre Release
 
 on: 
   push:
@@ -52,13 +52,6 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      -
-        name: Login To ACR
-        uses: azure/docker-login@v1
-        with:
-          login-server: sadaqa.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
       - 
         name: Get Package Version
         id: package-version
@@ -72,7 +65,7 @@ jobs:
           dns-name-label: pre-sadaqa
           image: sadaqa.azurecr.io/sadaqa-website:pre-${{ steps.package-version.outputs.current-version }}
           location: 'east us'
-          ports: 80
+          ports: 3000
           registry-username: ${{ secrets.ACR_USERNAME }}
           registry-password: ${{ secrets.ACR_PASSWORD }}
           secure-environment-variables: >

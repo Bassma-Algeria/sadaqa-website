@@ -1,17 +1,17 @@
-import React from "react";
-import { ReactSVG } from "react-svg";
-import Link from "next/link";
+import React from 'react';
+import { ReactSVG } from 'react-svg';
+import Link from 'next/link';
 
 // styles
-import styles from "../../../styles/pop-ups.module.scss";
+import styles from '../../../styles/pop-ups.module.scss';
 
 // images and icons
-import checkMarkIcon from "../../../public/svg/check_mark_icon.svg";
-import closeIcon from "../../../public/svg/close_icon.svg";
+import checkMarkIcon from '../../../../public/svg/check_mark_icon.svg';
+import closeIcon from '../../../../public/svg/close_icon.svg';
 
 // components
-import { AdLoadingSpinner } from "../loaders/AdLoadingSpinner";
-import Button from "../buttons/Button";
+import { AdLoadingSpinner } from '../loaders/AdLoadingSpinner';
+import Button from '../buttons/Button';
 
 const AdLoadingPopup = ({ loading, uploadedAdId, setIsPopupOpen }) => {
   return (
@@ -22,10 +22,7 @@ const AdLoadingPopup = ({ loading, uploadedAdId, setIsPopupOpen }) => {
         {loading ? (
           <AdNotUploadedYet />
         ) : (
-          <AdUploaded
-            uploadedAdId={uploadedAdId}
-            setIsPopupOpen={setIsPopupOpen}
-          />
+          <AdUploaded uploadedAdId={uploadedAdId} setIsPopupOpen={setIsPopupOpen} />
         )}
       </div>
     </div>
@@ -34,19 +31,14 @@ const AdLoadingPopup = ({ loading, uploadedAdId, setIsPopupOpen }) => {
 
 const AdNotUploadedYet = () => (
   <>
-    <h1>
-      Your ad is being uploaded, this may take some seconds please wait...
-    </h1>
+    <h1>Your ad is being uploaded, this may take some seconds please wait...</h1>
     <AdLoadingSpinner />
   </>
 );
 
 const AdUploaded = ({ uploadedAdId, setIsPopupOpen }) => (
   <>
-    <button
-      className={styles.closeButton}
-      onClick={() => setIsPopupOpen(false)}
-    >
+    <button className={styles.closeButton} onClick={() => setIsPopupOpen(false)}>
       <ReactSVG src={closeIcon.src} />
     </button>
 

@@ -1,7 +1,7 @@
-import donationDefault from '../public/images/donation_default.png';
-import callForHelpDefault from '../public/images/call_for_help_default.png';
-import familyInNeedDefault from '../public/images/family_in_need_default.png';
-import donationRequestDefault from '../public/images/donation_request_default.png';
+import donationDefault from '../../public/images/donation_default.png';
+import callForHelpDefault from '../../public/images/call_for_help_default.png';
+import familyInNeedDefault from '../../public/images/family_in_need_default.png';
+import donationRequestDefault from '../../public/images/donation_request_default.png';
 
 const checkIfPostLiked = (likes, postId) => {
   if (likes.length > 0) {

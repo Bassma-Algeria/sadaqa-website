@@ -1,33 +1,27 @@
-import React, { useEffect, useRef, useState } from "react";
-import { ReactSVG } from "react-svg";
-import { useDispatch } from "react-redux";
+import React, { useEffect, useRef, useState } from 'react';
+import { ReactSVG } from 'react-svg';
+import { useDispatch } from 'react-redux';
 
 // styles
-import styles from "../../../styles/cards.module.scss";
+import styles from '../../../styles/cards.module.scss';
 
 // images and icons
-import checkMarkIcon from "../../../public/svg/check_mark_icon.svg";
+import checkMarkIcon from '../../../../public/svg/check_mark_icon.svg';
 
 // redux
-import {
-  deletePost,
-  makePostInactive,
-} from "../../../redux/actions/postsActions";
+import { deletePost, makePostInactive } from '../../../redux/actions/postsActions';
 
 // helpers
-import {
-  getAvailabiltyText,
-  getPostStatusText,
-} from "../../../utils/postsHelpers";
-import { isClickedElementInsideTarget } from "../../../utils/navbarHelpers";
+import { getAvailabiltyText, getPostStatusText } from '../../../utils/postsHelpers';
+import { isClickedElementInsideTarget } from '../../../utils/navbarHelpers';
 
 // components
-import Button from "../buttons/Button";
-import ConfirmDeletePopup from "../pop-ups/CofirmDeletePopup";
-import { Ribbon } from "../others/Ribbon";
-import AdCard from "./AdCard";
+import Button from '../buttons/Button';
+import ConfirmDeletePopup from '../pop-ups/CofirmDeletePopup';
+import { Ribbon } from '../others/Ribbon';
+import AdCard from './AdCard';
 
-const AdDashboardCard = (props) => {
+const AdDashboardCard = props => {
   const adCardRef = useRef(null);
 
   return (
@@ -47,13 +41,13 @@ const AdDashboardCard = (props) => {
   );
 };
 
-const DashboardActionButtons = (props) => {
+const DashboardActionButtons = props => {
   const [isGridView, setIsGridView] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const resize_ob = new ResizeObserver((entries) => {
+    const resize_ob = new ResizeObserver(entries => {
       if (entries[0].contentRect.width < 400) setIsGridView(true);
       else setIsGridView(false);
     });
@@ -92,10 +86,7 @@ const DotsMenu = ({ active, type, openPopup, inactiveAd }) => {
   const [isMenuListOpen, setisMenuListOpen] = useState(false);
 
   return (
-    <div
-      className={styles.dashboardMenu}
-      onClick={() => setisMenuListOpen(true)}
-    >
+    <div className={styles.dashboardMenu} onClick={() => setisMenuListOpen(true)}>
       <div className={styles.menuDots}>
         <div className={styles.dot}></div>
         <div className={styles.dot}></div>
@@ -115,20 +106,17 @@ const DotsMenu = ({ active, type, openPopup, inactiveAd }) => {
   );
 };
 
-const MenuList = (props) => {
+const MenuList = props => {
   useEffect(() => {
-    const handleClick = (e) => props.closeMenu();
-    window.addEventListener("click", handleClick);
+    const handleClick = e => props.closeMenu();
+    window.addEventListener('click', handleClick);
 
-    return () => window.removeEventListener("click", handleClick);
+    return () => window.removeEventListener('click', handleClick);
   }, []);
 
   return (
     <div className={styles.menuList} id="dashboard_menu_list">
-      <div
-        className={!props.active && styles.disabled}
-        onClick={props.inactiveAd}
-      >
+      <div className={!props.active && styles.disabled} onClick={props.inactiveAd}>
         {getPostStatusText(props.type)}
       </div>
       <div onClick={props.openPopup}>Delete</div>
@@ -136,7 +124,7 @@ const MenuList = (props) => {
   );
 };
 
-const Buttons = (props) => {
+const Buttons = props => {
   return (
     <div className={styles.dashboardButtons}>
       <Button size="sm" secondary onClick={props.openPopup}>

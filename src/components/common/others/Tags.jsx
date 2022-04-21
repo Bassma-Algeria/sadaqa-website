@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import tw from "twin.macro";
-import { ReactSVG } from "react-svg";
+import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+import { ReactSVG } from 'react-svg';
 
 // icons and images
-import rightArrowIcon from "../../../public/svg/right_arrow_nav_links.svg";
+import rightArrowIcon from '../../../../public/svg/right_arrow_nav_links.svg';
 
 const StyledTag = styled.div`
   ${tw`flex items-center gap-2 capitalize font-medium mt-6`}
@@ -31,7 +31,7 @@ const Tags = ({ type }) => {
   const [tags, setTags] = useState([]);
 
   useEffect(() => {
-    let tags = window.location.pathname.split("/");
+    let tags = window.location.pathname.split('/');
     tags.shift();
 
     setTags(tags);
@@ -42,9 +42,7 @@ const Tags = ({ type }) => {
       {tags.map((tag, index) => {
         return (
           <StyledTag key={index}>
-            <Link href={`/${tag}`}>
-              {tag.replace(/___/g, " / ").replace(/_/g, " ")}
-            </Link>
+            <Link href={`/${tag}`}>{tag.replace(/___/g, ' / ').replace(/_/g, ' ')}</Link>
             <ReactSVG src={rightArrowIcon.src} />
           </StyledTag>
         );

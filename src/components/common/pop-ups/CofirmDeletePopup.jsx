@@ -1,16 +1,16 @@
-import React from "react";
-import { ReactSVG } from "react-svg";
-import Link from "next/link";
+import React from 'react';
+import { ReactSVG } from 'react-svg';
+import Link from 'next/link';
 
 // styles
-import styles from "../../../styles/pop-ups.module.scss";
+import styles from '../../../styles/pop-ups.module.scss';
 
 // images and icons
-import closeIcon from "../../../public/svg/close_icon.svg";
-import deleteIcon from "../../../public/svg/delete_icon.svg";
+import closeIcon from '../../../../public/svg/close_icon.svg';
+import deleteIcon from '../../../../public/svg/delete_icon.svg';
 
 // components
-import Button from "../buttons/Button";
+import Button from '../buttons/Button';
 
 const ConfirmDeletePopup = ({ setIsPopupOpen, confirmDelete }) => {
   const closePopup = () => setIsPopupOpen(false);
@@ -35,21 +35,11 @@ const ConfirmDeletePopup = ({ setIsPopupOpen, confirmDelete }) => {
         <p>Are you sure you wanna delete this ad ?</p>
 
         <div className={styles.buttonsContainer}>
-          <Button
-            secondary
-            size="sm"
-            onClick={closePopup}
-            className={styles.secondary}
-          >
+          <Button secondary size="sm" onClick={closePopup} className={styles.secondary}>
             Close
           </Button>
 
-          <Button
-            primary
-            size="sm"
-            onClick={handleConfirmDeleteClick}
-            className={styles.primary}
-          >
+          <Button primary size="sm" onClick={handleConfirmDeleteClick} className={styles.primary}>
             Confirm
           </Button>
         </div>

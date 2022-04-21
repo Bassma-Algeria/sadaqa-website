@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 // styles
-import styles from "../../../styles/cards.module.scss";
+import styles from '../../../styles/cards.module.scss';
 
 // sounds
-import sound from "../../../public/media/like_sound.mp3";
+import sound from '../../../../public/media/like_sound.mp3';
 
 // helpers
-import { checkIfPostLiked } from "../../../utils/postsHelpers";
+import { checkIfPostLiked } from '../../../utils/postsHelpers';
 
 // redux
-import { likePost } from "../../../redux/actions/postsActions";
+import { likePost } from '../../../redux/actions/postsActions';
 
 // components
-import { AnimatedLikeButton } from "./AnimatedLikeButton";
-import UnauthorizePopup from "../pop-ups/UnauthorizePopup";
+import { AnimatedLikeButton } from './AnimatedLikeButton';
+import UnauthorizePopup from '../pop-ups/UnauthorizePopup';
 
 const LikeButton = ({
   postId,
@@ -28,7 +28,7 @@ const LikeButton = ({
 }) => {
   const [isUnautorizePopupOpen, setIsUnautorizePopupOpen] = useState(false);
 
-  const { likes, isAuthenticated } = useSelector((state) => state.authUser);
+  const { likes, isAuthenticated } = useSelector(state => state.authUser);
   const dispatch = useDispatch();
 
   const isPostLiked = checkIfPostLiked(likes, postId);
@@ -40,16 +40,8 @@ const LikeButton = ({
       return;
     }
     dispatch(
-      likePost(
-        postId,
-        likesCount,
-        isPostLiked,
-        type,
-        subType,
-        isSearchedPost,
-        isAuthUserPost
-      )
-    ).then((res) => {
+      likePost(postId, likesCount, isPostLiked, type, subType, isSearchedPost, isAuthUserPost),
+    ).then(res => {
       likeSound.play();
     });
   };
@@ -57,10 +49,7 @@ const LikeButton = ({
   return (
     <>
       {isUnautorizePopupOpen && (
-        <UnauthorizePopup
-          action="like"
-          setIsPopupOpen={setIsUnautorizePopupOpen}
-        />
+        <UnauthorizePopup action="like" setIsPopupOpen={setIsUnautorizePopupOpen} />
       )}
       <div className={styles.Button} onClick={handleLikeClick}>
         <AnimatedLikeButton isPostLiked={isPostLiked} />

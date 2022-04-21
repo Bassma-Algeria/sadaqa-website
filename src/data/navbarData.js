@@ -1,164 +1,164 @@
-import clothesIcon from "../public/svg/cloths_icon.svg";
-import foodIcon from "../public/svg/food_icon.svg";
-import servicesIcon from "../public/svg/services_icon.svg";
-import electronicsIcon from "../public/svg/electronics_icon.svg";
-import furnitureIcon from "../public/svg/furniture_icon.svg";
-import booksIcon from "../public/svg/books_icon.svg";
-import sportsIcon from "../public/svg/sports_icon.svg";
-import cosmeticsIcon from "../public/svg/cosmetics_icon.svg";
-import animalsIcon from "../public/svg/animals_icon.svg";
-import gamesIcon from "../public/svg/games_icon.svg";
-import toolsIcon from "../public/svg/tools_icon.svg";
-import healthIcon from "../public/svg/health_icon.svg";
-import carsIcon from "../public/svg/cars_icon.svg";
-import othersIcon from "../public/svg/others_icon.svg";
-import familiesInNeedIcon from "../public/svg/families_in_need_icon.svg";
-import donationsRequestsIcon from "../public/svg/donations_requests_icon.svg";
-import callForHelpIcon from "../public/svg/call_for_help_icon.svg";
-import messagesIcon from "../public/svg/nav_messages_icon.svg";
-import dashboardIcon from "../public/svg/dashboard_nav_icon.svg";
-import editProfileIcon from "../public/svg/edit_profile_nav_icon.svg";
-import darkModeIcon from "../public/svg/dark_mode_nav_icon.svg";
-import logoutIcon from "../public/svg/logout_nav_icon.svg";
-import homeIcon from "../public/svg/dashboard_activities_icon_empty.svg";
-import myAdsIcon from "../public/svg/dashboard_myads_icon_empty.svg";
-import signupIcon from "../public/svg/sign_up.svg";
-import loginIcon from "../public/svg/log_in.svg";
-import notificationsIcon from "../public/svg/notification.svg";
-import newAdIcon from "../public/svg/new_add.svg";
+import clothesIcon from '../../public/svg/cloths_icon.svg';
+import foodIcon from '../../public/svg/food_icon.svg';
+import servicesIcon from '../../public/svg/services_icon.svg';
+import electronicsIcon from '../../public/svg/electronics_icon.svg';
+import furnitureIcon from '../../public/svg/furniture_icon.svg';
+import booksIcon from '../../public/svg/books_icon.svg';
+import sportsIcon from '../../public/svg/sports_icon.svg';
+import cosmeticsIcon from '../../public/svg/cosmetics_icon.svg';
+import animalsIcon from '../../public/svg/animals_icon.svg';
+import gamesIcon from '../../public/svg/games_icon.svg';
+import toolsIcon from '../../public/svg/tools_icon.svg';
+import healthIcon from '../../public/svg/health_icon.svg';
+import carsIcon from '../../public/svg/cars_icon.svg';
+import othersIcon from '../../public/svg/others_icon.svg';
+import familiesInNeedIcon from '../../public/svg/families_in_need_icon.svg';
+import donationsRequestsIcon from '../../public/svg/donations_requests_icon.svg';
+import callForHelpIcon from '../../public/svg/call_for_help_icon.svg';
+import messagesIcon from '../../public/svg/nav_messages_icon.svg';
+import dashboardIcon from '../../public/svg/dashboard_nav_icon.svg';
+import editProfileIcon from '../../public/svg/edit_profile_nav_icon.svg';
+import darkModeIcon from '../../public/svg/dark_mode_nav_icon.svg';
+import logoutIcon from '../../public/svg/logout_nav_icon.svg';
+import homeIcon from '../../public/svg/dashboard_activities_icon_empty.svg';
+import myAdsIcon from '../../public/svg/dashboard_myads_icon_empty.svg';
+import signupIcon from '../../public/svg/sign_up.svg';
+import loginIcon from '../../public/svg/log_in.svg';
+import notificationsIcon from '../../public/svg/notification.svg';
+import newAdIcon from '../../public/svg/new_add.svg';
 
 const donationsCategories = [
   {
-    title: "Clothes / Accessories",
+    title: 'Clothes / Accessories',
     icon: clothesIcon.src,
-    pageLink: "/donations/Clothes___Accessories",
+    pageLink: '/donations/Clothes___Accessories',
   },
   {
-    title: "Food",
+    title: 'Food',
     icon: foodIcon.src,
-    pageLink: "/donations/Food",
+    pageLink: '/donations/Food',
   },
   {
-    title: "Services",
+    title: 'Services',
     icon: servicesIcon.src,
-    pageLink: "/donations/Services",
+    pageLink: '/donations/Services',
   },
   {
-    title: "Electronics / Appliances",
+    title: 'Electronics / Appliances',
     icon: electronicsIcon.src,
-    pageLink: "/donations/Electronics___Appliances",
+    pageLink: '/donations/Electronics___Appliances',
   },
   {
-    title: "Home / Furnitures",
+    title: 'Home / Furnitures',
     icon: furnitureIcon.src,
-    pageLink: "/donations/Home___Furnitures",
+    pageLink: '/donations/Home___Furnitures',
   },
   {
-    title: "Books / Magazines",
+    title: 'Books / Magazines',
     icon: booksIcon.src,
-    pageLink: "/donations/Books___Magazines",
+    pageLink: '/donations/Books___Magazines',
   },
   {
-    title: "Sports",
+    title: 'Sports',
     icon: sportsIcon.src,
-    pageLink: "/donations/Sports",
+    pageLink: '/donations/Sports',
   },
   {
-    title: "Cosmetics / Hygiene",
+    title: 'Cosmetics / Hygiene',
     icon: cosmeticsIcon.src,
-    pageLink: "/donations/Cosmetics___Hygiene",
+    pageLink: '/donations/Cosmetics___Hygiene',
   },
   {
-    title: "Animals / Accessories",
+    title: 'Animals / Accessories',
     icon: animalsIcon.src,
-    pageLink: "/donations/Animals___Accessories",
+    pageLink: '/donations/Animals___Accessories',
   },
   {
-    title: "Games / Toys",
+    title: 'Games / Toys',
     icon: gamesIcon.src,
-    pageLink: "/donations/Games___Toys",
+    pageLink: '/donations/Games___Toys',
   },
   {
-    title: "Tools",
+    title: 'Tools',
     icon: toolsIcon.src,
-    pageLink: "/donations/Tools",
+    pageLink: '/donations/Tools',
   },
   {
-    title: "Health / Medicines",
+    title: 'Health / Medicines',
     icon: healthIcon.src,
-    pageLink: "/donations/Health___Medicines",
+    pageLink: '/donations/Health___Medicines',
   },
   {
-    title: "Cars Accessories",
+    title: 'Cars Accessories',
     icon: carsIcon.src,
-    pageLink: "/donations/Cars_Accessories",
+    pageLink: '/donations/Cars_Accessories',
   },
   {
-    title: "Others",
+    title: 'Others',
     icon: othersIcon.src,
-    pageLink: "/donations/Others",
+    pageLink: '/donations/Others',
   },
 ];
 
 const peopleNeedHelpCategories = [
   {
-    title: "Families in need",
+    title: 'Families in need',
     icon: familiesInNeedIcon.src,
-    pageLink: "/people_need_help/family_in_need",
+    pageLink: '/people_need_help/family_in_need',
   },
   {
-    title: "Donations requests",
+    title: 'Donations requests',
     icon: donationsRequestsIcon.src,
-    pageLink: "/people_need_help/donation_request",
+    pageLink: '/people_need_help/donation_request',
   },
   {
-    title: "Call for help",
+    title: 'Call for help',
     icon: callForHelpIcon.src,
-    pageLink: "/people_need_help/call_for_help",
+    pageLink: '/people_need_help/call_for_help',
   },
 ];
 
 const dashboardLinks = [
   {
-    title: "Messages",
+    title: 'Messages',
     icon: messagesIcon.src,
-    pageLink: "/dashboard/messages",
+    pageLink: '/dashboard/messages',
   },
   {
-    title: "Dashboard",
+    title: 'Dashboard',
     icon: dashboardIcon.src,
-    pageLink: "/dashboard/activities",
+    pageLink: '/dashboard/activities',
   },
   {
-    title: "Profile Information",
+    title: 'Profile Information',
     icon: editProfileIcon.src,
-    pageLink: "/dashboard/settings/public_info",
+    pageLink: '/dashboard/settings/public_info',
   },
   {
-    title: "Dark mode",
+    title: 'Dark mode',
     icon: darkModeIcon.src,
   },
   {
-    title: "Logout",
+    title: 'Logout',
     icon: logoutIcon.src,
   },
 ];
 
 const baseBottomNavData = [
   {
-    title: "home",
+    title: 'home',
     icon: homeIcon.src,
-    link: "/",
+    link: '/',
   },
   {
-    title: "messages",
+    title: 'messages',
     icon: messagesIcon.src,
-    link: "/dashboard/messages",
+    link: '/dashboard/messages',
   },
   {
-    title: "new ad",
+    title: 'new ad',
     icon: newAdIcon.src,
-    link: "/create_new_ad",
+    link: '/create_new_ad',
   },
 ];
 
@@ -166,51 +166,46 @@ const phoneBottomNavData = {
   normalPage: [
     ...baseBottomNavData,
     {
-      title: "notifications",
+      title: 'notifications',
       icon: notificationsIcon.src,
-      link: "/dashboard/notifications",
+      link: '/dashboard/notifications',
     },
     {
-      title: "dashboard",
+      title: 'dashboard',
       icon: dashboardIcon.src,
-      link: "/dashboard/activities",
+      link: '/dashboard/activities',
     },
   ],
   dashbaord: [
     ...baseBottomNavData,
     {
-      title: "my ads",
+      title: 'my ads',
       icon: myAdsIcon.src,
-      link: "/dashboard/my_ads",
+      link: '/dashboard/my_ads',
     },
     {
-      title: "dashboard",
+      title: 'dashboard',
       icon: dashboardIcon.src,
-      link: "/dashboard/activities",
+      link: '/dashboard/activities',
     },
   ],
   notLoggedIn: [
     {
-      title: "home",
+      title: 'home',
       icon: homeIcon.src,
-      link: "/",
+      link: '/',
     },
     {
-      title: "log in",
+      title: 'log in',
       icon: loginIcon.src,
-      link: "/login",
+      link: '/login',
     },
     {
-      title: "sign up",
+      title: 'sign up',
       icon: signupIcon.src,
-      link: "/signup",
+      link: '/signup',
     },
   ],
 };
 
-export {
-  donationsCategories,
-  peopleNeedHelpCategories,
-  dashboardLinks,
-  phoneBottomNavData,
-};
+export { donationsCategories, peopleNeedHelpCategories, dashboardLinks, phoneBottomNavData };

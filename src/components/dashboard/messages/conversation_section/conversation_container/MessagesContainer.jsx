@@ -1,30 +1,27 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/router";
-import { useDispatch, useSelector } from "react-redux";
-import { getOldMessages } from "../../../../../redux/actions/messagesActions";
-import { ReactSVG } from "react-svg";
+import React, { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
+import { getOldMessages } from '../../../../../redux/actions/messagesActions';
+import { ReactSVG } from 'react-svg';
 
 // styles
-import styles from "../../../../../styles/dashboard.module.scss";
-
-// images and icons
-import smileFace from "../../../../../public/svg/smile.svg";
+import styles from '../../../../../styles/dashboard.module.scss';
 
 // helpers
-import { showRead } from "../../../../../utils/messagesHelpers";
-import { getNameToShow } from "../../../../../utils/usersHelpers";
+import { showRead } from '../../../../../utils/messagesHelpers';
+import { getNameToShow } from '../../../../../utils/usersHelpers';
 
 // components
-import Spinner from "../../../../common/loaders/Spinner";
-import Message from "./Message";
-import Typing from "./Typing";
+import Spinner from '../../../../common/loaders/Spinner';
+import Message from './Message';
+import Typing from './Typing';
 
 const NUM_OF_MESSAGES_PER_CHUNK = 30;
 
 const MessagesContainer = ({ height }) => {
   const {
     conversation: { isDataLoaded, chatParticipant },
-  } = useSelector((state) => state.messages);
+  } = useSelector(state => state.messages);
 
   const dispatch = useDispatch();
   const router = useRouter();
@@ -41,11 +38,7 @@ const MessagesContainer = ({ height }) => {
 
     if (isScrollRichTop) {
       dispatch(
-        getOldMessages(
-          router.query.chatParticipantId,
-          numOfChunk,
-          NUM_OF_MESSAGES_PER_CHUNK
-        )
+        getOldMessages(router.query.chatParticipantId, numOfChunk, NUM_OF_MESSAGES_PER_CHUNK),
       );
       setNumOfChunk(numOfChunk + 1);
     }
@@ -63,8 +56,8 @@ const MessagesContainer = ({ height }) => {
       onScroll={handleScroll}
     >
       {!isDataLoaded ? (
-        <div style={{ height: "100%", width: "100%" }}>
-          <Spinner style={{ fontSize: 8, top: "48%", color: "#FF7937" }} />
+        <div style={{ height: '100%', width: '100%' }}>
+          <Spinner style={{ fontSize: 8, top: '48%', color: '#FF7937' }} />
         </div>
       ) : (
         <MessagesList />
@@ -87,21 +80,16 @@ const MessagesList = () => {
         generalInfo: { user_id: currentUserId },
       },
     },
-  } = useSelector((state) => state);
+  } = useSelector(state => state);
 
   return conversation.length === 0 ? (
     <div className={styles.noMessages}>
-      <h1>
-        Send your first message to {getNameToShow(association_name, first_name)}
-        !
-      </h1>
+      <h1>Send your first message to {getNameToShow(association_name, first_name)}!</h1>
       {/* <ReactSVG src={smileFace.src} /> */}
     </div>
   ) : (
     <>
-      {showRead(conversation[0], currentUserId) && (
-        <p className={styles.readText}>Seen</p>
-      )}
+      {showRead(conversation[0], currentUserId) && <p className={styles.readText}>Seen</p>}
 
       {chatParticipantIsTyping && <Typing />}
 

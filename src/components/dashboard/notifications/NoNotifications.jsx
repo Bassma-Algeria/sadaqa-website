@@ -1,8 +1,8 @@
-import React from "react";
-import { ReactSVG } from "react-svg";
+import React from 'react';
+import { ReactSVG } from 'react-svg';
 
 // images and components
-import noNotificationsIcon from "../../../public/svg/no-notification.svg";
+import noNotificationsIcon from '../../../../public/svg/no-notification.svg';
 
 const NoNotifications = ({ styles }) => {
   return (

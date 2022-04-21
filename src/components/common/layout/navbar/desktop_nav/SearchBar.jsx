@@ -1,27 +1,27 @@
-import React, { useState, useRef, useEffect } from "react";
-import { ReactSVG } from "react-svg";
-import { useRouter } from "next/router";
+import React, { useState, useRef, useEffect } from 'react';
+import { ReactSVG } from 'react-svg';
+import { useRouter } from 'next/router';
 
 // styles
-import styles from "../../../../../styles/navbar.module.scss";
+import styles from '../../../../../styles/navbar.module.scss';
 
 // helpers
-import { isClickedElementInsideTarget } from "../../../../../utils/navbarHelpers";
+import { isClickedElementInsideTarget } from '../../../../../utils/navbarHelpers';
 
 // icons
-import searchIcon from "../../../../../public/svg/search_icon.svg";
+import searchIcon from '../../../../../../public/svg/search_icon.svg';
 
 const SearchBar = ({ isSearchBarOpen, setIsSearchBarOpen }) => {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
 
   const searchInput = useRef(null);
   const router = useRouter();
 
   const currentPath = router.asPath;
 
-  const handleInputkeyPress = (e) => {
-    if (e.key === "Enter") {
-      if (searchValue !== "") {
+  const handleInputkeyPress = e => {
+    if (e.key === 'Enter') {
+      if (searchValue !== '') {
         handleSearchIconClick();
       }
     }
@@ -29,7 +29,7 @@ const SearchBar = ({ isSearchBarOpen, setIsSearchBarOpen }) => {
 
   const handleSearchIconClick = () => {
     if (isSearchBarOpen) {
-      if (searchValue !== "") {
+      if (searchValue !== '') {
         router.prefetch(`/search`);
         router.push(`/search?searchPhrase=${searchValue}`);
       }
@@ -40,35 +40,33 @@ const SearchBar = ({ isSearchBarOpen, setIsSearchBarOpen }) => {
   };
 
   useEffect(() => {
-    const onWindowClick = (e) => {
-      if (!isClickedElementInsideTarget("searchBarContainer", e.target)) {
+    const onWindowClick = e => {
+      if (!isClickedElementInsideTarget('searchBarContainer', e.target)) {
         setIsSearchBarOpen(false);
       }
     };
-    window.addEventListener("click", onWindowClick);
+    window.addEventListener('click', onWindowClick);
 
-    if (currentPath.includes("search")) {
-      window.removeEventListener("click", onWindowClick);
+    if (currentPath.includes('search')) {
+      window.removeEventListener('click', onWindowClick);
       setSearchValue(router.query.searchPhrase);
       setIsSearchBarOpen(true);
     }
 
-    return () => window.removeEventListener("click", onWindowClick);
+    return () => window.removeEventListener('click', onWindowClick);
   }, []);
 
   return (
     <div
-      className={`${styles.searchBar} ${
-        isSearchBarOpen ? styles.openSearchBar : ""
-      }`}
+      className={`${styles.searchBar} ${isSearchBarOpen ? styles.openSearchBar : ''}`}
       id="searchBarContainer"
     >
       <input
         type="text"
         value={searchValue}
         placeholder="Search..."
-        onChange={(e) => setSearchValue(e.target.value)}
-        style={{ width: !isSearchBarOpen && "none" }}
+        onChange={e => setSearchValue(e.target.value)}
+        style={{ width: !isSearchBarOpen && 'none' }}
         onKeyPress={handleInputkeyPress}
         ref={searchInput}
       />

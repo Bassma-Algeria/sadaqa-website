@@ -7,8 +7,8 @@ import { useRouter } from 'next/router';
 import styles from '../styles/login.module.scss';
 
 // images
-import loginImg from '../public/images/login.png';
-import logo from '../public/images/sadaqa-logo.png';
+import loginImg from '../../public/images/login.png';
+import logo from '../../public/images/sadaqa-logo.png';
 
 // redux
 import { clearErrors } from '../redux/reducers/UISlice';

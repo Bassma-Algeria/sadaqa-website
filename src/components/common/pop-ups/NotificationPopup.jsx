@@ -9,10 +9,10 @@ import { isMobile } from 'react-device-detect';
 import styles from '../../../styles/pop-ups.module.scss';
 
 // images and icons
-import closeIcon from '../../../public/svg/close_icon.svg';
+import closeIcon from '../../../../public/svg/close_icon.svg';
 
 // sounds
-import sound from '../../../public/media/notification_sound.mp3';
+import sound from '../../../../public/media/notification_sound.mp3';
 
 // redux
 import { removeNewNotification } from '../../../redux/reducers/authUserSlice';

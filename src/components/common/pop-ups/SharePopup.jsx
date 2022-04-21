@@ -1,16 +1,16 @@
-import React, { useRef } from "react";
-import { ReactSVG } from "react-svg";
-import { useDispatch } from "react-redux";
+import React, { useRef } from 'react';
+import { ReactSVG } from 'react-svg';
+import { useDispatch } from 'react-redux';
 
 // styles
-import styles from "../../../styles/pop-ups.module.scss";
+import styles from '../../../styles/pop-ups.module.scss';
 
 // images and icons
-import closeIcon from "../../../public/svg/close_icon.svg";
-import shareIcon from "../../../public/svg/popup_share_icon.svg";
+import closeIcon from '../../../../public/svg/close_icon.svg';
+import shareIcon from '../../../../public/svg/popup_share_icon.svg';
 
 // redux
-import { sharePost } from "../../../redux/actions/postsActions";
+import { sharePost } from '../../../redux/actions/postsActions';
 
 const SharePopup = ({ postLink, setIsSharePopupOpen }) => {
   const dispatch = useDispatch();
@@ -57,8 +57,8 @@ const SharePopup = ({ postLink, setIsSharePopupOpen }) => {
   );
 };
 
-const getPostIdFromPostPageLink = (pageLink) => {
-  return Number(pageLink.split("/")[pageLink.split("/").length - 1]);
+const getPostIdFromPostPageLink = pageLink => {
+  return Number(pageLink.split('/')[pageLink.split('/').length - 1]);
 };
 
 export default SharePopup;

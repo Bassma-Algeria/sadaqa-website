@@ -1,19 +1,19 @@
-import React, { useState } from "react";
-import { ReactSVG } from "react-svg";
-import axios from "axios";
+import React, { useState } from 'react';
+import { ReactSVG } from 'react-svg';
+import axios from 'axios';
 
 // styles
-import styles from "../../../styles/pop-ups.module.scss";
+import styles from '../../../styles/pop-ups.module.scss';
 
 // images and icons
-import closeIcon from "../../../public/svg/close_icon.svg";
-import signalIcon from "../../../public/svg/signal_icon.svg";
-import checkMarkIcon from "../../../public/svg/check_mark_icon.svg";
+import closeIcon from '../../../../public/svg/close_icon.svg';
+import signalIcon from '../../../../public/svg/signal_icon.svg';
+import checkMarkIcon from '../../../../public/svg/check_mark_icon.svg';
 
 // components
-import Button from "../buttons/Button";
-import TextAreaInput from "../inputs/TextAreaInput";
-import Spinner from "../loaders/Spinner";
+import Button from '../buttons/Button';
+import TextAreaInput from '../inputs/TextAreaInput';
+import Spinner from '../loaders/Spinner';
 
 const SignalPopup = ({ signalItem, setIsPopupOpen, signalItemLink }) => {
   const [isSignalSent, setIsSignalSent] = useState(false);
@@ -42,12 +42,8 @@ const SignalPopup = ({ signalItem, setIsPopupOpen, signalItemLink }) => {
   );
 };
 
-const SignalNotSentContainer = ({
-  signalItemLink,
-  signalItem,
-  setIsSignalSent,
-}) => {
-  const [inputValue, setInputValue] = useState({ signalText: "" });
+const SignalNotSentContainer = ({ signalItemLink, signalItem, setIsSignalSent }) => {
+  const [inputValue, setInputValue] = useState({ signalText: '' });
   const [loading, setLoading] = useState(false);
 
   const handleSendClick = () => {
@@ -57,11 +53,11 @@ const SignalNotSentContainer = ({
       signalText: inputValue.signalText,
       signalItemLink,
     })
-      .then((res) => {
+      .then(res => {
         setIsSignalSent(true);
         setLoading(false);
       })
-      .catch((error) => {
+      .catch(error => {
         console.log(error);
       });
   };
@@ -89,9 +85,9 @@ const SignalNotSentContainer = ({
           size="sm"
           className={styles.primary}
           onClick={handleSendClick}
-          disabled={inputValue.signalText === ""}
+          disabled={inputValue.signalText === ''}
         >
-          {loading ? <Spinner style={{ fontSize: 4, bottom: 9 }} /> : "Send"}
+          {loading ? <Spinner style={{ fontSize: 4, bottom: 9 }} /> : 'Send'}
         </Button>
       </div>
     </>
@@ -104,18 +100,15 @@ const SignalSentContainer = ({ signalItem }) => (
       <ReactSVG src={checkMarkIcon.src} />
     </div>
 
-    <h1>
-      Thanks for telling us about this {signalItem}, our team will remove it if
-      necessary
-    </h1>
+    <h1>Thanks for telling us about this {signalItem}, our team will remove it if necessary</h1>
   </div>
 );
 
-const sendSignal = async (data) => {
+const sendSignal = async data => {
   return axios
-    .post("/signal", data)
-    .then((res) => true)
-    .catch((error) => {
+    .post('/signal', data)
+    .then(res => true)
+    .catch(error => {
       console.log(error);
       return false;
     });

@@ -1,11 +1,11 @@
 import { wilayas } from '../data/wilayas';
-import defaultProfilePicFemale from '../public/svg/profile_pic_default_female.svg';
-import defaultProfilePicMale from '../public/svg/profile_pic_default_male.svg';
-import facebookIcon from '../public/svg/facebook_profile_icon.svg';
-import instagramIcon from '../public/svg/instagram_profile_icon.svg';
-import linkedInIcon from '../public/svg/linkedIn_profile_icon.svg';
-import viberIcon from '../public/svg/viber_profile_icon.svg';
-import whatsappIcon from '../public/svg/whatsapp_profile_icon.svg';
+import defaultProfilePicFemale from '../../public/svg/profile_pic_default_female.svg';
+import defaultProfilePicMale from '../../public/svg/profile_pic_default_male.svg';
+import facebookIcon from '../../public/svg/facebook_profile_icon.svg';
+import instagramIcon from '../../public/svg/instagram_profile_icon.svg';
+import linkedInIcon from '../../public/svg/linkedIn_profile_icon.svg';
+import viberIcon from '../../public/svg/viber_profile_icon.svg';
+import whatsappIcon from '../../public/svg/whatsapp_profile_icon.svg';
 
 const isUserOnline = (userId, onlineUsersIds) => {
   return onlineUsersIds.find(id => userId === id);

@@ -1,34 +1,31 @@
-import React, { useEffect, useRef, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useRouter } from "next/router";
-import { ReactSVG } from "react-svg";
+import React, { useEffect, useRef, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
+import { ReactSVG } from 'react-svg';
 
 // styles
-import styles from "../../../../styles/dashboard.module.scss";
+import styles from '../../../../styles/dashboard.module.scss';
 
 // images and icons
-import ContactsIcon from "../../../../public/svg/contacts.svg";
+import ContactsIcon from '../../../../../public/svg/contacts.svg';
 
 // redux
-import {
-  addContact,
-  getContacts,
-} from "../../../../redux/actions/messagesActions";
+import { addContact, getContacts } from '../../../../redux/actions/messagesActions';
 
 // helpers
 import {
   chatParticipantExistInContactsList,
   getContactsContainerHeight,
-} from "../../../../utils/messagesHelpers";
+} from '../../../../utils/messagesHelpers';
 
 // components
-import Spinner from "../../../common/loaders/Spinner";
-import Contact from "./Contact";
+import Spinner from '../../../common/loaders/Spinner';
+import Contact from './Contact';
 
 const ContactsContainer = ({ contactsSection, searchTerm }) => {
   const {
     contacts: { isDataLoaded: isContactsLoaded },
-  } = useSelector((state) => state.messages);
+  } = useSelector(state => state.messages);
 
   const dispatch = useDispatch();
   const contactsContainer = useRef(null);
@@ -36,18 +33,14 @@ const ContactsContainer = ({ contactsSection, searchTerm }) => {
 
   useEffect(() => {
     dispatch(getContacts());
-    setContactsContainerHeight(
-      getContactsContainerHeight(contactsSection, contactsContainer)
-    );
+    setContactsContainerHeight(getContactsContainerHeight(contactsSection, contactsContainer));
 
     const resizeHandler = () => {
-      setContactsContainerHeight(
-        getContactsContainerHeight(contactsSection, contactsContainer)
-      );
+      setContactsContainerHeight(getContactsContainerHeight(contactsSection, contactsContainer));
     };
-    window.addEventListener("resize", resizeHandler);
+    window.addEventListener('resize', resizeHandler);
 
-    return () => window.removeEventListener("resize", resizeHandler);
+    return () => window.removeEventListener('resize', resizeHandler);
   }, []);
 
   return (
@@ -57,8 +50,8 @@ const ContactsContainer = ({ contactsSection, searchTerm }) => {
       ref={contactsContainer}
     >
       {!isContactsLoaded ? (
-        <div style={{ height: "100%", width: "100%" }}>
-          <Spinner style={{ fontSize: 8, top: "40%", color: "#000" }} />
+        <div style={{ height: '100%', width: '100%' }}>
+          <Spinner style={{ fontSize: 8, top: '40%', color: '#000' }} />
         </div>
       ) : (
         <ContactsList searchTerm={searchTerm} />
@@ -70,7 +63,7 @@ const ContactsContainer = ({ contactsSection, searchTerm }) => {
 const ContactsList = ({ searchTerm }) => {
   const {
     contacts: { data: contacts, isDataLoaded: isContactsLoaded },
-  } = useSelector((state) => state.messages);
+  } = useSelector(state => state.messages);
 
   const router = useRouter();
   const dispatch = useDispatch();
@@ -80,10 +73,7 @@ const ContactsList = ({ searchTerm }) => {
       isContactsLoaded &&
       router.query.chatParticipantId &&
       !searchTerm &&
-      !chatParticipantExistInContactsList(
-        Number(router.query.chatParticipantId),
-        contacts
-      )
+      !chatParticipantExistInContactsList(Number(router.query.chatParticipantId), contacts)
     ) {
       dispatch(addContact(router.query.chatParticipantId));
     }

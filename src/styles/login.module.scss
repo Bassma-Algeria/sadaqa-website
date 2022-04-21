@@ -3,12 +3,8 @@
   height: 100vh;
 
   .imgContainer {
-    width: 50%;
     @apply flex items-center px-8 bg-secondary;
-
-    img {
-      @apply w-full h-auto mb-20;
-    }
+    width: 50%;
   }
 
   .loginInputsSection {
