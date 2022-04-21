@@ -21,6 +21,7 @@ WORKDIR /home/app
 
 COPY package.json ./
 COPY next.config.js ./
+COPY next-i18next.config.js ./
 
 RUN npm install --only=production
 
