@@ -65,7 +65,7 @@ jobs:
           dns-name-label: pre-sadaqa
           image: sadaqa.azurecr.io/sadaqa-website:pre-${{ steps.package-version.outputs.current-version }}
           location: 'east us'
-          ports: 3000
+          ports: 80
           registry-username: ${{ secrets.ACR_USERNAME }}
           registry-password: ${{ secrets.ACR_PASSWORD }}
           secure-environment-variables: >

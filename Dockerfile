@@ -37,6 +37,6 @@ RUN setcap 'cap_net_bind_service=+ep' /usr/local/bin/node
 RUN chown -R node:node /home/app
 USER node
 
-EXPOSE 3000
+EXPOSE 80
 
 CMD ["npm", "start"]
