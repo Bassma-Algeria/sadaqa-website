@@ -100,7 +100,7 @@ jobs:
           registry-username: ${{ secrets.ACR_USERNAME }}
           registry-password: ${{ secrets.ACR_PASSWORD }}
           secure-environment-variables: >
-            NEXT_PUBLIC_BASE_FRONT_URL=${{ secrets.PRE_FRONT_URL }}
+            NEXT_PUBLIC_BASE_FRONT_URL=${{ secrets.FRONT_URL }}
             NEXT_PUBLIC_BASE_BACK_URL=${{ secrets.BACK_URL }}/api
             NEXT_PUBLIC_BACK_DOMAIN=${{ secrets.BACK_URL }}
            
