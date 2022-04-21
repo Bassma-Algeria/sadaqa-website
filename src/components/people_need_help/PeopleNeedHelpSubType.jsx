@@ -1,25 +1,25 @@
-import React from "react";
-import styled from "styled-components";
-import { ReactSVG } from "react-svg";
-import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
-import VisibilitySensor from "react-visibility-sensor";
-import { useRouter } from "next/router";
+import React from 'react';
+import styled from 'styled-components';
+import { ReactSVG } from 'react-svg';
+import Link from 'next/link';
+import { useDispatch, useSelector } from 'react-redux';
+import VisibilitySensor from 'react-visibility-sensor';
+import { useRouter } from 'next/router';
 
 // icons
-import rightArrowIcon from "../../public/svg/right_arrow_see_more_icon.svg";
+import rightArrowIcon from '../../../public/svg/right_arrow_see_more_icon.svg';
 
 // helpers
-import { linkFormatToTextFormat } from "../../utils/postsHelpers";
+import { linkFormatToTextFormat } from '../../utils/postsHelpers';
 
 // redux
-import { getPeopleNeedHelpData } from "../../redux/actions/postsActions";
+import { getPeopleNeedHelpData } from '../../redux/actions/postsActions';
 
 // componenets
-import AdCard from "../common/cards/AdCard";
-import { SubHeader } from "../common/others/Headers";
-import Spinner from "../common/loaders/Spinner";
-import NoAds from "../common/others/NoAds";
+import AdCard from '../common/cards/AdCard';
+import { SubHeader } from '../common/others/Headers';
+import Spinner from '../common/loaders/Spinner';
+import NoAds from '../common/others/NoAds';
 
 const SvgContainer = styled.div`
   cursor: pointer;
@@ -38,12 +38,12 @@ const PeopleNeedHelpSubType = ({ subType, numOfPostsToShow }) => {
     peopleNeedHelp: {
       [subType]: { isDataLoaded },
     },
-  } = useSelector((state) => state.posts);
+  } = useSelector(state => state.posts);
 
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const handleVisibiltyChange = (isVisible) => {
+  const handleVisibiltyChange = isVisible => {
     if (isVisible) {
       const numOfPage = 1;
       dispatch(getPeopleNeedHelpData(subType, numOfPage, numOfPostsToShow));
@@ -53,16 +53,11 @@ const PeopleNeedHelpSubType = ({ subType, numOfPostsToShow }) => {
   return (
     <VisibilitySensor onChange={handleVisibiltyChange} active={!isDataLoaded}>
       <div style={{ marginBottom: 80 }}>
-        <SectionHeader
-          subType={subType}
-          isPostPage={router.asPath.includes("post")}
-        />
+        <SectionHeader subType={subType} isPostPage={router.asPath.includes('post')} />
         <Ads
           subType={subType}
-          isPostPage={router.asPath.includes("post")}
-          currentPostId={Number(
-            router.asPath.split("/")[router.asPath.split("/").length - 1]
-          )}
+          isPostPage={router.asPath.includes('post')}
+          currentPostId={Number(router.asPath.split('/')[router.asPath.split('/').length - 1])}
         />
       </div>
     </VisibilitySensor>
@@ -71,13 +66,8 @@ const PeopleNeedHelpSubType = ({ subType, numOfPostsToShow }) => {
 
 const SectionHeader = ({ subType, isPostPage }) => {
   return (
-    <div
-      className="flex items-center justify-between"
-      style={{ marginBottom: "-10px" }}
-    >
-      <SubHeader>
-        {isPostPage ? "Similar Ads" : linkFormatToTextFormat(subType)}
-      </SubHeader>
+    <div className="flex items-center justify-between" style={{ marginBottom: '-10px' }}>
+      <SubHeader>{isPostPage ? 'Similar Ads' : linkFormatToTextFormat(subType)}</SubHeader>
       <Link href={`/people_need_help/${subType}`}>
         <SvgContainer>
           <ReactSVG src={rightArrowIcon.src} />
@@ -92,27 +82,27 @@ const Ads = ({ subType, isPostPage, currentPostId }) => {
     peopleNeedHelp: {
       [subType]: { isDataLoaded, data },
     },
-  } = useSelector((state) => state.posts);
+  } = useSelector(state => state.posts);
 
   const router = useRouter();
 
   if (isPostPage) {
-    data = data.filter((post) => post.post_id !== currentPostId);
+    data = data.filter(post => post.post_id !== currentPostId);
   }
 
   return (
     <>
       {!isDataLoaded ? (
-        <div style={{ height: 350, width: "100%" }}>
-          <Spinner style={{ fontSize: 12, top: 150, color: "#000" }} />
+        <div style={{ height: 350, width: '100%' }}>
+          <Spinner style={{ fontSize: 12, top: 150, color: '#000' }} />
         </div>
       ) : data.length === 0 ? (
-        <div style={{ height: 350, width: "100%" }}>
+        <div style={{ height: 350, width: '100%' }}>
           <NoAds />
         </div>
       ) : (
-        <div className={`flex flex-wrap`} style={{ gap: "2%" }}>
-          {data.map((post) => {
+        <div className={`flex flex-wrap`} style={{ gap: '2%' }}>
+          {data.map(post => {
             return <AdCard key={post.post_id} {...post} subType={subType} />;
           })}
         </div>

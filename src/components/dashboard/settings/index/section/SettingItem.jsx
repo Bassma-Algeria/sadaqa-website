@@ -1,12 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import { ReactSVG } from "react-svg";
+import React from 'react';
+import Link from 'next/link';
+import { ReactSVG } from 'react-svg';
 
 // styles
-import styles from "../../../../../styles/dashboard.module.scss";
+import styles from '../../../../../styles/dashboard.module.scss';
 
 // images and icons
-import rightArrow from "../../../../../public/svg/right_arrow_nav_links.svg";
+import rightArrow from '../../../../../../public/svg/right_arrow_nav_links.svg';
 
 const SettingItem = ({ title, link, icon }) => {
   return (

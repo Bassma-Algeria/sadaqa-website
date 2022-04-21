@@ -1,8 +1,8 @@
-import React from "react";
-import Head from "next/head";
+import React from 'react';
+import Head from 'next/head';
 
 // images
-import logo from "../../../public/images/sadaqa-logo-favicon.png";
+import logo from '../../../../public/images/sadaqa-logo-favicon.png';
 
 const PageMetaData = ({ title }) => {
   return (

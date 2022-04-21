@@ -1,6 +1,6 @@
-import HeroImage_1 from '../public/images/home_page_1.png';
-import HeroImage_2 from '../public/images/home_page_2.png';
-import HeroImage_3 from '../public/images/home_page_3.png';
+import HeroImage_1 from '../../public/images/home_page_1.png';
+import HeroImage_2 from '../../public/images/home_page_2.png';
+import HeroImage_3 from '../../public/images/home_page_3.png';
 
 export const heroData = [
   {

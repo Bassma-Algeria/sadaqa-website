@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import styles from '../styles/signup.module.scss';
 
 // images and icons
-import signupImg from '../public/images/signup.png';
+import signupImg from '../../public/images/signup.png';
 
 // redux
 import { clearErrors } from '../redux/reducers/UISlice';
@@ -79,11 +79,13 @@ export default function Signup() {
         <PageMetaData title={'Sadaqa صدقة | Signup'} />
 
         <section className={styles.imgContainer}>
-          <Image
-            placeholder="blur"
-            src={signupImg}
-            alt="girl with his father put donations in a box"
-          />
+          <div className={styles.img}>
+            <Image
+              placeholder="blur"
+              src={signupImg}
+              alt="girl with his father put donations in a box"
+            />
+          </div>
         </section>
 
         <section className={styles.signupInputsSection}>

@@ -92,11 +92,11 @@ textarea::placeholder {
 }
 
 .slick-prev::before {
-  content: url('../public/svg/home_left_arrow.svg') !important;
+  content: url('../../public/svg/home_left_arrow.svg') !important;
 }
 
 .slick-next::before {
-  content: url('../public/svg/home_right_arrow.svg') !important;
+  content: url('../../public/svg/home_right_arrow.svg') !important;
 }
 
 .slick-dots li button:before {

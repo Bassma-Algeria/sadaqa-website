@@ -4,8 +4,8 @@ import tw from 'twin.macro';
 import { ReactSVG } from 'react-svg';
 
 // icons
-import uploadIcon from '../../../public/svg/upload_icon.svg';
-import removeIcon from '../../../public/svg/crossed_icon.svg';
+import uploadIcon from '../../../../public/svg/upload_icon.svg';
+import removeIcon from '../../../../public/svg/crossed_icon.svg';
 import Image from 'next/image';
 
 const StyledDragAndDropContainer = styled.div`

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from '../../../../../../styles/navbar.module.scss';
 
 // images and icons
-import logo from '../../../../../../public/images/sadaqa-logo.png';
+import logo from '../../../../../../../public/images/sadaqa-logo.png';
 import Image from 'next/image';
 
 const Logo = () => {

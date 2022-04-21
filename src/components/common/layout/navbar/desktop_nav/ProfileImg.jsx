@@ -8,7 +8,7 @@ import { useRouter } from 'next/router';
 import styles from '../../../../../styles/navbar.module.scss';
 
 // images and icons
-import rightArrow from '../../../../../public/svg/right_arrow_nav_links.svg';
+import rightArrow from '../../../../../../public/svg/right_arrow_nav_links.svg';
 
 // redux
 import { logoutUser } from '../../../../../redux/actions/userActions';

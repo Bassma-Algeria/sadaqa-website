@@ -8,10 +8,10 @@ import Link from 'next/link';
 import styles from '../../../../../../styles/navbar.module.scss';
 
 // images
-import settingsIcon from '../../../../../../public/svg/dashboard_settings_icon_empty.svg';
+import settingsIcon from '../../../../../../../public/svg/dashboard_settings_icon_empty.svg';
 
 // images and icons
-import searchIcon from '../../../../../../public/svg/search_icon.svg';
+import searchIcon from '../../../../../../../public/svg/search_icon.svg';
 import { isDashboardLinks } from '../../../../../../utils/navbarHelpers';
 import { getProfilePic } from '../../../../../../utils/usersHelpers';
 import Image from 'next/image';

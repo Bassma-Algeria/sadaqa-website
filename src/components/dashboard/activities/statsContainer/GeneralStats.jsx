@@ -1,19 +1,19 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { ReactSVG } from "react-svg";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { ReactSVG } from 'react-svg';
 
 // styles
-import styles from "../../../../styles/dashboard.module.scss";
+import styles from '../../../../styles/dashboard.module.scss';
 
 // icons
-import postIcon from "../../../../public/svg/all_ads_dashboard_icon.svg";
+import postIcon from '../../../../../public/svg/all_ads_dashboard_icon.svg';
 
 // helpers
-import { ACTIVITIES_DATA } from "../../../../data/dashboard";
-import { getTotalsForTargetType } from "../../../../utils/dashboardHelpers";
+import { ACTIVITIES_DATA } from '../../../../data/dashboard';
+import { getTotalsForTargetType } from '../../../../utils/dashboardHelpers';
 
 // components
-import { Container } from "../../../common/containers/Container";
+import { Container } from '../../../common/containers/Container';
 
 const GeneralStats = ({ totals }) => {
   return (
@@ -44,12 +44,12 @@ const RightSide = ({ totals }) => {
     profileInfo: {
       generalInfo: { role },
     },
-  } = useSelector((state) => state.authUser);
+  } = useSelector(state => state.authUser);
 
   return (
     <div className={styles.rightSide}>
       {ACTIVITIES_DATA.map((element, index) => {
-        if (role !== "association" && index <= 1) return;
+        if (role !== 'association' && index <= 1) return;
 
         return (
           <RightSideElement
