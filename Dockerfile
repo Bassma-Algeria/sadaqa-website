@@ -27,7 +27,7 @@ COPY next-i18next.config.js ./
 
 RUN npm install --only=production
 
-COPY --from=appBuild /home/app/public ./public
+COPY --from=appBuild /home/app/src/public ./public
 COPY --from=appBuild /home/app/.next ./.next
 
 ENV NODE_ENV=PROD
