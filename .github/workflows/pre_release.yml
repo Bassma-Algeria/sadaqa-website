@@ -52,13 +52,6 @@ jobs:
         uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      -
-        name: Login To ACR
-        uses: azure/docker-login@v1
-        with:
-          login-server: sadaqa.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
       - 
         name: Get Package Version
         id: package-version
