@@ -79,11 +79,13 @@ export default function Signup() {
         <PageMetaData title={'Sadaqa صدقة | Signup'} />
 
         <section className={styles.imgContainer}>
-          <Image
-            placeholder="blur"
-            src={signupImg}
-            alt="girl with his father put donations in a box"
-          />
+          <div className={styles.img}>
+            <Image
+              placeholder="blur"
+              src={signupImg}
+              alt="girl with his father put donations in a box"
+            />
+          </div>
         </section>
 
         <section className={styles.signupInputsSection}>
