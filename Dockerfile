@@ -30,7 +30,7 @@ RUN npm install --only=production
 COPY --from=appBuild /home/app/src/public ./public
 COPY --from=appBuild /home/app/.next ./.next
 
-ENV NODE_ENV=PROD
+ENV NODE_ENV=production
 
 # Set the privileges for our built app executable to run on privileged ports
 RUN setcap 'cap_net_bind_service=+ep' /usr/local/bin/node
@@ -38,6 +38,6 @@ RUN setcap 'cap_net_bind_service=+ep' /usr/local/bin/node
 RUN chown -R node:node /home/app
 USER node
 
-EXPOSE 80
+EXPOSE 3000
 
 CMD ["npm", "start"]
