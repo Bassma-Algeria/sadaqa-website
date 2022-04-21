@@ -7,7 +7,7 @@ WORKDIR /home/app
 
 COPY . .
 
-ENV NEXT_PUBLIC_BASE_BACK_URL=sadaqa-server.eastus.azurecontainer.io/api
+ENV NEXT_PUBLIC_BASE_BACK_URL=http://sadaqa-server.eastus.azurecontainer.io/api
 
 RUN npm install
 RUN npm run build
