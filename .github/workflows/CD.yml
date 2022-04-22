@@ -5,7 +5,7 @@ on:
     branches:
       - master
 
-jobs:  
+jobs:
   cleanup:
     name: Delete Pre Release
     runs-on: ubuntu-latest

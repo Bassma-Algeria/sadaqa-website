@@ -5,7 +5,7 @@ on:
     branches:
       - "release/*"
 
-jobs:  
+jobs:
   build: 
     name: Build / Push to ACR
     runs-on: ubuntu-latest
