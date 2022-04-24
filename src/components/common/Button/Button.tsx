@@ -31,4 +31,4 @@ const Button: React.FC<Props> = ({ size = 'md', ...props }) => {
   );
 };
 
-export default Button;
+export { Button };
