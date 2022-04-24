@@ -1,0 +1,57 @@
+.button {
+  @apply flex items-center justify-center gap-2;
+
+  svg {
+    width: 18px;
+  }
+
+  &.primary {
+    @apply bg-primary text-white hover:bg-primaryHover;
+
+    &.disabled {
+      @apply hover:bg-primary;
+    }
+
+    svg {
+      fill: white;
+    }
+  }
+
+  &.secondary {
+    @apply bg-white text-primary border border-primary hover:text-primaryHover hover:border-primaryHover;
+
+    &.disabled {
+      @apply hover:text-primary hover:border-primary;
+    }
+
+    svg {
+      fill: #ff7937;
+    }
+  }
+
+  &.sm {
+    @apply text-base px-5 py-2 rounded-2xl font-semibold;
+  }
+
+  &.md {
+    @apply text-lg px-10 py-3 rounded-2xl font-bold;
+  }
+
+  &.lg {
+    @apply text-xl px-8 py-5 rounded-3xl font-bold;
+  }
+
+  &.fullWidth {
+    @apply w-full;
+  }
+
+  &.disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  @media only screen and (max-width: 900px) {
+    @apply w-full;
+    font-size: 14px;
+  }
+}
