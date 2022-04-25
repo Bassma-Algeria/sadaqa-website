@@ -13,9 +13,14 @@
   /* border: 1px solid black; */
 }
 
-html,
-body {
+html:lang(en),
+html:lang(en) body {
   font-family: 'Poppins', sans-serif;
+}
+
+html:lang(ar),
+html:lang(ar) body {
+  font-family: 'Almarai', sans-serif;
 }
 
 input::placeholder {

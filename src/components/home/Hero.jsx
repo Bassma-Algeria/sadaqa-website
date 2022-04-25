@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { useSelector } from 'react-redux';
 import Slider from 'react-slick';
+import Image from 'next/image';
 
 // styles
 import 'slick-carousel/slick/slick.css';
@@ -16,7 +17,6 @@ import { heroData } from '../../data/heroData';
 // components
 import Button from '../common/buttons/Button';
 import { HeroContainer } from '../common/containers/Container';
-import Image from 'next/image';
 
 const Hero = ({ setIsPopupOpen }) => {
   return (

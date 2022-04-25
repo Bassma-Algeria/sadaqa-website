@@ -29,6 +29,9 @@ export default function PostPage({ postId }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log('====================================');
+    console.log(postId);
+    console.log('====================================');
     dispatch(getPost(postId));
 
     return () => dispatch(clearSinglePost());
@@ -76,9 +79,9 @@ export async function getStaticPaths() {
   const {
     data: { data: postsIds },
   } = await axios.get('/posts/getPostsIds');
-  const paths = postsIds.map(postId => {
+  const paths = postsIds.map(({ post_id }) => {
     return {
-      params: { postId: postId.post_id.toString() },
+      params: { postId: post_id.toString() },
     };
   });
 
