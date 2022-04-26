@@ -7,7 +7,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from '../../Home.module.scss';
 
-import { heroSliderSettings } from '../../../../utils/slidersSettings';
+import { heroSliderSettings } from './utils/slideSettings';
 import { IMAGES } from '../../../../utils/constants/Images';
 
 import { useUnauthorizePopup } from './hooks/useUnauthorizePopup';

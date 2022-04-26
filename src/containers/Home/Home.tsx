@@ -13,7 +13,8 @@ import { SecondaryBackground } from '../../components/common/others/SecondaryBac
 import Layout from '../../components/common/layout/Layout';
 import PageMetaData from '../../components/common/others/PageMetaData';
 import { Hero } from './components/Hero/Hero';
-import PeopleNeedHelp from '../../components/home/PeopleNeedHelp';
+import { PeopleNeedHelp } from './components/PeopleNeedHelp/PeopleNeedHelp';
+
 import Donations from '../../components/home/Donations';
 
 const Home: React.FC = () => {
