@@ -47,7 +47,7 @@ const HeroSlide: React.FC<Props> = props => {
 
       <div className={styles.image}>
         <div className={styles.imgContainer}>
-          <Image placeholder="blur" src={props.image} alt={'Hero Pic'} />
+          <Image placeholder="blur" src={props.image} alt={'Hero Pic'} priority />
         </div>
       </div>
     </div>

@@ -1,0 +1,29 @@
+.container {
+  .header {
+    @apply flex items-center justify-between;
+    margin-bottom: -10px;
+
+    .iconContainer {
+      cursor: pointer;
+
+      svg {
+        height: 20px;
+        width: auto;
+
+        @media only screen and (max-width: 700px) {
+          height: 15px;
+        }
+      }
+    }
+  }
+
+  .loaderContainer {
+    height: 350px;
+    width: 100%;
+
+    .loader {
+      font-size: 12px;
+      top: 150px;
+    }
+  }
+}

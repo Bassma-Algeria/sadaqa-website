@@ -29,9 +29,6 @@ export default function PostPage({ postId }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('====================================');
-    console.log(postId);
-    console.log('====================================');
     dispatch(getPost(postId));
 
     return () => dispatch(clearSinglePost());

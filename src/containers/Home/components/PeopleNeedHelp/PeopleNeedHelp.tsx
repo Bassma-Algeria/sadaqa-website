@@ -8,6 +8,10 @@ import { Header } from '../../../../components/common/others/Headers';
 import { Title } from '../../../../components/common/Title/Title';
 
 import PeopleNeedHelpSubType from '../../../../components/people_need_help/PeopleNeedHelpSubType';
+import { ItemsList } from '../../../../components/common/ItemsList/ItemsList';
+import { DonationRequests } from './components/DonationRequests';
+import { CallsForHelp } from './components/CallsForHelp';
+import { FamiliesInNeed } from './components/FamiliesInNeed';
 
 interface Props {}
 
@@ -18,10 +22,13 @@ const PeopleNeedHelp: React.FC<Props> = () => {
   return (
     <div className={`${styles.peopleNeedHelp} ${styles[locale!]}`}>
       <Title title={t('people-need-help')} variant="big" className={styles.title} />
-
+      {/* 
       <PeopleNeedHelpSubType numOfPostsToShow={2} subType="call_for_help" />
       <PeopleNeedHelpSubType numOfPostsToShow={2} subType="family_in_need" />
-      <PeopleNeedHelpSubType numOfPostsToShow={2} subType="donation_request" />
+      <PeopleNeedHelpSubType numOfPostsToShow={2} subType="donation_request" /> */}
+      <CallsForHelp />
+      <FamiliesInNeed />
+      <DonationRequests />
     </div>
   );
 };

@@ -84,8 +84,6 @@ const Ads = ({ subType, isPostPage, currentPostId }) => {
     },
   } = useSelector(state => state.posts);
 
-  const router = useRouter();
-
   if (isPostPage) {
     data = data.filter(post => post.post_id !== currentPostId);
   }
