@@ -124,7 +124,8 @@
       }
 
       @media only screen and (max-width: 800px) {
-        @apply flex flex-col items-center text-center;
+        @apply flex flex-col text-center;
+        align-items: center !important;
         width: 100%;
 
         h1 {

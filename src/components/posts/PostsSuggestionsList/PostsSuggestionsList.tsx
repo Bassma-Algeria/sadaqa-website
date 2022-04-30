@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { ReactSVG } from 'react-svg';
+import React from 'react';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
+import { ReactSVG } from 'react-svg';
 import classNames from 'classnames/bind';
 
 import styles from './PostsSuggestionsList.module.scss';
 
-// icons
-import rightArrowIcon from '../../../../../../public/svg/right_arrow_see_more_icon.svg';
+import type { PostType } from '../../../@types/Posts';
 
-// componenets
-import AdCard from '../../../../../components/common/cards/AdCard';
-import { SubHeader } from '../../../../../components/common/others/Headers';
-import { Spinner } from '../../common/Spinner/Spinner';
-import NoAds from '../../../../../components/common/others/NoAds';
-import { postsGateway } from '../../../../../Gateways';
-import type { IPost } from '../../../@types/Posts';
-import { DonationCategory, PostType } from '../../../@types/Posts';
+import { ICONS } from '../../../utils/constants/Icons';
+
 import { usePostsFetcher } from './usePostsFetcher';
+
+import { Loading } from './components/Loading';
+import { ErrorMessage } from './components/ErrorMessage';
+import { PostsList } from './components/PostsList';
 
 const cx = classNames.bind(styles);
 
@@ -26,34 +22,37 @@ interface Props {
   seeMoreLink: string;
   postType: PostType;
   containerClass?: string;
+  reverseDirection?: boolean;
 }
 
-const PostsSuggestionsList: React.FC<Props> = ({
-  postType,
-  seeMoreLink,
-  title,
-  containerClass,
-}) => {
+const PostsSuggestionsList: React.FC<Props> = ({ reverseDirection, ...props }) => {
+  const className = cx('container', { reverseDirection });
+
   return (
-    <div className={`${styles.container} ${containerClass}`}>
-      <div className={styles.header}>
-        <h3>{title}</h3>
-
-        <Link href={seeMoreLink}>
-          <div className={styles.iconContainer}>
-            <ReactSVG src={rightArrowIcon.src} />
-          </div>
-        </Link>
-      </div>
-
-      <Posts />
+    <div className={`${className} ${props.containerClass}`}>
+      <Header seeMoreLink={props.seeMoreLink} title={props.title} />
+      <Posts postType={props.postType} />
     </div>
   );
 };
 
-const Posts: React.FC = () => {
+const Header: React.FC<Pick<Props, 'seeMoreLink' | 'title'>> = props => {
+  return (
+    <div className={styles.header}>
+      <h3>{props.title}</h3>
+
+      <Link href={props.seeMoreLink}>
+        <div className={styles.iconContainer}>
+          <ReactSVG src={ICONS.RIGHT_ARROW} />
+        </div>
+      </Link>
+    </div>
+  );
+};
+
+const Posts: React.FC<Pick<Props, 'postType'>> = ({ postType }) => {
   const { posts, refrech, status } = usePostsFetcher({
-    postType: 'call_for_help',
+    postType,
     numOfPostsPerChunk: 2,
     numOfChunk: 1,
   });
@@ -62,32 +61,6 @@ const Posts: React.FC = () => {
   if (status === 'success') return <PostsList posts={posts!} />;
 
   return <ErrorMessage refrech={refrech} />;
-};
-
-const Loading = () => {
-  return <Spinner containerClass={styles.loaderContainer} className={styles.loader} />;
-};
-
-const ErrorMessage: React.FC<{ refrech: () => Promise<void> }> = ({ refrech }) => {
-  return (
-    <p>
-      Something went wrong, <button onClick={refrech}>refrech</button>
-    </p>
-  );
-};
-
-const PostsList: React.FC<{ posts: IPost[] }> = ({ posts }) => {
-  return !posts.length ? (
-    <div style={{ height: 350, width: '100%' }}>
-      <NoAds />
-    </div>
-  ) : (
-    <div className={`flex flex-wrap`} style={{ gap: '2%' }}>
-      {posts.map(post => {
-        return <AdCard key={post.post_id} {...post} subType={'donation_request'} />;
-      })}
-    </div>
-  );
 };
 
 export { PostsSuggestionsList };

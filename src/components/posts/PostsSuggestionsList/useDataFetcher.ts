@@ -8,6 +8,7 @@ function useDataFetcher<T>(fetchDataFunction: () => Promise<T>) {
 
   const fetchData = async () => {
     try {
+      setData(undefined);
       setStatus('loading');
 
       const res = await fetchDataFunction();

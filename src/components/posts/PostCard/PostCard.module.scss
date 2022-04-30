@@ -1,0 +1,354 @@
+.postCard {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.03);
+  border-radius: 10px;
+  height: 280px;
+
+  .imageContainer {
+    cursor: pointer;
+    width: 25%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      border-top-right-radius: 0px;
+    }
+  }
+
+  .details {
+    font-weight: 500;
+    position: relative;
+    height: 100%;
+    color: #2d2d2d;
+    width: 100%;
+    width: 75%;
+    padding: 30px;
+    padding-top: 20px;
+    font-size: 16px;
+
+    .time {
+      position: absolute;
+      color: #c8c8c8;
+      top: 20px;
+      right: 30px;
+    }
+
+    .tag {
+      margin-bottom: 10px;
+      color: #c8c8c8;
+      text-transform: capitalize;
+    }
+
+    h1 {
+      cursor: pointer;
+      font-size: 30px;
+      text-transform: capitalize;
+      color: black;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .desc {
+      max-height: 70px;
+      margin-top: 12px;
+      overflow: hidden;
+    }
+
+    .buttonsContainer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+
+      svg {
+        height: 20px;
+      }
+
+      .Button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        color: black;
+
+        svg {
+          height: 20px;
+          width: auto;
+          fill: black;
+        }
+      }
+    }
+  }
+
+  &.gridView {
+    display: flex;
+    flex-direction: column;
+    width: 245px;
+    height: 390px;
+
+    .imageContainer {
+      height: 70%;
+      width: 100%;
+
+      img {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+      }
+    }
+
+    .details {
+      height: 30%;
+      width: 100%;
+      padding: 14px;
+      font-size: 12px;
+
+      .tag {
+        margin-bottom: 0;
+      }
+
+      .time {
+        top: 14px;
+        right: 14px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .adress {
+        margin-top: -7px;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .desc {
+        display: none;
+      }
+
+      .buttonsContainer {
+        gap: 4px;
+        bottom: 14px;
+        left: 14px;
+
+        .Button {
+          font-size: 14px;
+
+          svg {
+            width: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    .details {
+      .imageContainer {
+        width: 30%;
+      }
+
+      .details {
+        width: 70%;
+
+        .time {
+          right: 20px;
+        }
+
+        h1 {
+          font-size: 28px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    flex-direction: column;
+    width: 245px;
+    height: 390px;
+
+    .imageContainer {
+      height: 70%;
+      width: 100%;
+
+      img {
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 0px;
+      }
+    }
+
+    .details {
+      height: 30%;
+      width: 100%;
+      padding: 14px;
+      font-size: 12px;
+
+      .tag {
+        margin: 0;
+      }
+
+      .time {
+        top: 14px;
+        right: 14px;
+      }
+
+      h1 {
+        font-size: 20px;
+      }
+
+      .adress {
+        margin-top: -7px;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      .desc {
+        display: none;
+      }
+
+      .buttonsContainer {
+        bottom: 14px;
+        left: 14px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    &,
+    &.gridView {
+      width: 49%;
+      height: 320px;
+
+      .details {
+        position: static;
+
+        .time {
+          display: none;
+        }
+
+        .buttonsContainer {
+          flex-direction: column;
+          gap: 2px;
+          top: 10px;
+          right: 10px;
+          bottom: unset;
+          left: unset;
+
+          .Button {
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
+            p {
+              display: none;
+            }
+
+            svg {
+              width: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    &,
+    &.gridView {
+      height: 280px;
+      border-radius: 5px;
+
+      .imageContainer {
+        height: 75%;
+
+        img {
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
+        }
+      }
+
+      .details {
+        font-size: 10px;
+        padding: 8px 10px;
+        height: 25%;
+
+        h1 {
+          font-size: 16px;
+        }
+
+        .adress {
+          font-size: 12px;
+          margin-top: -6px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    &,
+    &.gridView {
+      height: 240px;
+
+      .imageContainer {
+        height: 82%;
+      }
+
+      .details {
+        height: 18%;
+
+        .adress,
+        .tag {
+          @apply hidden;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    &,
+    &.gridView {
+      height: 200px;
+
+      .details {
+        h1 {
+          font-size: 12px;
+        }
+
+        .buttonsContainer {
+          gap: 2px;
+          top: 8px;
+          right: 8px;
+
+          .Button {
+            width: 25px;
+            height: 25px;
+
+            svg {
+              width: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

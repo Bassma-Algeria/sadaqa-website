@@ -1,6 +1,8 @@
 .container {
   .header {
-    @apply flex items-center justify-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: -10px;
 
     .iconContainer {
@@ -9,21 +11,52 @@
       svg {
         height: 20px;
         width: auto;
-
-        @media only screen and (max-width: 700px) {
-          height: 15px;
-        }
       }
     }
   }
 
   .loaderContainer {
     height: 350px;
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     .loader {
       font-size: 12px;
-      top: 150px;
+    }
+  }
+
+  .noPosts {
+    height: 350px;
+  }
+
+  .postsListContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+  }
+
+  &.reverseDirection {
+    .header {
+      flex-direction: row-reverse;
+
+      .iconContainer {
+        transform: rotate(180deg);
+      }
+    }
+
+    .postsListContainer {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    .header {
+      .iconContainer {
+        svg {
+          height: 15px;
+        }
+      }
     }
   }
 }

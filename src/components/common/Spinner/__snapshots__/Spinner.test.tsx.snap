@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Spinner component should be able to add custom classes 1`] = `
+<div
+  className="undefined customContainer"
+>
+  <div
+    className="undefined custom"
+  >
+    Loading...
+  </div>
+</div>
+`;
+
+exports[`Spinner component should render correctly 1`] = `
+<div
+  className="undefined undefined"
+>
+  <div
+    className="undefined undefined"
+  >
+    Loading...
+  </div>
+</div>
+`;

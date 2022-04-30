@@ -9,7 +9,7 @@ interface Props {
 
 const Spinner: React.FC<Props> = ({ className, containerClass }) => {
   return (
-    <div className={containerClass}>
+    <div className={`${styles.container} ${containerClass}`}>
       <div className={`${styles.loader} ${className}`}>Loading...</div>
     </div>
   );
