@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const StyledLikeButton = styled.div`
   svg {
@@ -229,12 +229,7 @@ const AnimatedLikeButton = ({ isPostLiked }) => {
   return (
     <StyledLikeButton>
       <div>
-        <input
-          type="checkbox"
-          className="checkbox"
-          checked={isPostLiked}
-          onChange={() => {}}
-        />
+        <input type="checkbox" className="checkbox" checked={isPostLiked} onChange={() => {}} />
 
         <svg
           id="heart-svg"
@@ -242,28 +237,16 @@ const AnimatedLikeButton = ({ isPostLiked }) => {
           xmlns="http://www.w3.org/2000/svg"
           transform="scale(2, 1.8)"
         >
-          <g
-            id="Group"
-            fill="none"
-            fillRule="evenodd"
-            transform="translate(467 392)"
-          >
+          <g id="Group" fill="none" fillRule="evenodd" transform="translate(467 392)">
             <path
               d="M29.144 20.773c-.063-.13-4.227-8.67-11.44-2.59C7.63 28.795 28.94 43.256 29.143 43.394c.204-.138 21.513-14.6 11.44-25.213-7.214-6.08-11.377 2.46-11.44 2.59z"
               id="heart"
               fill="transparent"
-              stroke={isPostLiked ? "transparent" : "#000000"}
+              stroke={isPostLiked ? 'transparent' : '#000000'}
               strokeWidth="1.8px"
             />
 
-            <circle
-              id="main-circ"
-              fill="#D7443E"
-              opacity="0"
-              cx="29.5"
-              cy="29.5"
-              r="1.5"
-            />
+            <circle id="main-circ" fill="#D7443E" opacity="0" cx="29.5" cy="29.5" r="1.5" />
 
             <g id="grp7" opacity="0" transform="translate(7 6)">
               <circle id="oval1" fill="#9CD8C3" cx="2" cy="6" r="2" />
@@ -301,7 +284,6 @@ const AnimatedLikeButton = ({ isPostLiked }) => {
             </g>
           </g>
         </svg>
-        {/* </label> */}
       </div>
     </StyledLikeButton>
   );

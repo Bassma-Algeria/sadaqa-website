@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactSVG } from 'react-svg';
 
-import styles from '../PostCard.module.scss';
+import styles from '../BasePostCard.module.scss';
 
 import { ICONS } from '../../../../utils/constants/Icons';
 

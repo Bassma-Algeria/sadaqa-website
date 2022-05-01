@@ -1,13 +1,13 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { PostCard } from './PostCard';
+import { BasePostCard } from './BasePostCard';
 
 import { IMAGES } from '../../../utils/constants/Images';
 
 export default {
   title: 'Global/PostCard',
-  component: PostCard,
+  component: BasePostCard,
   parameters: {
     backgrounds: {
       default: 'light',
@@ -15,9 +15,9 @@ export default {
   },
 
   argTypes: {},
-} as ComponentMeta<typeof PostCard>;
+} as ComponentMeta<typeof BasePostCard>;
 
-const Template: ComponentStory<typeof PostCard> = args => <PostCard {...args} />;
+const Template: ComponentStory<typeof BasePostCard> = args => <BasePostCard {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -32,8 +32,8 @@ Default.args = {
   sharePost: () => Promise.resolve({ success: true }),
   postPicture: IMAGES.DONATION_DEFAULT as any,
   tag: 'Donations',
-  postLink: '',
-  tagPageLink: '',
+  navigateToPostPage: () => {},
+  navigateToTagPage: () => {},
 };
 
 export const Liked = Template.bind({});
@@ -46,4 +46,17 @@ export const Grid = Template.bind({});
 Grid.args = {
   ...Default.args,
   gridView: true,
+};
+
+export const DirectionReversed = Template.bind({});
+DirectionReversed.args = {
+  ...Default.args,
+  directionReversed: true,
+};
+
+export const GridDirectionReversed = Template.bind({});
+GridDirectionReversed.args = {
+  ...Default.args,
+  gridView: true,
+  directionReversed: true,
 };

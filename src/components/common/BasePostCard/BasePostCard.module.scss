@@ -7,6 +7,7 @@
   box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.03);
   border-radius: 10px;
   height: 280px;
+  max-width: 1100px;
 
   .imageContainer {
     cursor: pointer;
@@ -25,6 +26,9 @@
   }
 
   .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     font-weight: 500;
     position: relative;
     height: 100%;
@@ -43,6 +47,7 @@
     }
 
     .tag {
+      cursor: pointer;
       margin-bottom: 10px;
       color: #c8c8c8;
       text-transform: capitalize;
@@ -68,7 +73,7 @@
     .buttonsContainer {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 12px;
       position: absolute;
       bottom: 30px;
       left: 30px;
@@ -154,6 +159,44 @@
         }
       }
     }
+
+    &.directionReversed {
+      flex-direction: column;
+
+      .details {
+        .time {
+          left: 14px;
+        }
+
+        .buttonsContainer {
+          right: 14px;
+        }
+      }
+    }
+  }
+
+  &.directionReversed {
+    flex-direction: row-reverse;
+    text-align: right;
+
+    .details {
+      align-items: flex-end;
+
+      .time {
+        right: unset;
+        left: 30px;
+      }
+
+      .buttonsContainer {
+        left: unset;
+        flex-direction: row-reverse;
+        right: 30px;
+      }
+
+      .Button {
+        flex-direction: row-reverse;
+      }
+    }
   }
 
   @media only screen and (max-width: 900px) {
@@ -224,6 +267,30 @@
       .buttonsContainer {
         bottom: 14px;
         left: 14px;
+        gap: 4px;
+
+        .Button {
+          font-size: 14px;
+
+          svg {
+            width: 16px;
+          }
+        }
+      }
+    }
+
+    &.directionReversed {
+      flex-direction: column;
+
+      .details {
+        .time {
+          left: 14px;
+        }
+
+        .buttonsContainer {
+          right: 14px;
+          bottom: 14px;
+        }
       }
     }
   }
@@ -267,6 +334,17 @@
               width: 14px;
             }
           }
+        }
+      }
+    }
+
+    &.directionReversed {
+      .details {
+        .buttonsContainer {
+          flex-direction: column;
+
+          top: 10px;
+          right: 10px;
         }
       }
     }
@@ -318,7 +396,7 @@
 
         .adress,
         .tag {
-          @apply hidden;
+          display: none;
         }
       }
     }

@@ -17,7 +17,7 @@ const PostsList: React.FC<Props> = ({ posts = [] }) => {
   ) : (
     <div className={styles.postsListContainer}>
       {posts.map(post => {
-        return <AdCard key={post.post_id} {...post} subType={'donation_request'} />;
+        return <AdCard key={post.postId} {...post} subType={'donation_request'} />;
       })}
     </div>
   );

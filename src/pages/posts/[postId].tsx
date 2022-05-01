@@ -14,12 +14,12 @@ import Layout from '../../components/common/layout/Layout';
 import { SecondaryBackground } from '../../components/common/others/SecondaryBackground';
 import { Container } from '../../components/common/containers/Container';
 import Spinner from '../../components/common/loaders/Spinner';
-import PostDetailsContainer from '../../components/posts/PostDetailsContainer';
+import PostDetailsContainer from '../../components/Posts/PostDetailsContainer';
 import UserCard from '../../components/common/cards/user_card/UserCard';
 import PageMetaData from '../../components/common/others/PageMetaData';
-import Tags from '../../components/posts/Tags';
-import SimilarAds from '../../components/posts/SimilarAds';
-import Margin from '../../components/posts/Margin';
+import Tags from '../../components/Posts/Tags';
+import SimilarAds from '../../components/Posts/SimilarAds';
+import Margin from '../../components/Posts/Margin';
 
 export default function PostPage({ postId }) {
   const {

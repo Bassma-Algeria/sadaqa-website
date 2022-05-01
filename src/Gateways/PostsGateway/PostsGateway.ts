@@ -16,7 +16,16 @@ class PostsGateway extends RestApiGateway implements IPostsGateway {
     try {
       const { data } = await axios.get(`${this.BASE_URL}/${this.getPostQueryStrings(filters)}`);
 
-      return data.data;
+      return data.data.map((post: any) => ({
+        ...post,
+        postId: post.post_id,
+        publisherId: post.user_id,
+        likesCount: post.likes_count,
+        sharesCount: post.shares_count,
+        thumbnailLink: post.thumbnail_link,
+        ccpKey: post.ccp_key,
+        createdAt: post.created_at,
+      }));
     } catch (error: any) {
       throw error.response.data.error;
     }

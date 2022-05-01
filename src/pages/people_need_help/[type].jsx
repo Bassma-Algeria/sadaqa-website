@@ -1,24 +1,24 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 // redux
-import { clearPosts } from "../../redux/reducers/postsSlice";
+import { clearPosts } from '../../redux/reducers/postsSlice';
 
 // helpers
-import { peopleNeedHelpCategories } from "../../data/navbarData";
+import { peopleNeedHelpCategories } from '../../data/navbarData';
 
 // components
-import { Container } from "../../components/common/containers/Container";
-import { Header } from "../../components/common/others/Headers";
-import Layout from "../../components/common/layout/Layout";
-import { SecondaryBackground } from "../../components/common/others/SecondaryBackground";
-import Tags from "../../components/common/others/Tags";
-import PageMetaData from "../../components/common/others/PageMetaData";
-import { linkFormatToTextFormat } from "../../utils/postsHelpers";
-import Ads from "../../components/people_need_help/Ads";
-import Margin from "../../components/posts/Margin";
-import Hr from "../../components/posts/Hr";
+import { Container } from '../../components/common/containers/Container';
+import { Header } from '../../components/common/others/Headers';
+import Layout from '../../components/common/layout/Layout';
+import { SecondaryBackground } from '../../components/common/others/SecondaryBackground';
+import Tags from '../../components/common/others/Tags';
+import PageMetaData from '../../components/common/others/PageMetaData';
+import { linkFormatToTextFormat } from '../../utils/postsHelpers';
+import Ads from '../../components/people_need_help/Ads';
+import Margin from '../../components/Posts/Margin';
+import Hr from '../../components/Posts/Hr';
 
 export default function PeopleNeedHelp({ params: { type } }) {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ export default function PeopleNeedHelp({ params: { type } }) {
 
   return (
     <Layout navbarWithBoxShadow withSidebar>
-      <PageMetaData title={"Sadaqa صدقة | People Need Help"} />
+      <PageMetaData title={'Sadaqa صدقة | People Need Help'} />
 
       <SecondaryBackground>
         <Margin>
@@ -48,9 +48,8 @@ export default function PeopleNeedHelp({ params: { type } }) {
 }
 
 export function getStaticPaths() {
-  const paths = peopleNeedHelpCategories.map((category) => {
-    const type =
-      category.pageLink.split("/")[category.pageLink.split("/").length - 1];
+  const paths = peopleNeedHelpCategories.map(category => {
+    const type = category.pageLink.split('/')[category.pageLink.split('/').length - 1];
     return {
       params: { type },
     };

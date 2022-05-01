@@ -1,4 +1,4 @@
-export type PostType = 'call_for_help' | 'family_in_need' | 'donation' | 'donation_request';
+export type PostType = 'call-for-help' | 'family-in-need' | 'donation' | 'donation-request';
 export type DonationCategory =
   | 'food'
   | 'clothes / accessories'
@@ -16,21 +16,21 @@ export type DonationCategory =
   | 'others';
 
 export interface IPost {
-  post_id: number;
-  user_id: number;
+  postId: number;
+  publisherId: number;
   title: string;
   description: string;
-  likes_count: number;
-  shares_count: number;
-  thumbnail_link: string;
+  likesCount: number;
+  sharesCount: number;
+  thumbnailLink: string;
   postPhotos: string[];
   category: DonationCategory;
   type: PostType;
   wilaya: string;
   commun: string;
   ccp: string;
-  ccp_key: string;
+  ccpKey: string;
   rib: string;
   active: boolean;
-  created_at: string;
+  createdAt: string;
 }

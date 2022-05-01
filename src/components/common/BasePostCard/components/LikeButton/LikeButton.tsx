@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import styles from '../../PostCard.module.scss';
+import styles from '../../BasePostCard.module.scss';
 
 import { SOUNDS } from '../../../../../utils/constants/Sounds';
 
