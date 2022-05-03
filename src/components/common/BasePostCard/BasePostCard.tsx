@@ -23,7 +23,7 @@ interface Props {
   navigateToPostPage: () => void;
   navigateToTagPage: () => void;
   likePost: () => Promise<{ success: boolean }>;
-  sharePost: () => Promise<{ success: boolean }>;
+  sharePost: () => void;
 }
 
 const BasePostCard: React.FC<Props> = ({ gridView, directionReversed, ...props }) => {

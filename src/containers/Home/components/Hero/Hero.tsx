@@ -10,11 +10,10 @@ import styles from '../../Home.module.scss';
 import { heroSliderSettings } from './utils/slideSettings';
 import { IMAGES } from '../../../../utils/constants/Images';
 
-import { useUnauthorizePopup } from './hooks/useUnauthorizePopup';
+import { useNeedAuthPopup } from '../../../../utils/hooks/Popups/useNeedAuthPopup';
 
 import { Container } from '../../../../components/common/Container/Container';
 import { HeroSlide } from './components/HeroSlide';
-import { useNeedAuthPopup } from '../../../../utils/hooks/Popups/useNeedAuthPopup';
 
 const Hero: React.FC = () => {
   const { NeedAuthPopup, openPopup } = useNeedAuthPopup();

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ReactSVG } from 'react-svg';
 import { ICONS } from '../../../utils/constants/Icons';
 
@@ -10,6 +10,14 @@ interface Props {
 }
 
 const BasePopup: React.FC<Props> = ({ closePopup, selfClose = true, children }) => {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, []);
+
   return (
     <div className={styles.container}>
       <Overlay closePopup={closePopup} selfClose={selfClose} />

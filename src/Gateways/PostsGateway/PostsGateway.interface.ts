@@ -25,4 +25,6 @@ export interface GetPostsFilters {
 
 export interface IPostsGateway {
   getPosts: (filters?: GetPostsFilters) => Promise<IPost[]>;
+  likePost: (token: string, postId: number) => Promise<void>;
+  sharePost: (token: string, postId: number) => Promise<void>;
 }

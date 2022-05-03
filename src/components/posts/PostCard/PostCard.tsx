@@ -4,15 +4,17 @@ import { useRouter } from 'next/router';
 import type { IPost } from '../../../@types/Posts';
 
 import { BasePostCard } from '../../common/BasePostCard/BasePostCard';
+import { postsGateway } from '../../../Gateways';
+import { useNeedAuthPopup } from '../../../utils/hooks/Popups/useNeedAuthPopup';
+import { useSharePostPopup } from '../../../utils/hooks/Popups/useSharePostPopup';
 
 interface Props extends IPost {}
 
 const PostCard: React.FC<Props> = props => {
   const router = useRouter();
-
-  const navigateToPostPage = () => {
-    router.push(`/posts/${props.postId}`);
-  };
+  const isAuthenticated = false;
+  const { NeedAuthPopup, openPopup: openNeedAuthPopup } = useNeedAuthPopup();
+  const { SharePopup, openPopup: openSharePopup } = useSharePostPopup(props.postId);
 
   const navigateToTagPage = () => {
     let pageLink: string;
@@ -27,20 +29,39 @@ const PostCard: React.FC<Props> = props => {
     return true;
   };
 
+  const likePost = async (): Promise<{ success: boolean }> => {
+    if (!isAuthenticated) {
+      openNeedAuthPopup();
+      return { success: false };
+    }
+
+    try {
+      await postsGateway.likePost('', props.postId);
+      return { success: true };
+    } catch (error) {
+      return { success: false };
+    }
+  };
+
   return (
-    <BasePostCard
-      {...props}
-      location={props.wilaya}
-      postPicture={props.thumbnailLink}
-      gridView={props.type == 'donation'}
-      tag={props.type.replaceAll('_', ' ')}
-      directionReversed={router.locale === 'ar'}
-      liked={isLiked()}
-      likePost={() => Promise.resolve({ success: true })}
-      sharePost={() => Promise.resolve({ success: true })}
-      navigateToPostPage={navigateToPostPage}
-      navigateToTagPage={navigateToTagPage}
-    />
+    <>
+      <NeedAuthPopup />
+      <SharePopup />
+
+      <BasePostCard
+        {...props}
+        location={props.wilaya}
+        postPicture={props.thumbnailLink}
+        gridView={props.type == 'donation'}
+        tag={props.type.replaceAll('_', ' ')}
+        directionReversed={router.locale === 'ar'}
+        liked={isLiked()}
+        likePost={likePost}
+        sharePost={openSharePopup}
+        navigateToPostPage={() => router.push(`/posts/${props.postId}`)}
+        navigateToTagPage={navigateToTagPage}
+      />
+    </>
   );
 };
 

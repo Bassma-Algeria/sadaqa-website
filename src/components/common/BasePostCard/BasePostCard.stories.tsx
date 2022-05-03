@@ -29,7 +29,7 @@ Default.args = {
   likesCount: 3,
   location: 'jijel',
   likePost: () => Promise.resolve({ success: true }),
-  sharePost: () => Promise.resolve({ success: true }),
+  sharePost: () => {},
   postPicture: IMAGES.DONATION_DEFAULT as any,
   tag: 'Donations',
   navigateToPostPage: () => {},

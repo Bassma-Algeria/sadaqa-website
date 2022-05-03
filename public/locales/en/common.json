@@ -6,5 +6,7 @@
   "no-posts-found": "no posts here",
   "need-login": "You must be logged in.",
   "login": "login",
-  "signup": "signup"
+  "signup": "signup",
+  "share-with-connections": "Copy the link bellow and share it with your connections",
+  "copy": "copy"
 }

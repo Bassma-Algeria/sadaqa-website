@@ -28,8 +28,9 @@
     animation: containerAnimation 0.3s ease forwards;
 
     .closeButton {
-      display: flex;
-      justify-content: flex-end;
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
 
       svg {
         cursor: pointer;
@@ -45,12 +46,17 @@
   }
 
   @media only screen and (max-width: 500px) {
+    padding: 20px;
+
     .content {
       border-radius: 15px;
       width: 100%;
-      margin: 20px;
+      padding: 1rem;
 
       .closeButton {
+        top: 1rem;
+        right: 1rem;
+
         svg {
           width: 15px;
           width: 15px;

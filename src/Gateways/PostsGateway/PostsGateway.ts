@@ -12,6 +12,30 @@ class PostsGateway extends RestApiGateway implements IPostsGateway {
     this.BASE_URL = `${this.BASE_REST_URL}/posts`;
   }
 
+  async likePost(token: string, postId: number) {
+    try {
+      const { data } = await axios.put(`${this.BASE_URL}/likePost/${postId}`, {
+        headers: { Authorization: token },
+      });
+
+      return data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
+  }
+
+  async sharePost(token: string, postId: number) {
+    try {
+      const { data } = await axios.put(`${this.BASE_URL}/sharePost/${postId}`, {
+        headers: { Authorization: token },
+      });
+
+      return data.data;
+    } catch (error: any) {
+      throw error.response.data.error;
+    }
+  }
+
   async getPosts(filters?: GetPostsFilters): Promise<IPost[]> {
     try {
       const { data } = await axios.get(`${this.BASE_URL}/${this.getPostQueryStrings(filters)}`);

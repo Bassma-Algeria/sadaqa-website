@@ -8,12 +8,12 @@ import styles from './NeedAuthPopup.module.scss';
 
 import { ICONS } from '../../../utils/constants/Icons';
 
+import type { PopupProps } from '../PopupProps';
+
 import { BasePopup } from '../../common/BasePopup/BasePopup';
 import { Button } from '../../common/Button/Button';
 
-interface Props {
-  closePopup: () => void;
-}
+interface Props extends PopupProps {}
 
 const NeedAuthPopup: React.FC<Props> = ({ closePopup }) => {
   const { t } = useTranslation('common');
