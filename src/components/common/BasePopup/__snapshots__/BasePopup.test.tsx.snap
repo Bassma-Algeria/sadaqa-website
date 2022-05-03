@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasePopup Component should render not the close button when passing the closePopup prop and not call it when clicking the close button or the overlay 1`] = `
+<div>
+  <div
+    data-testid="overlay"
+    onClick={[Function]}
+  />
+  <div>
+    <h1>
+      some content
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`BasePopup Component should render the default popup correctly 1`] = `
+<div>
+  <div
+    data-testid="overlay"
+    onClick={[Function]}
+  />
+  <div>
+    <div>
+      <div
+        data-testid="closeButton"
+        onClick={[MockFunction]}
+      />
+    </div>
+    <h1>
+      some content
+    </h1>
+  </div>
+</div>
+`;

@@ -1,0 +1,49 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  .iconContainer {
+    svg {
+      fill: black;
+      width: 70px;
+    }
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .buttonsContainer {
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 10px;
+
+    button {
+      width: 150px;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .iconContainer {
+      svg {
+        width: 50px;
+      }
+    }
+
+    .buttonsContainer {
+      gap: 5px;
+      flex-direction: column;
+
+      button {
+        width: 100%;
+      }
+    }
+  }
+}

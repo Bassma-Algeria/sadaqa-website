@@ -14,15 +14,16 @@ import { useUnauthorizePopup } from './hooks/useUnauthorizePopup';
 
 import { Container } from '../../../../components/common/Container/Container';
 import { HeroSlide } from './components/HeroSlide';
+import { useNeedAuthPopup } from '../../../../utils/hooks/Popups/useNeedAuthPopup';
 
 const Hero: React.FC = () => {
-  const { Popup, openPopup } = useUnauthorizePopup();
+  const { NeedAuthPopup, openPopup } = useNeedAuthPopup();
   const { t } = useTranslation('home');
   const { locale } = useRouter();
 
   return (
     <Container className={`${styles.heroContainer} ${styles[locale!]}`}>
-      <Popup />
+      <NeedAuthPopup />
 
       <Slider {...heroSliderSettings} className="home_slider_container">
         <HeroSlide

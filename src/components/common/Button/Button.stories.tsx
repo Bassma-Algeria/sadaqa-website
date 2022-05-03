@@ -21,6 +21,16 @@ Secondary.args = {
   variant: 'secondary',
 };
 
+export const GreyFilled = Template.bind({});
+GreyFilled.args = {
+  variant: 'greyFilled',
+};
+
+export const GreyOutline = Template.bind({});
+GreyOutline.args = {
+  variant: 'greyOutline',
+};
+
 export const FullWidth = Template.bind({});
 FullWidth.args = {
   variant: 'primary',

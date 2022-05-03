@@ -6,7 +6,7 @@ import styles from './Button.module.scss';
 const cx = classNames.bind(styles);
 
 interface Props {
-  variant: 'primary' | 'secondary';
+  variant: 'primary' | 'secondary' | 'greyFilled' | 'greyOutline';
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   disabled?: boolean;

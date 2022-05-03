@@ -9,7 +9,7 @@ import type { PostType } from '../../../@types/Posts';
 
 import { ICONS } from '../../../utils/constants/Icons';
 
-import { usePostsFetcher } from './usePostsFetcher';
+import { usePostsFetcher } from '../../../utils/hooks/DataFetching/usePostsFetcher';
 
 import { Loading } from './components/Loading';
 import { ErrorMessage } from './components/ErrorMessage';

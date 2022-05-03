@@ -1,4 +1,4 @@
-export type PostType = 'call-for-help' | 'family-in-need' | 'donation' | 'donation-request';
+export type PostType = 'call_for_help' | 'family_in_need' | 'donation' | 'donation_request';
 export type DonationCategory =
   | 'food'
   | 'clothes / accessories'

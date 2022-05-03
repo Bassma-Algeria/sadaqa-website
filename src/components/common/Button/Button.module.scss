@@ -1,3 +1,5 @@
+@import '../../../styles/variables.scss';
+
 .button {
   @apply flex items-center justify-center gap-2;
 
@@ -26,6 +28,25 @@
 
     svg {
       fill: #ff7937;
+    }
+  }
+
+  &.greyFilled {
+    border: 2px solid $grey;
+    background-color: $grey;
+
+    &:hover {
+      border-color: $grey-deep;
+      background-color: $grey-deep;
+    }
+  }
+
+  &.greyOutline {
+    border: 2px solid $grey;
+    background-color: transparent;
+
+    &:hover {
+      border-color: $grey-deep;
     }
   }
 

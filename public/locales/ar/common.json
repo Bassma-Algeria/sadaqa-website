@@ -3,5 +3,8 @@
   "donation-requests": "طلبات تبرع",
   "families-in-need": "عائلات محتاجة",
   "call-for-help": "نداء إستغاثة",
-  "no-posts-found": "لا اعلانات هنا"
+  "no-posts-found": "لا اعلانات هنا",
+  "need-login": "يجب أن تكون مسجلا",
+  "login": "تسجيل الدخول",
+  "signup": "فتح حساب"
 }
