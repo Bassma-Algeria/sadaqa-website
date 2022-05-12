@@ -17,7 +17,7 @@ const NoPosts: React.FC<Props> = ({ containerClass, message }) => {
   const { t } = useTranslation();
 
   return (
-    <div className={`${styles.noAds} ${containerClass}`}>
+    <div className={`${styles.container} ${containerClass}`}>
       <ReactSVG src={ICONS.NO_POSTS} />
       <p>{message || t('no-posts-found')}</p>
     </div>

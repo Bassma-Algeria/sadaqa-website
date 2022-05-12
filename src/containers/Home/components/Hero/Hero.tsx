@@ -8,47 +8,53 @@ import 'slick-carousel/slick/slick-theme.css';
 import styles from '../../Home.module.scss';
 
 import { heroSliderSettings } from './utils/slideSettings';
-import { IMAGES } from '../../../../utils/constants/Images';
 
 import { useNeedAuthPopup } from '../../../../utils/hooks/Popups/useNeedAuthPopup';
 
-import { Container } from '../../../../components/common/Container/Container';
+import { IMAGES } from '../../../../utils/constants/Images';
+
 import { HeroSlide } from './components/HeroSlide';
 
+import { Container } from '../../../../components/common/Container/Container';
+
 const Hero: React.FC = () => {
-  const { NeedAuthPopup, openPopup } = useNeedAuthPopup();
-  const { t } = useTranslation('home');
   const { locale } = useRouter();
+  const { t } = useTranslation('home');
+  const { NeedAuthPopup, openPopup } = useNeedAuthPopup();
 
   return (
     <Container className={`${styles.heroContainer} ${styles[locale!]}`}>
       <NeedAuthPopup />
-
       <Slider {...heroSliderSettings} className="home_slider_container">
         <HeroSlide
+          variant="imageRightTextLeft"
           title={t('hero1-title')}
-          desc={t('hero1-desc')}
-          buttonText={t('hero1-button')}
-          actionLink="/create_new_ad"
+          description={t('hero1-desc')}
+          actionButtonText={t('hero1-button')}
+          actionButtonLinkTo={'/donate'}
           image={IMAGES.HERO1}
-          openPopup={openPopup}
+          openNeedAuthPopup={openPopup}
+          directionReversed={locale === 'ar'}
         />
         <HeroSlide
+          variant="imageLeftTextRight"
           title={t('hero2-title')}
-          desc={t('hero2-desc')}
-          buttonText={t('hero2-button')}
-          actionLink="/create_new_ad"
+          description={t('hero2-desc')}
+          actionButtonText={t('hero2-button')}
+          actionButtonLinkTo={'/donate'}
           image={IMAGES.HERO2}
-          openPopup={openPopup}
-          reverse
+          openNeedAuthPopup={openPopup}
+          directionReversed={locale === 'ar'}
         />
         <HeroSlide
+          variant="imageRightTextLeft"
           title={t('hero3-title')}
-          desc={t('hero3-desc')}
-          buttonText={t('hero3-button')}
-          actionLink="/people_need_help/donation_request"
+          description={t('hero3-desc')}
+          actionButtonText={t('hero3-button')}
+          actionButtonLinkTo={'/people_need_help/donation_requests'}
           image={IMAGES.HERO3}
-          openPopup={openPopup}
+          openNeedAuthPopup={openPopup}
+          directionReversed={locale === 'ar'}
         />
       </Slider>
     </Container>

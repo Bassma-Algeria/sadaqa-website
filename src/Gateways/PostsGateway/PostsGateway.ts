@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 import { IPost } from '../../@types/Posts';
-import { RestApiGateway } from '../_Helpers_/RestApiGateway';
+import { RestApiGateway } from '../Common/RestApiGateway';
 import { GetPostsFilters, IPostsGateway } from './PostsGateway.interface';
 
 class PostsGateway extends RestApiGateway implements IPostsGateway {

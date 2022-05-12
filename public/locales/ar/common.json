@@ -8,5 +8,7 @@
   "login": "تسجيل الدخول",
   "signup": "فتح حساب",
   "share-with-connections": "انسخ الرابط أدناه وأرسله إلى شخص يمكنه المساعدة",
-  "copy": "نسخ"
+  "copy": "نسخ",
+  "try-again": "حاول مرة أخرى",
+  "something-went-wrong": "حدث خطأ ما"
 }

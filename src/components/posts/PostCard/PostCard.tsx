@@ -7,6 +7,7 @@ import { BasePostCard } from '../../common/BasePostCard/BasePostCard';
 import { postsGateway } from '../../../Gateways';
 import { useNeedAuthPopup } from '../../../utils/hooks/Popups/useNeedAuthPopup';
 import { useSharePostPopup } from '../../../utils/hooks/Popups/useSharePostPopup';
+import { getDefaultPostThumbnail } from '../../../utils/postsHelpers';
 
 interface Props extends IPost {}
 
@@ -16,6 +17,7 @@ const PostCard: React.FC<Props> = props => {
   const { NeedAuthPopup, openPopup: openNeedAuthPopup } = useNeedAuthPopup();
   const { SharePopup, openPopup: openSharePopup } = useSharePostPopup(props.postId);
 
+  // ! need to change the routing
   const navigateToTagPage = () => {
     let pageLink: string;
 
@@ -51,7 +53,7 @@ const PostCard: React.FC<Props> = props => {
       <BasePostCard
         {...props}
         location={props.wilaya}
-        postPicture={props.thumbnailLink}
+        postPicture={props.thumbnailLink || getDefaultPostThumbnail(props.type)}
         gridView={props.type == 'donation'}
         tag={props.type.replaceAll('_', ' ')}
         directionReversed={router.locale === 'ar'}
@@ -65,4 +67,4 @@ const PostCard: React.FC<Props> = props => {
   );
 };
 
-export default PostCard;
+export { PostCard };

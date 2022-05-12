@@ -14,6 +14,9 @@ import { usePostsFetcher } from '../../../utils/hooks/DataFetching/usePostsFetch
 import { Loading } from './components/Loading';
 import { ErrorMessage } from './components/ErrorMessage';
 import { PostsList } from './components/PostsList';
+import { useRouter } from 'next/router';
+import { Title } from '../../common/Title/Title';
+import { FetchingDataError } from '../../common/FetchingDataError/FetchingDataError';
 
 const cx = classNames.bind(styles);
 
@@ -22,10 +25,11 @@ interface Props {
   seeMoreLink: string;
   postType: PostType;
   containerClass?: string;
-  reverseDirection?: boolean;
 }
 
-const PostsSuggestionsList: React.FC<Props> = ({ reverseDirection, ...props }) => {
+const PostsSuggestionsList: React.FC<Props> = props => {
+  const router = useRouter();
+  const reverseDirection = router.locale === 'ar';
   const className = cx('container', { reverseDirection });
 
   return (
@@ -39,7 +43,7 @@ const PostsSuggestionsList: React.FC<Props> = ({ reverseDirection, ...props }) =
 const Header: React.FC<Pick<Props, 'seeMoreLink' | 'title'>> = props => {
   return (
     <div className={styles.header}>
-      <h3>{props.title}</h3>
+      <Title title={props.title} variant="small" />
 
       <Link href={props.seeMoreLink}>
         <div className={styles.iconContainer}>

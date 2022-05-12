@@ -1,0 +1,17 @@
+@import '../../../styles/variables.scss';
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 22px;
+
+  button {
+    color: $blue;
+  }
+
+  @media only screen and (max-width: 800) {
+    font-size: 18px;
+  }
+}

@@ -4,8 +4,8 @@ import styles from '../PostsSuggestionsList.module.scss';
 
 import type { IPost } from '../../../../@types/Posts';
 
-import AdCard from '../../../common/cards/AdCard';
 import { NoPosts } from '../../NoPosts/NoPosts';
+import { PostCard } from '../../PostCard/PostCard';
 
 interface Props {
   posts: IPost[];
@@ -17,7 +17,7 @@ const PostsList: React.FC<Props> = ({ posts = [] }) => {
   ) : (
     <div className={styles.postsListContainer}>
       {posts.map(post => {
-        return <AdCard key={post.postId} {...post} subType={'donation_request'} />;
+        return <PostCard key={post.postId} {...post} />;
       })}
     </div>
   );
