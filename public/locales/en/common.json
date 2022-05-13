@@ -3,6 +3,7 @@
   "donation-requests": "donation requests",
   "families-in-need": "families in need",
   "call-for-help": "call for help",
+  "donations": "donations",
   "no-posts-found": "no posts here",
   "need-login": "You must be logged in.",
   "login": "login",
@@ -10,5 +11,19 @@
   "share-with-connections": "Copy the link bellow and share it with your connections",
   "copy": "copy",
   "try-again": "try again",
-  "something-went-wrong": "Something went wrong"
+  "something-went-wrong": "Something went wrong",
+  "clothes-accessories": "cloths / accessories",
+  "food": "food",
+  "services": "services",
+  "electronics-appliances": "Electronics / Appliances",
+  "home-furnitures": "Home / Furnitures",
+  "books-magazines": "Books / Magazines",
+  "sports": "sports",
+  "cosmetics-hygiene": "Cosmetics / Hygiene",
+  "animales-accessories": "Animales / Accessories",
+  "toys": "Toys",
+  "tools": "Tools",
+  "health-medicines": "Health / Medicines",
+  "cars-accessories": "Cars / Accessories",
+  "others": "Others"
 }

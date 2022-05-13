@@ -11,6 +11,7 @@ const DonationRequests: React.FC = () => {
       postType="donation_request"
       seeMoreLink="/people_need_help/donation_requests"
       title={t('donation-requests')}
+      numOfPosts={2}
     />
   );
 };

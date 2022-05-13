@@ -11,6 +11,7 @@ const FamiliesInNeed: React.FC = () => {
       postType="family_in_need"
       seeMoreLink="/people_need_help/families_in_need"
       title={t('families-in-need')}
+      numOfPosts={2}
     />
   );
 };

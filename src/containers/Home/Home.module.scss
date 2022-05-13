@@ -3,10 +3,10 @@
   padding-bottom: 0 !important;
 }
 
-.peopleNeedHelp {
+.postsSection {
   &.ar {
     .title {
-      @apply text-right;
+      text-align: right;
     }
   }
 

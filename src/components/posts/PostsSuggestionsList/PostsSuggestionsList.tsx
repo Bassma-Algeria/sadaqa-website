@@ -5,7 +5,7 @@ import classNames from 'classnames/bind';
 
 import styles from './PostsSuggestionsList.module.scss';
 
-import type { PostType } from '../../../@types/Posts';
+import type { DonationCategory, PostType } from '../../../@types/Posts';
 
 import { ICONS } from '../../../utils/constants/Icons';
 
@@ -24,6 +24,8 @@ interface Props {
   title: string;
   seeMoreLink: string;
   postType: PostType;
+  numOfPosts: number;
+  category?: DonationCategory;
   containerClass?: string;
 }
 
@@ -35,7 +37,7 @@ const PostsSuggestionsList: React.FC<Props> = props => {
   return (
     <div className={`${className} ${props.containerClass}`}>
       <Header seeMoreLink={props.seeMoreLink} title={props.title} />
-      <Posts postType={props.postType} />
+      <Posts category={props.category} numOfPosts={props.numOfPosts} postType={props.postType} />
     </div>
   );
 };
@@ -54,10 +56,12 @@ const Header: React.FC<Pick<Props, 'seeMoreLink' | 'title'>> = props => {
   );
 };
 
-const Posts: React.FC<Pick<Props, 'postType'>> = ({ postType }) => {
+const Posts: React.FC<Pick<Props, 'postType' | 'numOfPosts' | 'category'>> = props => {
+  const { postType, numOfPosts: numOfPostsPerChunk, category } = props;
   const { posts, refrech, status } = usePostsFetcher({
     postType,
-    numOfPostsPerChunk: 2,
+    numOfPostsPerChunk,
+    category,
     numOfChunk: 1,
   });
 

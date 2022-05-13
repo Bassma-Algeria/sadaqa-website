@@ -14,8 +14,9 @@ import Layout from '../../components/common/layout/Layout';
 import PageMetaData from '../../components/common/others/PageMetaData';
 import { Hero } from './components/Hero/Hero';
 import { PeopleNeedHelp } from './components/PeopleNeedHelp/PeopleNeedHelp';
+import { Donations } from './components/Donations/Donations';
 
-import Donations from '../../components/Home/Donations';
+// import Donations from '../../components/Home/Donations';
 
 const Home: React.FC = () => {
   const dispatch = useDispatch();

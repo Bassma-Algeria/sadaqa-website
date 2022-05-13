@@ -20,7 +20,7 @@
   }
 
   .loaderContainer {
-    height: 250px;
+    height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,17 +31,18 @@
   }
 
   .errorMessageContainer {
-    height: 250px;
+    height: 300px;
   }
 
   .noPosts {
-    height: 250px;
+    height: 300px;
   }
 
   .postsListContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 2%;
+    row-gap: 1.5rem;
   }
 
   &.reverseDirection {
@@ -51,6 +52,10 @@
       .iconContainer {
         transform: rotate(180deg);
       }
+    }
+
+    .postsListContainer {
+      flex-direction: row-reverse;
     }
   }
 

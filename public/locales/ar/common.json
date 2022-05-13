@@ -3,6 +3,7 @@
   "donation-requests": "طلبات تبرع",
   "families-in-need": "عائلات محتاجة",
   "call-for-help": "نداء إستغاثة",
+  "donations": "تبرعات",
   "no-posts-found": "لا اعلانات هنا",
   "need-login": "يجب أن تكون مسجلا",
   "login": "تسجيل الدخول",
@@ -10,5 +11,19 @@
   "share-with-connections": "انسخ الرابط أدناه وأرسله إلى شخص يمكنه المساعدة",
   "copy": "نسخ",
   "try-again": "حاول مرة أخرى",
-  "something-went-wrong": "حدث خطأ ما"
+  "something-went-wrong": "حدث خطأ ما",
+  "clothes-accessories": "ملابس",
+  "food": "أطعمة",
+  "services": "خدمات",
+  "electronics-appliances": "أجهزة إلكترونية",
+  "home-furnitures": "اثاث",
+  "books-magazines": "كتب",
+  "sports": "رياضة",
+  "cosmetics-hygiene": "نظافة",
+  "animales-accessories": "اكسسوارات الحيوانات",
+  "toys": "ألعاب الأطفال",
+  "tools": "أدوات",
+  "health-medicines": "صحة",
+  "cars-accessories": "اكسسوارات السيارات",
+  "others": "اخرى"
 }

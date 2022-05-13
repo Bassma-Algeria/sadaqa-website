@@ -17,7 +17,7 @@ const PeopleNeedHelp: React.FC<Props> = () => {
   const { locale } = useRouter();
 
   return (
-    <div className={`${styles.peopleNeedHelp} ${styles[locale!]}`}>
+    <div className={`${styles.postsSection} ${styles[locale!]}`}>
       <Title title={t('people-need-help')} variant="big" className={styles.title} />
 
       <CallsForHelp />
