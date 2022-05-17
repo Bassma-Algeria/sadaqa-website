@@ -12,13 +12,18 @@ const cx = classNames.bind(styles);
 
 interface Props {
   isExpanded: boolean;
+  expandSearchBar: () => void;
 }
 
-const SearchBar: React.FC<Props> = ({ isExpanded }) => {
-  const [searchValue, setSearchValue] = useState('');
+const SearchBar: React.FC<Props> = ({ isExpanded, expandSearchBar }) => {
+  const [searchValue, setSearchValue] = useState<string>('');
 
   const { t } = useTranslation('common');
   const { locale } = useRouter();
+
+  const handleSearchClick = () => {
+    if (!isExpanded) return expandSearchBar();
+  };
 
   return (
     <div className={cx('searchBar', locale, { isExpanded })}>
@@ -28,7 +33,7 @@ const SearchBar: React.FC<Props> = ({ isExpanded }) => {
         onChange={e => setSearchValue(e.target.value)}
       />
 
-      <button className={styles.searchIconContainer}>
+      <button className={styles.searchIconContainer} onClick={handleSearchClick}>
         <ReactSVG src={ICONS.SEARCH} />
       </button>
     </div>

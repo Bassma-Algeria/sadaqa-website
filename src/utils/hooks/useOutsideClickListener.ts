@@ -20,7 +20,7 @@ const useOutsideClickListener = (
 
     document.addEventListener('mousedown', handleMouseDown);
     return () => document.removeEventListener('mousedown', handleMouseDown);
-  }, [targetElementRef]);
+  }, [targetElementRef, callback]);
 };
 
 export { useOutsideClickListener };

@@ -23,11 +23,31 @@
 
       .languagesSwitcher {
         .selectedLanguage {
-          flex-direction: row-reverse;
+          p {
+            font-weight: 600;
+          }
         }
 
         .availableLanguagesPopupContainer {
           right: 0;
+        }
+      }
+
+      .navigationLinksContainer {
+        .navigationLink {
+          font-weight: 600;
+        }
+      }
+
+      .categoriesPopupContainer {
+        transform: translateX(-40%);
+      }
+
+      .authButtonContainer {
+        flex-direction: row-reverse;
+
+        button {
+          min-width: 160px;
         }
       }
     }
@@ -45,7 +65,7 @@
     & > div {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 1.5rem;
     }
 
     .logoContainer {
@@ -76,7 +96,7 @@
         }
 
         p {
-          font-weight: 600;
+          font-weight: 500;
         }
       }
 
@@ -84,7 +104,7 @@
         position: absolute;
         z-index: 11;
         top: 40px;
-        animation: openAnimation 0.2s ease forwards;
+        animation: openLanguagePopupAnimation 0.2s ease forwards;
 
         .availableLanguagesPopup {
           background-color: white;
@@ -118,10 +138,111 @@
     .searchBarContainer {
       z-index: 3;
 
-      &.openSearchBar {
+      &.isOpened {
         position: absolute;
         left: 46.25%;
         animation: searchBarChangeMoveToRight 0.1s ease forwards;
+      }
+    }
+
+    .navigationLinksContainer {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      .navigationLink {
+        font-weight: 500;
+        text-transform: capitalize;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    }
+
+    .categoriesPopupContainer {
+      position: absolute;
+      z-index: 11;
+      top: 60px;
+      left: 0;
+      animation: openAnimation 0.2s ease forwards;
+      transform: translateX(-50%);
+
+      .categoriesPopup {
+        background-color: white;
+        border: 1px solid $brown;
+        padding: 1rem 1.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        width: 767px;
+        max-height: 450px;
+        border-radius: 12px;
+
+        &.oneColumn {
+          width: auto;
+        }
+
+        h3 {
+          font-weight: 600;
+          padding: 0 1rem;
+          margin-bottom: 0.75rem;
+          width: 100%;
+          font-size: 22px;
+          text-transform: capitalize;
+        }
+
+        .category {
+          display: flex;
+          align-items: center;
+          padding: 0.5rem 1rem;
+          gap: 1rem;
+          cursor: pointer;
+          font-size: 18px;
+          width: 350px;
+          border-radius: 8px;
+          transition: all 0.2s;
+          text-transform: capitalize;
+
+          &:hover {
+            background-color: $grey;
+          }
+
+          .categoryIcon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+
+            svg {
+              height: 100%;
+              width: auto;
+            }
+          }
+        }
+
+        &.ar {
+          flex-direction: row-reverse;
+
+          h3 {
+            text-align: right;
+          }
+
+          .category {
+            flex-direction: row-reverse;
+          }
+        }
+      }
+    }
+
+    .authButtonContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      button {
+        min-width: 130px;
+        font-size: 14px;
       }
     }
   }
@@ -146,6 +267,8 @@
   }
 
   &.ar {
+    max-width: 560px;
+
     input {
       text-align: right;
     }
@@ -166,14 +289,14 @@
     }
   }
 
-  @media only screen and (max-width: 1200px) {
-    &.expanded {
-      width: 500px !important;
+  @media only screen and (max-width: 1250px) {
+    &.isExpanded {
+      width: 450px !important;
     }
   }
 
   @media only screen and (max-width: 900px) {
-    &.expanded {
+    &.isExpanded {
       width: 100% !important;
     }
   }
@@ -918,11 +1041,22 @@
 @keyframes openAnimation {
   0% {
     opacity: 0;
+    top: 100px;
+  }
+  100% {
+    opacity: 1;
+    top: 60px;
+  }
+}
+
+@keyframes openLanguagePopupAnimation {
+  0% {
+    opacity: 0;
     transform: translateY(40px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 
@@ -944,7 +1078,7 @@
 
 @keyframes expandeSeachBar {
   to {
-    width: 700px;
+    width: 670px;
     padding: 0 1.5rem;
     padding-right: 1rem;
     background-color: #edf6f2;

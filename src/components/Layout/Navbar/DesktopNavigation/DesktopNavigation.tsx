@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRouter } from 'next/router';
 
 import styles from '../Navbar.module.scss';
@@ -14,6 +14,11 @@ interface Props {}
 const DesktopNavigation: React.FC<Props> = () => {
   const { locale } = useRouter();
 
+  const [isSearchBarOpen, setIsSearchBarOpen] = useState<boolean>(false);
+
+  const openSearchBar = () => setIsSearchBarOpen(true);
+  const closeSearchBar = () => setIsSearchBarOpen(false);
+
   return (
     <div className={`${styles.desktopNavbar} ${styles[locale!]}`}>
       <div className={styles.contentContainer}>
@@ -23,7 +28,11 @@ const DesktopNavigation: React.FC<Props> = () => {
         </div>
 
         <div>
-          <DesktopSearchBar />
+          <DesktopSearchBar
+            isOpened={isSearchBarOpen}
+            openSearchBar={openSearchBar}
+            closeSearchBar={closeSearchBar}
+          />
           <NavigationLinks />
           <AuthenticationButtons />
 

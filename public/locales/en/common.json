@@ -1,5 +1,5 @@
 {
-  "people-need-help": "People Need Help",
+  "people-need-help": "People need help",
   "donation-requests": "donation requests",
   "families-in-need": "families in need",
   "call-for-help": "call for help",
@@ -26,5 +26,6 @@
   "health-medicines": "Health / Medicines",
   "cars-accessories": "Cars / Accessories",
   "others": "Others",
-  "search": "search..."
+  "search": "search...",
+  "request-a-donation": "request a donation"
 }

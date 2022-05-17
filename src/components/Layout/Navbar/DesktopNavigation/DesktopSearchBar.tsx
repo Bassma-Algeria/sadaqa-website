@@ -1,17 +1,29 @@
-import React, { useState } from 'react';
-import { ReactSVG } from 'react-svg';
-import { useTranslation } from 'next-i18next';
-
-import { ICONS } from '../../../../utils/constants/Icons';
+import React, { useRef } from 'react';
+import classNames from 'classnames/bind';
 
 import styles from '../Navbar.module.scss';
 
 import { SearchBar } from '../common/SearchBar';
+import { useOutsideClickListener } from '../../../../utils/hooks/useOutsideClickListener';
 
-const DesktopSearchBar: React.FC = () => {
+const cx = classNames.bind(styles);
+
+interface Props {
+  isOpened: boolean;
+  openSearchBar: () => void;
+  closeSearchBar: () => void;
+}
+
+const DesktopSearchBar: React.FC<Props> = ({ isOpened, openSearchBar, closeSearchBar }) => {
+  const ref = useRef(null);
+
+  useOutsideClickListener(ref, () => {
+    if (isOpened) closeSearchBar();
+  });
+
   return (
-    <div className={styles.searchBarContainer}>
-      <SearchBar isExpanded={false} />
+    <div ref={ref} className={cx('searchBarContainer', { isOpened })}>
+      <SearchBar isExpanded={isOpened} expandSearchBar={openSearchBar} />
     </div>
   );
 };

@@ -24,7 +24,7 @@ const Navbar = () => {
     <div className={styles.navbar}>
       <BrowserView>
         <DesktopNavigation />
-        {/* <DesktopNavbar />  */}
+        {/* <DesktopNavbar /> */}
         <MobileNav />
       </BrowserView>
 

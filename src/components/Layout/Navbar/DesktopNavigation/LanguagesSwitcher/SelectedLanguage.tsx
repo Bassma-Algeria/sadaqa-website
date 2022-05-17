@@ -2,9 +2,9 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { ReactSVG } from 'react-svg';
 
-import { ICONS } from '../../../../../utils/constants/Icons';
-
 import styles from '../../Navbar.module.scss';
+
+import { ICONS } from '../../../../../utils/constants/Icons';
 
 interface Props {
   openAvailableLanguagesPopup: () => void;
