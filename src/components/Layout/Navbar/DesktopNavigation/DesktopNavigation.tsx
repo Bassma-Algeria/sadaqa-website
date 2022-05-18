@@ -8,16 +8,17 @@ import { LanguagesSwitcher } from './LanguagesSwitcher/LanguagesSwitcher';
 import { DesktopSearchBar } from './DesktopSearchBar';
 import { NavigationLinks } from './NavigationLinks/NavigationLinks';
 import { AuthenticationButtons } from './AuthenticationButtons';
+import { DonateButton } from './DonateButton';
+import { Notifications } from './Notifications/Notifications';
+import { Profile } from './Profile/Profile';
 
 interface Props {}
 
 const DesktopNavigation: React.FC<Props> = () => {
   const { locale } = useRouter();
+  const isAuthenticated = true;
 
   const [isSearchBarOpen, setIsSearchBarOpen] = useState<boolean>(false);
-
-  const openSearchBar = () => setIsSearchBarOpen(true);
-  const closeSearchBar = () => setIsSearchBarOpen(false);
 
   return (
     <div className={`${styles.desktopNavbar} ${styles[locale!]}`}>
@@ -30,21 +31,20 @@ const DesktopNavigation: React.FC<Props> = () => {
         <div>
           <DesktopSearchBar
             isOpened={isSearchBarOpen}
-            openSearchBar={openSearchBar}
-            closeSearchBar={closeSearchBar}
+            openSearchBar={() => setIsSearchBarOpen(true)}
+            closeSearchBar={() => setIsSearchBarOpen(false)}
           />
-          <NavigationLinks />
-          <AuthenticationButtons />
 
-          {/* {!isAuthenticated ? (
-          <AuthenticationButtons />
-        ) : (
-          <>
-            <Notifications />
-            <Profile />
-            <DonateButton />
-          </>
-        )} */}
+          {!isSearchBarOpen && <NavigationLinks />}
+
+          {!isAuthenticated && <AuthenticationButtons />}
+          {isAuthenticated && (
+            <>
+              <Notifications />
+              <Profile />
+              <DonateButton />
+            </>
+          )}
         </div>
       </div>
     </div>

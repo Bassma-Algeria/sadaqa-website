@@ -1,29 +1,25 @@
 import React, { useMemo, useState } from 'react';
 import { ReactSVG } from 'react-svg';
+import { useRouter } from 'next/router';
 import classNames from 'classnames/bind';
 import { useTranslation } from 'next-i18next';
 
-import { ICONS } from '../../../../utils/constants/Icons';
-
 import styles from '../Navbar.module.scss';
-import { useRouter } from 'next/router';
+
+import { ICONS } from '../../../../utils/constants/Icons';
 
 const cx = classNames.bind(styles);
 
 interface Props {
   isExpanded: boolean;
-  expandSearchBar: () => void;
+  onSearchIconClick: () => void;
 }
 
-const SearchBar: React.FC<Props> = ({ isExpanded, expandSearchBar }) => {
+const SearchBar: React.FC<Props> = ({ isExpanded, onSearchIconClick }) => {
   const [searchValue, setSearchValue] = useState<string>('');
 
   const { t } = useTranslation('common');
   const { locale } = useRouter();
-
-  const handleSearchClick = () => {
-    if (!isExpanded) return expandSearchBar();
-  };
 
   return (
     <div className={cx('searchBar', locale, { isExpanded })}>
@@ -33,7 +29,7 @@ const SearchBar: React.FC<Props> = ({ isExpanded, expandSearchBar }) => {
         onChange={e => setSearchValue(e.target.value)}
       />
 
-      <button className={styles.searchIconContainer} onClick={handleSearchClick}>
+      <button className={styles.searchIconContainer} onClick={onSearchIconClick}>
         <ReactSVG src={ICONS.SEARCH} />
       </button>
     </div>

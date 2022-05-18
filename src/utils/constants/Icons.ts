@@ -33,7 +33,7 @@ import home from '../../../public/svg/dashboard_activities_icon_empty.svg';
 import myAds from '../../../public/svg/dashboard_myads_icon_empty.svg';
 import signup from '../../../public/svg/sign_up.svg';
 import login from '../../../public/svg/log_in.svg';
-import notifications from '../../../public/svg/notification.svg';
+import notifications from '../../../public/svg/nav_notification_icon.svg';
 import newAd from '../../../public/svg/new_add.svg';
 
 const ICONS = {

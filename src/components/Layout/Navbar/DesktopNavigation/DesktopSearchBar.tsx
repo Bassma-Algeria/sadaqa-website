@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useMemo, useRef } from 'react';
 import classNames from 'classnames/bind';
 
 import styles from '../Navbar.module.scss';
@@ -21,9 +21,13 @@ const DesktopSearchBar: React.FC<Props> = ({ isOpened, openSearchBar, closeSearc
     if (isOpened) closeSearchBar();
   });
 
+  const handleSearchIconClick = () => {
+    if (!isOpened) openSearchBar();
+  };
+
   return (
     <div ref={ref} className={cx('searchBarContainer', { isOpened })}>
-      <SearchBar isExpanded={isOpened} expandSearchBar={openSearchBar} />
+      <SearchBar isExpanded={isOpened} onSearchIconClick={handleSearchIconClick} />
     </div>
   );
 };

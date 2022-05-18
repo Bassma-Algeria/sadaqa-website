@@ -43,7 +43,14 @@
         transform: translateX(-40%);
       }
 
-      .authButtonContainer {
+      .notifications {
+        .notificationsPopupContainer {
+          left: -10rem;
+          right: unset;
+        }
+      }
+
+      .actionButtonsContainer {
         flex-direction: row-reverse;
 
         button {
@@ -104,7 +111,7 @@
         position: absolute;
         z-index: 11;
         top: 40px;
-        animation: openLanguagePopupAnimation 0.2s ease forwards;
+        animation: openPopupAnimation 0.2s ease forwards;
 
         .availableLanguagesPopup {
           background-color: white;
@@ -165,7 +172,7 @@
       z-index: 11;
       top: 60px;
       left: 0;
-      animation: openAnimation 0.2s ease forwards;
+      animation: openCategoriesPopupAnimation 0.2s ease forwards;
       transform: translateX(-50%);
 
       .categoriesPopup {
@@ -234,13 +241,215 @@
       }
     }
 
-    .authButtonContainer {
+    .notifications {
+      position: relative;
+
+      .notificationIconContainer {
+        cursor: pointer;
+
+        svg {
+          width: 25px;
+          height: fit-content;
+        }
+      }
+
+      .notificationsPopupContainer {
+        position: absolute;
+        right: -10rem;
+        top: 3rem;
+        z-index: 3;
+        animation: openPopupAnimation 0.2s ease forwards;
+
+        .notificationsPopup {
+          background-color: white;
+          border: 1px solid $brown;
+          width: 400px;
+          min-height: 200px;
+          border-radius: 12px;
+
+          &.ar {
+            text-align: right;
+
+            .notification {
+              flex-direction: row-reverse;
+            }
+          }
+
+          h3 {
+            font-weight: 600;
+            padding: 1rem;
+            text-transform: capitalize;
+            padding-bottom: 0;
+            font-size: 24px;
+          }
+
+          .notification {
+            display: flex;
+            padding: 0.75rem 0.5rem;
+            gap: 0.5rem;
+            cursor: pointer;
+            margin: 0.25rem;
+            height: 100px;
+            border-radius: 8px;
+            transition: all 0.2s;
+
+            &:hover {
+              background-color: $grey;
+            }
+
+            .notificationPic {
+              width: 20%;
+
+              img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 9px;
+              }
+            }
+
+            .notificationText {
+              position: relative;
+              width: 80%;
+              font-size: 16px;
+              line-height: 1.3;
+
+              span {
+                font-size: 400;
+              }
+
+              .messageContent {
+                font-weight: 400;
+                color: rgba(0, 0, 0, 0.7);
+              }
+
+              .createdAt {
+                position: absolute;
+                left: 0;
+                bottom: -10px;
+                font-size: 14px;
+                color: rgba(0, 0, 0, 0.4);
+              }
+            }
+          }
+
+          .noNotifications {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-transform: capitalize;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 16px;
+
+            svg {
+              height: 30px;
+            }
+          }
+
+          .seeMore {
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 18px;
+            color: $blue-deep;
+          }
+        }
+      }
+    }
+
+    .profile {
+      position: relative;
+
+      .profileAvatar {
+        cursor: pointer;
+      }
+
+      .dashboardLinksPopupContainer {
+        position: absolute;
+        left: -5rem;
+        top: 3rem;
+        z-index: 3;
+
+        @media only screen and (max-width: 1300px) {
+          left: -100px;
+        }
+
+        .dashboardLinksPopup {
+          background-color: white;
+          border: 1px solid $brown;
+          width: 250px;
+          border-radius: 12px;
+          animation: openPopupAnimation 0.2s ease forwards;
+
+          .header {
+            .profileLink {
+              font-weight: 600;
+              padding: 0.5rem 1rem;
+              margin: 0.25rem;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              cursor: pointer;
+              text-transform: capitalize;
+              font-size: 22px;
+              border-radius: 8px;
+              transition: all 0.2s;
+
+              &:hover {
+                background-color: $grey;
+              }
+            }
+          }
+
+          .separator {
+            width: 100%;
+            color: rgba(0, 0, 0, 0.3);
+          }
+
+          .dashboardLink {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 0.75rem;
+            cursor: pointer;
+            margin: 0.25rem;
+            transition: all 0.2s;
+            border-radius: 6px;
+
+            &:hover {
+              background-color: $grey;
+            }
+
+            .text {
+              display: flex;
+              align-items: center;
+              font-weight: 400;
+              gap: 0.5rem;
+              font-size: 16px;
+            }
+
+            .iconContainer svg {
+              width: 22px;
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+
+    .actionButtonsContainer {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
 
       button {
+        text-transform: capitalize;
         min-width: 130px;
         font-size: 14px;
       }
@@ -267,8 +476,6 @@
   }
 
   &.ar {
-    max-width: 560px;
-
     input {
       text-align: right;
     }
@@ -348,7 +555,7 @@
         .options {
           @apply absolute bg-white p-1;
           z-index: 11;
-          animation: openAnimation 0.2s ease forwards;
+          animation: openPopupAnimation 0.2s ease forwards;
           border-radius: 10px;
           border: 1px solid #707070;
           top: 40px;
@@ -428,7 +635,7 @@
             z-index: -1;
             top: 40px;
             left: -310px;
-            animation: openAnimation 0.2s ease forwards;
+            animation: openPopupAnimation 0.2s ease forwards;
 
             h3 {
               @apply font-semibold px-4 mb-3;
@@ -481,7 +688,7 @@
         border: 1px solid #707070;
         border-radius: 12px;
         display: block;
-        animation: openAnimation 0.2s ease forwards;
+        animation: openPopupAnimation 0.2s ease forwards;
 
         h3 {
           @apply font-semibold p-4 pb-0;
@@ -544,6 +751,8 @@
 
         .seeMore {
           @apply text-center font-semibold my-2;
+          text-align: center;
+
           font-size: 18px;
           color: #1e31d6;
         }
@@ -562,7 +771,7 @@
         border: 1px solid #707070;
         border-radius: 12px;
         display: block;
-        animation: openAnimation 0.2s ease forwards;
+        animation: openPopupAnimation 0.2s ease forwards;
 
         @media only screen and (max-width: 1300px) {
           left: -100px;
@@ -1038,7 +1247,7 @@
   }
 }
 
-@keyframes openAnimation {
+@keyframes openCategoriesPopupAnimation {
   0% {
     opacity: 0;
     top: 100px;
@@ -1049,7 +1258,7 @@
   }
 }
 
-@keyframes openLanguagePopupAnimation {
+@keyframes openPopupAnimation {
   0% {
     opacity: 0;
     transform: translateY(40px);
@@ -1078,7 +1287,7 @@
 
 @keyframes expandeSeachBar {
   to {
-    width: 670px;
+    width: 560px;
     padding: 0 1.5rem;
     padding-right: 1rem;
     background-color: #edf6f2;
