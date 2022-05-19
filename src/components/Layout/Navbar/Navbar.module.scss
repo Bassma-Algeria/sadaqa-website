@@ -374,19 +374,24 @@
         left: -5rem;
         top: 3rem;
         z-index: 3;
+        animation: openPopupAnimation 0.2s ease forwards;
 
-        @media only screen and (max-width: 1300px) {
-          left: -100px;
-        }
+        // @media only screen and (max-width: 1300px) {
+        //   left: -100px;
+        // }
 
         .dashboardLinksPopup {
           background-color: white;
           border: 1px solid $brown;
           width: 250px;
           border-radius: 12px;
-          animation: openPopupAnimation 0.2s ease forwards;
 
           .header {
+            .profileImage {
+              margin: 1.25rem;
+              margin-bottom: 0.5rem;
+            }
+
             .profileLink {
               font-weight: 600;
               padding: 0.5rem 1rem;
@@ -408,13 +413,15 @@
 
           .separator {
             width: 100%;
-            color: rgba(0, 0, 0, 0.3);
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.3);
           }
 
           .dashboardLink {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start;
+            gap: 1rem;
             padding: 0.5rem 0.75rem;
             cursor: pointer;
             margin: 0.25rem;
@@ -425,17 +432,44 @@
               background-color: $grey;
             }
 
-            .text {
+            .title {
               display: flex;
+              text-transform: capitalize;
               align-items: center;
-              font-weight: 400;
-              gap: 0.5rem;
+              font-weight: 500;
               font-size: 16px;
             }
 
             .iconContainer svg {
               width: 22px;
               height: auto;
+            }
+          }
+
+          &.ar {
+            text-align: right;
+
+            .header {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+
+              .profileLink {
+                width: 100%;
+                flex-direction: row-reverse;
+
+                svg {
+                  transform: rotate(180deg);
+                }
+              }
+            }
+
+            .dashboardLink {
+              flex-direction: row-reverse;
+
+              .title {
+                font-weight: 600;
+              }
             }
           }
         }

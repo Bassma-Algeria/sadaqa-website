@@ -29,5 +29,9 @@
   "search": "search...",
   "request-a-donation": "request a donation",
   "donate": "donate",
-  "notifications": "notifications"
+  "notifications": "notifications",
+  "messages": "messages",
+  "dashboard": "dashboard",
+  "profile-information": "profile information",
+  "logout": "logout"
 }

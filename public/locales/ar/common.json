@@ -29,5 +29,9 @@
   "search": "...بحث",
   "request-a-donation": "أطلب تبرع",
   "donate": "تبرع",
-  "notifications": "إشعارات"
+  "notifications": "إشعارات",
+  "messages": "رسائل",
+  "dashboard": "إحصائيات",
+  "profile-information": "معلومات شخصية",
+  "logout": "تسجيل الخروج"
 }
