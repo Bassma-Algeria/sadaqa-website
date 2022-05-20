@@ -3,31 +3,30 @@ import classNames from 'classnames/bind';
 
 import styles from '../Navbar.module.scss';
 
-import { SearchBar } from '../common/SearchBar';
 import { useOutsideClickListener } from '../../../../utils/hooks/useOutsideClickListener';
+
+import { SearchBar } from '../common/SearchBar';
 
 const cx = classNames.bind(styles);
 
 interface Props {
-  isOpened: boolean;
-  openSearchBar: () => void;
-  closeSearchBar: () => void;
+  onSearchBarExpandedStateChange: (isExpanded: boolean) => void;
+  isSearchBarOpen: boolean;
 }
 
-const DesktopSearchBar: React.FC<Props> = ({ isOpened, openSearchBar, closeSearchBar }) => {
+const DesktopSearchBar: React.FC<Props> = ({
+  onSearchBarExpandedStateChange,
+  isSearchBarOpen: isOpened,
+}) => {
   const ref = useRef(null);
 
-  useOutsideClickListener(ref, () => {
-    if (isOpened) closeSearchBar();
-  });
-
-  const handleSearchIconClick = () => {
-    if (!isOpened) openSearchBar();
+  const onSubmit = (searchValue: string) => {
+    console.log(searchValue);
   };
 
   return (
     <div ref={ref} className={cx('searchBarContainer', { isOpened })}>
-      <SearchBar isExpanded={isOpened} onSearchIconClick={handleSearchIconClick} />
+      <SearchBar onStateChange={onSearchBarExpandedStateChange} onSubmit={onSubmit} />
     </div>
   );
 };

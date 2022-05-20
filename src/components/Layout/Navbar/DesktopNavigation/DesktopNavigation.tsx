@@ -18,7 +18,12 @@ const DesktopNavigation: React.FC<Props> = () => {
   const { locale } = useRouter();
   const isAuthenticated = true;
 
-  const [isSearchBarOpen, setIsSearchBarOpen] = useState<boolean>(false);
+  const [shouldHideNavigationLinks, setShouldHideNavigationLinks] = useState<boolean>(false);
+
+  const handleSeachBarExpandedStateChange = (isExpanded: boolean) => {
+    if (isExpanded) setShouldHideNavigationLinks(true);
+    else setShouldHideNavigationLinks(false);
+  };
 
   return (
     <div className={`${styles.desktopNavbar} ${styles[locale!]}`}>
@@ -30,12 +35,11 @@ const DesktopNavigation: React.FC<Props> = () => {
 
         <div>
           <DesktopSearchBar
-            isOpened={isSearchBarOpen}
-            openSearchBar={() => setIsSearchBarOpen(true)}
-            closeSearchBar={() => setIsSearchBarOpen(false)}
+            isSearchBarOpen={shouldHideNavigationLinks}
+            onSearchBarExpandedStateChange={handleSeachBarExpandedStateChange}
           />
 
-          {!isSearchBarOpen && <NavigationLinks />}
+          {!shouldHideNavigationLinks && <NavigationLinks />}
 
           {!isAuthenticated && <AuthenticationButtons />}
           {isAuthenticated && (

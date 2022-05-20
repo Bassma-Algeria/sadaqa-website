@@ -24,7 +24,9 @@ const DashboardLinksPopup: React.FC<Props> = ({ closePopup }) => {
   const { locale, push } = useRouter();
   const { t } = useTranslation('common');
 
-  useOutsideClickListener(ref, closePopup);
+  useOutsideClickListener(ref, () => {
+    closePopup();
+  });
 
   return (
     <div ref={ref} className={styles.dashboardLinksPopupContainer}>

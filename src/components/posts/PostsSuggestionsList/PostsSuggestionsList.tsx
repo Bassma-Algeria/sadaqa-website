@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ReactSVG } from 'react-svg';
+import { useRouter } from 'next/router';
 import classNames from 'classnames/bind';
 
 import styles from './PostsSuggestionsList.module.scss';
@@ -14,9 +15,7 @@ import { usePostsFetcher } from '../../../utils/hooks/DataFetching/usePostsFetch
 import { Loading } from './components/Loading';
 import { ErrorMessage } from './components/ErrorMessage';
 import { PostsList } from './components/PostsList';
-import { useRouter } from 'next/router';
 import { Title } from '../../common/Title/Title';
-import { FetchingDataError } from '../../common/FetchingDataError/FetchingDataError';
 
 const cx = classNames.bind(styles);
 
