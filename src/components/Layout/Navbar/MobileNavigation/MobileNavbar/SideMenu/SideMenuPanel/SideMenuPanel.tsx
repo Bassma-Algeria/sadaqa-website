@@ -16,9 +16,13 @@ const SideMenuPanel: React.FC = () => {
     <div className={`${styles.sideMenuPanel} ${styles[locale!]}`}>
       <LanguagesSwitcher />
       <LoginButtonsOrProfile />
+
       <Separator />
+
       <PeopleNeedHelpLinks />
+
       <Separator />
+
       <DonationsLinks />
     </div>
   );

@@ -33,5 +33,7 @@
   "messages": "رسائل",
   "dashboard": "إحصائيات",
   "profile-information": "معلومات شخصية",
-  "logout": "تسجيل الخروج"
+  "logout": "تسجيل الخروج",
+  "home": "الرئيسية"
+
 }

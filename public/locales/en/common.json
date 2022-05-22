@@ -33,5 +33,7 @@
   "messages": "messages",
   "dashboard": "dashboard",
   "profile-information": "profile information",
-  "logout": "logout"
+  "logout": "logout",
+  "home": "home"
+
 }

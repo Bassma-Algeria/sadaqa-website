@@ -510,6 +510,10 @@
         flex-direction: row-reverse;
       }
     }
+
+    .bottomNavigation {
+      flex-direction: row-reverse;
+    }
   }
 
   .navbar {
@@ -793,6 +797,62 @@
   }
 
   .bottomNavigation {
+    z-index: 8;
+    background-color: white;
+    border-top: 1px solid $grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+
+    .navItem {
+      display: flex;
+      flex: 1;
+      height: 100%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      cursor: pointer;
+
+      .iconContainer {
+        svg {
+          fill: black;
+          width: 20px;
+          height: auto;
+        }
+      }
+
+      h1 {
+        text-transform: capitalize;
+        color: $primary-color;
+        display: none;
+      }
+
+      &.active {
+        .iconContainer {
+          svg,
+          path,
+          g {
+            fill: $primary-color !important;
+          }
+        }
+
+        h1 {
+          display: block;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 300px) {
+      .navItem.active h1 {
+        display: none;
+      }
+    }
   }
 
   @media only screen and (min-width: 900px) {
@@ -801,317 +861,8 @@
 }
 
 .navbar {
-  .mobileNav {
-    @apply z-10 flex items-center justify-between h-full p-2 relative bg-white;
-    height: 50px;
-    box-shadow: unset !important;
-
-    @media only screen and (min-width: 900px) {
-      @apply hidden;
-    }
-
-    .menuBars {
-      @apply flex flex-col items-center justify-between gap-1;
-      width: 23px;
-      z-index: 11;
-
-      .bar {
-        width: 100%;
-        height: 3px;
-        border-radius: 5px;
-        background-color: black;
-      }
-    }
-
-    .swipeDiv {
-      @apply fixed left-0 top-0;
-      // border: 1px solid black;
-      height: 100vh;
-      width: 3vw;
-    }
-
-    .overlay {
-      @apply fixed top-0 left-0 w-full h-full z-10;
-      animation: overlayOpen 0.4s ease forwards;
-
-      // @supports (backdrop-filter: blur(10px) brightness(0.8)) {
-      //   backdrop-filter: blur(10px);
-      // }
-      // @supports not (backdrop-filter: blur(10px) brightness(0.8)) {
-      //   background-color: rgba(0, 0, 0, 0.3);
-      // }
-    }
-
-    .sideMenu {
-      @apply fixed overflow-scroll top-0 bg-white px-2  pb-6;
-      left: -100%;
-      z-index: 11;
-      width: 300px;
-      max-width: 100%;
-      height: 100vh;
-      scrollbar-width: none;
-
-      &::-webkit-scrollbar {
-        width: 0;
-      }
-
-      &.open {
-        border-right: 1px solid #edf6f2;
-        transition: left 0.4s ease;
-        left: 0% !important;
-      }
-
-      .loginButtons {
-        @apply flex items-center justify-between gap-3 my-4;
-
-        button {
-          width: 50%;
-        }
-
-        button.primary {
-          background-color: #edf6f2;
-          color: black !important;
-          opacity: 1;
-
-          &:hover {
-            background-color: #d8f1e7;
-          }
-        }
-
-        button.secondary {
-          @apply m-0 font-medium;
-          border-color: #edf6f2;
-          color: black;
-          background-color: transparent;
-        }
-      }
-
-      .profile {
-        @apply font-medium capitalize mt-4;
-        font-size: 18px;
-
-        .languageContainer {
-          @apply absolute top-4 right-4;
-
-          select {
-            @apply p-1;
-            background-color: white;
-            width: 60px;
-            border: 1px solid #edf6f2;
-            border-radius: 10px;
-            font-size: 12px;
-          }
-        }
-
-        svg {
-          height: 12px;
-        }
-
-        .profilePicContainer {
-          @apply mx-2 my-1 mt-4;
-          width: 60px;
-          height: 60px;
-          border: 1px solid #707070;
-          border-radius: 50%;
-          overflow: hidden;
-
-          img {
-            @apply h-full w-full;
-            object-fit: cover;
-            object-position: center;
-          }
-        }
-
-        .name {
-          @apply flex items-center justify-between cursor-pointer py-1 px-2 mt-4;
-          border-radius: 5px;
-          transition: all 0.3s ease;
-
-          &:hover {
-            background-color: #edf6f2;
-          }
-
-          h1 {
-            @apply font-semibold;
-            font-size: 20px;
-            padding: 0;
-          }
-        }
-      }
-
-      h1 {
-        @apply capitalize font-medium cursor-pointer px-2 py-1;
-        font-size: 18px;
-      }
-
-      .category {
-        @apply flex items-center cursor-pointer py-1 px-2 gap-2;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-
-        &:hover {
-          background-color: #edf6f2;
-        }
-
-        .iconContainer {
-          @apply flex items-center justify-center;
-          width: 25px;
-
-          svg {
-            height: auto;
-            width: 100%;
-            max-height: 25px;
-          }
-        }
-      }
-
-      .divider {
-        @apply w-full my-2;
-        height: 1px;
-        background-color: #edf6f2;
-      }
-
-      @media only screen and (max-width: 280px) {
-        h1 {
-          @apply font-medium;
-          font-size: 16px;
-        }
-
-        p {
-          font-size: 14px;
-        }
-      }
-    }
-
-    .logoContainer,
-    .rightIcon {
-      @apply h-full flex items-center justify-center;
-
-      img {
-        height: auto;
-        width: 80px;
-      }
-    }
-
-    .logoContainer {
-      @apply absolute;
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
-    .rightIcon {
-      @apply flex items-center justify-center gap-3;
-
-      svg {
-        @apply cursor-pointer;
-        height: 22px;
-        width: auto;
-
-        path,
-        g {
-          fill: black;
-        }
-      }
-
-      .profilePic {
-        @apply overflow-hidden cursor-pointer;
-        border-radius: 50%;
-        border: 1px solid #3b3a3a;
-        width: 27px;
-        height: 27px;
-
-        img {
-          @apply w-full h-auto;
-          object-fit: cover;
-          object-position: center;
-        }
-      }
-    }
-  }
-
-  .searchBarContainer {
-    @apply bg-white flex px-1 items-center justify-center w-full fixed top-0 left-0 w-full;
-    z-index: -1;
-    transition: all 0.3s ease;
-    border-bottom: 1px solid #edf6f2;
-    height: 50px;
-
-    @media only screen and (min-width: 900px) {
-      @apply hidden;
-    }
-
-    &.open {
-      z-index: 8;
-      top: 50px;
-    }
-
-    .searchBar {
-      @apply flex w-full items-center justify-between p-2 px-4;
-      background-color: #edf6f2;
-      border-radius: 12px;
-
-      input {
-        @apply w-full;
-        background-color: transparent;
-        outline: none;
-      }
-
-      .iconContainer {
-        @apply flex items-center justify-center;
-
-        svg {
-          width: 20px;
-          height: auto;
-        }
-      }
-    }
-  }
-
   .bottomNav {
-    @apply flex items-center justify-around w-full bg-white fixed bottom-0 left-0;
-    border-top: 1px solid #edf6f2;
-    height: 60px;
-
-    @media only screen and (min-width: 900px) {
-      display: none !important;
-    }
-
     .navItem {
-      @apply relative flex flex-col items-center justify-center cursor-pointer capitalize h-full;
-      font-size: 12px;
-      width: 20%;
-      white-space: nowrap;
-
-      h1 {
-        @apply hidden;
-      }
-
-      svg {
-        fill: black;
-        width: 20px;
-        height: auto;
-      }
-
-      &.active {
-        @apply text-primary;
-
-        h1 {
-          display: initial;
-        }
-
-        &.showText {
-          h1 {
-            display: initial !important;
-          }
-        }
-
-        svg,
-        path,
-        g {
-          fill: #ff7937 !important;
-        }
-      }
-
       .num {
         @apply absolute text-white flex items-center justify-center font-medium;
         bottom: 50%;
@@ -1122,12 +873,6 @@
         width: 28px;
         height: 28px;
         font-size: 14px;
-      }
-
-      @media only screen and (max-width: 300px) {
-        &.active h1 {
-          display: none;
-        }
       }
     }
   }
@@ -1240,16 +985,6 @@
   100% {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes overlayOpen {
-  0% {
-    background-color: transparent;
-  }
-
-  100% {
-    background-color: rgba(0, 0, 0, 0.3);
   }
 }
 
