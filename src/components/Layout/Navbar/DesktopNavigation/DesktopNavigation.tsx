@@ -12,9 +12,7 @@ import { DonateButton } from './DonateButton';
 import { Notifications } from './Notifications/Notifications';
 import { Profile } from './Profile/Profile';
 
-interface Props {}
-
-const DesktopNavigation: React.FC<Props> = () => {
+const DesktopNavigation: React.FC = () => {
   const { locale } = useRouter();
   const isAuthenticated = true;
 

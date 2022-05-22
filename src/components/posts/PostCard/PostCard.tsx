@@ -3,11 +3,14 @@ import { useRouter } from 'next/router';
 
 import type { IPost } from '../../../@types/Posts';
 
-import { BasePostCard } from '../../common/BasePostCard/BasePostCard';
 import { postsGateway } from '../../../Gateways';
+
+import { getDefaultPostThumbnail } from '../../../utils/postsHelpers';
+
 import { useNeedAuthPopup } from '../../../utils/hooks/Popups/useNeedAuthPopup';
 import { useSharePostPopup } from '../../../utils/hooks/Popups/useSharePostPopup';
-import { getDefaultPostThumbnail } from '../../../utils/postsHelpers';
+
+import { BasePostCard } from '../../common/BasePostCard/BasePostCard';
 
 interface Props extends IPost {}
 

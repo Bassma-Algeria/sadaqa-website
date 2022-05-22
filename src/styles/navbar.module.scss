@@ -1,8 +1,8 @@
 .navbar {
-  @apply fixed top-0 w-full m-auto bg-white z-10;
-  border-bottom: 1px solid #edf6f2;
-  transition: box-shadow 0.2s linear;
-  width: 100%;
+  // @apply fixed top-0 w-full m-auto bg-white z-10;
+  // border-bottom: 1px solid #edf6f2;
+  // transition: box-shadow 0.2s linear;
+  // width: 100%;
 
   .desktopNav {
     @apply flex items-center m-auto py-4 justify-between h-full;
@@ -38,7 +38,7 @@
 
         p.ar {
           @apply font-semibold;
-          font-family: "Almarai", sans-serif;
+          font-family: 'Almarai', sans-serif;
         }
 
         .options {
@@ -75,8 +75,7 @@
       &.openSearchBar {
         position: absolute;
         left: 46.25%;
-        animation: searchBarChangeMoveToRight 0.1s ease forwards,
-          expandeSeachBar 0.1s ease forwards;
+        animation: searchBarChangeMoveToRight 0.1s ease forwards, expandeSeachBar 0.1s ease forwards;
 
         @media only screen and (max-width: 1200px) {
           width: 500px !important;

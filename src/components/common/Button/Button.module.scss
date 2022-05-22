@@ -69,7 +69,8 @@
   }
 
   &.sm {
-    @apply text-base px-5 py-2 rounded-2xl font-semibold;
+    @apply px-5 py-2 rounded-2xl font-semibold;
+    font-size: 14px;
   }
 
   &.md {

@@ -3,6 +3,7 @@ import React from 'react';
 import styles from '../../Navbar.module.scss';
 
 import { IMAGES } from '../../../../../utils/constants/Images';
+
 import { Avatar } from '../../../../common/Avatar/Avatar';
 
 interface Props {

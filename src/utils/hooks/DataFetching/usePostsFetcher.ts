@@ -1,5 +1,6 @@
 import { postsGateway } from '../../../Gateways';
-import { GetPostsFilters } from '../../../Gateways/PostsGateway/PostsGateway.interface';
+import type { GetPostsFilters } from '../../../Gateways/PostsGateway/PostsGateway.interface';
+
 import { useDataFetcher } from './useDataFetcher';
 
 const usePostsFetcher = (filters?: GetPostsFilters) => {

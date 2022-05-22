@@ -14,7 +14,7 @@ const AvailableLanguagesPopup: React.FC<Props> = ({ closePopup }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { pathname } = useRouter();
 
-  useOutsideClickListener(ref, () => closePopup());
+  useOutsideClickListener(ref, closePopup);
 
   return (
     <div ref={ref} className={styles.availableLanguagesPopupContainer}>

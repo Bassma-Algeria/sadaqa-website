@@ -11,6 +11,7 @@ import MobileNav from './mobile_nav';
 import NavMessage from './NavMessage';
 import ProgressLoader from './ProgressLoader';
 import { DesktopNavigation } from '../../../Layout/Navbar/DesktopNavigation/DesktopNavigation';
+import { MobileNavigation } from '../../../Layout/Navbar/MobileNavigation/MobileNavigation';
 
 const Navbar = () => {
   const {
@@ -24,8 +25,10 @@ const Navbar = () => {
     <div className={styles.navbar}>
       <BrowserView>
         <DesktopNavigation />
-        {/* <DesktopNavbar /> */}
-        <MobileNav />
+        <MobileNavigation />
+
+        {/* <DesktopNavbar />
+        <MobileNav /> */}
       </BrowserView>
 
       <MobileView>

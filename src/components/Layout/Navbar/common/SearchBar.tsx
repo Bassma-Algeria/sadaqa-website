@@ -22,7 +22,8 @@ const SearchBar: React.FC<Props> = ({ alwaysExpanded, onStateChange, onSubmit })
   const { locale } = useRouter();
   const { t } = useTranslation('common');
 
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const [searchValue, setSearchValue] = useState<string>('');
   const [isExpanded, setIsExpanded] = useState<boolean>(!!alwaysExpanded);
@@ -41,12 +42,15 @@ const SearchBar: React.FC<Props> = ({ alwaysExpanded, onStateChange, onSubmit })
   });
 
   useEffect(() => {
+    if (isExpanded) inputRef.current?.focus();
+
     onStateChange?.(isExpanded);
   }, [isExpanded]);
 
   return (
     <div ref={ref} className={cx('searchBar', locale, { isExpanded })}>
       <input
+        ref={inputRef}
         value={searchValue}
         onKeyDown={handleKeyDown}
         placeholder={t('search')}

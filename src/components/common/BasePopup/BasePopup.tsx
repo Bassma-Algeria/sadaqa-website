@@ -33,7 +33,7 @@ const BasePopup: React.FC<Props> = ({ closePopup, selfClose = true, children }) 
 
 const Overlay: React.FC<Props> = ({ closePopup, selfClose }) => {
   const handleClick = () => {
-    selfClose && closePopup();
+    if (selfClose) closePopup();
   };
 
   return <div data-testid="overlay" className={styles.overlay} onClick={handleClick} />;
