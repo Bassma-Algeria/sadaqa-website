@@ -505,6 +505,10 @@
           }
         }
       }
+
+      .settingsAndProfileLinks {
+        flex-direction: row-reverse;
+      }
     }
   }
 
@@ -764,6 +768,26 @@
         height: 50px;
         width: 100%;
         animation: opacityAnimation 0.3s ease forwards;
+      }
+    }
+
+    .settingsAndProfileLinks {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+
+      & > div {
+        cursor: pointer;
+      }
+
+      .settingsIconContainer svg {
+        width: 22px;
+
+        path,
+        g {
+          fill: black;
+        }
       }
     }
   }

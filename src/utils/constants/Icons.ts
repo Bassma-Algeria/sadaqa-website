@@ -36,6 +36,7 @@ import login from '../../../public/svg/log_in.svg';
 import notifications from '../../../public/svg/nav_notification_icon.svg';
 import newAd from '../../../public/svg/new_add.svg';
 import rightArrow2 from '../../../public/svg/right_arrow_nav_links.svg';
+import settings from '../../../public/svg/dashboard_settings_icon_empty.svg';
 
 const ICONS = {
   RIGHT_ARROW: rightArrow.src,
@@ -75,6 +76,7 @@ const ICONS = {
   NOTIFICATIONS: notifications.src,
   NEW_POST: newAd.src,
   RIGHT_ARROW_2: rightArrow2.src,
+  SETTINGS: settings.src,
 };
 
 export { ICONS };
