@@ -18,14 +18,12 @@ const DesktopSearchBar: React.FC<Props> = ({
   onSearchBarExpandedStateChange,
   isSearchBarOpen: isOpened,
 }) => {
-  const ref = useRef(null);
-
   const onSubmit = (searchValue: string) => {
     console.log(searchValue);
   };
 
   return (
-    <div ref={ref} className={cx('searchBarContainer', { isOpened })}>
+    <div className={cx('searchBarContainer', { isOpened })}>
       <SearchBar onStateChange={onSearchBarExpandedStateChange} onSubmit={onSubmit} />
     </div>
   );

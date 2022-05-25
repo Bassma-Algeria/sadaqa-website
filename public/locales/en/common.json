@@ -34,6 +34,8 @@
   "dashboard": "dashboard",
   "profile-information": "profile information",
   "logout": "logout",
-  "home": "home"
+  "home": "home",
+  "email": "email adress",
+  "password": "password"
 
 }

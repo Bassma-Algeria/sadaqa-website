@@ -14,7 +14,7 @@ import { Profile } from './Profile/Profile';
 
 const DesktopNavigation: React.FC = () => {
   const { locale } = useRouter();
-  const isAuthenticated = true;
+  const isAuthenticated = false;
 
   const [shouldHideNavigationLinks, setShouldHideNavigationLinks] = useState<boolean>(false);
 

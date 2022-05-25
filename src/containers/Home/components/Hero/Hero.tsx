@@ -20,11 +20,13 @@ import { Container } from '../../../../components/common/Container/Container';
 const Hero: React.FC = () => {
   const { locale } = useRouter();
   const { t } = useTranslation('home');
+
   const { NeedAuthPopup, openPopup } = useNeedAuthPopup();
 
   return (
     <Container className={`${styles.heroContainer} ${styles[locale!]}`}>
       <NeedAuthPopup />
+
       <Slider {...heroSliderSettings} className="home_slider_container">
         <HeroSlide
           variant="imageRightTextLeft"
@@ -34,7 +36,6 @@ const Hero: React.FC = () => {
           actionButtonLinkTo={'/donate'}
           image={IMAGES.HERO1}
           openNeedAuthPopup={openPopup}
-          directionReversed={locale === 'ar'}
         />
         <HeroSlide
           variant="imageLeftTextRight"
@@ -44,7 +45,6 @@ const Hero: React.FC = () => {
           actionButtonLinkTo={'/donate'}
           image={IMAGES.HERO2}
           openNeedAuthPopup={openPopup}
-          directionReversed={locale === 'ar'}
         />
         <HeroSlide
           variant="imageRightTextLeft"
@@ -54,7 +54,6 @@ const Hero: React.FC = () => {
           actionButtonLinkTo={'/people_need_help/donation_requests'}
           image={IMAGES.HERO3}
           openNeedAuthPopup={openPopup}
-          directionReversed={locale === 'ar'}
         />
       </Slider>
     </Container>

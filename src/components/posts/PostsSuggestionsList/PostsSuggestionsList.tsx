@@ -29,9 +29,8 @@ interface Props {
 }
 
 const PostsSuggestionsList: React.FC<Props> = props => {
-  const router = useRouter();
-  const reverseDirection = router.locale === 'ar';
-  const className = cx('container', { reverseDirection });
+  const { locale } = useRouter();
+  const className = cx('container', locale);
 
   return (
     <div className={`${className} ${props.containerClass}`}>

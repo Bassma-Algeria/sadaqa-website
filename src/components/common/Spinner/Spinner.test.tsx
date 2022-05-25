@@ -13,4 +13,9 @@ describe('Spinner component', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
+
+  it('should be able to change the default color', () => {
+    const tree = rendered.create(<Spinner color="white" />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

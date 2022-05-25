@@ -1,9 +1,15 @@
 import React from 'react';
 
+import { Navbar } from './Navbar/Navbar';
+
 interface Props {}
 
 const Layout: React.FC<Props> = () => {
-  return <div>Layout</div>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 };
 
 export { Layout };

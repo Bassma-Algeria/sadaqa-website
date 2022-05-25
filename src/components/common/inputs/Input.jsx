@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
-import { ReactSVG } from "react-svg";
-import { useState } from "react";
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+import { ReactSVG } from 'react-svg';
+import { useState } from 'react';
+import { useRouter } from 'next/router';
 
 const StyledInput = styled.div`
   ${tw`w-full relative`}
@@ -17,7 +18,7 @@ const StyledInput = styled.div`
     border: 1px solid  rgba(0,0,0, 0.15);
     border-radius: 16px;
     outline: none;
-    border-color: ${(props) => props.errorMessage && "#c407077d"};
+    border-color: ${props => props.errorMessage && '#c407077d'};
   }
 
   input:focus {
@@ -29,7 +30,7 @@ const StyledInput = styled.div`
     bottom: 10%;
     font-size: 0.75rem !important;
     color: #c40707;
-    display: ${(props) => (props.errorMessage ? "block" : "none")};
+    display: ${props => (props.errorMessage ? 'block' : 'none')};
   }
 
   svg {
@@ -55,8 +56,8 @@ const StyledInput = styled.div`
   }
 `;
 
-const Input = (props) => {
-  const handleInputChange = (e) => {
+const Input = props => {
+  const handleInputChange = e => {
     props.setInputValues({
       ...props.inputValues,
       [props.name]: e.target.value,
@@ -65,7 +66,7 @@ const Input = (props) => {
 
   return (
     <>
-      {props.type !== "password" ? (
+      {props.type !== 'password' ? (
         <PlainTextInput {...props} handleInputChange={handleInputChange} />
       ) : (
         <PasswordInput {...props} handleInputChange={handleInputChange} />
@@ -74,21 +75,19 @@ const Input = (props) => {
   );
 };
 
-const BaseInput = (props) => {
+const BaseInput = props => {
   return (
     <StyledInput errorMessage={props.errorMessage?.[props.name]}>
       <label htmlFor={props.name}>{props.label}</label>
       {props.children}
 
       <p>{props.errorMessage?.[props.name]}</p>
-      {props.iconUrl && (
-        <ReactSVG onClick={props.handleIconClick} src={props.iconUrl} />
-      )}
+      {props.iconUrl && <ReactSVG onClick={props.handleIconClick} src={props.iconUrl} />}
     </StyledInput>
   );
 };
 
-const PlainTextInput = (props) => {
+const PlainTextInput = props => {
   return (
     <BaseInput {...props}>
       <input
@@ -103,11 +102,10 @@ const PlainTextInput = (props) => {
   );
 };
 
-const PasswordInput = (props) => {
+const PasswordInput = props => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const { isSeePasswordIcon, setIsSeePasswordIcon } =
-    props.changeSeePasswordIconState;
+  const { isSeePasswordIcon, setIsSeePasswordIcon } = props.changeSeePasswordIconState;
 
   const handleIconClick = () => {
     setIsPasswordVisible(!isPasswordVisible);
@@ -116,9 +114,9 @@ const PasswordInput = (props) => {
 
   const passwordTypeHandler = () => {
     if (isPasswordVisible) {
-      return "text";
+      return 'text';
     } else {
-      return "password";
+      return 'password';
     }
   };
 

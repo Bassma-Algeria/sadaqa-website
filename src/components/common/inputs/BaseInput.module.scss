@@ -1,0 +1,62 @@
+@import '../../../styles/variables.scss';
+
+.container {
+  width: 100%;
+  position: relative;
+
+  &.ar {
+    text-align: right;
+
+    p.error {
+      text-align: right;
+    }
+  }
+
+  &.error {
+    .content {
+      border-color: #c407077d;
+    }
+  }
+
+  label {
+    font-size: 1.125rem;
+    padding: 0 0.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+
+  .content {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.875rem 1.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 16px;
+    outline: none;
+  }
+
+  p.error {
+    display: block !important;
+    padding: 0 0.5rem;
+    font-size: 0.75rem;
+    text-align: left;
+    margin-top: 0.25rem;
+    color: $red;
+  }
+
+  @media only screen and (max-width: 600px) {
+    label {
+      font-size: 14px;
+    }
+
+    .content {
+      padding: 0.75rem;
+      border-radius: 14px;
+      margin-top: 0.25rem;
+    }
+
+    .error {
+      font-size: 10px;
+      bottom: 3%;
+    }
+  }
+}

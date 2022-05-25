@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Avatar Component should be able to change the size of the avatar 1`] = `
+<div
+  style={
+    Object {
+      "height": 40,
+      "width": 40,
+    }
+  }
+>
+  <img
+    alt="avatar"
+  />
+</div>
+`;
+
+exports[`Avatar Component should render the default avatar correctly 1`] = `
+<div>
+  <img
+    alt="avatar"
+  />
+</div>
+`;

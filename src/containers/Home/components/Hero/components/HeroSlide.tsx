@@ -4,26 +4,35 @@ import { useRouter } from 'next/router';
 
 import { HeroFeatured } from '../../../../../components/Home/HeroFeatured/HeroFeatured';
 
-interface Props extends Omit<React.ComponentProps<typeof HeroFeatured>, 'actionButtonOnClick'> {
+type HeroFeaturedNeededProps = Omit<
+  React.ComponentProps<typeof HeroFeatured>,
+  'actionButtonOnClick' | 'directionReversed'
+>;
+
+interface Props extends HeroFeaturedNeededProps {
   actionButtonLinkTo: string;
   openNeedAuthPopup(): void;
 }
 
 const HeroSlide: React.FC<Props> = ({ actionButtonLinkTo: link, ...props }) => {
   const isAuthenticated = false;
-  const router = useRouter();
+  const { push, locale } = useRouter();
 
   const handleButtonClick = () => {
-    router.prefetch(link);
-
     if (link.includes('donate') && !isAuthenticated) {
       return props.openNeedAuthPopup();
     }
 
-    router.push(link);
+    push(link);
   };
 
-  return <HeroFeatured {...props} actionButtonOnClick={handleButtonClick} />;
+  return (
+    <HeroFeatured
+      {...props}
+      actionButtonOnClick={handleButtonClick}
+      directionReversed={locale === 'ar'}
+    />
+  );
 };
 
 export { HeroSlide };
