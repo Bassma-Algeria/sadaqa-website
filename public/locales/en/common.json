@@ -36,6 +36,7 @@
   "logout": "logout",
   "home": "home",
   "email": "email adress",
-  "password": "password"
-
+  "password": "password",
+  "invalid-email": "invalid email",
+  "password-should-have-6-letters": "password should have at least 6 letters"
 }

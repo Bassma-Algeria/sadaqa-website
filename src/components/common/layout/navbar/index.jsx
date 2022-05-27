@@ -23,17 +23,8 @@ const Navbar = () => {
 
   return (
     <div className={styles.navbar}>
-      <BrowserView>
-        <DesktopNavigation />
-        <MobileNavigation />
-
-        {/* <DesktopNavbar />
-        <MobileNav /> */}
-      </BrowserView>
-
-      <MobileView>
-        <MobileNav />
-      </MobileView>
+      <DesktopNavigation />
+      <MobileNavigation />
 
       <ProgressLoader />
 

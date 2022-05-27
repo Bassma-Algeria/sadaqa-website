@@ -1,7 +1,8 @@
-import { useRouter } from 'next/router';
 import React from 'react';
 
 import styles from '../Navbar.module.scss';
+
+import { useLocaleDetector } from '../../../../utils/hooks/useLocaleDetecter';
 
 import { BottomNavigation } from './BottomNavigation/BottomNavigation';
 import { MobileNavbar } from './MobileNavbar/MobileNavbar';
@@ -9,10 +10,10 @@ import { MobileNavbar } from './MobileNavbar/MobileNavbar';
 interface Props {}
 
 const MobileNavigation: React.FC<Props> = () => {
-  const { locale } = useRouter();
+  const locale = useLocaleDetector();
 
   return (
-    <div className={`${styles.mobileNavigation} ${styles[locale!]}`}>
+    <div className={`${styles.mobileNavigation} ${styles[locale]}`}>
       <MobileNavbar />
       <BottomNavigation />
     </div>

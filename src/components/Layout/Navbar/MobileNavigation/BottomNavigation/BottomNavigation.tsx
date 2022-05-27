@@ -10,14 +10,14 @@ import { DashboardLinks } from './DashboardLinks';
 interface Props {}
 
 const BottomNavigation: React.FC<Props> = () => {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const { pathname } = useRouter();
 
   const showDashboardLink = shouldShowDasboardLinks(pathname);
 
   return (
     <div className={styles.bottomNavigation}>
-      {!isAuthenticated && <NotAuthUserLinks />}
+      {!isAuthenticated && !showDashboardLink && <NotAuthUserLinks />}
       {isAuthenticated && !showDashboardLink && <AuthUserLinks />}
       {isAuthenticated && showDashboardLink && <DashboardLinks />}
     </div>

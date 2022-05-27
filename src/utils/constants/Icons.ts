@@ -38,6 +38,8 @@ import notifications2 from '../../../public/svg/notification.svg';
 import newAd from '../../../public/svg/new_add.svg';
 import rightArrow2 from '../../../public/svg/right_arrow_nav_links.svg';
 import settings from '../../../public/svg/dashboard_settings_icon_empty.svg';
+import hidePassword from '../../../public/svg/see_password_icon.svg';
+import seePassword from '../../../public/svg/hide_password_icon.svg';
 
 const ICONS = {
   RIGHT_ARROW: rightArrow.src,
@@ -79,6 +81,8 @@ const ICONS = {
   RIGHT_ARROW_2: rightArrow2.src,
   SETTINGS: settings.src,
   NOTIFICATIONS_2: notifications2.src,
+  SEE_PASSWORD: seePassword.src,
+  HIDE_PASSWORD: hidePassword.src,
 };
 
 export { ICONS };

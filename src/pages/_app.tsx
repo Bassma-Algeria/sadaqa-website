@@ -32,8 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     if (isAuthenticated) {
-      connectSocket(generalInfo.user_id, dispatch);
-      return;
+      return connectSocket(generalInfo.user_id, dispatch);
     }
 
     checkForTokenAndSetAuthUser(dispatch);
