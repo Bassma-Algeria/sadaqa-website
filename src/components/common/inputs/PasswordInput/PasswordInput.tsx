@@ -30,6 +30,7 @@ const PasswordInput: React.FC<Props> = props => {
           type={isPasswordHidden ? 'password' : 'text'}
           placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;"
           value={props.value}
+          autoComplete="current-password"
           onChange={e => props.onValueChange(e.target.value)}
         />
 

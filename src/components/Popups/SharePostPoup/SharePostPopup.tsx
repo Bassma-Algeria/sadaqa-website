@@ -8,7 +8,7 @@ import type { PopupProps } from '../PopupProps';
 
 import { ICONS } from '../../../utils/constants/Icons';
 
-import { postsGateway } from '../../../Gateways';
+import { postsGateway } from '../../../CoreGateways';
 
 import { BasePopup } from '../../common/BasePopup/BasePopup';
 

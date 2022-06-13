@@ -1,3 +1,4 @@
 {
-  "do-not-have-account": "Don't have an account?"
+  "do-not-have-account": "Don't have an account?",
+  "credentials-error": "credentials error, please try again"
 }

@@ -7,40 +7,35 @@ import { EmailInput } from '../../../../components/Forms/EmailInput';
 import { ValidatedPasswordInput } from '../../../../components/Forms/PasswordInput';
 import { Button } from '../../../../components/common/Button/Button';
 import { Spinner } from '../../../../components/common/Spinner/Spinner';
+import { useLoginFormHandler } from './hooks/useLoginFormHandler';
 
 const LoginForm: React.FC = () => {
   const { t } = useTranslation('common');
-
-  const [loginInputValues, setLoginInputValues] = useState({ email: '', password: '' });
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // dispatch(loginUserGetAuthTokenAndPushToHome(loginInputValues));
-    console.log(loginInputValues);
-  };
+  const { loginBody, setLoginBody, handleSubmit, isLoading, error } = useLoginFormHandler();
 
   return (
     <form onSubmit={handleSubmit}>
       <EmailInput
-        value={loginInputValues.email}
-        onValueChange={email => setLoginInputValues({ ...loginInputValues, email })}
+        value={loginBody.email}
+        onValueChange={email => setLoginBody({ ...loginBody, email })}
         className={styles.input}
       />
 
       <ValidatedPasswordInput
         label={t('password')}
         name="password"
-        value={loginInputValues.password}
-        onValueChange={password => setLoginInputValues({ ...loginInputValues, password })}
+        value={loginBody.password}
+        onValueChange={password => setLoginBody({ ...loginBody, password })}
         className={styles.input}
       />
+
+      <p className={styles.error}>{error}</p>
 
       <Button
         variant="primary"
         size="md"
         className={styles.loginButton}
-        disabled={!loginInputValues.email || !loginInputValues.password}
+        disabled={!loginBody.email || !loginBody.password}
         fullWidth
       >
         {isLoading ? <Spinner color="white" /> : t('login')}

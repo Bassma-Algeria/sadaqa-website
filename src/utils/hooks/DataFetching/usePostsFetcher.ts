@@ -1,5 +1,5 @@
-import { postsGateway } from '../../../Gateways';
-import type { GetPostsFilters } from '../../../Gateways/PostsGateway/PostsGateway.interface';
+import { postsGateway } from '../../../CoreGateways';
+import type { GetPostsFilters } from '../../../CoreGateways/PostsGateway/PostsGateway';
 
 import { useDataFetcher } from './useDataFetcher';
 

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import type { IPost } from '../../../@types/Posts';
 
-import { postsGateway } from '../../../Gateways';
+import { postsGateway } from '../../../CoreGateways';
 
 import { getDefaultPostThumbnail } from '../../../utils/postsHelpers';
 

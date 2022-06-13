@@ -12,23 +12,24 @@ interface Props {
   likePost: () => Promise<{ success: boolean }>;
 }
 
-const likeSound = new Audio(SOUNDS.LIKE);
-
 const LikeButton: React.FC<Props> = ({ likePost, likesCount: count, liked }) => {
+  const [isLiked, setIsLiked] = useState<boolean>(liked);
   const [likesCount, setLikesCount] = useState<number>(count);
 
   const handleClick = async () => {
     const { success } = await likePost();
     if (!success) return;
 
+    const likeSound = new Audio(SOUNDS.LIKE);
     likeSound.play();
 
-    setLikesCount(liked ? likesCount - 1 : likesCount + 1);
+    setLikesCount(isLiked ? likesCount - 1 : likesCount + 1);
+    setIsLiked(!isLiked);
   };
 
   return (
     <div className={styles.Button} onClick={handleClick}>
-      <AnimatedLikeButton liked={liked} />
+      <AnimatedLikeButton liked={isLiked} />
       <p>{likesCount}</p>
     </div>
   );

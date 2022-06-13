@@ -38,5 +38,6 @@
   "email": "email adress",
   "password": "password",
   "invalid-email": "invalid email",
-  "password-should-have-6-letters": "password should have at least 6 letters"
+  "password-should-have-6-letters": "password should have at least 6 letters",
+  "network-error": "please check your internet connection, and try again"
 }

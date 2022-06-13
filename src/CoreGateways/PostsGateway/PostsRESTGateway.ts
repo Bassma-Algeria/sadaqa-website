@@ -1,15 +1,12 @@
 import axios from 'axios';
 
 import { IPost } from '../../@types/Posts';
-import { RestApiGateway } from '../Common/RestApiGateway';
-import { GetPostsFilters, IPostsGateway } from './PostsGateway.interface';
+import { RESTApiGateway } from '../utils/RESTApiGateway';
+import { GetPostsFilters, PostsGateway } from './PostsGateway';
 
-class PostsGateway extends RestApiGateway implements IPostsGateway {
-  private BASE_URL: string;
-
+class PostsRESTGateway extends RESTApiGateway implements PostsGateway {
   constructor() {
-    super();
-    this.BASE_URL = `${this.BASE_REST_URL}/posts`;
+    super('posts');
   }
 
   async likePost(token: string, postId: number) {
@@ -81,4 +78,4 @@ class PostsGateway extends RestApiGateway implements IPostsGateway {
   }
 }
 
-export { PostsGateway };
+export { PostsRESTGateway };

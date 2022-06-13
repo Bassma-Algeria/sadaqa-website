@@ -23,7 +23,7 @@ export interface GetPostsFilters {
   numOfPostsPerChunk?: number;
 }
 
-export interface IPostsGateway {
+export interface PostsGateway {
   getPosts: (filters?: GetPostsFilters) => Promise<IPost[]>;
   likePost: (token: string, postId: number) => Promise<void>;
   sharePost: (token: string, postId: number) => Promise<void>;

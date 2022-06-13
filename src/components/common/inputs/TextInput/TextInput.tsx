@@ -15,9 +15,10 @@ const TextInput: React.FC<Props> = props => {
     <BaseInput {...props}>
       <input
         type="text"
-        className={styles.input}
         id={props.name}
         name={props.name}
+        className={styles.input}
+        autoComplete={props.name}
         placeholder={props.placeholder}
         value={props.value}
         onChange={e => props.onValueChange(e.target.value)}
