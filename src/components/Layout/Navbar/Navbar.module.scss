@@ -964,6 +964,74 @@
   }
 }
 
+.progressLoaderContainer {
+  position: fixed;
+  z-index: 9;
+  top: 70px;
+  width: 100%;
+
+  .progressLoader {
+    background-color: $primary-color;
+    height: 2px;
+    width: 0%;
+
+    &.isLoading {
+      animation: loadingStart 0.4s ease forwards, loadingLatency 5s ease 1s forwards;
+    }
+
+    &.isComplete {
+      animation: loadingComplete 0.2s ease forwards, notLoading 0s ease 0.4s forwards;
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    top: 50px;
+
+    .progressLoader {
+      height: 1px;
+    }
+  }
+}
+
+@keyframes loadingStart {
+  0% {
+    width: 0%;
+  }
+
+  20% {
+    width: 10%;
+  }
+
+  100% {
+    width: 70%;
+  }
+}
+
+@keyframes loadingLatency {
+  0% {
+    width: 70%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes loadingComplete {
+  0% {
+    width: 70%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes notLoading {
+  100% {
+    width: 0%;
+  }
+}
+
 @keyframes openCategoriesPopupAnimation {
   0% {
     opacity: 0;

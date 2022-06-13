@@ -18,6 +18,7 @@ import { Container } from '../containers/Container';
 
 const StyledFooter = styled.div`
   ${tw`bg-primary text-white pt-10`}
+
   p {
     font-size: 14px;
     text-align: center;

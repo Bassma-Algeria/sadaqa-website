@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import Router from "next/router";
-import styled from "styled-components";
-import tw from "twin.macro";
+import React, { useEffect, useState } from 'react';
+import Router, { useRouter } from 'next/router';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 
 const StyledLoader = styled.div`
   ${tw`absolute bg-primary`}
@@ -10,11 +10,11 @@ const StyledLoader = styled.div`
   height: 2px;
   animation: ${({ isLoading, isComplete }) => {
     if (isLoading) {
-      return "loadingStart 0.4s ease forwards, loadingLatency 5s ease 1s forwards";
+      return 'loadingStart 0.4s ease forwards, loadingLatency 5s ease 1s forwards';
     } else if (isComplete) {
-      return "loadingComplete 0.2s ease forwards, notLoading 0s ease 0.4s forwards";
+      return 'loadingComplete 0.2s ease forwards, notLoading 0s ease 0.4s forwards';
     } else {
-      return "notLoading 0s ease forwards";
+      return 'notLoading 0s ease forwards';
     }
   }};
 
@@ -68,20 +68,18 @@ const ProgressLoader = () => {
   const [isLoadingComplete, setIsLoadingComplete] = useState(false);
 
   useEffect(() => {
-    Router.events.on("routeChangeStart", (url) => {
+    Router.events.on('routeChangeStart', url => {
       setIsLoadingComplete(false);
       setIsPageLoading(true);
     });
 
-    Router.events.on("routeChangeComplete", (url) => {
+    Router.events.on('routeChangeComplete', url => {
       setIsPageLoading(false);
       setIsLoadingComplete(true);
     });
   }, []);
 
-  return (
-    <StyledLoader isLoading={isPageLoading} isComplete={isLoadingComplete} />
-  );
+  return <StyledLoader isLoading={isPageLoading} isComplete={isLoadingComplete} />;
 };
 
 export default ProgressLoader;
