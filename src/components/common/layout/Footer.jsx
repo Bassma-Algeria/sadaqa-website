@@ -155,7 +155,7 @@ const Footer = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Yasser
+            Bassma Team
           </a>
         </p>
       </Container>

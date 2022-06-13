@@ -41,6 +41,11 @@ import settings from '../../../public/svg/dashboard_settings_icon_empty.svg';
 import hidePassword from '../../../public/svg/see_password_icon.svg';
 import seePassword from '../../../public/svg/hide_password_icon.svg';
 
+import facebookIcon from '../../../public/svg/facebook_footer_icon.svg';
+import instagramIcon from '../../../public/svg/instagram_footer_icon.svg';
+import twitterIcon from '../../../public/svg/twitter_footer_icon.svg';
+import emailIcon from '../../../public/svg/dashboard_chat_icon_empty.svg';
+
 const ICONS = {
   RIGHT_ARROW: rightArrow.src,
   NO_POSTS: noPosts.src,
@@ -83,6 +88,10 @@ const ICONS = {
   NOTIFICATIONS_2: notifications2.src,
   SEE_PASSWORD: seePassword.src,
   HIDE_PASSWORD: hidePassword.src,
+  FACEBOOK: facebookIcon.src,
+  INSTAGRAM: instagramIcon.src,
+  TWITTER: twitterIcon.src,
+  EMAIL: emailIcon.src,
 };
 
 export { ICONS };

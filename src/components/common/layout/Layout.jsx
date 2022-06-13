@@ -2,11 +2,12 @@ import React, { useState } from 'react';
 import VisibilitySensor from 'react-visibility-sensor';
 
 // components
-import Footer from './Footer';
+// import Footer from './Footer';
 import Navbar from './navbar/index';
 import Sidebar from './Sidebar';
 import DashboardSidebar from './DashboardSidebar';
 import NotificationPopup from '../pop-ups/NotificationPopup';
+import { Footer } from '../../Layout/Footer/Footer';
 
 const Layout = ({
   children,
