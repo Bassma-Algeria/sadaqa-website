@@ -2,11 +2,11 @@ import {
   addNewOnlineUser,
   removeOnlineUser,
   setOnlineUsersIds,
-} from "../../redux/reducers/usersSlice";
+} from '../../redux/reducers/usersSlice';
 
 const setOnlineUsersHandler =
   ([usersIds]) =>
-  (dispatch) => {
+  dispatch => {
     dispatch(setOnlineUsersIds(usersIds));
   };
 
@@ -16,14 +16,14 @@ const newConnectionHandler =
     const {
       users: { onlineUsersIds },
     } = getState();
-    if (onlineUsersIds.find((userId) => userId === newUserId)) return;
+    if (onlineUsersIds.find(userId => userId === newUserId)) return;
 
     dispatch(addNewOnlineUser(newUserId));
   };
 
 const deconnectUser =
   ([userId]) =>
-  (dispatch) => {
+  dispatch => {
     dispatch(removeOnlineUser(userId));
   };
 

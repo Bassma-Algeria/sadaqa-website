@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 
 import styles from './BaseInput.module.scss';
 
-import { useLocaleDetector } from '../../../utils/hooks/useLocaleDetecter';
+import { useRightToLeftDetector } from '../../../utils/hooks/useRightToLeftDetector';
 
 const cx = classNames.bind(styles);
 
@@ -14,14 +14,13 @@ interface Props {
   className?: string;
 }
 
-const BaseInput: React.FC<Props> = ({ children, label, name, className: customClass, error }) => {
-  const locale = useLocaleDetector();
-
-  const className = cx('container', locale, { error });
+const BaseInput: React.FC<Props> = ({ children, error, ...props }) => {
+  const { rightToLeft } = useRightToLeftDetector();
+  const className = cx('container', { error, rightToLeft });
 
   return (
-    <div className={`${className} ${customClass}`}>
-      <label htmlFor={name}>{label}</label>
+    <div className={`${className} ${props.className}`}>
+      <label htmlFor={props.name}>{props.label}</label>
 
       <div className={styles.content}>{children}</div>
 

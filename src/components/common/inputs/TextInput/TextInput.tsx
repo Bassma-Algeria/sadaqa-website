@@ -2,8 +2,6 @@ import React from 'react';
 
 import styles from './TextInput.module.scss';
 
-import { useLocaleDetector } from '../../../../utils/hooks/useLocaleDetecter';
-
 import { BaseInput } from '../BaseInput';
 
 interface Props extends React.ComponentProps<typeof BaseInput> {
@@ -13,13 +11,11 @@ interface Props extends React.ComponentProps<typeof BaseInput> {
 }
 
 const TextInput: React.FC<Props> = props => {
-  const locale = useLocaleDetector();
-
   return (
     <BaseInput {...props}>
       <input
         type="text"
-        className={`${styles.input} ${styles[locale]}`}
+        className={styles.input}
         id={props.name}
         name={props.name}
         placeholder={props.placeholder}

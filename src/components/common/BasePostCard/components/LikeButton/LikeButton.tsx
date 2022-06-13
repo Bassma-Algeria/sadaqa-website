@@ -12,6 +12,8 @@ interface Props {
   likePost: () => Promise<{ success: boolean }>;
 }
 
+const likeSound = new Audio(SOUNDS.LIKE);
+
 const LikeButton: React.FC<Props> = ({ likePost, likesCount: count, liked }) => {
   const [likesCount, setLikesCount] = useState<number>(count);
 
@@ -19,7 +21,6 @@ const LikeButton: React.FC<Props> = ({ likePost, likesCount: count, liked }) => 
     const { success } = await likePost();
     if (!success) return;
 
-    const likeSound = new Audio(SOUNDS.LIKE);
     likeSound.play();
 
     setLikesCount(liked ? likesCount - 1 : likesCount + 1);

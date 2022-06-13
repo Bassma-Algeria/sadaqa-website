@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from '../Navbar.module.scss';
 
-import { useLocaleDetector } from '../../../../utils/hooks/useLocaleDetecter';
+import { useLocaleDetector } from '../../../../utils/hooks/useLocaleDetector';
 
 import { BottomNavigation } from './BottomNavigation/BottomNavigation';
 import { MobileNavbar } from './MobileNavbar/MobileNavbar';

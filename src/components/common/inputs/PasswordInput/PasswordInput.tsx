@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { ReactSVG } from 'react-svg';
+import classNames from 'classnames/bind';
 
 import styles from './PasswordInput.module.scss';
 
 import { ICONS } from '../../../../utils/constants/Icons';
-import { useLocaleDetector } from '../../../../utils/hooks/useLocaleDetecter';
+
+import { useRightToLeftDetector } from '../../../../utils/hooks/useRightToLeftDetector';
 
 import { BaseInput } from '../BaseInput';
+
+const cx = classNames.bind(styles);
 
 interface Props extends React.ComponentProps<typeof BaseInput> {
   value: string;
@@ -14,13 +18,12 @@ interface Props extends React.ComponentProps<typeof BaseInput> {
 }
 
 const PasswordInput: React.FC<Props> = props => {
-  const locale = useLocaleDetector();
-
+  const { rightToLeft } = useRightToLeftDetector();
   const [isPasswordHidden, setIsPasswordHidden] = useState(true);
 
   return (
     <BaseInput {...props}>
-      <div className={`${styles.container} ${styles[locale]}`}>
+      <div className={cx('container', { rightToLeft })}>
         <input
           id={props.name}
           name={props.name}

@@ -4,10 +4,11 @@
   width: 100%;
   position: relative;
 
-  &.ar {
+  &.rightToLeft {
     text-align: right;
 
-    p.error {
+    p.error,
+    input {
       text-align: right;
     }
   }
