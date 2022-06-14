@@ -45,6 +45,7 @@ import facebookIcon from '../../../public/svg/facebook_footer_icon.svg';
 import instagramIcon from '../../../public/svg/instagram_footer_icon.svg';
 import twitterIcon from '../../../public/svg/twitter_footer_icon.svg';
 import emailIcon from '../../../public/svg/dashboard_chat_icon_empty.svg';
+import heart from '../../../public/svg/heart.svg';
 
 const ICONS = {
   RIGHT_ARROW: rightArrow.src,
@@ -92,6 +93,7 @@ const ICONS = {
   INSTAGRAM: instagramIcon.src,
   TWITTER: twitterIcon.src,
   EMAIL: emailIcon.src,
+  HEART: heart.src,
 };
 
 export { ICONS };

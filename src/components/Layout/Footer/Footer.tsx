@@ -26,67 +26,70 @@ const Footer: React.FC = () => {
 
           <div className={styles.sectionContent}>
             {DONATIONS_CATEGORIES.map(category => (
-              <div className={styles.link}>
-                <Link href={category.pageLink} key={category.nameKey}>
-                  {t(category.nameKey)}
-                </Link>
-              </div>
+              <Link href={category.pageLink} key={category.nameKey}>
+                <p className={styles.link}>{t(category.nameKey)}</p>
+              </Link>
             ))}
           </div>
         </section>
 
         <section>
           <h3>{t('people-need-help')}</h3>
+
           <div className={styles.sectionContent}>
             {PEOPLE_NEED_HELP_CATEGORIES.map(category => (
-              <div className={styles.link}>
-                <Link href={category.pageLink} key={category.nameKey}>
-                  {t(category.nameKey)}
-                </Link>
-              </div>
+              <Link href={category.pageLink} key={category.nameKey}>
+                <p className={styles.link}>{t(category.nameKey)}</p>
+              </Link>
             ))}
           </div>
         </section>
 
         <section>
           <h3>{t('about-sadaqa')}</h3>
+
           <div className={styles.sectionContent}>
-            <Link href="/faq">{t('faq')}</Link>
-            <Link href="/term-of-use">{t('term-of-use')}</Link>
-            <Link href="/contact-us">{t('contact-us')}</Link>
+            <div>
+              <Link href="/faq">{t('faq')}</Link>
+              <Link href="/term-of-use">{t('term-of-use')}</Link>
+              <Link href="/contact-us">{t('contact-us')}</Link>
 
-            <div className={styles.socialLink}>
-              <ReactSVG src={ICONS.EMAIL} />
-              <p>sadaqa.contact@gmail.com</p>
+              <div className={styles.socialLink}>
+                <ReactSVG src={ICONS.EMAIL} />
+                <p>sadaqa.contact@gmail.com</p>
+              </div>
+
+              <a href="facebook.com" target="_blank" className={styles.socialLink} rel="noreferrer">
+                <ReactSVG src={ICONS.FACEBOOK} />
+                <p>Bassma</p>
+              </a>
+
+              <a
+                href="https://www.instagram.com/bassma.algeria/"
+                target="_blank"
+                className={styles.socialLink}
+                rel="noreferrer"
+              >
+                <ReactSVG src={ICONS.INSTAGRAM} />
+                <p>Bassma</p>
+              </a>
+
+              <a href="twitter.com" target="_blank" className={styles.socialLink} rel="noreferrer">
+                <ReactSVG src={ICONS.TWITTER} />
+                <p>Bassma</p>
+              </a>
             </div>
-
-            <a href="facebook.com" target="_blank" className={styles.socialLink} rel="noreferrer">
-              <ReactSVG src={ICONS.FACEBOOK} />
-              <p>/sadaqa-dz</p>
-            </a>
-
-            <a href="instagram.com" target="_blank" className={styles.socialLink} rel="noreferrer">
-              <ReactSVG src={ICONS.INSTAGRAM} />
-              <p>/sadaqa-dz</p>
-            </a>
-
-            <a href="twitter.com" target="_blank" className={styles.socialLink} rel="noreferrer">
-              <ReactSVG src={ICONS.TWITTER} />
-              <p>/sadaqa-dz</p>
-            </a>
           </div>
         </section>
       </div>
 
       <p className={styles.copyRight}>
-        Copyright Sadaqa ©2021 All rights reserved | made with ♥ by{' '}
-        <a
-          href="https://www.linkedin.com/in/yasser-belatreche-6b450620a/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {/* {t("bassma-team")} */}
-          Bassma Team
+        {t('copyright-bassma')} ©{new Date().getFullYear()} {t('all-rights-reserved')} |{' '}
+        {t('made-with')}
+        <ReactSVG src={ICONS.HEART} />
+        {t('by')}
+        <a href="https://www.instagram.com/bassma.algeria/" target="_blank" rel="noreferrer">
+          {t('bassma-team')}
         </a>
       </p>
     </div>

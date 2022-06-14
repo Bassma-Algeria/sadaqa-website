@@ -39,5 +39,14 @@
   "password": "password",
   "invalid-email": "invalid email",
   "password-should-have-6-letters": "password should have at least 6 letters",
-  "network-error": "please check your internet connection, and try again"
+  "network-error": "please check your internet connection, and try again",
+  "about-sadaqa": "about sadaqa",
+  "faq": "FAQ",
+  "term-of-use": "term of use",
+  "contact-us": "contact us",
+  "bassma-team": "bassma team",
+  "made-with": "made with",
+  "by": "by",
+  "copyright-bassma": "copyright bassma",
+  "all-rights-reserved": "All rights reserved"
 }
