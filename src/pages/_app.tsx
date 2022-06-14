@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect } from 'react';
-import { AppProps } from 'next/app';
+import App, { AppContext, AppProps } from 'next/app';
 import { useSelector, useDispatch } from 'react-redux';
 import { appWithTranslation } from 'next-i18next';
 import { CookiesProvider } from 'react-cookie';

@@ -1,5 +1,5 @@
 module.exports = {
-  setupFiles: ['<rootDir>/jest.setup.js'], // links to normal "configure({ adapter: new Adapter() })" stuff.
+  setupFiles: ['<rootDir>/jest.setup.js', 'dotenv/config'], // links to normal "configure({ adapter: new Adapter() })" stuff.
 
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'], // ignores test files in .next(js) & node modules
 

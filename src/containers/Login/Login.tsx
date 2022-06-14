@@ -1,16 +1,17 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import classNames from 'classnames/bind';
 
 import styles from './Login.module.scss';
 
-import Layout from '../../components/common/layout/Layout';
+import { useAuthContext } from '../../utils/hooks/useAuthContext';
+import { useRightToLeftDetector } from '../../utils/hooks/useRightToLeftDetector';
+
 import PageMetaData from '../../components/common/others/PageMetaData';
 
+import { Layout } from '../../components/Layout/Layout';
 import { LoginImageSection } from './components/LoginImageSection';
 import { LoginFormSection } from './components/LoginFormSection/LoginFormSection';
-import { useRightToLeftDetector } from '../../utils/hooks/useRightToLeftDetector';
-import { useAuthContext } from '../../utils/hooks/useAuthContext';
 
 const cx = classNames.bind(styles);
 
@@ -24,7 +25,7 @@ const Login: React.FC = () => {
   }, []);
 
   return (
-    <Layout withoutFooter>
+    <Layout noFooter>
       <PageMetaData title={'Sadaqa صدقة | login'} />
 
       <div className={cx('login', { rightToLeft })}>

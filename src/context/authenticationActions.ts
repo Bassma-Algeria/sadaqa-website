@@ -5,7 +5,7 @@ const setToken = (token: string): AuthenticationAction => {
 };
 
 const removeToken = (): AuthenticationAction => {
-  return { type: 'REMOVE_TOKEN' };
+  return { type: 'REMOVE_TOKEN', payload: undefined };
 };
 
 export { setToken, removeToken };

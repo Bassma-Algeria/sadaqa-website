@@ -2,7 +2,7 @@ import { AuthenticationState } from './AuthContextProvider';
 
 export type AuthenticationAction =
   | { type: 'SET_TOKEN'; payload: { token: string } }
-  | { type: 'REMOVE_TOKEN' };
+  | { type: 'REMOVE_TOKEN'; payload: undefined };
 
 type Actions = AuthenticationAction['type'];
 
@@ -10,19 +10,16 @@ const authenticationReducer = (
   state: AuthenticationState,
   action: AuthenticationAction,
 ): AuthenticationState => {
-  switch (action.type) {
-    case 'SET_TOKEN':
-      return { isAuthenticated: true, token: action.payload.token };
-      break;
+  return actionHandler[action.type](action.payload);
+};
 
-    case 'REMOVE_TOKEN':
-      return { isAuthenticated: false, token: undefined };
-      break;
+type ActionHandler = {
+  [K in Actions]: (payload: any) => AuthenticationState;
+};
 
-    default:
-      return state;
-      break;
-  }
+const actionHandler: ActionHandler = {
+  REMOVE_TOKEN: () => ({ isAuthenticated: false, token: undefined }),
+  SET_TOKEN: ({ token }) => ({ isAuthenticated: true, token }),
 };
 
 export { authenticationReducer };

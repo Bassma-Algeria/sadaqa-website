@@ -15,27 +15,26 @@ import { MobileNavigation } from '../../../Layout/Navbar/MobileNavigation/Mobile
 import { RouteChangingProgressLoader } from '../../../Layout/Navbar/RouteChangingProgressLoader/RouteChangingProgressLoader';
 
 const Navbar = () => {
-  const {
-    isAuthenticated,
-    profileInfo: {
-      generalInfo: { active },
-    },
-  } = useSelector(state => state.authUser);
+  // const {
+  //   isAuthenticated,
+  //   profileInfo: {
+  //     generalInfo: { active },
+  //   },
+  // } = useSelector(state => state.authUser);
 
   return (
     <div className={styles.navbar}>
       <DesktopNavigation />
       <MobileNavigation />
 
-      {/* <ProgressLoader /> */}
       <RouteChangingProgressLoader />
 
-      {!active && isAuthenticated && (
+      {/* {!active && isAuthenticated && (
         <NavMessage
           success
           text={"You account is not verified yet, you won't be able to post any ads."}
         />
-      )}
+      )} */}
     </div>
   );
 };
