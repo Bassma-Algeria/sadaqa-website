@@ -20,18 +20,18 @@
   .signupImageSection {
     display: flex;
     align-items: center;
+    width: 45%;
     padding: 0 2.5rem;
     background-color: $secondary-color;
-    width: 45%;
 
     .imgContainer {
       height: auto;
+      width: 44vw;
       margin-bottom: 5rem;
       position: fixed;
       top: 50%;
       left: 22.5%;
       transform: translate(-50%, -50%);
-      width: 44vw;
     }
   }
 
@@ -116,8 +116,9 @@
     }
 
     .errorMessage {
-      @apply text-base text-center;
-      color: #c40707;
+      font-size: 16px;
+      text-align: center;
+      color: $red;
     }
 
     p {
@@ -152,11 +153,11 @@
         }
 
         & button:nth-child(2) {
-          @apply hidden;
+          display: none;
         }
 
         .backArrow {
-          @apply flex;
+          display: flex;
         }
       }
     }
@@ -166,12 +167,13 @@
     .signupFormSection {
       h1,
       h1.chooseType {
-        @apply mb-8 text-center;
+        text-align: center;
+        margin-bottom: 2rem;
         font-size: 45px;
       }
 
       p {
-        @apply text-center;
+        text-align: center;
       }
     }
   }
@@ -204,7 +206,7 @@
 
   @media only screen and (max-width: 500px) {
     .signupFormSection {
-      @apply justify-start;
+      justify-content: flex-start;
       padding-top: 20%;
 
       .typeCard {
