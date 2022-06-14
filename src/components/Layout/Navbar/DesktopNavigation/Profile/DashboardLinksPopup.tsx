@@ -14,6 +14,9 @@ import { ICONS } from '../../../../../utils/constants/Icons';
 
 import { Avatar } from '../../../../common/Avatar/Avatar';
 import { DashboardPopupLink } from './DashboardPopupLink';
+import { LocalStorage } from '../../../../../utils/helpers/LocalStorage';
+import { useAuthContext } from '../../../../../utils/hooks/useAuthContext';
+import { removeToken } from '../../../../../context/authenticationActions';
 
 interface Props {
   closePopup: () => void;
@@ -55,12 +58,7 @@ const DashboardLinksPopup: React.FC<Props> = ({ closePopup }) => {
         />
 
         <DashboardLinksPopupSeparator />
-
-        <DashboardPopupLink
-          title={t('logout')}
-          icon={ICONS.LOGOUT}
-          onClick={() => console.log('logout')}
-        />
+        <LogoutButton />
       </div>
     </div>
   );
@@ -84,5 +82,17 @@ const Header: React.FC = () => {
 };
 
 const DashboardLinksPopupSeparator: React.FC = () => <div className={styles.separator} />;
+
+const LogoutButton = () => {
+  const { dispatch } = useAuthContext();
+  const { t } = useTranslation('common');
+
+  const handleClick = () => {
+    LocalStorage.remove('token');
+    dispatch(removeToken());
+  };
+
+  return <DashboardPopupLink title={t('logout')} icon={ICONS.LOGOUT} onClick={handleClick} />;
+};
 
 export { DashboardLinksPopup };

@@ -11,10 +11,11 @@ import { AuthenticationButtons } from './AuthenticationButtons';
 import { DonateButton } from './DonateButton';
 import { Notifications } from './Notifications/Notifications';
 import { Profile } from './Profile/Profile';
+import { useAuthContext } from '../../../../utils/hooks/useAuthContext';
 
 const DesktopNavigation: React.FC = () => {
   const { locale } = useRouter();
-  const isAuthenticated = false;
+  const { isAuthenticated } = useAuthContext();
 
   const [shouldHideNavigationLinks, setShouldHideNavigationLinks] = useState<boolean>(false);
 

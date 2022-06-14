@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { useRouter } from 'next/router';
 import classNames from 'classnames/bind';
 
@@ -10,12 +10,13 @@ import PageMetaData from '../../components/common/others/PageMetaData';
 import { LoginImageSection } from './components/LoginImageSection';
 import { LoginFormSection } from './components/LoginFormSection/LoginFormSection';
 import { useRightToLeftDetector } from '../../utils/hooks/useRightToLeftDetector';
+import { useAuthContext } from '../../utils/hooks/useAuthContext';
 
 const cx = classNames.bind(styles);
 
 const Login: React.FC = () => {
-  const isAuthenticated = false;
   const { back } = useRouter();
+  const { isAuthenticated } = useAuthContext();
   const { rightToLeft } = useRightToLeftDetector();
 
   useEffect(() => {

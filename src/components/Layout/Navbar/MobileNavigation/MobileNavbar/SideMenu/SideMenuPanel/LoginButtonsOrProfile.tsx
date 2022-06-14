@@ -8,11 +8,13 @@ import styles from '../../../../Navbar.module.scss';
 import { ICONS } from '../../../../../../../utils/constants/Icons';
 import { IMAGES } from '../../../../../../../utils/constants/Images';
 
+import { useAuthContext } from '../../../../../../../utils/hooks/useAuthContext';
+
 import { Avatar } from '../../../../../../common/Avatar/Avatar';
 import { Button } from '../../../../../../common/Button/Button';
 
 const LoginButtonsOrProfile: React.FC = () => {
-  const isAuthenticated = true;
+  const { isAuthenticated } = useAuthContext();
 
   return isAuthenticated ? <Profile /> : <LoginButtons />;
 };

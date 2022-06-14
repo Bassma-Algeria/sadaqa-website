@@ -3,6 +3,8 @@ import { useRouter } from 'next/router';
 
 import styles from '../../Navbar.module.scss';
 
+import { useAuthContext } from '../../../../../utils/hooks/useAuthContext';
+
 import { AuthUserLinks } from './AuthUserLinks';
 import { NotAuthUserLinks } from './NotAuthUserLinks';
 import { DashboardLinks } from './DashboardLinks';
@@ -10,8 +12,8 @@ import { DashboardLinks } from './DashboardLinks';
 interface Props {}
 
 const BottomNavigation: React.FC<Props> = () => {
-  const isAuthenticated = false;
   const { pathname } = useRouter();
+  const { isAuthenticated } = useAuthContext();
 
   const showDashboardLink = shouldShowDasboardLinks(pathname);
 
