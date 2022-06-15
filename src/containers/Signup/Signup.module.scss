@@ -15,6 +15,10 @@
         transform: translate(50%, -50%);
       }
     }
+
+    .signupFormSection {
+      text-align: right;
+    }
   }
 
   .signupImageSection {
@@ -42,52 +46,21 @@
     flex: 1;
     margin: 0;
     padding: 5%;
-    padding-top: 6rem;
+    padding-top: 4rem;
 
-    .typeCard {
-      @apply flex bg-white border border-black p-4 px-0 pl-6 font-medium mb-6 items-center cursor-pointer;
-      border-radius: 20px;
-      font-size: 20px;
-      width: 100%;
-      min-width: 470px;
-      max-width: 470px;
+    .headTitle {
+      h1 {
+        text-transform: capitalize;
+        font-weight: 600;
+        font-size: 50px;
+      }
 
-      &.selected {
-        border-color: #c94ac6;
-        background-color: #fff5ff;
+      p {
+        font-size: 18px;
 
-        .circleInside {
-          @apply absolute rounded-full;
-
-          background-color: #c94ac6;
-          top: 50%;
-          right: 50%;
-          transform: translate(44%, -43%);
-          height: 8px;
-          width: 8px;
+        a {
+          color: $blue;
         }
-      }
-
-      &:hover {
-        border-color: #c94ac6;
-        background-color: #fff5ff;
-      }
-
-      .radioButton {
-        @apply relative rounded-full border border-black mr-3;
-        height: 15px;
-        width: 15px;
-      }
-    }
-
-    h1 {
-      @apply font-semibold mb-5;
-      font-size: 50px;
-
-      &.chooseType {
-        font-size: 40px;
-        max-width: 600px;
-        margin-bottom: 40px;
       }
     }
 
@@ -119,15 +92,6 @@
       font-size: 16px;
       text-align: center;
       color: $red;
-    }
-
-    p {
-      @apply text-left;
-      font-size: 18px;
-
-      a {
-        color: #cb7feb;
-      }
     }
   }
 

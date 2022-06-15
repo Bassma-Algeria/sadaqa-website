@@ -16,12 +16,6 @@ import { SignupFormSection } from './components/SignupFormSection/SignupFormSect
 const cx = classNames.bind(styles);
 
 const Signup: React.FC = () => {
-  // const {
-  //   authUser: { isAuthenticated },
-  // } = useSelector(state => state);
-  // const dispatch = useDispatch();
-  // const router = useRouter();
-
   // const initialState = {
   //   roleId: null,
   //   associationName: '',
@@ -42,7 +36,6 @@ const Signup: React.FC = () => {
 
   // const initializeState = () => {
   //   setSignupInputValues(initialState);
-  //   dispatch(clearErrors());
   // };
 
   // const handleSubmit = e => {
@@ -60,12 +53,6 @@ const Signup: React.FC = () => {
   //   }
   //   dispatch(signupUserGetAuthTokenAndPushToHome(formData, router));
   // };
-
-  // useEffect(() => {
-  //   if (isAuthenticated) router.back();
-
-  //   return () => dispatch(clearErrors());
-  // }, []);
 
   const { back } = useRouter();
   const { rightToLeft } = useRightToLeftDetector();
