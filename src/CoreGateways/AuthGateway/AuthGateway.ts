@@ -5,7 +5,16 @@ export interface LoginBody {
   password: string;
 }
 
+export interface NormalUserSignupBody {
+  firstName: string;
+  lastName: string;
+  wilaya: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
+
 export interface AuthGateway {
   login(body: LoginBody): Promise<Token>;
-  // signup(body: SignupBody): Promise<Token>;
+  normalUserSignup(body: NormalUserSignupBody): Promise<Token>;
 }

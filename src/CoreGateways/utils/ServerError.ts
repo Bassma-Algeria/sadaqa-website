@@ -1,8 +1,9 @@
 class ServerError extends Error {
   public readonly error: any;
 
-  constructor(message: any) {
-    super(message);
+  constructor(error: any) {
+    super('Server Error');
+    this.error = error;
   }
 }
 

@@ -9,7 +9,7 @@ import { IMAGES } from '../../../../../utils/constants/Images';
 const Logo: React.FC = () => {
   return (
     <div className={styles.logoContainer}>
-      <Link href={'/'}>
+      <Link href={'/'} passHref>
         <Image src={IMAGES.LOGO} alt="Logo" priority />
       </Link>
     </div>

@@ -6,9 +6,10 @@ import { authGateway } from '../../../../../CoreGateways';
 import { ServerError } from '../../../../../CoreGateways/utils/ServerError';
 import { NetworkError } from '../../../../../CoreGateways/utils/NetworkError';
 
+import { setToken } from '../../../../../context/authenticationActions';
+
 import { LocalStorage } from '../../../../../utils/helpers/LocalStorage';
 import { useAuthContext } from '../../../../../utils/hooks/useAuthContext';
-import { setToken } from '../../../../../context/authenticationActions';
 
 const useLoginFormHandler = () => {
   const { back } = useRouter();

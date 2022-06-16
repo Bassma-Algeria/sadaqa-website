@@ -49,6 +49,7 @@
     padding-top: 4rem;
 
     .headTitle {
+      margin-bottom: 2rem;
       h1 {
         text-transform: capitalize;
         font-weight: 600;
@@ -65,36 +66,29 @@
     }
 
     .signupForm {
-    }
+      .input {
+        margin-bottom: 2rem;
+      }
 
-    .submitBtnContainer {
-      @apply flex w-full gap-2 justify-end;
+      .notArabicInput {
+        margin-bottom: 2rem;
 
-      .backArrow {
-        @apply flex items-center justify-end absolute p-2 hidden bg-white cursor-pointer;
-        width: 70px;
-        height: 50px;
-        border-radius: 25px;
-        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
-        top: 80px;
-        left: -30px;
-
-        svg {
-          width: 25px;
-          height: auto;
+        input {
+          font-family: 'Poppins', sans-serif;
         }
       }
 
-      button {
-        @apply mt-4 mx-0;
-        border-radius: 20px;
+      .signupButton {
+        height: 52px;
+        margin-top: 3rem;
+        text-transform: capitalize;
       }
-    }
 
-    .errorMessage {
-      font-size: 16px;
-      text-align: center;
-      color: $red;
+      .error {
+        font-size: 16px;
+        text-align: center;
+        color: $red;
+      }
     }
   }
 
@@ -105,70 +99,41 @@
 
     .signupFormSection {
       width: 100%;
-
-      .typeCard {
-        max-width: unset;
-      }
     }
   }
 
   @media only screen and (max-width: $phone-break-point) {
     min-height: calc(100vh - $mobile-navbar-height - $bottom-navigation-height);
-
-    .signupFormSection {
-      .submitBtnContainer {
-        button {
-          width: 100% !important;
-        }
-
-        & button:nth-child(2) {
-          display: none;
-        }
-
-        .backArrow {
-          display: flex;
-        }
-      }
-    }
   }
 
   @media only screen and (max-width: 700px) {
     .signupFormSection {
-      h1,
-      h1.chooseType {
-        text-align: center;
-        margin-bottom: 2rem;
-        font-size: 45px;
-      }
+      padding: 5%;
 
-      p {
+      .headTitle {
         text-align: center;
+
+        h1 {
+          font-size: 45px;
+        }
       }
     }
   }
 
   @media only screen and (max-width: 600px) {
     .signupFormSection {
-      h1 {
-        font-size: 35px;
-
-        &.chooseType {
-          font-size: 40px;
+      .headTitle {
+        p {
+          font-size: 16px;
         }
       }
 
-      button {
-        height: 48px !important;
-        font-size: 16px;
-        border-radius: 18px;
-      }
-
-      p {
-        font-size: 16px;
-      }
-
-      .errorMessage {
-        font-size: 14px;
+      .signupForm {
+        .signupButton {
+          height: 48px;
+          font-size: 16px;
+          border-radius: 18px;
+        }
       }
     }
   }
@@ -176,87 +141,35 @@
   @media only screen and (max-width: 500px) {
     .signupFormSection {
       justify-content: flex-start;
-      padding-top: 20%;
 
-      .typeCard {
-        @apply pl-3;
-        min-width: unset;
-        font-size: 18px;
-
-        .radioButton {
-          @apply mr-2;
-          height: 12px;
-          width: 12px;
+      .headTitle {
+        h1 {
+          font-size: 35px;
         }
-      }
 
-      h1,
-      h1.chooseType {
-        font-size: 35px;
-      }
-
-      p {
-        font-size: 14px;
+        p {
+          font-size: 14px;
+        }
       }
     }
   }
 
   @media only screen and (max-width: 400px) {
     .signupFormSection {
-      h1 {
-        font-size: 26px;
-
-        &.chooseType {
-          font-size: 26px;
+      .headTitle {
+        h1 {
+          font-size: 32px;
         }
       }
 
-      p {
-        font-size: 14px;
-      }
-
-      .typeCard {
-        @apply py-3;
-        border-radius: 15px;
-        font-size: 14px;
-      }
-
-      button {
-        height: 50px !important;
-      }
-
-      .errorMessage {
-        font-size: 12px;
-      }
-    }
-  }
-
-  @media only screen and (max-width: 300px) {
-    .signupFormSection {
-      h1 {
-        font-size: 24px;
-
-        &.chooseType {
-          font-size: 22px;
+      .signupForm {
+        .signupButton {
+          height: 50px;
         }
-      }
 
-      p {
-        font-size: 12px;
-      }
-
-      .typeCard {
-        @apply py-3;
-        border-radius: 13px;
-        font-size: 12px;
-      }
-
-      button {
-        height: 50px !important;
-      }
-
-      .errorMessage {
-        font-size: 12px;
+        .error {
+          font-size: 12px;
+        }
       }
     }
   }

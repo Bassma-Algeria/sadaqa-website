@@ -48,5 +48,22 @@
   "made-with": "made with",
   "by": "by",
   "copyright-bassma": "copyright bassma",
-  "all-rights-reserved": "All rights reserved"
+  "all-rights-reserved": "All rights reserved",
+  "tap-to-choose": "tap to choose :",
+  "first-name": "first name",
+  "last-name": "last name",
+  "ahmed": "Ahmed",
+  "slimani": "Slimani",
+  "wilaya": "wilaya",
+  "phone-number": "phone number",
+  "confirm-password": "confirm password",
+  "submit": "submit",
+  "association-name": "association name",
+  "provide-legal-association-documents": "Provide some legal document of your association",
+  "drag-and-drop": "drag and drop here",
+  "or": "or",
+  "browse-files": "browse files",
+  "should-have-at-least-3-characters": "should have 3 characters at least",
+  "should-match-password": "should match the password",
+  "invalid-phone-number": "invalid phone number"
 }

@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import styles from '../../Login.module.scss';
 
 import { EmailInput } from '../../../../components/Forms/EmailInput';
-import { ValidatedPasswordInput } from '../../../../components/Forms/PasswordInput';
+import { ValidatedPasswordInput } from '../../../../components/Forms/ValidatedPasswordInput';
 import { Button } from '../../../../components/common/Button/Button';
 import { Spinner } from '../../../../components/common/Spinner/Spinner';
 import { useLoginFormHandler } from './hooks/useLoginFormHandler';
@@ -22,8 +22,6 @@ const LoginForm: React.FC = () => {
       />
 
       <ValidatedPasswordInput
-        label={t('password')}
-        name="password"
         value={loginBody.password}
         onValueChange={password => setLoginBody({ ...loginBody, password })}
         className={styles.input}
@@ -33,7 +31,6 @@ const LoginForm: React.FC = () => {
 
       <Button
         variant="primary"
-        size="md"
         className={styles.loginButton}
         disabled={!loginBody.email || !loginBody.password}
         fullWidth

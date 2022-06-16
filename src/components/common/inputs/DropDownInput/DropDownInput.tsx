@@ -7,9 +7,9 @@ import styles from './DropDownInput.module.scss';
 import { ICONS } from '../../../../utils/constants/Icons';
 
 import { useRightToLeftDetector } from '../../../../utils/hooks/useRightToLeftDetector';
+import { useOutsideClickListener } from '../../../../utils/hooks/useOutsideClickListener';
 
 import { BaseInput } from '../BaseInput';
-import { useOutsideClickListener } from '../../../../utils/hooks/useOutsideClickListener';
 
 const cx = classNames.bind(styles);
 
@@ -17,17 +17,19 @@ interface Props extends React.ComponentProps<typeof BaseInput> {
   placeholder: string;
   value?: string;
   onValueChange: (value: string) => void;
-  options: { label: string; value: string }[];
+  options: { name: string; value: string }[];
 }
 
 const DropDownInput: React.FC<Props> = props => {
   const { rightToLeft } = useRightToLeftDetector();
   const [isOptionsOpen, setIsOptionsOpen] = useState<boolean>(false);
 
+  const selectedOption = props.options.find(option => option.value === props.value);
+
   return (
     <BaseInput {...props}>
       <div className={cx('container', { rightToLeft })} onClick={() => setIsOptionsOpen(true)}>
-        <p className={cx({ active: !!props.value })}>{props.value || props.placeholder}</p>
+        <p className={cx({ active: !!props.value })}>{selectedOption?.name || props.placeholder}</p>
         <ReactSVG src={ICONS.DOWN_ARROW} />
       </div>
 
@@ -59,10 +61,10 @@ const OptionsPanel: React.FC<OptionsPanelProps> = ({ closePanel, onValueChange, 
 
   return (
     <div className={styles.optionsPanelContainer} ref={ref}>
-      <div className={styles.optionsPanel}>
-        {options.map(({ label, value }) => (
+      <div className={cx('optionsPanel')}>
+        {options.map(({ name, value }) => (
           <p className={styles.option} key={value} onClick={() => handleOptionClick(value)}>
-            {label}
+            {name}
           </p>
         ))}
       </div>

@@ -4,8 +4,6 @@ import { useTranslation } from 'next-i18next';
 import { PasswordInput } from '../common/Inputs/PasswordInput/PasswordInput';
 
 interface Props {
-  name: string;
-  label: string;
   value: string;
   onValueChange: (password: string) => void;
   className?: string;
@@ -13,20 +11,14 @@ interface Props {
 
 const ValidatedPasswordInput: React.FC<Props> = props => {
   const { t } = useTranslation('common');
-  const [isValidPassword, setIsValidPassword] = useState<boolean>(true);
-
-  const handleChange = (password: string) => {
-    props.onValueChange(password);
-
-    if (password) setIsValidPassword(password.length >= 6);
-    else setIsValidPassword(true);
-  };
+  const isInvalidPassword = props.value && props.value.length < 6;
 
   return (
     <PasswordInput
       {...props}
-      onValueChange={handleChange}
-      error={!isValidPassword ? t('password-should-have-6-letters') : undefined}
+      name="password"
+      label={t('password')}
+      error={isInvalidPassword ? t('password-should-have-6-letters') : undefined}
     />
   );
 };

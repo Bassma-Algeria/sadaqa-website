@@ -11,14 +11,7 @@ interface Props {
 
 const EmailInput: React.FC<Props> = ({ value, onValueChange, className }) => {
   const { t } = useTranslation('common');
-  const [isValidEmail, setIsValidEmail] = useState(true);
-
-  const handleChange = (email: string) => {
-    onValueChange(email);
-
-    if (email) setIsValidEmail(!!email.match(EMAIL_PATTERN));
-    else setIsValidEmail(true);
-  };
+  const isInvalidEmail = value && !value.match(EMAIL_PATTERN);
 
   return (
     <TextInput
@@ -27,8 +20,8 @@ const EmailInput: React.FC<Props> = ({ value, onValueChange, className }) => {
       placeholder="example@gmail.com"
       className={className}
       value={value}
-      onValueChange={handleChange}
-      error={!isValidEmail ? t('invalid-email') : undefined}
+      onValueChange={onValueChange}
+      error={isInvalidEmail ? t('invalid-email') : undefined}
     />
   );
 };

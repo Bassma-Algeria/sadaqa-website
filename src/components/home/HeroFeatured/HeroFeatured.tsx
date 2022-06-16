@@ -20,6 +20,7 @@ interface Props {
 
 const HeroFeatured: React.FC<Props> = ({ variant, directionReversed, ...props }) => {
   const className = cx('container', variant, { directionReversed });
+
   return (
     <div className={className}>
       <div className={styles.content}>

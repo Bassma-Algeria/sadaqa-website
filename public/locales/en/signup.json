@@ -1,3 +1,7 @@
 {
-  "already-have-account": "Already have an account?"
+  "already-have-account": "Already have an account?",
+  "are-you-association": "are you an association ?",
+  "yes-we-are-association": "yes, we are an association",
+  "no-iam-normal-user": "no, i'm not",
+  "signup-error": "please re-check that all the inputs are valid, or maybe the email is already used, try to change it"
 }
