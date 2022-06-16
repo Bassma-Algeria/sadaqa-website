@@ -1,8 +1,10 @@
-import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
 import React from 'react';
+import { useTranslation } from 'next-i18next';
 
 import styles from '../../Signup.module.scss';
+
+import { HeadTitle } from './HeadTitle';
+import { SignupForm } from './SignupForm';
 
 {
   /* 
@@ -38,16 +40,10 @@ import styles from '../../Signup.module.scss';
 }
 
 const SignupFormSection: React.FC = () => {
-  const { t } = useTranslation(['common', 'signup']);
-
   return (
     <section className={styles.signupFormSection}>
-      <div className={styles.headTitle}>
-        <h1>{t('signup')}</h1>
-        <p>
-          {t('already-have-account', { ns: 'signup' })} <Link href="/login">{t('login')}</Link>
-        </p>
-      </div>
+      <HeadTitle />
+      <SignupForm />
     </section>
   );
 };

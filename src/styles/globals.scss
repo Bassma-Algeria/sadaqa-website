@@ -18,22 +18,6 @@ html:lang(ar) body {
   font-family: 'Almarai', sans-serif;
 }
 
-input::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgb(0, 0, 0, 0.2);
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: rgb(0, 0, 0, 0.2);
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: rgb(0, 0, 0, 0.2);
-}
-
 textarea::-webkit-input-placeholder {
   color: rgb(0, 0, 0, 0.2);
 }

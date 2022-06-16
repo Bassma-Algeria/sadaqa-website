@@ -1,0 +1,80 @@
+@import '../../../../styles/variables.scss';
+
+.container {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.rightToLeft {
+    flex-direction: row-reverse;
+  }
+
+  p {
+    color: $placeholder-grey;
+
+    &.active {
+      color: black;
+    }
+  }
+
+  svg {
+    width: 18px;
+    height: auto;
+    fill: rgba(0, 0, 0, 0.15);
+  }
+
+  @media only screen and (max-width: 600px) {
+    p {
+      font-size: 14px;
+    }
+
+    svg {
+      width: 14px;
+    }
+  }
+}
+
+.optionsPanelContainer {
+  position: absolute;
+  z-index: 2;
+  top: 110%;
+  left: 0;
+  width: 100%;
+
+  .optionsPanel {
+    width: 100%;
+    background-color: white;
+    padding: 0.75rem 0rem 0.75rem 0.5rem;
+    overflow-y: scroll;
+    max-height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+    .option {
+      width: 100%;
+      cursor: pointer;
+      text-transform: capitalize;
+      border-radius: 15px;
+      transition: all 0.2s;
+      padding: 0.75rem 1rem;
+
+      &:hover {
+        background-color: $grey;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      border-radius: 12px;
+      padding: 0.5rem;
+      max-height: 250px;
+
+      .option {
+        padding: 0.5rem;
+        border-radius: 8px;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+  }
+}

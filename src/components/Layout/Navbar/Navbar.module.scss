@@ -8,7 +8,7 @@
   border-bottom: 1px solid $grey;
   background-color: white;
   z-index: 10;
-  height: 70px;
+  height: $desktop-navbar-height;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -524,7 +524,7 @@
     justify-content: space-between;
     background-color: white;
     border-bottom: 1px solid $grey;
-    height: 50px;
+    height: $mobile-navbar-height;
     width: 100%;
     z-index: 10;
     padding: 0 0.5rem;
@@ -808,7 +808,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: $bottom-navigation-height;
 
     .navItem {
       display: flex;
@@ -936,6 +936,22 @@
     background-color: transparent;
     width: 100%;
     flex: 1;
+
+    &::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $placeholder-grey;
+      opacity: 1; /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+      /* Internet Explorer 10-11 */
+      color: $placeholder-grey;
+    }
+
+    &::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: $placeholder-grey;
+    }
   }
 
   .searchIconContainer {

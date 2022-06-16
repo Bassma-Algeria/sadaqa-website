@@ -1,7 +1,29 @@
+@import '../../../../styles/variables.scss';
+
 .input {
   font-size: 16px;
   outline: none;
   width: 100%;
+
+  &.rightToLeft {
+    text-align: right;
+  }
+
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $placeholder-grey;
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: $placeholder-grey;
+  }
+
+  &::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: $placeholder-grey;
+  }
 
   @media only screen and (max-width: 600px) {
     font-size: 14px;

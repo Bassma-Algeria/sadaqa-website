@@ -1,8 +1,13 @@
 import React from 'react';
+import classNames from 'classnames/bind';
 
 import styles from './TextInput.module.scss';
 
+import { useRightToLeftDetector } from '../../../../utils/hooks/useRightToLeftDetector';
+
 import { BaseInput } from '../BaseInput';
+
+const cx = classNames.bind(styles);
 
 interface Props extends React.ComponentProps<typeof BaseInput> {
   placeholder: string;
@@ -11,13 +16,15 @@ interface Props extends React.ComponentProps<typeof BaseInput> {
 }
 
 const TextInput: React.FC<Props> = props => {
+  const { rightToLeft } = useRightToLeftDetector();
+
   return (
     <BaseInput {...props}>
       <input
         type="text"
         id={props.name}
         name={props.name}
-        className={styles.input}
+        className={cx('input', { rightToLeft })}
         autoComplete={props.name}
         placeholder={props.placeholder}
         value={props.value}

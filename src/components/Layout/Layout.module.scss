@@ -1,9 +1,10 @@
 @import '../../styles/variables.scss';
 
 .content {
-  padding-top: 70px;
+  padding-top: $desktop-navbar-height;
 
   @media only screen and (max-width: $phone-break-point) {
-    padding-top: 50px;
+    padding-top: $mobile-navbar-height;
+    padding-bottom: $bottom-navigation-height;
   }
 }

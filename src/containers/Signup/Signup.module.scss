@@ -3,7 +3,7 @@
 .signup {
   width: 100%;
   display: flex;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - $desktop-navbar-height);
 
   &.rightToLeft {
     flex-direction: row-reverse;
@@ -64,6 +64,9 @@
       }
     }
 
+    .signupForm {
+    }
+
     .submitBtnContainer {
       @apply flex w-full gap-2 justify-end;
 
@@ -110,6 +113,8 @@
   }
 
   @media only screen and (max-width: $phone-break-point) {
+    min-height: calc(100vh - $mobile-navbar-height - $bottom-navigation-height);
+
     .signupFormSection {
       .submitBtnContainer {
         button {
