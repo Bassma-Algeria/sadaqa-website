@@ -7,12 +7,12 @@ import { useNormalUserSignupHandler } from './hooks/useNormalUserSignupHandler';
 
 import { NameInput } from '../../../../../components/Forms/NameInput';
 import { EmailInput } from '../../../../../components/Forms/EmailInput';
+import { PhoneNumberInput } from '../../../../../components/Forms/PhoneNumberInput';
 import { ConfirmPasswordInput } from '../../../../../components/Forms/ConfirmPasswordInput';
 import { ValidatedPasswordInput } from '../../../../../components/Forms/ValidatedPasswordInput';
+import { DropDownInput } from '../../../../../components/common/Inputs/DropDownInput/DropDownInput';
 import { Button } from '../../../../../components/common/Button/Button';
 import { Spinner } from '../../../../../components/common/Spinner/Spinner';
-import { DropDownInput } from '../../../../../components/common/Inputs/DropDownInput/DropDownInput';
-import PhoneNumberInput from '../../../../../components/Forms/PhoneNumberInput';
 
 const NormalUserSignupForm: React.FC = () => {
   const { t } = useTranslation(['common', 'signup']);

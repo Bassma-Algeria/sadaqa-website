@@ -28,4 +28,4 @@ const PhoneNumberInput: React.FC<Props> = ({ className, onValueChange, value }) 
 
 const PHONE_NUMBER_PATTERN = /^(00213|\+213|0)(5|6|7)[0-9]{8}$/;
 
-export default PhoneNumberInput;
+export { PhoneNumberInput };
