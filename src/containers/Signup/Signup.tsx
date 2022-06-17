@@ -25,7 +25,7 @@ const Signup: React.FC = () => {
   }, []);
 
   return (
-    <Layout noFooter>
+    <Layout>
       <PageMetaData title={'Sadaqa صدقة | Signup'} />
 
       <div className={cx('signup', { rightToLeft })}>

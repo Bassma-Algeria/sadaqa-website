@@ -25,7 +25,7 @@ const Login: React.FC = () => {
   }, []);
 
   return (
-    <Layout noFooter>
+    <Layout>
       <PageMetaData title={'Sadaqa صدقة | login'} />
 
       <div className={cx('login', { rightToLeft })}>

@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
   const { rightToLeft } = useRightToLeftDetector();
 
   return (
-    <div className={cx('footer', { rightToLeft })}>
+    <footer className={cx('footer', { rightToLeft })}>
       <div className={styles.container}>
         <section>
           <h3>{t('donations')}</h3>
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
           {t('bassma-team')}
         </a>
       </p>
-    </div>
+    </footer>
   );
 };
 

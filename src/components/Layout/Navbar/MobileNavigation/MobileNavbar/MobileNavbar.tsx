@@ -16,12 +16,12 @@ const MobileNavbar: React.FC<Props> = () => {
   const isDashboardPage = pathname.includes('dashboard');
 
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.navbar}>
       <SideMenu />
       <Logo />
 
       {isDashboardPage ? <SettingsAndProfileLinks /> : <Search />}
-    </div>
+    </nav>
   );
 };
 

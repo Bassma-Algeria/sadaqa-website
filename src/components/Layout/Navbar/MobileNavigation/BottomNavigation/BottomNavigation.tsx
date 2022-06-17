@@ -18,11 +18,11 @@ const BottomNavigation: React.FC<Props> = () => {
   const showDashboardLink = shouldShowDasboardLinks(pathname);
 
   return (
-    <div className={styles.bottomNavigation}>
+    <nav className={styles.bottomNavigation}>
       {!isAuthenticated && !showDashboardLink && <NotAuthUserLinks />}
       {isAuthenticated && !showDashboardLink && <AuthUserLinks />}
       {isAuthenticated && showDashboardLink && <DashboardLinks />}
-    </div>
+    </nav>
   );
 };
 

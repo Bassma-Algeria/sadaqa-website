@@ -25,7 +25,7 @@ const DesktopNavigation: React.FC = () => {
   };
 
   return (
-    <div className={`${styles.desktopNavbar} ${styles[locale!]}`}>
+    <nav className={`${styles.desktopNavbar} ${styles[locale!]}`}>
       <div className={styles.contentContainer}>
         <div>
           <Logo />
@@ -50,7 +50,7 @@ const DesktopNavigation: React.FC = () => {
           )}
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
