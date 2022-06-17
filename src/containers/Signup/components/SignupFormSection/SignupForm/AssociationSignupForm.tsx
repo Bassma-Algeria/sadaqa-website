@@ -7,7 +7,7 @@ import { useAssociationSignupHandler } from './hooks/useAssociationSignupHandler
 
 import { NameInput } from '../../../../../components/Forms/NameInput';
 import { EmailInput } from '../../../../../components/Forms/EmailInput';
-import { PicturesInput } from '../../../../../components/Forms/PicturesInput';
+import { PicturesInput } from '../../../../../components/Forms/PicturesInput/PicturesInput';
 import { PhoneNumberInput } from '../../../../../components/Forms/PhoneNumberInput';
 import { ConfirmPasswordInput } from '../../../../../components/Forms/ConfirmPasswordInput';
 import { ValidatedPasswordInput } from '../../../../../components/Forms/ValidatedPasswordInput';

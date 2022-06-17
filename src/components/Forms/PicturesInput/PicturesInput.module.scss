@@ -1,0 +1,43 @@
+@import '../../../styles/variables.scss';
+
+.picturesPreviewContainer {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  flex-wrap: wrap;
+
+  .picture {
+    width: auto;
+    height: 100px;
+    position: relative;
+
+    .closeIconContainer {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: -5%;
+      right: -5%;
+      border: 2px solid white;
+      border-radius: 50%;
+      background-color: $red;
+      box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+
+      svg {
+        width: 8px;
+        height: auto;
+        fill: white;
+      }
+    }
+
+    img {
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
