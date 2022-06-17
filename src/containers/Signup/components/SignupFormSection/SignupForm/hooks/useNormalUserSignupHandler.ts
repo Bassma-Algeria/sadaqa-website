@@ -3,25 +3,16 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
 import { authGateway } from '../../../../../../CoreGateways';
-import { NetworkError } from '../../../../../../CoreGateways/utils/NetworkError';
 import { ServerError } from '../../../../../../CoreGateways/utils/ServerError';
+import { NetworkError } from '../../../../../../CoreGateways/utils/NetworkError';
+import { NormalUserSignupBody } from '../../../../../../CoreGateways/AuthGateway/AuthGateway';
 
 import { setToken } from '../../../../../../context/authenticationActions';
 
 import { LocalStorage } from '../../../../../../utils/helpers/LocalStorage';
 import { useAuthContext } from '../../../../../../utils/hooks/useAuthContext';
 
-interface NormalUserSignupValues {
-  firstName: string;
-  lastName: string;
-  wilaya: string;
-  phoneNumber: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
-
-const initialValues: NormalUserSignupValues = {
+const initialValues: NormalUserSignupBody = {
   firstName: '',
   lastName: '',
   wilaya: '',
@@ -38,7 +29,7 @@ const useNormalUserSignupHandler = () => {
 
   const [error, setError] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [signupValues, setSignupValues] = useState<NormalUserSignupValues>(initialValues);
+  const [signupValues, setSignupValues] = useState<NormalUserSignupBody>(initialValues);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

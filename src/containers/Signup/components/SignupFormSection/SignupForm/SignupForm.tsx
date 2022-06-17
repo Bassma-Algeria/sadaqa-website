@@ -16,12 +16,12 @@ const SignupForm: React.FC = () => {
   return (
     <div className={styles.signupForm}>
       <DropDownInput
-        label={t('are-you-association')}
         name="userType"
+        className={styles.input}
+        label={t('are-you-association')}
         placeholder={t('tap-to-choose', { ns: 'common' })}
         value={userType}
         onValueChange={type => setUserType(type as UserType)}
-        className={styles.input}
         options={[
           { name: t('yes-we-are-association'), value: 'association' },
           { name: t('no-iam-normal-user'), value: 'normalUser' },
