@@ -1,0 +1,100 @@
+@import '../../../../styles/variables.scss';
+
+.container {
+  &.rightToLeft {
+    text-align: right;
+
+    .uploadFilesButton {
+      justify-content: flex-end;
+    }
+  }
+
+  input[type='file'] {
+    display: none;
+  }
+
+  .uploadFilesButton {
+    display: none;
+    margin: 1rem 0;
+
+    button {
+      text-transform: capitalize;
+      width: fit-content;
+    }
+
+    svg {
+      width: 15px;
+      height: auto;
+
+      g,
+      path,
+      rect {
+        fill: black;
+      }
+    }
+  }
+
+  p.error {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    margin-top: 0.25rem;
+    color: $red;
+  }
+
+  @media only screen and (max-width: $phone-break-point) {
+    .dragAndDropBoxContainer {
+      display: none;
+    }
+
+    .uploadFilesButton {
+      display: flex;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    p.error {
+      font-size: 14px;
+    }
+  }
+}
+
+.dragAndDropBox {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 300px;
+  box-shadow: 0px 2px 14px 4px rgba($color: #000, $alpha: 0);
+  transition: all ease 0.5s;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='rgba(0,0,0,0.3)' stroke-width='3' stroke-dasharray='25' stroke-dashoffset='35' stroke-linecap='square'/%3e%3c/svg%3e");
+  margin: 1rem 0;
+
+  &.isDraggedOver {
+    box-shadow: 0px 2px 14px 4px rgba($color: #000, $alpha: 0.25);
+  }
+
+  svg {
+    margin: 1rem 0;
+    width: 30px;
+    height: auto;
+  }
+
+  p {
+    text-align: center;
+    font-size: 18px;
+    text-transform: capitalize;
+
+    span {
+      color: $blue;
+      font-weight: 600;
+      cursor: pointer;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    p {
+      font-size: 14px;
+    }
+  }
+}

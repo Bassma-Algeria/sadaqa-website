@@ -18,7 +18,7 @@ interface NormalUserSignupValues {
   email: string;
   password: string;
   confirmPassword: string;
-  associationDocuments: string[];
+  associationDocuments: File[];
 }
 
 const initialValues: NormalUserSignupValues = {

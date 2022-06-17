@@ -71,7 +71,7 @@ const NormalUserSignupForm: React.FC = () => {
 
       <p className={styles.error}>{error}</p>
 
-      <Button variant="primary" className={styles.signupButton} fullWidth>
+      <Button variant="primary" className={styles.signupButton} type="submit" fullWidth>
         {isLoading ? <Spinner color="white" /> : t('submit')}
       </Button>
     </form>

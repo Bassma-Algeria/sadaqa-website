@@ -60,11 +60,12 @@
   "submit": "تأكيد",
   "association-name": "اسم الجمعية",
   "provide-legal-association-documents": "يرجى تقديم بعض الأوراق القانونية لجمعيتك",
-  "drag-and-drop": "اسحب و ضع الصور هنا",
+  "drag-and-drop": "اسحب و ضع الملفات هنا",
   "or": "أو",
   "browse-files": "اختر من الملفات",
   "should-have-at-least-3-characters": "يجب أن تحتوي على 3 أحرف على الأقل",
   "should-match-password": "يجب أن تتطابق مع كلمة المرور",
   "invalid-phone-number": "رقم الهاتف غير صحيح",
-  "association-al-baraka": "association al baraka"
+  "association-al-baraka": "جمعية البركة",
+  "upload-files": "رفع الملفات"
 }

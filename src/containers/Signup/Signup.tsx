@@ -16,44 +16,6 @@ import { SignupFormSection } from './components/SignupFormSection/SignupFormSect
 const cx = classNames.bind(styles);
 
 const Signup: React.FC = () => {
-  // const initialState = {
-  //   roleId: null,
-  //   associationName: '',
-  //   firstName: '',
-  //   lastName: '',
-  //   gender: '',
-  //   birthday: null,
-  //   phoneNum: '',
-  //   wilaya: null,
-  //   commun: '',
-  //   email: '',
-  //   password: '',
-  //   confirmPassword: '',
-  //   associationDocs: [],
-  // };
-
-  // const [signupInputValues, setSignupInputValues] = useState(initialState);
-
-  // const initializeState = () => {
-  //   setSignupInputValues(initialState);
-  // };
-
-  // const handleSubmit = e => {
-  //   e.preventDefault();
-  //   const formData = new FormData();
-
-  //   for (const [key, value] of Object.entries(signupInputValues)) {
-  //     if (key !== 'associationDocs') {
-  //       formData.append(key, value);
-  //     } else {
-  //       value.map(doc => {
-  //         formData.append(key, doc, doc.name);
-  //       });
-  //     }
-  //   }
-  //   dispatch(signupUserGetAuthTokenAndPushToHome(formData, router));
-  // };
-
   const { back } = useRouter();
   const { rightToLeft } = useRightToLeftDetector();
   const { isAuthenticated } = useAuthContext();

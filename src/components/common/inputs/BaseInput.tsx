@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import styles from './BaseInput.module.scss';
 
 import { useRightToLeftDetector } from '../../../utils/hooks/useRightToLeftDetector';
+import { Label } from './common/Label/Label';
 
 const cx = classNames.bind(styles);
 
@@ -20,7 +21,7 @@ const BaseInput: React.FC<Props> = ({ children, error, ...props }) => {
 
   return (
     <div className={`${className} ${props.className}`}>
-      <label htmlFor={props.name}>{props.label}</label>
+      <Label for={props.name}>{props.label}</Label>
 
       <div className={styles.content}>{children}</div>
 

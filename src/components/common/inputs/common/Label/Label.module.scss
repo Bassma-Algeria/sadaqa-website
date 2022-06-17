@@ -1,0 +1,10 @@
+.label {
+  font-size: 1.125rem;
+  padding: 0 0.5rem;
+  font-weight: 500;
+  text-transform: capitalize;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+}

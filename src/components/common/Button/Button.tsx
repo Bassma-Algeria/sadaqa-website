@@ -10,6 +10,7 @@ interface Props {
   size?: 'sm' | 'md' | 'lg';
   fullWidth?: boolean;
   disabled?: boolean;
+  type?: 'button' | 'submit' | 'reset';
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
 }
@@ -25,6 +26,7 @@ const Button: React.FC<Props> = ({ size = 'md', ...props }) => {
       className={`${className} ${props.className}`}
       disabled={props.disabled}
       onClick={props.onClick}
+      type={props.type}
     >
       {props.children}
     </button>

@@ -41,7 +41,8 @@
     }
 
     &.disabled {
-      @apply hover:text-primary hover:border-primary;
+      color: $primary-color;
+      border-color: $primary-color;
     }
 
     svg {
@@ -69,20 +70,28 @@
   }
 
   &.sm {
-    @apply px-5 py-2 rounded-2xl font-semibold;
     font-size: 14px;
+    padding: 0.5rem 1.25rem;
+    font-weight: 600;
+    border-radius: 1rem;
   }
 
   &.md {
-    @apply text-lg px-10 py-3 rounded-2xl font-bold;
+    font-size: 1.125rem;
+    padding: 0.75rem 2.5rem;
+    font-weight: 600;
+    border-radius: 1rem;
   }
 
   &.lg {
-    @apply text-xl px-8 py-5 rounded-3xl font-bold;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 1.25rem 2rem;
+    border-radius: 1.5rem;
   }
 
   &.fullWidth {
-    @apply w-full;
+    width: 100%;
   }
 
   &.disabled {
@@ -91,7 +100,14 @@
   }
 
   @media only screen and (max-width: 900px) {
-    @apply w-full;
-    font-size: 14px;
+    width: 100%;
+
+    &.md {
+      font-size: 14px;
+    }
+
+    &.lg {
+      font-size: 18px;
+    }
   }
 }

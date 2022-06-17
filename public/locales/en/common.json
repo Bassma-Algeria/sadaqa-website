@@ -66,5 +66,6 @@
   "should-have-at-least-3-characters": "should have 3 characters at least",
   "should-match-password": "should match the password",
   "invalid-phone-number": "invalid phone number",
-  "association-al-baraka": "Association Al Baraka"
+  "association-al-baraka": "Al Baraka Association",
+  "upload-files": "upload"
 }

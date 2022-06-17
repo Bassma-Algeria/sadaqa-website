@@ -6,9 +6,11 @@ const useOutsideClickListener = (
 ) => {
   useEffect(() => {
     const handleMouseDown = ({ target: clickedElement }: MouseEvent) => {
-      const targetContainsClickElement = targetElementRef.current?.contains(clickedElement as Node);
+      const targetContainsClickedElement = targetElementRef.current?.contains(
+        clickedElement as Node,
+      );
 
-      if (!targetContainsClickElement) {
+      if (!targetContainsClickedElement) {
         callback();
       }
     };
