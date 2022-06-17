@@ -14,9 +14,10 @@
   }
 
   aside {
-    height: calc(100vh - $desktop-navbar-height);
     position: sticky;
     top: $desktop-navbar-height;
+    height: calc(100vh - $desktop-navbar-height);
+    width: 20%;
   }
 
   @media only screen and (max-width: $phone-break-point) {

@@ -1,26 +1,30 @@
+@import '../../../styles/variables.scss';
+
 .sidebar {
   justify-content: flex-start;
   gap: 1rem;
   align-items: center;
   background-color: white;
-  border-right: 1px solid #edf6f2;
+  border-right: 1px solid $grey;
   height: max-content;
-  width: 100%;
   height: 100%;
+  width: 100%;
   min-width: 250px;
   max-width: 300px;
-  padding-top: 10px;
   overflow-y: scroll;
   scrollbar-width: none;
+  padding-left: 30px;
 
-  ::-webkit-scrollbar {
+  &::-webkit-scrollbar {
     width: 0px;
   }
 
   &.rightToLeft {
     text-align: right;
     border-right: none;
-    border-left: 1px solid #edf6f2;
+    border-left: 1px solid $grey;
+    padding-right: 30px;
+    padding-left: unset;
 
     section {
       .sidebarLink {
@@ -33,6 +37,7 @@
     text-transform: capitalize;
 
     h4 {
+      margin-top: 1rem;
       font-size: 18px;
       font-weight: 600;
     }
