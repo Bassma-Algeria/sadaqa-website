@@ -1,0 +1,137 @@
+@import '../../styles/variables.scss';
+
+.container {
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+
+  .content {
+    padding-bottom: 3rem;
+    padding-top: 4rem;
+    max-width: 700px;
+    margin: auto;
+
+    &.rightToLeft {
+      .topHeaders {
+        text-align: right;
+      }
+    }
+
+    .topHeaders {
+      margin-bottom: 4rem;
+
+      h1 {
+        text-transform: capitalize;
+        font-weight: 600;
+        font-size: 40px;
+      }
+
+      .note {
+        margin-top: 0.5rem;
+        font-size: 14px;
+
+        a {
+          color: $blue;
+        }
+      }
+    }
+
+    form {
+      .input {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .btnsContainer {
+      @apply flex items-center justify-between flex-wrap;
+
+      .submitPreviewBtns {
+        @apply flex flex-wrap gap-4 items-center;
+      }
+
+      button {
+        @apply mx-0;
+        height: 52px;
+        width: 150px;
+      }
+
+      .discardBtn button {
+        @apply text-black font-medium;
+        background-color: #edf6f2;
+        border: none;
+
+        &:hover {
+          background-color: #d8f1e7;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 900px) {
+      h1 {
+        @apply text-center mt-4;
+      }
+
+      .note {
+        @apply mb-16 text-center;
+      }
+
+      .btnsContainer {
+        @apply flex-col-reverse;
+        button {
+          @apply w-full my-2;
+        }
+
+        .discardBtn,
+        .submitPreviewBtns {
+          @apply w-full gap-0 flex-col-reverse;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 800px) {
+      @apply pt-0;
+      h1 {
+        @apply mt-0 mb-8;
+        font-size: 45px;
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      h1 {
+        @apply mb-0;
+        font-size: 35px;
+      }
+
+      .note {
+        @apply mb-6;
+        font-size: 12px;
+      }
+      .btnsContainer {
+        button {
+          height: 48px !important;
+          font-size: 16px;
+          border-radius: 18px;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 400px) {
+      h1 {
+        font-size: 26px;
+      }
+      .note {
+        font-size: 8px;
+      }
+    }
+
+    @media only screen and (max-width: 300px) {
+      h1 {
+        font-size: 24px;
+      }
+      .btnsContainer {
+        button {
+          height: 50px !important;
+        }
+      }
+    }
+  }
+}

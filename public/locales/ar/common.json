@@ -67,5 +67,6 @@
   "should-match-password": "يجب أن تتطابق مع كلمة المرور",
   "invalid-phone-number": "رقم الهاتف غير صحيح",
   "association-al-baraka": "جمعية البركة",
-  "upload-files": "رفع الملفات"
+  "upload-files": "رفع الملفات",
+  "category": "الصنف"
 }

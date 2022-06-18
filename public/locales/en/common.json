@@ -67,5 +67,6 @@
   "should-match-password": "should match the password",
   "invalid-phone-number": "invalid phone number",
   "association-al-baraka": "Al Baraka Association",
-  "upload-files": "upload"
+  "upload-files": "upload",
+  "category": "category"
 }

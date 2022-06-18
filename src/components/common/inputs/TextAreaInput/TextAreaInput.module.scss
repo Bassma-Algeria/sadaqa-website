@@ -1,0 +1,37 @@
+@import '../../../../styles/variables.scss';
+
+.textarea {
+  width: 100%;
+  outline: none;
+  min-height: 150px;
+
+  &.rightToLeft {
+    text-align: right;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $placeholder-grey;
+  }
+
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $placeholder-grey;
+  }
+
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $placeholder-grey;
+  }
+
+  &:-ms-input-placeholder {
+    color: $placeholder-grey;
+  }
+
+  &::placeholder {
+    color: $placeholder-grey;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+}

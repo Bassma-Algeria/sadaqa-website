@@ -10,7 +10,7 @@ const DonateButton: React.FC = () => {
   const { t } = useTranslation('common');
 
   return (
-    <Link href="/donate">
+    <Link href="/new-post">
       <div className={styles.actionButtonsContainer}>
         <Button variant="primary" size="sm">
           {t('donate')}

@@ -10,7 +10,7 @@ const RequestADonation: React.FC = () => {
   return (
     <div className={styles.navigationLinksContainer}>
       <div className={styles.navigationLink}>
-        <Link href="/donate">
+        <Link href="/new-post">
           <p>{t('request-a-donation')}</p>
         </Link>
       </div>
