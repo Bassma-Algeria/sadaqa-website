@@ -7,11 +7,11 @@ import { useAssociationSignupHandler } from './hooks/useAssociationSignupHandler
 
 import { NameInput } from '../../../../../components/Forms/NameInput';
 import { EmailInput } from '../../../../../components/Forms/EmailInput';
-import { PicturesInput } from '../../../../../components/Forms/PicturesInput/PicturesInput';
 import { PhoneNumberInput } from '../../../../../components/Forms/PhoneNumberInput';
+import { WilayaDropDownInput } from '../../../../../components/Forms/WilayaDropDownInput';
+import { PicturesInput } from '../../../../../components/Forms/PicturesInput/PicturesInput';
 import { ConfirmPasswordInput } from '../../../../../components/Forms/ConfirmPasswordInput';
 import { ValidatedPasswordInput } from '../../../../../components/Forms/ValidatedPasswordInput';
-import { DropDownInput } from '../../../../../components/common/Inputs/DropDownInput/DropDownInput';
 import { Button } from '../../../../../components/common/Button/Button';
 import { Spinner } from '../../../../../components/common/Spinner/Spinner';
 
@@ -31,14 +31,10 @@ const AssociationSignupForm: React.FC = () => {
         value={signupValues.associationName}
         onValueChange={associationName => setSignupValues({ ...signupValues, associationName })}
       />
-      <DropDownInput
-        name="wilaya"
-        label={t('wilaya')}
-        placeholder={t('tap-to-choose')}
+      <WilayaDropDownInput
         className={styles.input}
         value={signupValues.wilaya}
         onValueChange={wilaya => setSignupValues({ ...signupValues, wilaya })}
-        options={[]}
       />
       <PhoneNumberInput
         className={styles.input}

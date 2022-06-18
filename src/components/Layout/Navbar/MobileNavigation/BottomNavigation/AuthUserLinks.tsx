@@ -9,7 +9,7 @@ const AuthUserLinks: React.FC = () => {
     <>
       <BottomNavItem pageNameKey="home" icon={ICONS.HOME} pageLink="/" />
       <BottomNavItem pageNameKey="messages" icon={ICONS.MESSAGES} pageLink="/dashboard/messages" />
-      <BottomNavItem pageNameKey="new-adv" icon={ICONS.NEW_POST} pageLink="/donate" />
+      <BottomNavItem pageNameKey="new-post" icon={ICONS.NEW_POST} pageLink="/new-post" />
       <BottomNavItem
         pageNameKey="notifications"
         icon={ICONS.NOTIFICATIONS_2}

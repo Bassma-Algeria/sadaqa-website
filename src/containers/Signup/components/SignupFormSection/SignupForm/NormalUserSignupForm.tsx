@@ -8,9 +8,9 @@ import { useNormalUserSignupHandler } from './hooks/useNormalUserSignupHandler';
 import { NameInput } from '../../../../../components/Forms/NameInput';
 import { EmailInput } from '../../../../../components/Forms/EmailInput';
 import { PhoneNumberInput } from '../../../../../components/Forms/PhoneNumberInput';
+import { WilayaDropDownInput } from '../../../../../components/Forms/WilayaDropDownInput';
 import { ConfirmPasswordInput } from '../../../../../components/Forms/ConfirmPasswordInput';
 import { ValidatedPasswordInput } from '../../../../../components/Forms/ValidatedPasswordInput';
-import { DropDownInput } from '../../../../../components/common/Inputs/DropDownInput/DropDownInput';
 import { Button } from '../../../../../components/common/Button/Button';
 import { Spinner } from '../../../../../components/common/Spinner/Spinner';
 
@@ -38,14 +38,10 @@ const NormalUserSignupForm: React.FC = () => {
         value={signupValues.lastName}
         onValueChange={lastName => setSignupValues({ ...signupValues, lastName })}
       />
-      <DropDownInput
-        name="wilaya"
-        label={t('wilaya')}
-        placeholder={t('tap-to-choose')}
+      <WilayaDropDownInput
         className={styles.input}
         value={signupValues.wilaya}
         onValueChange={wilaya => setSignupValues({ ...signupValues, wilaya })}
-        options={[]}
       />
       <PhoneNumberInput
         className={styles.input}

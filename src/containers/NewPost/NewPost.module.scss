@@ -39,6 +39,17 @@
       .input {
         margin-bottom: 2rem;
       }
+
+      .error {
+        font-size: 16px;
+        text-align: center;
+        color: $red;
+      }
+
+      .button {
+        text-transform: capitalize;
+        margin: 1rem 0;
+      }
     }
 
     .btnsContainer {
@@ -50,6 +61,7 @@
 
       button {
         @apply mx-0;
+
         height: 52px;
         width: 150px;
       }
@@ -130,6 +142,36 @@
       .btnsContainer {
         button {
           height: 50px !important;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1100px) {
+    .loginImageContainer {
+      display: none;
+    }
+
+    .loginFormSection {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .content {
+      form {
+        .error {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .content {
+      form {
+        .error {
+          font-size: 12px;
         }
       }
     }
