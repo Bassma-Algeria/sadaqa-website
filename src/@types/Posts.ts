@@ -15,7 +15,7 @@ export type DonationCategory =
   | 'cars accessories'
   | 'others';
 
-export interface IPost {
+export interface Post {
   postId: number;
   publisherId: number;
   title: string;
@@ -27,7 +27,6 @@ export interface IPost {
   category: DonationCategory;
   type: PostType;
   wilaya: string;
-  commun: string;
   ccp: string;
   ccpKey: string;
   rib: string;

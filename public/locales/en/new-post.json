@@ -10,5 +10,6 @@
   "describe-your-advertisement": "describe your advertisement",
   "pictures": "pictures",
   "preview": "preview",
-  "post": "post"
+  "post": "post",
+  "new-post-creation-error": "please re-check that all the inputs are valid"
 }

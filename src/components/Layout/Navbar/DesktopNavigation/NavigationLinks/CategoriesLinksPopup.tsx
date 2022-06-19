@@ -9,8 +9,6 @@ import styles from '../../Navbar.module.scss';
 
 import type { LinkCategory } from '../../../../../@types/Links';
 
-import { useOutsideHoverListener } from '../../../../../utils/hooks/useOutsideHoverListener';
-
 const cx = classNames.bind(styles);
 
 interface Props {
@@ -25,10 +23,8 @@ const CategoriesLinksPopup: React.FC<Props> = ({ oneColumn, ...props }) => {
   const { t } = useTranslation('common');
   const { locale } = useRouter();
 
-  useOutsideHoverListener(props.containerRef, props.closePopup);
-
   return (
-    <div className={styles.categoriesPopupContainer}>
+    <div className={styles.categoriesPopupContainer} onMouseLeave={props.closePopup}>
       <div className={cx('categoriesPopup', locale, { oneColumn })}>
         <h3>{t(props.category)}</h3>
 

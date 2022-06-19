@@ -13,14 +13,14 @@ import { BaseInput } from '../BaseInput';
 
 const cx = classNames.bind(styles);
 
-interface Props extends React.ComponentProps<typeof BaseInput> {
+interface Props<T> extends React.ComponentProps<typeof BaseInput> {
   placeholder: string;
-  value?: string;
-  onValueChange: (value: string) => void;
-  options: { name: string; value: string }[];
+  value: T | undefined;
+  onValueChange: (value: T) => void;
+  options: { name: string; value: T }[];
 }
 
-const DropDownInput: React.FC<Props> = props => {
+function DropDownInput<T>(props: Props<T>) {
   const { rightToLeft } = useRightToLeftDetector();
   const [isOptionsOpen, setIsOptionsOpen] = useState<boolean>(false);
 
@@ -29,7 +29,9 @@ const DropDownInput: React.FC<Props> = props => {
   return (
     <BaseInput {...props}>
       <div className={cx('container', { rightToLeft })} onClick={() => setIsOptionsOpen(true)}>
-        <p className={cx({ active: !!props.value })}>{selectedOption?.name || props.placeholder}</p>
+        <p className={cx({ active: !!selectedOption })}>
+          {selectedOption?.name || props.placeholder}
+        </p>
         <ReactSVG src={ICONS.DOWN_ARROW} />
       </div>
 
@@ -42,10 +44,9 @@ const DropDownInput: React.FC<Props> = props => {
       )}
     </BaseInput>
   );
-};
+}
 
-interface OptionsPanelProps extends Pick<Props, 'options'> {
-  onValueChange: (value: string) => void;
+interface OptionsPanelProps extends Pick<Props<any>, 'options' | 'onValueChange'> {
   closePanel: () => void;
 }
 

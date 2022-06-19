@@ -10,5 +10,6 @@
   "describe-your-advertisement": "صف إعلانك",
   "pictures": "الصور",
   "post": "نشر",
-  "preview": "كيف يبدو"
+  "preview": "كيف يبدو",
+  "new-post-creation-error": "يرجى اعادة التحقق من صحة جميع البيانات"
 }

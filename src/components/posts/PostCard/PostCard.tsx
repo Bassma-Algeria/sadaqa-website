@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import type { IPost } from '../../../@types/Posts';
+import type { Post } from '../../../@types/Posts';
 
 import { postsGateway } from '../../../CoreGateways';
 
@@ -12,7 +12,7 @@ import { useSharePostPopup } from '../../../utils/hooks/Popups/useSharePostPopup
 
 import { BasePostCard } from '../../common/BasePostCard/BasePostCard';
 
-interface Props extends IPost {}
+interface Props extends Post {}
 
 const PostCard: React.FC<Props> = props => {
   const router = useRouter();
