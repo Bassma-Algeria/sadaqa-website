@@ -69,5 +69,13 @@
   "association-al-baraka": "Al Baraka Association",
   "upload-files": "upload",
   "category": "category",
-  "new-post": "new post"
+  "new-post": "new post",
+  "advertisement-type": "Advertisement Type",
+  "description": "description",
+  "adress": "address",
+  "status": "status",
+  "publish-date": "publish date",
+  "publisher": "publisher",
+  "see-profile": "see profile",
+  "send-message": "send message"
 }

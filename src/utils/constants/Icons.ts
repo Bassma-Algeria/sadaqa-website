@@ -48,6 +48,8 @@ import emailIcon from '../../../public/svg/dashboard_chat_icon_empty.svg';
 import heart from '../../../public/svg/heart.svg';
 import downArrow from '../../../public/svg/dropdown_icon.svg';
 import uploadIcon from '../../../public/svg/upload_icon.svg';
+import phoneIcon from '../../../public/svg/phone_icon.svg';
+import locationIcon from '../../../public/svg/location_icon.svg';
 
 const ICONS = {
   RIGHT_ARROW: rightArrow.src,
@@ -98,6 +100,8 @@ const ICONS = {
   HEART: heart.src,
   DOWN_ARROW: downArrow.src,
   UPLOAD: uploadIcon.src,
+  LOCATION: locationIcon.src,
+  PHONE: phoneIcon.src,
 };
 
 export { ICONS };

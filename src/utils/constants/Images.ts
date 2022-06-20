@@ -6,6 +6,7 @@ import SIGNUP from '../../../public/images/signup.png';
 import DONATION_DEFAULT from '../../../public/images/donation_default.png';
 import LOGO from '../../../public/images/logo.png';
 import DEFAULT_PROFILE_PIC from '../../../public/svg/profile_pic_default_male.svg';
+import NO_IMAGE from '../../../public/images/no-image.png';
 
 const IMAGES = {
   HERO1,
@@ -16,6 +17,7 @@ const IMAGES = {
   DEFAULT_PROFILE_PIC,
   LOGIN,
   SIGNUP,
+  NO_IMAGE,
 };
 
 export { IMAGES };

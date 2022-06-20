@@ -30,6 +30,7 @@
     "react-is": "^17.0.2",
     "react-redux": "^7.2.4",
     "react-slick": "^0.28.1",
+    "react-slideshow-image": "^3.7.5",
     "react-svg": "^14.0.7",
     "react-swipeable": "^6.2.0",
     "react-visibility-sensor": "^5.1.1",

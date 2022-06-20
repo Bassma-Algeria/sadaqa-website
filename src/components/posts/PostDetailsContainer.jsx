@@ -61,17 +61,15 @@ const Title = ({ title, postStatus, createdAd }) => {
 };
 
 const PostPics = ({ postPhotos, postType }) => {
-  const paggingFunction = i => {
-    return (
-      <a>
-        <img
-          style={{ height: '100%', objectFit: 'cover' }}
-          src={postPhotos.length !== 0 && postPhotos[i].link}
-          alt="post pic"
-        />
-      </a>
-    );
-  };
+  const paggingFunction = i => (
+    <a>
+      <img
+        style={{ height: '100%', objectFit: 'cover' }}
+        src={postPhotos.length !== 0 && postPhotos[i].link}
+        alt="post pic"
+      />
+    </a>
+  );
 
   return (
     <div className={styles.postPics}>

@@ -27,7 +27,7 @@ const NewPostForm: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <DropDownInput
           name="postType"
-          label={t('advertisement-type')}
+          label={t('advertisement-type', { ns: 'common' })}
           placeholder={t('tap-to-choose', { ns: 'common' })}
           className={styles.input}
           value={newPostValues.typeId}
@@ -49,7 +49,7 @@ const NewPostForm: React.FC = () => {
         />
         <TextAreaInput
           name="description"
-          label={t('description')}
+          label={t('description', { ns: 'common' })}
           placeholder={t('describe-your-advertisement')}
           className={styles.input}
           value={newPostValues.description}
@@ -75,7 +75,7 @@ const NewPostForm: React.FC = () => {
 
         <p className={styles.error}>{error}</p>
 
-        <Button className={styles.button} height="52px" variant="primary" type="submit" fullWidth>
+        <Button className={styles.button} height="50px" variant="primary" type="submit" fullWidth>
           {isLoading ? <Spinner color="white" /> : t('post')}
         </Button>
         <Button

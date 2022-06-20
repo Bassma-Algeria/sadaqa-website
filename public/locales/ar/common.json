@@ -69,5 +69,13 @@
   "association-al-baraka": "جمعية البركة",
   "upload-files": "رفع الملفات",
   "category": "الصنف",
-  "new-post": "نشر إعلان"
+  "new-post": "نشر إعلان",
+  "advertisement-type": "نوع الإعلان",
+  "description": "وصف",
+  "adress": "العنوان",
+  "status": "الحالة",
+  "publish-date": "تاريخ النشر",
+  "publisher": "من قبل",
+  "see-profile": "الملف الشخصي",
+  "send-message": "أرسل رسالة"
 }

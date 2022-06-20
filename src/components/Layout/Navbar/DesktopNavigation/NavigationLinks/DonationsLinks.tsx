@@ -9,13 +9,15 @@ import { DONATIONS_CATEGORIES } from '../../../../../utils/constants/DonationsCa
 import { CategoriesLinksPopup } from './CategoriesLinksPopup';
 
 const DonationsLinks: React.FC = () => {
-  const ref = useRef(null);
   const { t } = useTranslation('common');
 
   const [isCategoriesPopupOpen, setIsCategoriesPopupOpen] = useState<boolean>(false);
 
   return (
-    <div ref={ref} className={styles.navigationLinksContainer}>
+    <div
+      className={styles.navigationLinksContainer}
+      onMouseLeave={() => setIsCategoriesPopupOpen(false)}
+    >
       <div className={styles.navigationLink} onMouseEnter={() => setIsCategoriesPopupOpen(true)}>
         <Link href="/donations">
           <p>{t('donations')}</p>
@@ -23,12 +25,7 @@ const DonationsLinks: React.FC = () => {
       </div>
 
       {isCategoriesPopupOpen && (
-        <CategoriesLinksPopup
-          containerRef={ref}
-          closePopup={() => setIsCategoriesPopupOpen(false)}
-          categories={DONATIONS_CATEGORIES}
-          category="donations"
-        />
+        <CategoriesLinksPopup categories={DONATIONS_CATEGORIES} category="donations" />
       )}
     </div>
   );

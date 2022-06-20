@@ -1,12 +1,13 @@
-import { useTranslation } from 'next-i18next';
 import React, { useState } from 'react';
+import { useTranslation } from 'next-i18next';
+
 import { postsGateway } from '../../../../../CoreGateways';
 import { NewPostBody } from '../../../../../CoreGateways/PostsGateway/PostsGateway';
 import { NetworkError } from '../../../../../CoreGateways/utils/NetworkError';
 import { ServerError } from '../../../../../CoreGateways/utils/ServerError';
 
 const initialValues: NewPostBody = {
-  typeId: 0,
+  typeId: -1,
   title: '',
   description: '',
   category: '',

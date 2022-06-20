@@ -12,19 +12,17 @@ import type { LinkCategory } from '../../../../../@types/Links';
 const cx = classNames.bind(styles);
 
 interface Props {
-  containerRef: React.RefObject<HTMLDivElement>;
-  closePopup: () => void;
   category: 'donations' | 'people-need-help';
   categories: LinkCategory[];
   oneColumn?: boolean;
 }
 
 const CategoriesLinksPopup: React.FC<Props> = ({ oneColumn, ...props }) => {
-  const { t } = useTranslation('common');
   const { locale } = useRouter();
+  const { t } = useTranslation('common');
 
   return (
-    <div className={styles.categoriesPopupContainer} onMouseLeave={props.closePopup}>
+    <div className={styles.categoriesPopupContainer}>
       <div className={cx('categoriesPopup', locale, { oneColumn })}>
         <h3>{t(props.category)}</h3>
 
