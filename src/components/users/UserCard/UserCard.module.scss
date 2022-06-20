@@ -73,91 +73,36 @@
     }
   }
 
-  .cardBottom {
-    @apply flex flex-col justify-center pt-4;
-    height: 50%;
-
-    svg {
-      fill: black;
-      height: 15px;
-      width: auto;
-    }
-
-    .contactInfo {
-      @apply flex items-center justify-center gap-3;
-      margin-bottom: 10px;
-      p {
-        font-size: 18px;
-        font-weight: 500;
-      }
-    }
-
-    .socialIcons {
-      @apply flex items-center justify-center gap-3;
-      margin: 10px 0;
-
-      svg {
-        height: 20px;
-        fill: #c8c8c8;
-      }
-    }
-
-    button {
-      margin-left: 0;
-      margin-right: 0;
-    }
-  }
-
-  @media only screen and (max-width: 1300px) {
-    .cardBottom {
-      .contactInfo {
-        p {
-          font-size: 16px;
-        }
-      }
-    }
-  }
-
-  @media only screen and (max-width: 1200px) {
-    @apply w-full flex relative top-0;
+  @media only screen and (max-width: 1000px) {
     height: 250px;
+    max-width: unset;
+    display: flex;
 
-    .cardHeader {
-      @apply h-full py-4;
-      width: 40%;
-    }
-
-    .divider {
-      width: 1px;
+    .topSection {
       height: 100%;
+      padding: 1rem 0;
+      width: 40%;
+      border-bottom: unset;
+      border-right: 1px solid rgba(0, 0, 0, 0.03);
     }
 
-    .cardBottom {
-      @apply h-full items-start;
+    .bottomSection {
+      align-items: flex-start;
+      height: 100%;
       width: 60%;
-
-      .contactInfo {
-        @apply pl-10;
-        p {
-          font-size: 18px;
-        }
-      }
-
-      .socialIcons {
-        @apply pl-10;
-      }
+      padding: 0 2.5rem;
     }
   }
 
   @media only screen and (max-width: 650px) {
-    .cardHeader {
+    .topSection {
       h1 {
         font-size: 22px;
       }
     }
 
-    .cardBottom {
-      .contactInfo {
+    .bottomSection {
+      .contactInfoItem {
         p {
           font-size: 16px;
         }
@@ -166,7 +111,7 @@
   }
 
   @media only screen and (max-width: 550px) {
-    .cardHeader {
+    .topSection {
       h1 {
         font-size: 20px;
       }
@@ -174,18 +119,14 @@
   }
 
   @media only screen and (max-width: 500px) {
-    @apply flex-col;
-    height: 350px;
+    flex-direction: column;
+    height: 400px;
 
-    .cardHeader {
-      @apply w-full;
+    .topSection {
+      width: 100%;
       height: 50%;
-
-      .imgContainer {
-        margin-bottom: 10px;
-        height: 80px;
-        width: 80px;
-      }
+      border-right: unset;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.03);
 
       h1 {
         font-size: 18px;
@@ -196,29 +137,19 @@
       }
     }
 
-    .divider {
+    .bottomSection {
+      padding: 0 2rem;
       width: 100%;
-      height: 1px;
-    }
-
-    .cardBottom {
-      @apply w-full;
-      align-items: unset;
+      align-items: center;
       height: 50%;
 
-      .contactInfo {
-        @apply pl-0;
+      .contactInfoItem {
         p {
           font-size: 14px;
         }
       }
 
-      .socialIcons {
-        @apply pl-0 m-0;
-      }
-
-      button {
-        @apply py-1;
+      .button {
         font-size: 14px;
       }
     }
