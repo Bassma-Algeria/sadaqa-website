@@ -2,9 +2,8 @@ import React from 'react';
 
 import styles from '../../NewPost.module.scss';
 
-import { AuthUserCard } from '../../../../components/Users/AuthUserCard';
 import { Container } from '../../../../components/common/Container/Container';
-import { PostDetails } from '../../../../components/Posts/PostDetails/PostDetails';
+import { PostDetailsWithPublisherCard } from '../../../../components/Posts/PostDetailsWithPublisherCard/PostDetailsWithPublisherCard';
 
 interface Props {
   closePreview: () => void;
@@ -17,10 +16,7 @@ const NewPostPreview: React.FC<Props> = ({ closePreview }) => {
 
       <div className={styles.previewContainer}>
         <Container>
-          <div className={styles.topContainer}>
-            <PostDetails pictures={[]} />
-            <AuthUserCard />
-          </div>
+          <PostDetailsWithPublisherCard postDetails={{ pictures: [] }} publisherDetails={{}} />
         </Container>
       </div>
     </div>

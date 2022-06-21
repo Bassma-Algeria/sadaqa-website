@@ -1,0 +1,35 @@
+.container {
+  max-width: 1000px;
+  gap: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &.rightToLeft {
+    flex-direction: row-reverse;
+  }
+
+  .postDetailsContainer {
+    width: 70%;
+  }
+
+  .userCardContainer {
+    width: 30%;
+    position: sticky;
+    top: 0;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    gap: 2rem;
+
+    &,
+    &.rightToLeft {
+      flex-direction: column;
+    }
+
+    .postDetailsContainer,
+    .userCardContainer {
+      width: 100%;
+    }
+  }
+}

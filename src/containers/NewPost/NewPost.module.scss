@@ -76,25 +76,9 @@
         height: 90vh;
         width: 100vw;
         overflow-y: scroll;
-        left: 0;
         position: fixed;
+        left: 0;
         animation: postPreviewAnimation 0.2s ease forwards;
-
-        .topContainer {
-          gap: 3rem;
-          display: flex;
-          justify-content: space-between;
-          align-items: flex-start;
-
-          @media only screen and (max-width: 1200px) {
-            flex-direction: column;
-            gap: 2rem;
-          }
-
-          @media only screen and (max-width: 1000px) {
-            margin-top: 1rem;
-          }
-        }
       }
     }
   }
@@ -119,7 +103,7 @@
 
       .postPreview {
         .previewContainer {
-          padding-top: 1rem;
+          padding-top: 2rem;
           border-top-left-radius: 15px;
           border-top-right-radius: 15px;
         }
