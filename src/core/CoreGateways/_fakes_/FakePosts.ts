@@ -1,0 +1,45 @@
+import moment from 'moment';
+import { Post } from '../PostsGateway/PostsGateway.types';
+
+export const FAKE_POSTS: Post[] = [
+  {
+    active: true,
+    category: 'animales-accessories',
+    description: '',
+    likesCount: 2,
+    pictures: [
+      'https://media.istockphoto.com/photos/fashionable-clothes-in-a-boutique-store-in-london-picture-id653003428?k=20&m=653003428&s=612x612&w=0&h=fz1l9s2zic9O9eXa_81972QcJxZ8rlqtei99wrfE7GM=',
+    ],
+    postId: '39',
+    publishDate: new Date().toISOString(),
+    publisherId: '"',
+    sharesCount: 39,
+    status: 'already-got-help',
+    title: 'HE',
+    type: 'call-for-help',
+    wilaya: 'jijel',
+    ccp: null,
+    ccpKey: null,
+    rib: null,
+    timeAgo: moment(new Date()).fromNow(),
+  },
+  {
+    active: true,
+    category: 'animales-accessories',
+    description: '',
+    likesCount: 2,
+    pictures: [],
+    postId: '39',
+    publishDate: new Date().toISOString(),
+    publisherId: '"',
+    sharesCount: 39,
+    status: 'already-got-help',
+    title: 'HE',
+    type: 'call-for-help',
+    wilaya: 'jijel',
+    ccp: null,
+    ccpKey: null,
+    rib: null,
+    timeAgo: moment(new Date()).fromNow(),
+  },
+];

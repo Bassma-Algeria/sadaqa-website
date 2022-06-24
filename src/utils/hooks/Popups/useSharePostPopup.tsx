@@ -1,7 +1,7 @@
 import { usePopup } from './usePopup';
 import { SharePostPopup } from '../../../components/Popups/SharePostPoup/SharePostPopup';
 
-const useSharePostPopup = (postId: number) => {
+const useSharePostPopup = (postId: string) => {
   const { Popup, openPopup, closePopup } = usePopup(props => (
     <SharePostPopup {...props} postId={postId} />
   ));

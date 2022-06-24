@@ -12,18 +12,18 @@ interface Props {
 
 const AvailableLanguagesPopup: React.FC<Props> = ({ closePopup }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { pathname } = useRouter();
+  const { asPath } = useRouter();
 
   useOutsideClickListener(ref, closePopup);
 
   return (
     <div ref={ref} className={styles.availableLanguagesPopupContainer}>
       <div className={styles.availableLanguagesPopup}>
-        <Link href={pathname} locale="en">
+        <Link href={asPath} locale="en">
           <div className={styles.option}>english</div>
         </Link>
 
-        <Link href={pathname} locale="ar">
+        <Link href={asPath} locale="ar">
           <div className={`${styles.option} ${styles.ar}`}>العربية</div>
         </Link>
       </div>

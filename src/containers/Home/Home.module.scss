@@ -4,7 +4,9 @@
 }
 
 .postsSection {
-  &.ar {
+  margin-bottom: 4rem;
+
+  &.rightToLeft {
     .title {
       text-align: right;
     }

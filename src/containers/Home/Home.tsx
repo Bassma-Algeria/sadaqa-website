@@ -3,10 +3,10 @@ import React from 'react';
 import PageMetaData from '../../components/common/others/PageMetaData';
 
 import { Hero } from './components/Hero/Hero';
+import { Donations } from './components/Donations';
 import { Layout } from '../../components/Layout/Layout';
-import { Donations } from './components/Donations/Donations';
+import { PeopleNeedHelp } from './components/PeopleNeedHelp';
 import { Container } from '../../components/common/Container/Container';
-import { PeopleNeedHelp } from './components/PeopleNeedHelp/PeopleNeedHelp';
 
 const Home: React.FC = () => {
   return (
@@ -14,12 +14,9 @@ const Home: React.FC = () => {
       <PageMetaData title={'Sadaqa صدقة'} />
 
       <Hero />
-
-      <Layout withFooter>
-        <Container>
-          <PeopleNeedHelp />
-          <Donations />
-        </Container>
+      <Layout withFooter withContainer>
+        <PeopleNeedHelp />
+        <Donations />
       </Layout>
     </>
   );

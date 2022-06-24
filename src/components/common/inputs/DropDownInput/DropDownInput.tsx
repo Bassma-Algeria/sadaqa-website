@@ -53,7 +53,7 @@ interface OptionsPanelProps extends Pick<Props<any>, 'options' | 'onValueChange'
 const OptionsPanel: React.FC<OptionsPanelProps> = ({ closePanel, onValueChange, options }) => {
   const ref = useRef<HTMLDivElement>(null);
 
-  useOutsideClickListener(ref, closePanel);
+  useOutsideClickListener(ref, () => closePanel());
 
   const handleOptionClick = (value: string) => {
     onValueChange(value);

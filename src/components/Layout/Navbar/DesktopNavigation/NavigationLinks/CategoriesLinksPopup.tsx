@@ -38,15 +38,15 @@ const Category: React.FC<LinkCategory> = ({ nameKey, icon, pageLink }) => {
   const { t } = useTranslation('common');
 
   return (
-    <div className={styles.category}>
-      <Link href={pageLink}>
+    <Link href={pageLink}>
+      <div className={styles.category}>
         <div className={styles.categoryIcon}>
           <ReactSVG src={icon} />
         </div>
-      </Link>
 
-      <p>{t(nameKey)}</p>
-    </div>
+        <p>{t(nameKey)}</p>
+      </div>
+    </Link>
   );
 };
 

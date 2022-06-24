@@ -4,10 +4,10 @@ import React from 'react';
 import styles from '../../../../Navbar.module.scss';
 
 const LanguagesSwitcher = () => {
-  const { locale, push, pathname } = useRouter();
+  const { locale, push, asPath } = useRouter();
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    push(pathname, pathname, { locale: e.target.value });
+    push(asPath, asPath, { locale: e.target.value });
   };
 
   return (

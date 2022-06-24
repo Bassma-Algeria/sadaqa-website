@@ -38,7 +38,7 @@ export interface NewPostBody {
 
 export interface PostsGateway {
   getPosts: (filters?: GetPostsFilters) => Promise<Post[]>;
-  likePost: (token: string, postId: number) => Promise<void>;
-  sharePost: (token: string, postId: number) => Promise<void>;
+  likePost: (token: string, postId: string) => Promise<void>;
+  sharePost: (token: string, postId: string) => Promise<void>;
   createNewPost: (body: NewPostBody) => Promise<{ postId: string }>;
 }

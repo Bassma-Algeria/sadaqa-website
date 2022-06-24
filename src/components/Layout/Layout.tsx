@@ -8,15 +8,17 @@ import { useRightToLeftDetector } from '../../utils/hooks/useRightToLeftDetector
 import { Navbar } from './Navbar/Navbar';
 import { Footer } from './Footer/Footer';
 import { Sidebar } from './Sidebar/Sidebar';
+import { Container } from '../common/Container/Container';
 
 const cx = classNames.bind(styles);
 
 interface Props {
   withFooter?: boolean;
   withSidebar?: boolean;
+  withContainer?: boolean;
 }
 
-const Layout: React.FC<Props> = ({ children, withFooter, withSidebar }) => {
+const Layout: React.FC<Props> = ({ children, withFooter, withSidebar, withContainer }) => {
   const { rightToLeft } = useRightToLeftDetector();
 
   return (
@@ -26,7 +28,10 @@ const Layout: React.FC<Props> = ({ children, withFooter, withSidebar }) => {
       <div className={cx('main', { rightToLeft })}>
         {withSidebar && <Sidebar />}
 
-        <main className={styles.content}>{children}</main>
+        <main className={styles.content}>
+          {withContainer && <Container>{children}</Container>}
+          {!withContainer && children}
+        </main>
       </div>
 
       {withFooter && <Footer />}

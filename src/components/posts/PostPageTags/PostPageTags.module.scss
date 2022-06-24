@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  text-transform: capitalize;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.2);
+  gap: 0.4rem;
+
+  &.rightToLeft {
+    flex-direction: row-reverse;
+
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  svg {
+    height: 8px;
+    fill: rgba(0, 0, 0, 0.2);
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 12px;
+  }
+}

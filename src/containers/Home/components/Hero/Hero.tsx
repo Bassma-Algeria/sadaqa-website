@@ -13,7 +13,7 @@ import { useNeedAuthPopup } from '../../../../utils/hooks/Popups/useNeedAuthPopu
 
 import { IMAGES } from '../../../../utils/constants/Images';
 
-import { HeroSlide } from './components/HeroSlide';
+import { HeroSlide } from './HeroSlide';
 
 import { Container } from '../../../../components/common/Container/Container';
 

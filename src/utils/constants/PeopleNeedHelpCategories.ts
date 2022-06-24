@@ -1,22 +1,22 @@
 import { ICONS } from './Icons';
 import { LinkCategory } from '../../@types/Links';
 
-const PEOPLE_NEED_HELP_CATEGORIES: LinkCategory[] = [
+const PEOPLE_NEED_HELP_CATEGORIES = [
   {
     nameKey: 'families-in-need',
     icon: ICONS.FAMILIES_IN_NEED,
-    pageLink: '/people_need_help/family_in_need',
+    pageLink: '/people-need-help/families-in-need',
   },
   {
     nameKey: 'donation-requests',
     icon: ICONS.DONATION_REQUESTS,
-    pageLink: '/people_need_help/donation_request',
+    pageLink: '/people-need-help/donation-requests',
   },
   {
     nameKey: 'call-for-help',
     icon: ICONS.CALL_FOR_HELP,
-    pageLink: '/people_need_help/call_for_help',
+    pageLink: '/people-need-help/call-for-help',
   },
-];
+] as const;
 
 export { PEOPLE_NEED_HELP_CATEGORIES };

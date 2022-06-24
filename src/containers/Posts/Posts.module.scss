@@ -1,0 +1,38 @@
+@import '../../styles/variables.scss';
+
+.container {
+  padding: 2rem 0;
+
+  &.rightToLeft {
+    text-align: right;
+
+    .postsContainer {
+      // flex-direction: row-reverse;
+    }
+  }
+
+  .title {
+    margin: 1rem 0 2rem 0;
+  }
+
+  .pagination {
+    margin: auto;
+    width: fit-content;
+  }
+
+  .postsContainer {
+    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  @media only screen and (max-width: $phone-break-point) {
+    padding-top: 0.5rem;
+
+    .postsContainer {
+      gap: 1%;
+    }
+  }
+}

@@ -4,8 +4,8 @@ import classNames from 'classnames/bind';
 
 import styles from './BasePostCard.module.scss';
 
-import { LikeButton } from './components/LikeButton/LikeButton';
 import { ShareButton } from './components/ShareButton';
+import { LikeButton } from './components/LikeButton/LikeButton';
 
 const cx = classNames.bind(styles);
 
@@ -16,7 +16,7 @@ interface Props {
   location: string;
   tag: string;
   liked: boolean;
-  createdAt: string;
+  timeAgo: string;
   likesCount: number;
   gridView?: boolean;
   directionReversed?: boolean;
@@ -35,7 +35,7 @@ const BasePostCard: React.FC<Props> = ({ gridView, directionReversed, ...props }
 
       <div className={styles.details}>
         <div className={styles.time}>
-          <p>{moment(props.createdAt).fromNow()}</p>
+          <p>{props.timeAgo}</p>
         </div>
 
         <div className={styles.tag} onClick={props.navigateToTagPage}>

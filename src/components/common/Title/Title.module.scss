@@ -1,16 +1,17 @@
 .header {
-  @apply capitalize font-semibold;
+  text-transform: capitalize;
+  font-weight: 600;
 
   &.center {
-    @apply text-center;
+    text-align: center;
   }
 
   &.right {
-    @apply text-right;
+    text-align: right;
   }
 
   &.left {
-    @apply text-left;
+    text-align: left;
   }
 
   &.big {

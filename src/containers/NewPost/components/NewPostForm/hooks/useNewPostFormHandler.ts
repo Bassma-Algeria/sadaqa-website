@@ -2,15 +2,25 @@ import React, { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 
 import { postsGateway } from '../../../../../CoreGateways';
-import { NewPostBody } from '../../../../../CoreGateways/PostsGateway/PostsGateway';
+// import { NewPostBody } from '../../../../../CoreGateways/PostsGateway/PostsGateway';
 import { NetworkError } from '../../../../../CoreGateways/utils/NetworkError';
 import { ServerError } from '../../../../../CoreGateways/utils/ServerError';
+import { DonationCategory, PostType } from '../../../../../@types/Posts';
+
+interface NewPostBody {
+  type: PostType | undefined;
+  title: string;
+  description: string;
+  category: DonationCategory | undefined;
+  wilaya: string;
+  pictures: File[];
+}
 
 const initialValues: NewPostBody = {
-  typeId: -1,
+  type: undefined,
   title: '',
   description: '',
-  category: '',
+  category: undefined,
   wilaya: '',
   pictures: [],
 };

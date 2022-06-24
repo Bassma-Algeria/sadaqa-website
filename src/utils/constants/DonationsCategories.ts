@@ -1,77 +1,76 @@
 import { ICONS } from './Icons';
-import { LinkCategory } from '../../@types/Links';
 
-const DONATIONS_CATEGORIES: LinkCategory[] = [
+const DONATIONS_CATEGORIES = [
   {
     nameKey: 'clothes-accessories',
     icon: ICONS.CLOTHES,
-    pageLink: '/donations/Clothes___Accessories',
+    pageLink: '/donations/clothes-accessories',
   },
   {
     nameKey: 'food',
     icon: ICONS.FOOD,
-    pageLink: '/donations/Food',
+    pageLink: '/donations/food',
   },
   {
     nameKey: 'services',
     icon: ICONS.SERVICES,
-    pageLink: '/donations/Services',
+    pageLink: '/donations/services',
   },
   {
     nameKey: 'electronics-appliances',
     icon: ICONS.ELECTRONICS,
-    pageLink: '/donations/Electronics___Appliances',
+    pageLink: '/donations/electronics-appliances',
   },
   {
     nameKey: 'home-furnitures',
     icon: ICONS.FURNITURES,
-    pageLink: '/donations/Home___Furnitures',
+    pageLink: '/donations/home-furnitures',
   },
   {
     nameKey: 'books-magazines',
     icon: ICONS.BOOKS,
-    pageLink: '/donations/Books___Magazines',
+    pageLink: '/donations/books-magazines',
   },
   {
     nameKey: 'sports',
     icon: ICONS.SPORTS,
-    pageLink: '/donations/Sports',
+    pageLink: '/donations/sports',
   },
   {
     nameKey: 'cosmetics-hygiene',
     icon: ICONS.COSMETICS,
-    pageLink: '/donations/Cosmetics___Hygiene',
+    pageLink: '/donations/cosmetics-hygiene',
   },
   {
     nameKey: 'animales-accessories',
     icon: ICONS.ANIMALS,
-    pageLink: '/donations/Animals___Accessories',
+    pageLink: '/donations/animales-accessories',
   },
   {
     nameKey: 'toys',
     icon: ICONS.GAMES,
-    pageLink: '/donations/Games___Toys',
+    pageLink: '/donations/toys',
   },
   {
     nameKey: 'tools',
     icon: ICONS.TOOLS,
-    pageLink: '/donations/Tools',
+    pageLink: '/donations/tools',
   },
   {
     nameKey: 'health-medicines',
     icon: ICONS.HEALTH,
-    pageLink: '/donations/Health___Medicines',
+    pageLink: '/donations/health-medicines',
   },
   {
     nameKey: 'cars-accessories',
     icon: ICONS.CARS,
-    pageLink: '/donations/Cars_Accessories',
+    pageLink: '/donations/cars-accessories',
   },
   {
     nameKey: 'others',
     icon: ICONS.OTHERS,
-    pageLink: '/donations/Others',
+    pageLink: '/donations/others',
   },
-];
+] as const;
 
 export { DONATIONS_CATEGORIES };

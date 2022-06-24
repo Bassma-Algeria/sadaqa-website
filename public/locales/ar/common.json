@@ -77,5 +77,15 @@
   "publish-date": "تاريخ النشر",
   "publisher": "من قبل",
   "see-profile": "الملف الشخصي",
-  "send-message": "أرسل رسالة"
+  "send-message": "أرسل رسالة",
+  "back": "السابق",
+  "next": "التالي",
+  "still-available" : "مازال متوفر",
+  "no-available":"غير متوفر",
+  "not-obtained": "لم يتم الحصول عليها بعد",
+  "already-obtained": "تم الحصول عليها",
+  "still-need-help": "مازال بحاجة إلى المساعدة",
+  "already-got-help": "حصل على المساعدة",
+  "ccp": "رقم الحساب البريدي",
+  "rib": "رقم البطاقة الذهبية"
 }

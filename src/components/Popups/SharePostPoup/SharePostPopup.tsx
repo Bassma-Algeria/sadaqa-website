@@ -10,10 +10,10 @@ import { ICONS } from '../../../utils/constants/Icons';
 
 import { postsGateway } from '../../../CoreGateways';
 
-import { BasePopup } from '../../common/BasePopup/BasePopup';
+import { BasePopup } from '../BasePopup';
 
 interface Props extends PopupProps {
-  postId: number;
+  postId: string;
 }
 
 const SharePostPopup: React.FC<Props> = ({ closePopup, postId }) => {

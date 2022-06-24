@@ -7,15 +7,14 @@ const cx = classNames.bind(styles);
 
 interface Props {
   variant: 'big' | 'small';
-  title: string;
   className?: string;
   align?: 'left' | 'right' | 'center';
 }
 
-const Title: React.FC<Props> = ({ title, variant, align = 'left', className = '' }) => {
+const Title: React.FC<Props> = ({ children, variant, align, className = '' }) => {
   const defaultClass = cx('header', variant, align);
 
-  return <h1 className={`${defaultClass} ${className}`}>{title}</h1>;
+  return <h1 className={`${defaultClass} ${className}`}>{children}</h1>;
 };
 
 export { Title };

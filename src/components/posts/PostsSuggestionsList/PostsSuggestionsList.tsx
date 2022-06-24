@@ -13,9 +13,9 @@ import { ICONS } from '../../../utils/constants/Icons';
 import { usePostsFetcher } from '../../../utils/hooks/DataFetching/usePostsFetcher';
 
 import { Loading } from './components/Loading';
-import { ErrorMessage } from './components/ErrorMessage';
-import { PostsList } from './components/PostsList';
 import { Title } from '../../common/Title/Title';
+import { PostsList } from './components/PostsList';
+import { ErrorMessage } from './components/ErrorMessage';
 
 const cx = classNames.bind(styles);
 
@@ -25,7 +25,7 @@ interface Props {
   postType: PostType;
   numOfPosts: number;
   category?: DonationCategory;
-  containerClass?: string;
+  className?: string;
 }
 
 const PostsSuggestionsList: React.FC<Props> = props => {
@@ -33,7 +33,7 @@ const PostsSuggestionsList: React.FC<Props> = props => {
   const className = cx('container', locale);
 
   return (
-    <div className={`${className} ${props.containerClass}`}>
+    <div className={`${className} ${props.className}`}>
       <Header seeMoreLink={props.seeMoreLink} title={props.title} />
       <Posts category={props.category} numOfPosts={props.numOfPosts} postType={props.postType} />
     </div>
@@ -43,7 +43,7 @@ const PostsSuggestionsList: React.FC<Props> = props => {
 const Header: React.FC<Pick<Props, 'seeMoreLink' | 'title'>> = props => {
   return (
     <div className={styles.header}>
-      <Title title={props.title} variant="small" />
+      <Title variant="small">{props.title}</Title>
 
       <Link href={props.seeMoreLink}>
         <div className={styles.iconContainer}>

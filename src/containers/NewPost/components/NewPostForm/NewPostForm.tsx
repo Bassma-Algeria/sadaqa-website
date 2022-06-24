@@ -3,6 +3,8 @@ import { useTranslation } from 'next-i18next';
 
 import styles from '../../NewPost.module.scss';
 
+import { PostType } from '../../../../@types/Posts';
+
 import { useNewPostFormHandler } from './hooks/useNewPostFormHandler';
 
 import { NewPostPreview } from './NewPostPreview';
@@ -30,13 +32,13 @@ const NewPostForm: React.FC = () => {
           label={t('advertisement-type', { ns: 'common' })}
           placeholder={t('tap-to-choose', { ns: 'common' })}
           className={styles.input}
-          value={newPostValues.typeId}
-          onValueChange={typeId => setNewPostValues({ ...newPostValues, typeId })}
+          value={newPostValues.type}
+          onValueChange={(type: PostType) => setNewPostValues({ ...newPostValues, type })}
           options={[
-            { name: t('donations', { ns: 'common' }), value: 0 },
-            { name: t('donation-requests', { ns: 'common' }), value: 1 },
-            { name: t('families-in-need', { ns: 'common' }), value: 2 },
-            { name: t('call-for-help', { ns: 'common' }), value: 3 },
+            { name: t('donations', { ns: 'common' }), value: 'donation' },
+            { name: t('donation-requests', { ns: 'common' }), value: 'donation-requests' },
+            { name: t('families-in-need', { ns: 'common' }), value: 'families-in-need' },
+            { name: t('call-for-help', { ns: 'common' }), value: 'call-for-help' },
           ]}
         />
         <NameInput

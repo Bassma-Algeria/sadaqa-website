@@ -42,15 +42,15 @@ const SidebarLink: React.FC<LinkCategory> = ({ icon, nameKey, pageLink }) => {
   const { t } = useTranslation('common');
 
   return (
-    <div className={styles.sidebarLink}>
-      <div className={styles.iconContainer}>
-        <ReactSVG src={icon} />
-      </div>
+    <Link href={pageLink}>
+      <div className={styles.sidebarLink}>
+        <div className={styles.iconContainer}>
+          <ReactSVG src={icon} />
+        </div>
 
-      <Link href={pageLink}>
         <p>{t(nameKey)}</p>
-      </Link>
-    </div>
+      </div>
+    </Link>
   );
 };
 

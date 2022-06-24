@@ -3,10 +3,11 @@ import { useTranslation } from 'next-i18next';
 
 import { DropDownInput } from '../common/Inputs/DropDownInput/DropDownInput';
 import { DONATIONS_CATEGORIES } from '../../utils/constants/DonationsCategories';
+import { DonationCategory } from '../../@types/Posts';
 
 interface Props {
-  value: string;
-  onValueChange: (category: string) => void;
+  value: DonationCategory | undefined;
+  onValueChange: (category: DonationCategory) => void;
   className?: string;
 }
 

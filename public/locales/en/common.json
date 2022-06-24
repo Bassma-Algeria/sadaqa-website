@@ -77,5 +77,15 @@
   "publish-date": "publish date",
   "publisher": "publisher",
   "see-profile": "see profile",
-  "send-message": "send message"
+  "send-message": "send message",
+  "back": "back",
+  "next": "next",
+  "still-available" : "still available",
+  "no-available":"not available (given)",
+  "not-obtained": "not obtained yet",
+  "already-obtained": "already obtained",
+  "still-need-help": "still need help",
+  "already-got-help": "already got help",
+  "ccp": "CCP",
+  "rib": "RIB (for Edahabia card)"
 }

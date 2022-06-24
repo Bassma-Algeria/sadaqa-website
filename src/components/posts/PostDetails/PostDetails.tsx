@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next';
 import 'react-slideshow-image/dist/styles.css';
 import styles from './PostDetails.module.scss';
 
+import { Post } from '../../../core/CoreGateways/PostsGateway/PostsGateway.types';
 import { useRightToLeftDetector } from '../../../utils/hooks/useRightToLeftDetector';
 
 import { ICONS } from '../../../utils/constants/Icons';
@@ -15,16 +16,7 @@ import { IMAGES } from '../../../utils/constants/Images';
 
 const cx = classNames.bind(styles);
 
-export interface Props {
-  type: string;
-  title: string;
-  description: string;
-  category: string;
-  address: string;
-  status: string;
-  active: boolean;
-  pictures: string[];
-  publishingDate: string;
+interface Props extends Post {
   publisherName: string;
 }
 
@@ -37,7 +29,7 @@ const PostDetails: React.FC<Props> = props => {
       <div className={styles.head}>
         <h1>{props.title}</h1>
         <h4>
-          {props.status} <span>.</span> {t('publish-date')} : {props.publishingDate}
+          {t(props.status)} <span>.</span> {t('publish-date')} : {props.publishDate}
         </h4>
       </div>
 
@@ -49,23 +41,40 @@ const PostDetails: React.FC<Props> = props => {
         <h1>{t('description')}</h1>
         <p className={styles.desc}>{props.description}</p>
 
-        <PostInfoItem title={t('advertisement-type')} value={props.type} />
+        <PostInfoItem title={t('advertisement-type')} value={t(props.type)} />
 
         <div className={styles.separator}></div>
 
-        <PostInfoItem title={t('category')} value={props.category} />
+        {props.category && (
+          <>
+            <PostInfoItem title={t('category')} value={t(props.category)} />
+            <div className={styles.separator}></div>
+          </>
+        )}
+
+        {props.ccp && (
+          <>
+            <PostInfoItem title={t('ccp')} value={`${props.ccp} - ${props.ccpKey}`} />
+            <div className={styles.separator}></div>
+          </>
+        )}
+
+        {props.rib && (
+          <>
+            <PostInfoItem title={t('rib')} value={props.rib} />
+            <div className={styles.separator}></div>
+          </>
+        )}
+
+        <PostInfoItem title={t('adress')} value={props.wilaya} />
 
         <div className={styles.separator}></div>
 
-        <PostInfoItem title={t('adress')} value={props.address} />
+        <PostInfoItem title={t('status')} value={t(props.status)} />
 
         <div className={styles.separator}></div>
 
-        <PostInfoItem title={t('status')} value={props.status} />
-
-        <div className={styles.separator}></div>
-
-        <PostInfoItem title={t('publish-date')} value={props.publishingDate} />
+        <PostInfoItem title={t('publish-date')} value={props.publishDate} />
 
         <div className={styles.separator}></div>
 

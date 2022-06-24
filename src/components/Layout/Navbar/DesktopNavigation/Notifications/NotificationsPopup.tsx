@@ -15,9 +15,7 @@ const NotificationsPopup: React.FC<Props> = ({ closePopup }) => {
   const { t } = useTranslation();
   const { locale } = useRouter();
 
-  useOutsideClickListener(ref, () => {
-    closePopup();
-  });
+  useOutsideClickListener(ref, () => closePopup());
 
   return (
     <div ref={ref} className={styles.notificationsPopupContainer}>

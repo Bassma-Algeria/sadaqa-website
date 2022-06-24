@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { ReactSVG } from 'react-svg';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
 import styles from './NeedAuthPopup.module.scss';
@@ -10,7 +9,7 @@ import { ICONS } from '../../../utils/constants/Icons';
 
 import type { PopupProps } from '../PopupProps';
 
-import { BasePopup } from '../../common/BasePopup/BasePopup';
+import { BasePopup } from '../BasePopup';
 import { Button } from '../../common/Button/Button';
 
 interface Props extends PopupProps {}
