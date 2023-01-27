@@ -2,6 +2,7 @@
 
 - [x] configure prettier
 - [x] configure eslint with prettier
+- [ ] configure sass
 - [ ] configure jest for testing
 - [ ] configure docker
 - [ ] configure docker-compose to pull the sadaqa server from docker hub
