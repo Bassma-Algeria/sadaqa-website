@@ -5,7 +5,7 @@ FROM node:16-alpine AS appBuild
 
 WORKDIR /home/app
 
-COPY . .
+COPY .. .
 
 RUN npm install
 RUN npm run build
