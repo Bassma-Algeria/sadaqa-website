@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "docker:backend": "docker-compose -f docker/docker-compose.dev.yml up",
+    "docker:backend:latest": "docker-compose -f docker/docker-compose.dev.yml pull backend && docker-compose -f docker/docker-compose.dev.yml up"
   },
   "dependencies": {
     "@next/font": "13.1.5",
