@@ -12,4 +12,5 @@
   3. build docker image
   4. push docker image to docker hub
 
+- [x] init adr (architecture decision records)
 - [ ] setup internationalization
