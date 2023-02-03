@@ -5,7 +5,7 @@ FROM node:18.13-alpine AS stagingBuild
 
 WORKDIR /home/app
 
-COPY ../.. .
+COPY . .
 
 RUN npm install
 RUN npm run build
