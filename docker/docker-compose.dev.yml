@@ -3,6 +3,7 @@ version: '3'
 services:
   backend:
     image: yasserbelatreche/sadaqa-backend:latest
+    container_name: sadaqa-backend
     depends_on:
       - postgres-db
     ports:
@@ -14,8 +15,9 @@ services:
 
   postgres-db:
     image: postgres:latest
+    container_name: sadaqa-postgres-db
     ports:
-      - "5432:5432"
+      - "5433:5432"
     restart: always
     environment:
       - POSTGRES_USER=postgres

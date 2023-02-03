@@ -1,7 +1,7 @@
 # Build Stage 1
 # This build created a staging docker image
 #
-FROM node:16-alpine AS appBuild
+FROM node:19-alpine AS appBuild
 
 WORKDIR /home/app
 
@@ -13,7 +13,7 @@ RUN npm run build
 # Build Stage 2
 # This build takes the production build from staging build
 #
-FROM node:16-alpine
+FROM node:19-alpine
 
 RUN apk add --no-cache libcap
 
