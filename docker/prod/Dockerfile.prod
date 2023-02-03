@@ -1,11 +1,11 @@
 # Build Stage 1
 # This build created a staging docker image
 #
-FROM node:19-alpine AS appBuild
+FROM node:18.13-alpine AS stagingBuild
 
 WORKDIR /home/app
 
-COPY .. .
+COPY ../.. .
 
 RUN npm install
 RUN npm run build
@@ -13,7 +13,7 @@ RUN npm run build
 # Build Stage 2
 # This build takes the production build from staging build
 #
-FROM node:19-alpine
+FROM node:18.13-alpine as prodBuild
 
 RUN apk add --no-cache libcap
 
@@ -24,7 +24,7 @@ COPY next.config.js ./
 
 RUN npm install --omit=dev
 
-COPY --from=appBuild /home/app/.next ./.next
+COPY --from=stagingBuild /home/app/.next ./.next
 
 ENV NODE_ENV=production PORT=80
 

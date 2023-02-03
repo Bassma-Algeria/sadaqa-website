@@ -1,38 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sadaqa Frontend
+
+This is the frontend for the Sadaqa project. It is built using Next.js and TypeScript.
 
 ## Getting Started
 
-First, run the development server:
+### Pre-requisites
+
+First, you need to have `docker` and `docker-compose` installed on your machine. 
+Refer to the [download page](https://docs.docker.com/get-docker/) to get them.
+
+Also you will need `node` and `npm` installed on your machine.
+Refer to the [download page](https://nodejs.org/en/download/) to get them.
+make sure you install the version specified in the `.nvmrc` file
+
+### Running the project locally
+
+To run the development server, you have two options:
+
+#### 1. Use Docker only (recommended)
+
+This is the recommended way to run the project locally. It will run the project in a container, and you will not need to install any dependencies on your machine.
+Docker will pull and setup the backend, and run the frontend in a container.
+
+To run the project in docker, run the following command (this will take a few minutes the first time you run it):
+
+```bash
+npm run docker:dev
+````
+
+Then open your browser and go to [http://localhost:3000](http://localhost:3000).
+
+
+#### 2. Use Docker for the backend and run the frontend locally
+
+In case you wanna run the frontend locally, and use docker only for the backend, follow those steps:
+
+1 - start the backend:
+
+```bash
+npm run docker:dev:min
+````
+
+2 - install the dependencies:
+
+```bash
+npm install
+````
+
+3 - run the frontend:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+````
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open your browser and go to [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Staying up to date with the latest version of the backend
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Docker will cash the backend image locally, and will not pull it everytime you start the project.
+To make sure you are using the latest version of the backend, you need to pull the new image from time to time.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To do so, run the following command:
+```bash
+npm run docker:backend:pull
+````
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Testing the production build locally
 
-## Learn More
+To test the production build locally, run the following command:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run docker:prod
+````
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then open your browser and go to [http://localhost:3000](http://localhost:3000).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

@@ -1,6 +1,20 @@
-version: '3'
+version: "3"
 
 services:
+  frontend:
+    build:
+      context: ../..
+      dockerfile: docker/dev/Dockerfile.dev
+    image: sadaqa-frontend:prod
+    container_name: sadaqa-frontend-prod
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    env_file:
+      - ../../.env
+
   backend:
     image: yasserbelatreche/sadaqa-backend:latest
     container_name: sadaqa-backend
@@ -9,10 +23,11 @@ services:
     ports:
       - "5000:80"
     env_file:
-      - ../.env.backend
+      -  ../../.env.backend
     environment:
       - DATABASE_URL=postgresql://postgres:postgres@postgres-db/sadaqa?schema=public
 
+  # later on, should pull the real prod databases
   postgres-db:
     image: postgres:latest
     container_name: sadaqa-postgres-db
