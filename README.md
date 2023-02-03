@@ -50,7 +50,7 @@ npm install
 3 - run the frontend:
 
 ```bash
-npm run dev
+npm run start:dev
 ````
 
 Then open your browser and go to [http://localhost:3000](http://localhost:3000).
