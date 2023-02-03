@@ -1,0 +1,66 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - 'master'
+
+jobs:
+  lint:
+    name: Run Linter
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.13.0'
+          cache: npm
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Lint
+        run: npm run lint
+
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.13.0'
+          cache: npm
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Tests
+        run: npm test
+
+  integrate:
+    name: Dockerize and Push to Docker Hub
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Get Package Version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
+      - name: Build The Image
+        run: docker build . -f docker/prod/Dockerfile.prod -t ${{ secrets.DOCKER_USERNAME }}/sadaqa-frontend:${{ steps.package-version.outputs.current-version }}
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+      - name: Push The current version To Docker Hub
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/sadaqa-frontend:${{ steps.package-version.outputs.current-version }}
+      - name: Update latest tag
+        run: docker tag ${{ secrets.DOCKER_USERNAME }}/sadaqa-frontend:${{ steps.package-version.outputs.current-version }} ${{ secrets.DOCKER_USERNAME }}/sadaqa-frontend:latest
+      - name: Push latest tag to Docker Hub
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/sadaqa-frontend:latest

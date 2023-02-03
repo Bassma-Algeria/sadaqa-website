@@ -8,6 +8,8 @@ services:
     restart: always
     image: sadaqa-frontend:dev
     container_name: sadaqa-frontend-dev
+    depends_on:
+      - backend
     ports:
       - "3000:3000"
     env_file:
