@@ -4,7 +4,7 @@ services:
   frontend:
     build:
       context: ../..
-      dockerfile: Dockerfile
+      dockerfile: docker/prod/Dockerfile.prod
     image: sadaqa-frontend:prod
     container_name: sadaqa-frontend-prod
     restart: always

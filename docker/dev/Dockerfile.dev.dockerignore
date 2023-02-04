@@ -1,6 +1,7 @@
-../../.next
-../../node_modules
-../../docker
-../../.git
-../../.github
-../../.gitignore
+.next
+node_modules
+docker
+.git
+.github
+.gitignore
+.idea
