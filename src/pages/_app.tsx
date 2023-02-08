@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import localFont from '@next/font/local';
 import { appWithTranslation } from 'next-i18next';
 
-import '@nextjs/styles/globals.scss';
+import '../framework/nextjs/styles/globals.scss';
 
 function App({ Component, pageProps }: AppProps) {
     return (

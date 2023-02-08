@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 
 import styles from './Login.module.scss';
+
 import { LocalImages } from '../../utils/constants/LocalImages';
 
 import { Image } from '../../components/Image/Image';
+import { Button } from '../../components/Buttons/Button/Button';
 import { TextInput } from '../../components/Inputs/TextInput/TextInput';
 import { PasswordInput } from '../../components/Inputs/PasswordInput/PasswordInput';
+import Link from 'next/link';
 
 const Login: React.FC = () => {
     const { t } = useTranslation('login');
@@ -37,7 +40,17 @@ const Login: React.FC = () => {
                             placeholder={t('enter-your-password')}
                             containerClassName={styles.input}
                         />
+                        <Button onClick={() => {}} variant={'primary'}>
+                            {t('login')}
+                        </Button>
                     </form>
+
+                    <p>
+                        {t('does-not-have-an-account')} ?{' '}
+                        <Link className={styles.signup} href={'signup'}>
+                            {t('signup')}
+                        </Link>
+                    </p>
                 </div>
             </div>
 

@@ -3,5 +3,3 @@ describe('Pass', function () {
         expect(true).toEqual(true);
     });
 });
-
-export {};
