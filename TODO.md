@@ -14,3 +14,4 @@
 
 - [x] init adr (architecture decision records)
 - [ ] setup internationalization
+- [ ] move config files to a config folder

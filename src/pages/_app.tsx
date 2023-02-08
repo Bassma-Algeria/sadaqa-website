@@ -1,11 +1,33 @@
-import type { AppProps } from 'next/app';
+import { AppProps } from 'next/app';
 import localFont from '@next/font/local';
+import { appWithTranslation } from 'next-i18next';
 
 import '@nextjs/styles/globals.scss';
-import '@nextjs/styles/variables.scss';
+
+function App({ Component, pageProps }: AppProps) {
+    return (
+        <>
+            <style jsx global>{`
+                html[lang='en'] {
+                    font-family: ${MyriadProFont.style.fontFamily};
+                }
+
+                html[lang='ar'] {
+                    font-family: ${IbmPlexSansArabicFont.style.fontFamily};
+                }
+            `}</style>
+            <Component {...pageProps} />
+        </>
+    );
+}
 
 const IbmPlexSansArabicFont = localFont({
     src: [
+        {
+            path: '../framework/nextjs/assets/fonts/IBMPlexSansArabic-Light.ttf',
+            weight: '300',
+            style: 'normal',
+        },
         {
             path: '../framework/nextjs/assets/fonts/IBMPlexSansArabic-Regular.ttf',
             weight: '400',
@@ -54,19 +76,4 @@ const MyriadProFont = localFont({
     ],
 });
 
-export default function App({ Component, pageProps }: AppProps) {
-    return (
-        <>
-            <style jsx global>{`
-                html[lang='en'] {
-                    font-family: ${MyriadProFont.style.fontFamily};
-                }
-
-                html[lang='ar'] {
-                    font-family: ${IbmPlexSansArabicFont.style.fontFamily};
-                }
-            `}</style>
-            <Component {...pageProps} />
-        </>
-    );
-}
+export default appWithTranslation(App);

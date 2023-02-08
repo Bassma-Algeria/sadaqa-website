@@ -1,14 +1,14 @@
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { Home } from '../framework/nextjs/containers/Home/Home';
+import { Login } from '../framework/nextjs/containers/Login/Login';
 
-export default function HomePage() {
-    return <Home />;
+export default function LoginPage() {
+    return <Login />;
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-    const locales = await serverSideTranslations(locale!, ['common', 'home']);
+    const locales = await serverSideTranslations(locale!, ['common', 'login']);
 
     return {
         props: {
