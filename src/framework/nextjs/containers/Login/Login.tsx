@@ -45,7 +45,7 @@ const Login: React.FC = () => {
                         </Button>
                     </form>
 
-                    <p>
+                    <p className={styles.notHaveAccount}>
                         {t('does-not-have-an-account')} ?{' '}
                         <Link className={styles.signup} href={'signup'}>
                             {t('signup')}

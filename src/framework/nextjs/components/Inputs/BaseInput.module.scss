@@ -13,7 +13,7 @@
 
     .label {
         display: inline-block;
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin-bottom: 0.3rem;
         font-weight: 600;
         color: #1e1e1e;
@@ -24,7 +24,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        padding: 1rem 1rem;
+        padding: 1rem;
         border-radius: 6px;
         border: 1px solid $grey-color-4;
 
@@ -47,5 +47,11 @@
         font-size: 0.8rem;
         margin-top: 0.5rem;
         padding: 0 0.6rem;
+    }
+
+    @media only screen and (max-width: $phone-breakpoint) {
+        .inputBox {
+            padding: 0.8rem;
+        }
     }
 }

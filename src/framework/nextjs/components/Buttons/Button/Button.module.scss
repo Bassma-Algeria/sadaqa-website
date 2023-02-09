@@ -2,7 +2,7 @@
 
 .btn {
     padding: 1rem 2rem;
-    border-radius: 0.3rem;
+    border-radius: 6px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -20,5 +20,13 @@
     }
 
     &.secondary {
+    }
+
+    @media only screen and (max-width: $tablet-breakpoint) {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: $phone-breakpoint) {
+        padding: 0.8rem;
     }
 }
