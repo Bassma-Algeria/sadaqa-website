@@ -5,6 +5,6 @@ module.exports = {
     },
     localePath:
         typeof window === 'undefined'
-            ? require('path').resolve('./src/framework/nextjs/assets/locales')
-            : './src/framework/nextjs/assets/locales',
+            ? require('path').resolve('./src/assets/locales')
+            : './src/assets/locales',
 };

@@ -1,0 +1,178 @@
+@import '../../styles/variables';
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+
+    .content {
+        flex: 1;
+        width: 60%;
+        height: 100%;
+        display: flex;
+        padding: 4rem 1rem 0;
+        justify-content: center;
+
+        > div {
+            width: 100%;
+            max-width: 38rem;
+        }
+
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 0.7rem;
+        }
+
+        .text {
+            color: $grey-color;
+            margin-bottom: 1rem;
+        }
+
+        .alreadyHaveAccount {
+            .login {
+                color: $primary-color;
+            }
+        }
+
+        .chooseUserType {
+            .choosingButtons {
+                margin-top: 3rem;
+
+                h3 {
+                    margin-bottom: 1rem;
+                }
+
+                .chooseButton {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    border: 1px solid $grey-color-4;
+                    cursor: pointer;
+                    border-radius: 0.5rem;
+                    margin-bottom: 1rem;
+                    width: 100%;
+                    padding: 2rem 1.5rem;
+
+                    p {
+                        font-weight: 500;
+                    }
+
+                    &:hover {
+                        border: 1px solid $primary-color;
+                    }
+                }
+            }
+        }
+
+        .registerIndividualUser {
+            .inputs {
+                margin-top: 3rem;
+                margin-bottom: 2rem;
+
+                .input {
+                    margin-bottom: 1rem;
+                }
+
+                .firstLastName {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .input {
+                        width: 48%;
+                    }
+                }
+            }
+        }
+    }
+
+    .banner {
+        flex: 1;
+        width: 40%;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: $small-laptop-breakpoint) {
+        .content {
+            width: 65%;
+            padding-left: 2rem;
+            padding-right: 2rem;
+
+            .title {
+                font-size: 2.7rem;
+                margin-bottom: 0.8rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $tablet-breakpoint) {
+        .content {
+            width: 100%;
+        }
+
+        .banner {
+            display: none;
+        }
+    }
+
+    @media only screen and (max-width: $small-tablet-breakpoint) {
+        .content {
+            padding-right: 1.5rem;
+            padding-left: 1.5rem;
+
+            .title {
+                font-size: 2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .text {
+                margin-bottom: 0.5rem;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $phone-breakpoint) {
+        .content {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+
+            .title {
+                font-size: 1.8rem;
+            }
+
+            .alreadyHaveAccount {
+                display: none;
+            }
+
+            .chooseUserType {
+                .choosingButtons {
+                    .chooseButton {
+                        padding: 1.5rem 0.8rem;
+                        gap: 0.8rem;
+                    }
+                }
+            }
+
+            .registerIndividualUser {
+                .inputs {
+                    margin-top: 3rem;
+                    margin-bottom: 2rem;
+
+                    .input {
+                        margin-bottom: 0.8rem;
+                    }
+
+                    .firstLastName {
+                        display: block;
+
+                        .input {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { Login } from '../framework/nextjs/containers/Login/Login';
+import { Login } from '../containers/Login/Login';
 
 export default function LoginPage() {
     return <Login />;

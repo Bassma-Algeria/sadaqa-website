@@ -1,0 +1,48 @@
+@import '../../../styles/variables';
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: background-color 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    &.primary {
+        color: white;
+        background-color: $primary-color;
+
+        &:hover {
+            background-color: lighten($primary-color, 4%);
+        }
+
+        .icon {
+            path {
+                stroke: white;
+            }
+        }
+    }
+
+    &.secondary {
+    }
+
+    .icon {
+        &.isRTL {
+            transform: rotate(180deg);
+        }
+    }
+
+    @media only screen and (max-width: $tablet-breakpoint) {
+        width: 100%;
+    }
+
+    @media only screen and (max-width: $phone-breakpoint) {
+        padding: 0.8rem;
+    }
+}

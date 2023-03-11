@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import localFont from '@next/font/local';
 import { appWithTranslation } from 'next-i18next';
 
-import '../framework/nextjs/styles/globals.scss';
+import '../styles/globals.scss';
 
 function App({ Component, pageProps }: AppProps) {
     return (
@@ -10,10 +10,12 @@ function App({ Component, pageProps }: AppProps) {
             <style jsx global>{`
                 html[lang='en'] {
                     font-family: ${MyriadProFont.style.fontFamily};
+                    direction: ltr;
                 }
 
                 html[lang='ar'] {
                     font-family: ${IbmPlexSansArabicFont.style.fontFamily};
+                    direction: rtl;
                 }
             `}</style>
             <Component {...pageProps} />
@@ -24,22 +26,22 @@ function App({ Component, pageProps }: AppProps) {
 const IbmPlexSansArabicFont = localFont({
     src: [
         {
-            path: '../framework/nextjs/assets/fonts/IBMPlexSansArabic-Light.ttf',
+            path: '../assets/fonts/IBMPlexSansArabic-Light.ttf',
             weight: '300',
             style: 'normal',
         },
         {
-            path: '../framework/nextjs/assets/fonts/IBMPlexSansArabic-Regular.ttf',
+            path: '../assets/fonts/IBMPlexSansArabic-Regular.ttf',
             weight: '400',
             style: 'normal',
         },
         {
-            path: '../framework/nextjs/assets/fonts/IBMPlexSansArabic-SemiBold.ttf',
+            path: '../assets/fonts/IBMPlexSansArabic-SemiBold.ttf',
             weight: '600',
             style: 'normal',
         },
         {
-            path: '../framework/nextjs/assets/fonts/IBMPlexSansArabic-Bold.ttf',
+            path: '../assets/fonts/IBMPlexSansArabic-Bold.ttf',
             weight: '700',
             style: 'normal',
         },
@@ -49,27 +51,27 @@ const IbmPlexSansArabicFont = localFont({
 const MyriadProFont = localFont({
     src: [
         {
-            path: '../framework/nextjs/assets/fonts/MyriadPro-Light.woff',
+            path: '../assets/fonts/MyriadPro-Light.woff',
             weight: '300',
             style: 'normal',
         },
         {
-            path: '../framework/nextjs/assets/fonts/MyriadPro-Regular.woff',
+            path: '../assets/fonts/MyriadPro-Regular.woff',
             weight: '400',
             style: 'normal',
         },
         {
-            path: '../framework/nextjs/assets/fonts/MyriadPro-SemiBold.woff',
+            path: '../assets/fonts/MyriadPro-SemiBold.woff',
             weight: '600',
             style: 'normal',
         },
         {
-            path: '../framework/nextjs/assets/fonts/MyriadPro-SemiBoldItalic.woff',
+            path: '../assets/fonts/MyriadPro-SemiBoldItalic.woff',
             weight: '600',
             style: 'italic',
         },
         {
-            path: '../framework/nextjs/assets/fonts/MyriadPro-Bold.woff',
+            path: '../assets/fonts/MyriadPro-Bold.woff',
             weight: '700',
             style: 'normal',
         },
