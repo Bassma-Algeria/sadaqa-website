@@ -1,0 +1,86 @@
+@import '../../../styles/variables';
+
+.desktop {
+    position: relative;
+
+    .head {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .value {
+            flex: 1;
+
+            &.placeholder {
+                color: $grey-color-4;
+            }
+        }
+    }
+
+    .menu {
+        position: absolute;
+        top: 110%;
+        background-color: white;
+        border-radius: 6px;
+        padding: 0.5rem;
+        width: 100%;
+        max-height: 250px;
+        overflow-y: auto;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+
+        /* width */
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: white;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $grey-color-4;
+            border-radius: 6px;
+
+            &:hover {
+                background: darken($grey-color-4, 10%);
+            }
+        }
+
+        .item {
+            padding: 0.8rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.2s ease-in-out;
+
+            &:hover {
+                background-color: $primary-color-1;
+            }
+        }
+    }
+
+    @media only screen and (max-width: $phone-breakpoint) {
+        .menu {
+            padding: 0.4rem;
+
+            .item {
+                padding: 0.6rem;
+                font-size: 0.95rem;
+            }
+        }
+    }
+}
+
+.mobile {
+    select {
+        width: 100%;
+        outline: none;
+        border: 0;
+        background-color: white;
+
+        &.placeholder {
+            color: $grey-color-4;
+        }
+    }
+}

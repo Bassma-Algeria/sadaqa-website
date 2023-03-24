@@ -6,8 +6,8 @@ import styles from '../../Register.module.scss';
 import { useTranslation } from '../../../../utils/hooks/useTranslation';
 
 import { Button } from '../../../../components/Buttons/Button/Button';
-import { TextInput } from '../../../../components/Inputs/TextInput/TextInput';
 import { PasswordInput } from '../../../../components/Inputs/PasswordInput/PasswordInput';
+import { DropdownInput } from '../../../../components/Inputs/DropdownInput/DropdownInput';
 
 interface Props {
     goBack: () => void;
@@ -15,6 +15,8 @@ interface Props {
 
 const RegisterIndividualUserSecondSlide: React.FC<Props> = ({ goBack }) => {
     const { t } = useTranslation('register');
+
+    const [value, setValue] = React.useState<string>('');
 
     return (
         <>
@@ -29,11 +31,15 @@ const RegisterIndividualUserSecondSlide: React.FC<Props> = ({ goBack }) => {
             </p>
 
             <div className={styles.inputs}>
-                <TextInput
+                <DropdownInput
                     containerClassName={styles.input}
                     placeholder={t('choose-your-wilaya')}
-                    value={''}
-                    onChange={() => {}}
+                    value={value}
+                    options={[
+                        { value: '1', label: '1' },
+                        { value: '2', label: '2' },
+                    ]}
+                    onChange={setValue}
                     name={'wilaya'}
                     label={t('wilaya')}
                 />
@@ -53,7 +59,7 @@ const RegisterIndividualUserSecondSlide: React.FC<Props> = ({ goBack }) => {
                 />
             </div>
 
-            <Button onClick={() => {}} variant={'primary'}>
+            <Button onClick={() => {}} type={'submit'} variant={'primary'}>
                 {t('create-account')}
             </Button>
         </>

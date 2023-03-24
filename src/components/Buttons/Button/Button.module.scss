@@ -16,10 +16,10 @@
 
     &.primary {
         color: white;
-        background-color: $primary-color;
+        background-color: $main-color;
 
         &:hover {
-            background-color: lighten($primary-color, 4%);
+            background-color: lighten($main-color, 4%);
         }
 
         .icon {

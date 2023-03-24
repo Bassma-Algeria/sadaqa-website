@@ -2,7 +2,8 @@ import React from 'react';
 
 import styles from '../../Register.module.scss';
 
-import { RegisterIndividualUserFirstSlide } from './RegisterindividualUserFirstSlide';
+import { ReturnButton } from '../ReturnButton';
+import { RegisterIndividualUserSecondSlide } from './RegisterIndividualUserSecondSlide';
 
 interface Props {
     goBack: () => void;
@@ -11,8 +12,9 @@ interface Props {
 const RegisterIndividualUser: React.FC<Props> = ({ goBack }) => {
     return (
         <div className={styles.registerIndividualUser}>
-            <RegisterIndividualUserFirstSlide goBack={() => {}} />
-            {/*<RegisterIndividualUserSecondSlide goBack={() => {}} />*/}
+            <ReturnButton onClick={goBack} />
+            {/*<RegisterIndividualUserFirstSlide goBack={() => {}} />*/}
+            <RegisterIndividualUserSecondSlide goBack={() => {}} />
         </div>
     );
 };

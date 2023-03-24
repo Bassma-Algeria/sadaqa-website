@@ -19,6 +19,7 @@ interface Props {
         | 'bottom left'
         | 'bottom right';
 }
+
 const Image: React.FC<Props> = props => {
     return (
         <div className={props.containerClassName} style={{ position: 'relative' }}>

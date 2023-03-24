@@ -19,7 +19,7 @@ const Register: React.FC = () => {
                 {/*    openAssociationAccount={() => {}}*/}
                 {/*    openIndividualAccount={() => {}}*/}
                 {/*/>*/}
-                <RegisterIndividualUser />
+                <RegisterIndividualUser goBack={() => {}} />
             </div>
 
             <Image

@@ -32,7 +32,17 @@
 
         .alreadyHaveAccount {
             .login {
-                color: $primary-color;
+                color: $main-color;
+            }
+        }
+
+        .returnButtonContainer {
+            position: relative;
+            right: 2rem;
+            bottom: 2rem;
+
+            svg {
+                cursor: pointer;
             }
         }
 
@@ -60,7 +70,7 @@
                     }
 
                     &:hover {
-                        border: 1px solid $primary-color;
+                        border: 1px solid $main-color;
                     }
                 }
             }
@@ -103,6 +113,15 @@
             .title {
                 font-size: 2.7rem;
                 margin-bottom: 0.8rem;
+            }
+
+            .returnButtonContainer {
+                right: 0rem;
+                bottom: 1rem;
+
+                svg {
+                    cursor: pointer;
+                }
             }
         }
     }

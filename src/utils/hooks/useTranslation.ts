@@ -1,7 +1,7 @@
-import { useTranslation as useI8Translation } from 'next-i18next';
+import { useTranslation as useI18Translation } from 'next-i18next';
 
 const useTranslation = (namespace: string) => {
-    const { t } = useI8Translation(namespace);
+    const { t } = useI18Translation(namespace);
 
     return { t };
 };
