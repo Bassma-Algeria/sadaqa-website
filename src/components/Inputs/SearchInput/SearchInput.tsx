@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './SearchInput.module.scss';
 import { LocalIcons } from '../../../utils/constants/LocalIcons';
-import { useRTLDetector } from '../../../utils/hooks/useRTLDetector';
 
 interface Props {
     placeholder: string;
@@ -9,8 +8,6 @@ interface Props {
 }
 
 const Search: React.FC<Props> = props => {
-    const isRTL = useRTLDetector();
-
     return (
         <div className={styles.searchInputContainer}>
             <input
