@@ -6,7 +6,7 @@
 
 .searchInput {
     width: 100%;
-    padding: 10px 12px 10px 58px;
+    padding: 10px 58px;
     font-size: 18px;
     color: $text-color;
     border: 1px solid $grey-color-4;
@@ -36,7 +36,7 @@
 .searchIconContainer {
     position: absolute;
     top: 50%;
-    left: 18px;
+    padding: 18px;
     transform: translateY(-50%);
     stroke: $grey-color-4;
     pointer-events: none;
