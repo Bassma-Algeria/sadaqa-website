@@ -1,0 +1,43 @@
+@import '../../../styles/variables';
+
+.searchInputContainer {
+    position: relative;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 10px 12px 10px 58px;
+    font-size: 18px;
+    color: $text-color;
+    border: 1px solid $grey-color-4;
+    border-radius: 8px;
+
+    &:focus {
+        outline: none;
+        border-color: $grey-color;
+    }
+
+    &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $grey-color-4;
+    }
+
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $grey-color-4;
+    }
+
+    &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $grey-color-4;
+    }
+}
+
+.searchIconContainer {
+    position: absolute;
+    top: 50%;
+    left: 18px;
+    transform: translateY(-50%);
+    stroke: $grey-color-4;
+    pointer-events: none;
+}
