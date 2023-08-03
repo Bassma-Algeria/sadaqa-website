@@ -2,8 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 
 import styles from '../Register.module.scss';
-import { useTranslation } from '../../../utils/hooks/useTranslation';
+
 import { LocalIcons } from '../../../utils/constants/LocalIcons';
+import { useTranslation } from '../../../utils/hooks/useTranslation';
 
 interface Props {
     openAssociationAccount: () => void;

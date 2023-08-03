@@ -12,16 +12,16 @@
         width: 60%;
         height: 100%;
         display: flex;
-        padding: 4rem 1rem 0;
+        padding: 2rem 1rem 0;
         justify-content: center;
 
         > div {
             width: 100%;
-            max-width: 38rem;
+            max-width: 32rem;
         }
 
         .title {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 0.7rem;
         }
 
@@ -39,7 +39,14 @@
         .returnButtonContainer {
             position: relative;
             right: 2rem;
-            bottom: 2rem;
+
+            &.isRTL {
+                display: flex;
+                justify-content: flex-end;
+                right: unset;
+                left: 2rem;
+                transform: rotate(180deg);
+            }
 
             svg {
                 cursor: pointer;
@@ -47,6 +54,11 @@
         }
 
         .chooseUserType {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: -2rem;
+
             .choosingButtons {
                 margin-top: 3rem;
 
@@ -76,7 +88,8 @@
             }
         }
 
-        .registerIndividualUser {
+        .registerIndividualUser,
+        .registerAssociation {
             .inputs {
                 margin-top: 3rem;
                 margin-bottom: 2rem;
@@ -96,6 +109,21 @@
                 }
             }
         }
+
+        .registerAssociation {
+            .privacyPolicyCheckbox {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+
+                .privacyPolicyText {
+                    color: $grey-color-7;
+
+                    a {
+                        color: $main-color;
+                    }
+                }
+            }
+        }
     }
 
     .banner {
@@ -104,25 +132,25 @@
         height: 100%;
     }
 
+    @media only screen and (max-width: $large-laptop-breakpoint) {
+        .content {
+            .returnButtonContainer {
+                right: 0;
+                bottom: 1rem;
+
+                &.isRTL {
+                    right: unset;
+                    left: 0rem;
+                }
+            }
+        }
+    }
+
     @media only screen and (max-width: $small-laptop-breakpoint) {
         .content {
             width: 65%;
             padding-left: 2rem;
             padding-right: 2rem;
-
-            .title {
-                font-size: 2.7rem;
-                margin-bottom: 0.8rem;
-            }
-
-            .returnButtonContainer {
-                right: 0rem;
-                bottom: 1rem;
-
-                svg {
-                    cursor: pointer;
-                }
-            }
         }
     }
 
@@ -140,11 +168,6 @@
         .content {
             padding-right: 1.5rem;
             padding-left: 1.5rem;
-
-            .title {
-                font-size: 2rem;
-                margin-bottom: 0.5rem;
-            }
 
             .text {
                 margin-bottom: 0.5rem;
@@ -174,7 +197,14 @@
                 }
             }
 
-            .registerIndividualUser {
+            .returnButtonContainer {
+                svg {
+                    transform: scale(0.8) translateX(-0.4rem);
+                }
+            }
+
+            .registerIndividualUser,
+            .registerAssociation {
                 .inputs {
                     margin-top: 3rem;
                     margin-bottom: 2rem;

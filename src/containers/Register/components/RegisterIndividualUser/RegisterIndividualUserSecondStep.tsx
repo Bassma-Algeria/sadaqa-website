@@ -8,18 +8,21 @@ import { useTranslation } from '../../../../utils/hooks/useTranslation';
 import { Button } from '../../../../components/Buttons/Button/Button';
 import { PasswordInput } from '../../../../components/Inputs/PasswordInput/PasswordInput';
 import { DropdownInput } from '../../../../components/Inputs/DropdownInput/DropdownInput';
+import { ReturnButton } from '../ReturnButton';
 
 interface Props {
     goBack: () => void;
 }
 
-const RegisterIndividualUserSecondSlide: React.FC<Props> = ({ goBack }) => {
+const RegisterIndividualUserSecondStep: React.FC<Props> = ({ goBack }) => {
     const { t } = useTranslation('register');
 
     const [value, setValue] = React.useState<string>('');
 
     return (
         <>
+            <ReturnButton onClick={goBack} />
+
             <h1 className={styles.title}>{t('we-are-almost-done')}</h1>
             <p className={styles.text}>{t('we-are-almost-done-text')}</p>
 
@@ -66,4 +69,4 @@ const RegisterIndividualUserSecondSlide: React.FC<Props> = ({ goBack }) => {
     );
 };
 
-export { RegisterIndividualUserSecondSlide };
+export { RegisterIndividualUserSecondStep };

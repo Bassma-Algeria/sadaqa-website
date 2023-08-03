@@ -1,0 +1,65 @@
+@import '../../../styles/variables';
+
+.container {
+    width: 100%;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%232F856EFF' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='5' stroke-linecap='square'/%3e%3c/svg%3e");
+    border-radius: 0.5rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem;
+    gap: 1rem;
+    transition: 0.4s ease all;
+
+    &.dragging {
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .uploadIconContainer {
+        background-color: $primary-color-2;
+        padding: 0.5rem;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p {
+        color: $grey-color-5;
+        text-align: center;
+    }
+
+    p.chooseFile {
+        color: $main-color;
+        text-decoration: underline;
+        cursor: pointer;
+        font-weight: 600;
+    }
+
+    .file {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+
+        .deleteIcon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background-color: $error-color;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+.error {
+    color: $error-color;
+    margin-top: 0.4rem;
+    margin-bottom: 0.2rem;
+}

@@ -1,7 +1,7 @@
 {
   "name": "sadaqa-website",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "build": "next build",
     "start:dev": "next dev -p 3000",

@@ -8,18 +8,22 @@ import { LocalIcons } from '../../../../utils/constants/LocalIcons';
 import { Button } from '../../../../components/Buttons/Button/Button';
 import { TextInput } from '../../../../components/Inputs/TextInput/TextInput';
 import { useTranslation } from '../../../../utils/hooks/useTranslation';
+import { ReturnButton } from '../ReturnButton';
 
 interface Props {
     goBack: () => void;
+    goNext: () => void;
 }
 
-const RegisterIndividualUserFirstSlide: React.FC<Props> = ({ goBack }) => {
+const RegisterAssociationFirstStep: React.FC<Props> = ({ goBack, goNext }) => {
     const { t } = useTranslation('register');
 
     return (
         <>
+            <ReturnButton onClick={goBack} />
+
             <h1 className={styles.title}>{t('lets-create-your-account')}</h1>
-            <p className={styles.text}>{t('individual-account-creation-text')}</p>
+            <p className={styles.text}>{t('association-creation-text')}</p>
 
             <p className={styles.alreadyHaveAccount}>
                 {t('already-have-account')} ?{' '}
@@ -29,25 +33,14 @@ const RegisterIndividualUserFirstSlide: React.FC<Props> = ({ goBack }) => {
             </p>
 
             <div className={styles.inputs}>
-                <div className={styles.firstLastName}>
-                    <TextInput
-                        containerClassName={styles.input}
-                        placeholder={t('jamal')}
-                        value={''}
-                        onChange={() => {}}
-                        name={'firstName'}
-                        label={t('first-name')}
-                    />
-                    <TextInput
-                        containerClassName={styles.input}
-                        placeholder={t('boukala')}
-                        value={''}
-                        onChange={() => {}}
-                        name={'lastName'}
-                        label={t('last-name')}
-                    />
-                </div>
-
+                <TextInput
+                    containerClassName={styles.input}
+                    placeholder={t('enter-association-name')}
+                    value={''}
+                    onChange={() => {}}
+                    name={'name'}
+                    label={t('association-name')}
+                />
                 <TextInput
                     name={'email'}
                     value={''}
@@ -66,11 +59,11 @@ const RegisterIndividualUserFirstSlide: React.FC<Props> = ({ goBack }) => {
                 />
             </div>
 
-            <Button onClick={() => {}} variant={'primary'} Icon={LocalIcons.RIGHT_ARROW}>
+            <Button onClick={goNext} variant={'primary'} Icon={LocalIcons.RIGHT_ARROW}>
                 {t('next')}
             </Button>
         </>
     );
 };
 
-export { RegisterIndividualUserFirstSlide };
+export { RegisterAssociationFirstStep };

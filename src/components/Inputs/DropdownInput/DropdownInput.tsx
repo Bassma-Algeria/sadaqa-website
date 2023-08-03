@@ -18,6 +18,7 @@ interface Props<T extends string | number> extends ComponentProps<typeof BaseInp
     onChange: (value: T) => void;
     placeholder: string;
 }
+
 function DropdownInput<T extends string | number>(props: Props<T>) {
     const device = useDeviceDetector();
     const [isMobile, setIsMobile] = useState(false);
@@ -40,7 +41,6 @@ function DesktopDropdownInput<T extends string | number>(props: Props<T>) {
         return addOutsideClickListener(ref.current, () => setIsOpen(false));
     }, [isOpen]);
 
-    // @ts-ignore
     return (
         <div className={styles.desktop}>
             <BaseInput {...props}>

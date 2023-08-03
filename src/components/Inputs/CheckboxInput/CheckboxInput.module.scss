@@ -1,0 +1,30 @@
+@import '../../../styles/variables.scss';
+
+.container {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    .checkIcon {
+        width: 22px;
+        height: 22px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid $grey-color-5;
+
+        &.checked {
+            background-color: $grey-color-5;
+
+            svg {
+                display: block;
+            }
+        }
+
+        svg {
+            display: none;
+        }
+    }
+}
