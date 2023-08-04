@@ -39,6 +39,7 @@
         .returnButtonContainer {
             position: relative;
             right: 2rem;
+            bottom: 1rem;
 
             &.isRTL {
                 display: flex;
@@ -58,6 +59,11 @@
             justify-content: center;
             flex-direction: column;
             margin-top: -2rem;
+
+            .title {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
 
             .choosingButtons {
                 margin-top: 3rem;
@@ -90,6 +96,10 @@
 
         .registerIndividualUser,
         .registerAssociation {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+
             .inputs {
                 margin-top: 3rem;
                 margin-bottom: 2rem;
@@ -151,12 +161,24 @@
             width: 65%;
             padding-left: 2rem;
             padding-right: 2rem;
+
+            .chooseUserType {
+                .title {
+                    font-size: 2.7rem;
+                    margin-bottom: 0.8rem;
+                }
+            }
         }
     }
 
     @media only screen and (max-width: $tablet-breakpoint) {
         .content {
             width: 100%;
+
+            .registerIndividualUser,
+            .registerAssociation {
+                display: block;
+            }
         }
 
         .banner {
@@ -171,6 +193,12 @@
 
             .text {
                 margin-bottom: 0.5rem;
+            }
+
+            .chooseUserType {
+                .title {
+                    font-size: 2rem;
+                }
             }
         }
     }
