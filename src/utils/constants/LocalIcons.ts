@@ -3,6 +3,7 @@ import React from 'react';
 import EYE from '../../../public/icons/eye.svg';
 import CHAT from '../../../public/icons/chat.svg';
 import CHECK from '../../../public/icons/check.svg';
+import SEND from '../../../public/icons/send.svg';
 import SEARCH from '../../../public/icons/search.svg';
 import DELETE from '../../../public/icons/delete.svg';
 import UPLOAD from '../../../public/icons/upload.svg';
@@ -18,6 +19,7 @@ import ASSOCIATION_USER_TYPE from '../../../public/icons/association-user-type.s
 type Icons =
     | 'EYE'
     | 'CHAT'
+    | 'SEND'
     | 'SEARCH'
     | 'UPLOAD'
     | 'CHECK'
@@ -33,6 +35,7 @@ const LocalIcons: Record<Icons, React.FC<React.SVGProps<SVGSVGElement>>> = {
     EYE,
     DELETE,
     CHAT,
+    SEND,
     CHECK,
     SEARCH,
     UPLOAD,

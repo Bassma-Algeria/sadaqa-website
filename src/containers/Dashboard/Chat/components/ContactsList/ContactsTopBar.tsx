@@ -1,12 +1,16 @@
 import React from 'react';
 
 import styles from '../../Chat.module.scss';
+
 import { LocalIcons } from '../../../../../utils/constants/LocalIcons';
+
 import { useTranslation } from '../../../../../utils/hooks/useTranslation';
+import { useRTLDetector } from '../../../../../utils/hooks/useRTLDetector';
 
 interface Props {}
 
 const ContactsTopBar: React.FC<Props> = () => {
+    const isRTL = useRTLDetector();
     const { t } = useTranslation('chat');
 
     return (

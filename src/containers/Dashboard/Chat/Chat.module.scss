@@ -6,10 +6,10 @@
     width: 100%;
 
     .contactsList {
-        padding-top: 1rem;
+        padding-top: 1.2rem;
         width: 30%;
         max-width: 400px;
-        min-width: 350px;
+        min-width: 300px;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -105,24 +105,6 @@
                 }
             }
 
-            &.online {
-                .avatar {
-                    position: relative;
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        bottom: 0;
-                        right: 0;
-                        height: 25%;
-                        width: 25%;
-                        border: 4px solid $grey-color-1;
-                        border-radius: 50%;
-                        background-color: $main-color;
-                    }
-                }
-            }
-
             .contactItemContent {
                 .latestMessage {
                     color: $grey-color-6;
@@ -143,8 +125,176 @@
 
     .conversation {
         flex: 1;
-        background: $grey-color-1;
+        background-color: $grey-color-1;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .conversationHead {
+            display: flex;
+            padding: 1rem 1.6rem;
+            gap: 1rem;
+            align-items: center;
+            border-bottom: 1px solid $grey-color-2;
+
+            &.isRTL {
+                .returnIcon {
+                    svg {
+                        transform: rotate(180deg) translateX(-10px);
+                    }
+                }
+            }
+
+            .returnIcon {
+                display: none;
+                width: 20px;
+                cursor: pointer;
+
+                svg {
+                    scale: 0.7;
+                    position: relative;
+                    right: 3px;
+                }
+            }
+
+            p {
+                color: $grey-color-7;
+            }
+        }
+
+        .conversationBody {
+            flex: 1;
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column-reverse;
+            padding: 1rem 1.6rem;
+            gap: 0.6rem;
+            direction: ltr;
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: $grey-color-1;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $grey-color-4;
+
+                &:hover {
+                    background: $grey-color-5;
+                }
+            }
+
+            .seen {
+                color: $grey-color-4;
+                text-align: end;
+            }
+
+            .message {
+                max-width: 80%;
+                display: flex;
+                align-items: flex-end;
+                gap: 1rem;
+
+                &.sent {
+                    align-self: flex-end;
+                    flex-direction: row-reverse;
+
+                    .profilePic {
+                        display: none;
+                    }
+
+                    .content {
+                        color: white;
+                        background-color: $main-color;
+                    }
+                }
+
+                &.received {
+                    .profilePic {
+                        width: 35px;
+                        min-width: 35px;
+                        cursor: pointer;
+                    }
+
+                    .content {
+                        background-color: $grey-color-2;
+                    }
+                }
+
+                &:hover {
+                    .time {
+                        display: block;
+                    }
+                }
+
+                .content {
+                    border-radius: 4px;
+                    padding: 0.5rem 0.8rem;
+                }
+
+                .time {
+                    color: $grey-color-4;
+                    align-self: center;
+                    display: none;
+                }
+            }
+        }
+
+        .conversationInputContainer {
+            padding: 0rem 1.6rem 1rem 1.6rem;
+            direction: ltr;
+
+            .conversationInput {
+                display: flex;
+                align-items: center;
+                background-color: white;
+                border-radius: 4px;
+                padding: 1rem 1rem;
+                gap: 0.8rem;
+
+                input {
+                    width: 100%;
+                    border: none;
+                    font-size: 1rem;
+
+                    &:focus {
+                        outline: none;
+                    }
+
+                    &::placeholder {
+                        /* Chrome, Firefox, Opera, Safari 10.1+ */
+                        color: $grey-color-5;
+                        opacity: 1; /* Firefox */
+                    }
+
+                    &:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: $grey-color-5;
+                    }
+
+                    &::-ms-input-placeholder {
+                        /* Microsoft Edge */
+                        color: $grey-color-5;
+                    }
+                }
+
+                .sendIconContainer {
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
     }
 
     @media only screen and (max-width: $small-tablet-breakpoint) {
@@ -171,6 +321,64 @@
             &.show {
                 left: 0;
             }
+
+            .conversationHead {
+                padding: 1rem;
+                background: white;
+                border-bottom: unset;
+                box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.06);
+
+                .returnIcon {
+                    display: block;
+                }
+
+                h3 {
+                    font-size: 1rem;
+                }
+
+                p {
+                    font-size: 0.8rem;
+                }
+            }
+
+            .conversationBody {
+                padding: 0.5rem;
+                gap: 0.5rem;
+
+                .message {
+                    gap: 0.5rem;
+
+                    .time {
+                        display: none !important;
+                    }
+                }
+            }
+
+            .conversationInputContainer {
+                padding: 0.5rem;
+
+                .conversationInput {
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+
+.profilePicAvatar {
+    &.online {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 25%;
+            width: 25%;
+            border: 4px solid $grey-color-1;
+            border-radius: 50%;
+            background-color: $main-color;
         }
     }
 }

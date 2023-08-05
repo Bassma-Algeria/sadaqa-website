@@ -8,12 +8,14 @@ function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <style jsx global>{`
-                html[lang='en'] {
+                html[lang='en'],
+                html[lang='en'] input {
                     font-family: ${MyriadProFont.style.fontFamily};
                     direction: ltr;
                 }
 
-                html[lang='ar'] {
+                html[lang='ar'],
+                html[lang='ar'] input {
                     font-family: ${IbmPlexSansArabicFont.style.fontFamily};
                     direction: rtl;
                 }
