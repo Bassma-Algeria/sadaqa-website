@@ -1,7 +1,9 @@
 import React from 'react';
 
 import EYE from '../../../public/icons/eye.svg';
+import CHAT from '../../../public/icons/chat.svg';
 import CHECK from '../../../public/icons/check.svg';
+import SEARCH from '../../../public/icons/search.svg';
 import DELETE from '../../../public/icons/delete.svg';
 import UPLOAD from '../../../public/icons/upload.svg';
 import LEFT_ARROW from '../../../public/icons/left-arrow.svg';
@@ -15,6 +17,8 @@ import ASSOCIATION_USER_TYPE from '../../../public/icons/association-user-type.s
 // add this to satisfy the ts compiler and have it recognize the type of the keys in the LocalIcons object
 type Icons =
     | 'EYE'
+    | 'CHAT'
+    | 'SEARCH'
     | 'UPLOAD'
     | 'CHECK'
     | 'DELETE'
@@ -28,7 +32,9 @@ type Icons =
 const LocalIcons: Record<Icons, React.FC<React.SVGProps<SVGSVGElement>>> = {
     EYE,
     DELETE,
+    CHAT,
     CHECK,
+    SEARCH,
     UPLOAD,
     DASHED_EYE,
     LEFT_ARROW,

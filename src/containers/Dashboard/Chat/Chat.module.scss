@@ -1,0 +1,176 @@
+@import '../../../styles/variables.scss';
+
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+
+    .contactsList {
+        padding-top: 1rem;
+        width: 30%;
+        max-width: 400px;
+        min-width: 350px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .topBar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 0.6rem;
+
+            .chatIconAndText {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+
+                .chatIcon {
+                    position: relative;
+                    top: 2px;
+                }
+
+                h1 {
+                    color: black;
+                    font-size: 28px;
+                    text-transform: capitalize;
+                    font-weight: bold;
+                }
+            }
+
+            .searchIcon {
+                cursor: pointer;
+            }
+        }
+
+        .contactItemsList {
+            height: 100%;
+            width: 100%;
+            overflow-y: scroll;
+            overflow-x: hidden;
+
+            /* width */
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: white;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                background: $grey-color-4;
+
+                &:hover {
+                    background: $grey-color-5;
+                }
+            }
+        }
+
+        .contactItem {
+            padding: 0.6rem 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            position: relative;
+
+            &.selected {
+                background: $primary-color-1;
+            }
+
+            &.haveUnreadMessage {
+                font-weight: 700;
+
+                &.isRTL {
+                    &::after {
+                        right: unset;
+                        left: 0.6rem;
+                    }
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 50%;
+                    transform: translateY(50%);
+                    right: 0.6rem;
+                    height: 15px;
+                    width: 15px;
+                    border: 4px solid white;
+                    border-radius: 50%;
+                    background-color: $blue-color-main;
+                }
+            }
+
+            &.online {
+                .avatar {
+                    position: relative;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        height: 25%;
+                        width: 25%;
+                        border: 4px solid $grey-color-1;
+                        border-radius: 50%;
+                        background-color: $main-color;
+                    }
+                }
+            }
+
+            .contactItemContent {
+                .latestMessage {
+                    color: $grey-color-6;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 0.4rem;
+
+                    .pointSeparator {
+                        position: relative;
+                        bottom: 3px;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+
+    .conversation {
+        flex: 1;
+        background: $grey-color-1;
+        height: 100%;
+    }
+
+    @media only screen and (max-width: $small-tablet-breakpoint) {
+        display: block;
+
+        .contactsList {
+            width: 100%;
+            max-width: unset;
+            min-width: unset;
+
+            .topBar {
+                display: none;
+            }
+        }
+
+        .conversation {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 100%;
+            transition: 0.2s ease-in left;
+            z-index: 2;
+
+            &.show {
+                left: 0;
+            }
+        }
+    }
+}

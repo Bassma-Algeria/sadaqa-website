@@ -7,7 +7,7 @@ import { LocalImages } from '../../utils/constants/LocalImages';
 
 import { useTranslation } from '../../utils/hooks/useTranslation';
 
-import { Image } from '../../components/Image/Image';
+import { Image } from '../../components/Images/Image';
 import { Button } from '../../components/Buttons/Button/Button';
 import { TextInput } from '../../components/Inputs/TextInput/TextInput';
 import { PasswordInput } from '../../components/Inputs/PasswordInput/PasswordInput';

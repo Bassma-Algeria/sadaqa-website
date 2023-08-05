@@ -7,7 +7,7 @@ import { LocalImages } from '../../utils/constants/LocalImages';
 
 import { useTranslation } from '../../utils/hooks/useTranslation';
 
-import { Image } from '../../components/Image/Image';
+import { Image } from '../../components/Images/Image';
 
 import { ChooseUserType } from './components/ChooseUserType';
 import { RegisterAssociation } from './components/RegisterAssociation/RegisterAssociation';

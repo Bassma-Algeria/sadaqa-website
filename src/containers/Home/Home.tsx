@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useTranslation } from 'next-i18next';
+import { useTranslation } from '../../utils/hooks/useTranslation';
 
 import { Head } from '../../components/Head/Head';
 
