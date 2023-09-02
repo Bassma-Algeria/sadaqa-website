@@ -8,7 +8,7 @@ interface Props {}
 const Greeting: React.FC<Props> = () => {
     return (
         <div className="p-3">
-            <Text variant="h4" weight="semi-bold">
+            <Text variant="h4" breackPoints={{ md: 'h3' }} weight="semi-bold">
                 Hi Yasser !!
             </Text>
         </div>
