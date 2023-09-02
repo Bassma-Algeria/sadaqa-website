@@ -1,8 +1,6 @@
 import React from 'react';
 import { StaticImageData } from 'next/image';
 
-import styles from './Avatar.module.scss';
-
 import { Image } from '../Image';
 
 interface Props {
@@ -22,7 +20,7 @@ const Avatar: React.FC<Props> = props => {
                 objectPosition="center"
                 width={props.size ?? 60}
                 height={props.size ?? 60}
-                containerClassName={styles.container}
+                containerClassName={'overflow-hidden rounded-full'}
             />
         </div>
     );

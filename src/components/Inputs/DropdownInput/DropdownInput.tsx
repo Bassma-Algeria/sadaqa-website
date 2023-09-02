@@ -5,8 +5,8 @@ import styles from './DropdownInput.module.scss';
 
 import { LocalIcons } from '../../../utils/constants/LocalIcons';
 
-import { useDeviceDetector } from '../../../utils/hooks/useDeviceDetector';
-import { addOutsideClickListener } from '../../../utils/helpers/addOutsideClickListener';
+import { useDeviceDetectorEffect } from '../../../utils/hooks/useDeviceDetectorEffect';
+import { useOutsideClickListenerEffect } from '../../../utils/hooks/useOutsideClickListenerEffect';
 
 import { BaseInput } from '../BaseInput';
 
@@ -20,12 +20,11 @@ interface Props<T extends string | number> extends ComponentProps<typeof BaseInp
 }
 
 function DropdownInput<T extends string | number>(props: Props<T>) {
-    const device = useDeviceDetector();
     const [isMobile, setIsMobile] = useState(false);
 
-    useEffect(() => {
+    useDeviceDetectorEffect(device => {
         setIsMobile(device === 'mobile');
-    }, []);
+    });
 
     return isMobile ? <MobileDropdownInput {...props} /> : <DesktopDropdownInput {...props} />;
 }
@@ -35,11 +34,13 @@ function DesktopDropdownInput<T extends string | number>(props: Props<T>) {
 
     const ref = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (!ref.current) return;
-
-        return addOutsideClickListener(ref.current, () => setIsOpen(false));
-    }, [isOpen]);
+    useOutsideClickListenerEffect(
+        ref,
+        () => {
+            setIsOpen(false);
+        },
+        [isOpen],
+    );
 
     return (
         <div className={styles.desktop}>
