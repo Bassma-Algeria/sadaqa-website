@@ -7,7 +7,7 @@ interface Props {
     onChange: (value: string) => void;
 }
 
-const Search: React.FC<Props> = props => {
+const SearchInput: React.FC<Props> = props => {
     return (
         <div className={styles.searchInputContainer}>
             <input
@@ -23,4 +23,4 @@ const Search: React.FC<Props> = props => {
     );
 };
 
-export { Search };
+export { SearchInput };
