@@ -1,7 +1,7 @@
 @import '../../../styles/variables';
 
 .btn {
-    padding: 1rem 2rem;
+    padding: 0.8rem 1.8rem;
     border-radius: 6px;
     font-size: 1rem;
     font-weight: 600;
@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 1rem;
 
     &.primary {
         color: white;
@@ -39,10 +39,12 @@
     }
 
     @media only screen and (max-width: $tablet-breakpoint) {
+        gap: 0.5rem;
         width: 100%;
     }
 
     @media only screen and (max-width: $phone-breakpoint) {
+        gap: 0.5rem;
         padding: 0.8rem;
     }
 }

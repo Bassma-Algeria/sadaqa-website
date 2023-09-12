@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 import { cl } from '../../utils/helpers/conditionalClassnames';
 
@@ -28,7 +28,7 @@ interface Props {
     decoration?: 'underline' | 'line-through';
     transform?: 'uppercase' | 'lowercase' | 'capitalize';
     responsive?: boolean;
-    children: string | number;
+    children: ReactNode | number;
 }
 
 const Text: React.FC<Props> = ({
@@ -41,7 +41,7 @@ const Text: React.FC<Props> = ({
     responsive = true,
     children,
 }) => {
-    className = cl('color-text', className, {
+    className = cl('text-text', className, {
         'font-bold': weight === 'bold',
         'font-semibold': weight === 'semi-bold',
         'font-light': weight === 'light',
