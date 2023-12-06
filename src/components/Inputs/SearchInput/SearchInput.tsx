@@ -1,24 +1,34 @@
-import React from 'react';
+import React, { ComponentProps, HTMLInputTypeAttribute } from 'react';
+import { BaseInput } from '../BaseInput';
 import styles from './SearchInput.module.scss';
 import { LocalIcons } from '../../../utils/constants/LocalIcons';
 
-interface Props {
+interface Props extends ComponentProps<typeof BaseInput> {
     placeholder: string;
+    value: string;
     onChange: (value: string) => void;
 }
 
 const SearchInput: React.FC<Props> = props => {
     return (
-        <div className={styles.searchInputContainer}>
+        <BaseInput {...props} icon={<SearchIcon />}>
             <input
-                className={styles.searchInput}
                 type="text"
+                id={props.name}
+                name={props.name}
+                value={props.value}
                 onChange={e => props.onChange(e.target.value)}
                 placeholder={props.placeholder}
+                className={styles.input}
             />
-            <div className={styles.searchIconContainer}>
-                <LocalIcons.SEARCH_PRIMARY />
-            </div>
+        </BaseInput>
+    );
+};
+
+const SearchIcon: React.FC = () => {
+    return (
+        <div className={styles.iconContainer}>
+            <LocalIcons.SEARCH_PRIMARY />
         </div>
     );
 };
