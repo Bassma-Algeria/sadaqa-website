@@ -9,8 +9,9 @@ const cx = classNames.bind(styles);
 
 interface Props {
     name: string;
-    label: string;
+    label?: string;
     icon?: React.ReactNode;
+    iconPosition?: 'start' | 'end';
     error?: string;
     containerClassName?: string;
 }
@@ -20,14 +21,22 @@ const BaseInput: React.FC<React.PropsWithChildren<Props>> = props => {
 
     return (
         <div className={`${cx('container', { error: !!props.error })} ${props.containerClassName}`}>
-            <label htmlFor={props.name} className={styles.label}>
-                {props.label}
-            </label>
+            {props.label && (
+                <label htmlFor={props.name} className={styles.label}>
+                    {props.label}
+                </label>
+            )}
 
             <div className={cx('inputBox', { isRTL })}>
+                {props.icon && props.iconPosition === 'start' && (
+                    <div className={styles.iconContainer}>{props.icon}</div>
+                )}
+
                 <div className={styles.children}>{props.children}</div>
 
-                {props.icon && <div className={styles.iconContainer}>{props.icon}</div>}
+                {props.icon && props.iconPosition != 'start' && (
+                    <div className={styles.iconContainer}>{props.icon}</div>
+                )}
             </div>
 
             {props.error && <p className={styles.error}>{props.error}</p>}
